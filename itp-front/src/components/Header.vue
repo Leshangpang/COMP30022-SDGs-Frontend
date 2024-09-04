@@ -36,10 +36,10 @@
                 </li>
 
                 <li class="nav-item ">
-                  <router-link to="/learning">
-                  <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                  <router-link to="/learning" class="dropdown-toggle nav-link">
+                   
                     Learning
-                  </a>
+                  
                 </router-link>
                   
                 </li>
@@ -110,6 +110,10 @@
   </script>
 
   <style scoped>
+  .edu-navbar-area.is-sticky {
+  background-color: rgba(255, 255, 255, 1);
+   background: linear-gradient(90deg, rgba(237, 252, 253) 0%, #FFFFFF 54%, #FFFFFF 56%); /* 滚动时保持不透明 */
+}
  
   #sign-up{
     margin-left: 20px;
