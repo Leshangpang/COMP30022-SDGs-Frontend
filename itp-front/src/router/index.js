@@ -6,6 +6,8 @@ import BandgesPage from '../views/BandgesPage.vue';
 import CertificationPage from '../views/CertificationPage.vue';
 import LearningPage from '../views/LearningPage.vue';
 import CommunityPage from '../views/CommunityPage.vue';
+import QuestionDetailPage from '../components/QuestionDetail.vue';
+import AnswerQuestionPage from '../views/AnswerQuestionPage.vue';
 
 
 
@@ -19,8 +21,9 @@ const routes = [
   { path: '/learning', name: 'learn', component: LearningPage },
   { path: '/bandges', name: 'Bandges', component: BandgesPage },
   { path: '/certification', name: 'Certification', component: CertificationPage },
-  { path: '/communitychallenge', name: 'CommunityChallenge', component: CommunityPage }
-  
+  { path: '/communitychallenge', name: 'CommunityChallenge', component: CommunityPage },
+  { path: '/answerquestion', name: 'AnswerQuestion', component: AnswerQuestionPage, children: [{ path: '/question/:id', name: 'QuestionDetailPage', component: QuestionDetailPage }] }
+
 
 ]
 
