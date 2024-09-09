@@ -110,7 +110,7 @@
 
     <MainFooter></MainFooter>
     <Footer class="footer"></Footer>
-
+    
   </div>
 </template>
 
@@ -160,24 +160,23 @@ export default {
 /* Badge section and list layout */
 .badge-container {
   display: flex;
-  justify-content: center; /* Center the badge container */
-  margin-top: 20px;
-  width: 88%; /* Reduce the width of the badge container */
-  margin-left: -100px; /* Ensure it's centered */
-  margin-right: -100px; /* Ensure it's centered */
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-left: -130px;
+  margin-right: -250px;
 }
 
 .badge-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 10px;
+  justify-content: space-around;
 }
 
-/* Individual badge items */
+/* Individual badge items - Set to take up 1/9th of the row */
 .badge-item {
   text-align: center;
-  flex-basis: calc(100% / 6 - 10px); /* 9 items per row, with spacing */
+  flex-basis: calc(100% / 6); /* 9 items per row */
   margin-bottom: 20px;
 }
 
@@ -189,12 +188,12 @@ export default {
 
 .badge-item p {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
 }
 
 .badge-item span {
-  font-size: 12px;
+  font-size: 14px;
   color: gray;
 }
 </style>
