@@ -69,6 +69,7 @@
                 <li class="nav-item dropdown">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                   Profile
+                  <i class='bx bx-chevron-down'></i>
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
