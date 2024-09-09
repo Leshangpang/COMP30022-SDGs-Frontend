@@ -1,9 +1,9 @@
 <template>
     <div id="CommunityChallenge">
-      <Header></Header>
-      <MainBanner></MainBanner>
+      <!-- <Header></Header> -->
+      <!-- <MainBanner></MainBanner> -->
       <div class="sidebar-container">
-        <SideBar class="sidebar"></SideBar>
+        <!-- <SideBar class="sidebar"></SideBar> -->
         <div class="questions-container">
         <QuestionList :question="'What percentage of women globally experience physical or sexual violence in their lifetime?'" :initialRating="4" :questionId="1" class="question-list"></QuestionList>
         <QuestionList :question="'How would you rate this service?'" :questionId="2" class="question-list"></QuestionList>
@@ -14,7 +14,7 @@
       </div>
       </div>
       
-      <MainFooter></MainFooter>
+      <!-- <MainFooter></MainFooter> -->
  
       <main class="content">
         <router-view></router-view>

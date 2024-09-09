@@ -2,14 +2,12 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import HomePage from '../views/HomePage.vue';
 import CoursePage from '../views/CoursePage.vue';
-import BandgesPage from '../views/BandgesPage.vue';
-import CertificationPage from '../views/CertificationPage.vue';
+import BandgesPage from '../views/BadgesPage.vue';
+import CertificationPage from '../views/CertificatePage.vue';
 import LearningPage from '../views/LearningPage.vue';
 import CommunityPage from '../views/CommunityPage.vue';
 import QuestionDetailPage from '../components/QuestionDetail.vue';
 import AnswerQuestionPage from '../views/AnswerQuestionPage.vue';
-
-
 
 
 Vue.use(Router)

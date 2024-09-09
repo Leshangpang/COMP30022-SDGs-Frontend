@@ -20,10 +20,10 @@
 
     <div class="aside-menu">
       <SideBar
-        @update="(val) => (step = val)"
+      @update="(val) => (step = val)"
         :active="step"
       ></SideBar>
-      <component class="operate-content" :is="getCom" />
+<component class="operate-content" :is="getCom" />
     </div>
     <MainFooter></MainFooter>
     <main class="content">
@@ -38,6 +38,7 @@ import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
 import FlashCard from "../components/FlashCard.vue";
+import CommunityChallenge from './CommunityPage.vue';
 
 
 export default {
@@ -55,12 +56,21 @@ export default {
         //1: Learning,
         2: FlashCard,
         //3: QuestionSubmit,
-        //4: CommunityChallenge,
+        4: CommunityChallenge,
       },
     };
   },
   computed: {
     getCom: (state) => state.comMap[state.step],
+  },
+  methods: {
+    handleUpdate(val) {
+      this.step = val;
+      // 如果点击了 Community Challenge (step === 4)，跳转到 CommunityPage
+      if (val === 4) {
+        this.$router.push("/");
+      }
+    },
   },
 }
 </script>
