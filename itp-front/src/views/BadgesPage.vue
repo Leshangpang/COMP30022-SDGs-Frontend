@@ -15,15 +15,93 @@
         <section class="badge-section">
           <div class="badge-container">
             <div class="badge-list">
+              <!-- First row: Goals 1-9 -->
               <div class="badge-item">
                 <img src="../assets/image/locked-badge.png" alt="locked-badge">
                 <p>NO POVERTY<br><span>GOAL 1</span></p>
               </div>
 
               <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 2</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 3</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 4</span></p>
+              </div>
+
+              <div class="badge-item">
                 <img src="../assets/image/Gender-equality-badge.png" alt="Gender-equality-badge">
                 <p>Gender Equality<br><span>GOAL 5</span></p>
               </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 6</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 7</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 8</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 9</span></p>
+              </div>
+
+              <!-- Second row: Goals 10-17 -->
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 10</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 11</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 12</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 13</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 14</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 15</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 16</span></p>
+              </div>
+
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 17</span></p>
+              </div>
+
             </div>
           </div>
         </section>
@@ -32,7 +110,7 @@
 
     <MainFooter></MainFooter>
     <Footer class="footer"></Footer>
-    
+
   </div>
 </template>
 
@@ -82,34 +160,41 @@ export default {
 /* Badge section and list layout */
 .badge-container {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center the badge container */
+  margin-top: 20px;
+  width: 88%; /* Reduce the width of the badge container */
+  margin-left: -100px; /* Ensure it's centered */
+  margin-right: -100px; /* Ensure it's centered */
 }
 
 .badge-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 /* Individual badge items */
 .badge-item {
   text-align: center;
+  flex-basis: calc(100% / 6 - 10px); /* 9 items per row, with spacing */
+  margin-bottom: 20px;
 }
 
 .badge-item img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
 }
 
 .badge-item p {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.2;
 }
 
 .badge-item span {
-  font-size: 14px;
+  font-size: 12px;
   color: gray;
 }
 </style>
