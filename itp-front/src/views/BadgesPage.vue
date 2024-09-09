@@ -4,31 +4,31 @@
     
     <BadgeBanner></BadgeBanner>
 
-    <main class="badge-content">
-      <section class="badge-section">
-        <!-- 
-        <div class="badge-container">
-          <div class="badge-list">
+    <div class="content-container">
+      <!-- Profile Sidebar -->
+      <aside class="sidebar">
+        <ProfileSidebar></ProfileSidebar>
+      </aside>
 
-            <div class="badge-item">
-              <img src="../assets/image/locked-badge.png" alt="locked-badge">
-              <p>NO POVERTY<br><span>GOAL 1</span></p>
-            </div>
+      <!-- Main Badge Content -->
+      <main class="badge-content">
+        <section class="badge-section">
+          <div class="badge-container">
+            <div class="badge-list">
+              <div class="badge-item">
+                <img src="../assets/image/locked-badge.png" alt="locked-badge">
+                <p>NO POVERTY<br><span>GOAL 1</span></p>
+              </div>
 
-            <div class="badge-item">
-              <img src="../assets/image/Gender-equality-badge.png" alt="Gender-equality-badge">
-              <p>Gender Equality<br><span>GOAL 5</span></p>
+              <div class="badge-item">
+                <img src="../assets/image/Gender-equality-badge.png" alt="Gender-equality-badge">
+                <p>Gender Equality<br><span>GOAL 5</span></p>
+              </div>
             </div>
-            
           </div>
-        </div>
-
-        -->
-
-
-
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
 
     <MainFooter></MainFooter>
     <Footer class="footer"></Footer>
@@ -40,32 +40,76 @@
 import Header from '../components/Header.vue';
 import MainFooter from '@/components/MainFooter.vue';
 import BadgeBanner from '@/components/BadgeBanner.vue';
-
-
+import ProfileSidebar from '@/components/ProfileSidebar.vue';
 
 export default {
-name: 'BadgePage',
-components: {
-  Header,
-  BadgeBanner,
-  MainFooter,
-}
-
+  name: 'BadgePage',
+  components: {
+    Header,
+    BadgeBanner,
+    ProfileSidebar,
+    MainFooter,
+  },
 }
 </script>
 
-<style>
+<style scoped>
+/* Ensure the page takes up the full height */
 #BadgePage {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
-.content {
-  flex: 1; 
+/* Flex container for sidebar and badge content */
+.content-container {
+  display: flex;
+  flex: 1;
   padding: 20px;
 }
 
+/* Sidebar styles */
+.sidebar {
+  flex-basis: 20%; /* Sidebar takes 20% of the width */
+  padding-right: 20px;
+}
 
+/* Badge content styles */
+.badge-content {
+  flex-basis: 80%; /* Badge content takes the remaining width */
+}
 
+/* Badge section and list layout */
+.badge-container {
+  display: flex;
+  justify-content: center;
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Individual badge items */
+.badge-item {
+  text-align: center;
+}
+
+.badge-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.badge-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.badge-item span {
+  font-size: 14px;
+  color: gray;
+}
 </style>
