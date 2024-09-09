@@ -1,26 +1,24 @@
 <template>
   <div class="sidebar-container">
+    <!-- Badge Section -->
     <div class="badge-section">
       <router-link 
-        v-if="$route.name !== 'BadgePage'"
-        to="/badges" 
-        class="text"
+        to="/badges"
+        :class="['text', { current: $route.name === 'BadgePage' }]"
       >
         My Badges
       </router-link>
-      <span v-else class="text current">Badge</span>
       <p class="icon">🥇</p> <!-- Replace with a suitable icon -->
     </div>
 
+    <!-- Certificate Section -->
     <div class="certification-section">
       <router-link 
-        v-if="$route.name !== 'CertificatePage'"
-        to="/certificate" 
-        class="text certification"
+        to="/certificate"
+        :class="['text certification', { current: $route.name === 'CertificatePage' }]"
       >
         My Certificate
       </router-link>
-      <span v-else class="text certification current">Certification</span>
       <p class="icon certification-icon">📜</p> <!-- Replace with a suitable icon -->
     </div>
   </div>
@@ -33,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-/* Style for the box */
+/* Style for the sidebar container */
 .sidebar-container {
   border: 1px solid #e4a6a6; /* Light red border */
   padding: 20px;
@@ -41,7 +39,7 @@ export default {
   background-color: #fff6f6; /* Light pink background */
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly; /* Ensures equal spacing between items */
+  justify-content: space-evenly; /* Equal spacing between items */
   align-items: center; /* Center items horizontally */
   width: 150px; /* Adjust width as necessary */
   height: 200px; /* Increase height for better spacing */
@@ -59,14 +57,14 @@ export default {
 /* Badge text styling */
 .badge-section .text {
   font-size: 20px;
-  color: #a89a9a; /* Grayish text for Badge */
+  color: #a89a9a; /* Grayish text for non-active Badge */
   text-decoration: none;
   margin-left: -8px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 .badge-section .text.current {
-  color: #333; /* Make the current page's text darker */
+  color: #333; /* Darker text when Badge page is active */
 }
 
 /* Section for Certification */
@@ -81,12 +79,8 @@ export default {
 /* Certification text styling */
 .certification-section .text.certification {
   font-size: 20px;
-  color: #333; /* Darker text for Certification */
+  color: #a89a9a; /* Grayish text for non-active Certification */
   text-decoration: none;
-}
-
-.certification-section .text.certification.current {
-  color: #333; /* Make the current page's text darker */
 }
 
 /* Icon styles */
