@@ -6,7 +6,25 @@
 
     <main class="badge-content">
       <section class="badge-section">
-        
+        <!-- 
+        <div class="badge-container">
+          <div class="badge-list">
+
+            <div class="badge-item">
+              <img src="../assets/image/locked-badge.png" alt="locked-badge">
+              <p>NO POVERTY<br><span>GOAL 1</span></p>
+            </div>
+
+            <div class="badge-item">
+              <img src="../assets/image/Gender-equality-badge.png" alt="Gender-equality-badge">
+              <p>Gender Equality<br><span>GOAL 5</span></p>
+            </div>
+            
+          </div>
+        </div>
+
+        -->
+
 
 
       </section>
