@@ -2,7 +2,7 @@
   <div id="BadgesPage">
     <Header></Header>
     
-    <ProfileBanner></ProfileBanner>
+    <BadgeBanner></BadgeBanner>
 
     <main class="badge-content">
       <section class="badge-section">
@@ -21,7 +21,7 @@
 <script>
 import Header from '../components/Header.vue';
 import MainFooter from '@/components/MainFooter.vue';
-import ProfileBanner from '@/components/ProfileBanner.vue';
+import BadgeBanner from '@/components/BadgeBanner.vue';
 
 
 
@@ -29,7 +29,7 @@ export default {
 name: 'BadgePage',
 components: {
   Header,
-  ProfileBanner,
+  BadgeBanner,
   MainFooter,
 }
 
