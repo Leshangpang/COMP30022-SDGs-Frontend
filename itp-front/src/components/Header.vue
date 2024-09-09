@@ -64,13 +64,28 @@
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                  <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                    Profile
-                  </a>
-                </li>
-              </ul>
-            </div>
+                
+                <!--Profile Dropdown box--> 
+                <li class="nav-item dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                  Profile
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <router-link to="/badges" class="nav-link">
+                      Badges
+                    </router-link>
+                  </li>
+                  <li class="nav-item">
+                    <router-link to="/certificate" class="nav-link">
+                      Certificate
+                    </router-link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
             <div class="nav-btn">
               <router-link to="" class="default-btn">
                 Log in

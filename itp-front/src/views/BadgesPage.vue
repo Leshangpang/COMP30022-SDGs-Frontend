@@ -1,5 +1,5 @@
 <template>
-    <div id="BadgePage">
+    <div id="BadgesPage">
       <Header></Header>
       <main class="content">
         BadgePage
