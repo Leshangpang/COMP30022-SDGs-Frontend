@@ -1,8 +1,8 @@
 <template>
-    <div id="BandgePage">
+    <div id="BadgePage">
       <Header></Header>
       <main class="content">
-        BandgePage
+        BadgePage
         <router-view></router-view>
       </main>
       <Footer class="footer"></Footer>
@@ -16,7 +16,7 @@ import Footer from '../components/Footer.vue';
 
 
 export default {
-  name: 'BandgePage',
+  name: 'BadgePage',
   components: {
     Header,
     Footer
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style>
-#BandgePage {
+#BadgePage {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
