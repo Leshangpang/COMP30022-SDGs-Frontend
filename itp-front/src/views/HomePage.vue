@@ -2,6 +2,7 @@
   <div id="HomePage">
     <Header></Header>
     <MainBanner></MainBanner>
+    <swiper-list></swiper-list>
     <ask-menu></ask-menu>
     <MainFooter></MainFooter>
     <main class="content">
@@ -13,6 +14,7 @@
 <script>
 import Header from "../components/Header.vue";
 import MainBanner from "../components/MainBannerHome.vue";
+import SwiperList from "../components/SwiperList.vue";
 import AskMenu from "../components/AskMenu.vue";
 import MainFooter from "../components/MainFooter.vue";
 
@@ -22,6 +24,7 @@ export default {
     Header,
     MainBanner,
     MainFooter,
+    SwiperList,
     AskMenu,
   },
 };

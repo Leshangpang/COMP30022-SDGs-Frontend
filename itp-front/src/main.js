@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
+import VueAwesomeSwiper from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
 
 // global css for whole page
 import './assets/css/Global.css'
@@ -12,6 +14,7 @@ import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 Vue.use(BootstrapVue);
+Vue.use(VueAwesomeSwiper);
 
 Vue.config.productionTip = false
 
