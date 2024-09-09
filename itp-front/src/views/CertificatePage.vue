@@ -4,9 +4,19 @@
     
     <CertificateBanner></CertificateBanner>
 
+    <!-- Main Certificate Section -->
     <main class="certificate-content">
       <section class="certificate">
-        
+        <!-- The locked/unlocked certificate effect -->
+        <div :class="['certificate-image', { 'unlocked': isUnlocked }]">
+          <img src="../assets/image/certificate-placeholder.png" alt="Certificate" />
+          <!-- Overlay to show a locked state -->
+          <div v-if="!isUnlocked" class="overlay">
+            <p>Certificate Locked</p>
+            <p>Collect all 17 SDG Badges to Unlock</p>
+            <!-- <button @click="unlockCertificate">Unlock</button>-->
+          </div>
+        </div>
       </section>
     </main>
 
@@ -30,6 +40,7 @@ components: {
   CertificateBanner,
   MainFooter,
 }
+
 
 }
 </script>
