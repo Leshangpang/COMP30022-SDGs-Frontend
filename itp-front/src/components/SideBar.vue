@@ -10,7 +10,7 @@
             <li class = "choose"><router-link to="" data-text="Quiz">Quiz</router-link></li>
         </div>
         <div class ="choose-section">
-            <li class = "choose"><router-link to="" data-text="Community Chanllenge">Community Chanllenge</router-link></li>
+            <li class = "choose"><router-link to="/communitychallenge" data-text="Community Chanllenge">Community Chanllenge</router-link></li>
         </div>
     </ul>
 </template>
