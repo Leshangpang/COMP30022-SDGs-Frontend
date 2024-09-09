@@ -5,6 +5,8 @@ import CoursePage from '../views/CoursePage.vue';
 import BandgesPage from '../views/BandgesPage.vue';
 import CertificationPage from '../views/CertificationPage.vue';
 import LearningPage from '../views/LearningPage.vue';
+import CommunityPage from '../views/CommunityPage.vue';
+
 
 
 
@@ -16,7 +18,8 @@ const routes = [
   { path: '/course', name: 'Course', component: CoursePage },
   { path: '/learning', name: 'learn', component: LearningPage },
   { path: '/bandges', name: 'Bandges', component: BandgesPage },
-  { path: '/certification', name: 'Certification', component: CertificationPage }
+  { path: '/certification', name: 'Certification', component: CertificationPage },
+  { path: '/communitychallenge', name: 'CommunityChallenge', component: CommunityPage }
   
 
 ]
