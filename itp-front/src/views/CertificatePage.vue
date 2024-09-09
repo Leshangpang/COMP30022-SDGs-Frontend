@@ -2,7 +2,7 @@
   <div id="CertificatePage">
     <Header></Header>
     
-    <BadgeBanner></BadgeBanner>
+    <CertificateBanner></CertificateBanner>
 
     <main class="certificate-content">
       <section class="certificate">
