@@ -18,7 +18,7 @@
           </h2>
         </header>
         <main>
-          <!-- Username field is shown for both Login and Sign Up -->
+
           <div class="input-group">
             <label for="username" class="visually-hidden"></label>
             <input type="text" id="username" class="auth-input" placeholder="username" />
@@ -29,7 +29,7 @@
             <input type="text" id="email" class="auth-input" placeholder="email" />
           </div>
   
-          <!-- Password field -->
+
           <div class="input-group">
             <label for="password" class="visually-hidden"></label>
             <input type="password" id="password" class="auth-input" placeholder="password" />
@@ -46,8 +46,8 @@
           </button>
           <p>
           </p>
-          <!-- Forgot Password link only for Login -->
-          <a href="#" v-if="isLogin" class="forgot-password">forgot password?</a>
+
+          <button v-if="isLogin" class="forgot-password">forgot password?</button>
 
 
         </main>
@@ -63,7 +63,7 @@
           <p>
           </p>
           <p v-if="!isLogin" class="switch-login">
-            <a href="#" @click="isLogin = true">already has an account? </a>
+            <button class="forgot-password" @click="isLogin = true">already has an account? </button>
           </p>
         </footer>
       </form>
@@ -75,7 +75,7 @@
   export default {
     data() {
       return {
-        isLogin: true,  // This controls whether it's in Login or Sign Up mode
+        isLogin: true,
       };
     },
     methods: {
@@ -89,7 +89,7 @@
         // Handle Facebook sign-in
       },
       closeForm() {
-      this.$emit('closeLogin');  // Emit event to close the form
+        this.$emit('closeLogin');
       },
     },
   };
@@ -97,7 +97,6 @@
   
   <style scoped>
   .auth-container {
-  /* Style the auth container */
   max-width: 400px;
   margin: 100px auto;
   padding: 30px;
@@ -118,7 +117,6 @@
 }
 
 .auth-header {
-  /* Style for the header containing Login and Sign Up options */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,6 +190,11 @@
   font-size: 12px;
   color: #999;
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
 }
 
 .forgot-password:hover {
@@ -256,16 +259,16 @@ header img {
 }
 
 .login-overlay {
-  position: fixed; /* Ensures the overlay covers the entire screen */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center; /* Horizontally centers the form */
-  align-items: center; /* Vertically centers the form */
-  z-index: 1000; /* Ensures the form is on top */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .login-popup {
