@@ -8,9 +8,9 @@
         <QuestionList :question="'What percentage of women globally experience physical or sexual violence in their lifetime?'" :initialRating="4" :questionId="1" class="question-list"></QuestionList>
         <QuestionList :question="'How would you rate this service?'" :questionId="2" class="question-list"></QuestionList>
         <QuestionList :question="'xxxx'" :questionId="3" class="question-list"></QuestionList>
-        <QuestionList :question="'这个问题如何？'" class="question-list"></QuestionList>
-        <QuestionList :question="'这个问题如何？'" class="question-list"></QuestionList>
-        <QuestionList :question="'这个问题如何？'" class="question-list"></QuestionList>
+        <QuestionList :question="'another question....'" class="question-list"></QuestionList>
+        <QuestionList :question="'another question....'" class="question-list"></QuestionList>
+        <QuestionList :question="'another question....？'" class="question-list"></QuestionList>
       </div>
       </div>
       
