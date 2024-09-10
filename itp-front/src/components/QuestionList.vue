@@ -1,41 +1,46 @@
 <template>
-    <section class="question-container">
-      <p class="question-title">{{ question }}</p>
-      <div class="rating-box">
-        <span class="rating-label">Rate:</span>
-        <el-rate
-        v-model="value"
-        disabled
-        show-score
-        text-color="#ff9900"
-        score-template="{value}">
-      </el-rate>
-      </div>
+    <section class="question-container" @click="goToAnswerQuestion">
+        <p class="question-title">{{ question }}</p>
+        <div class="rating-box">
+            <span class="rating-label">Rating:</span>
+            <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template="{value}" class = "list-rate">
+            </el-rate>
+        </div>
     </section>
-  </template>
+</template>
 
 <script>
 export default {
     props: {
-    question: {
-      type: String,
-      required: true, // 确保传入问题
+        question: {
+            type: String,
+            required: true, // 确保传入问题
+        },
+        initialRating: {
+            type: Number,
+            default: 0, // 默认评分
+        },
+        questionId: {
+            type: Number,
+            required: true,
+        }
     },
-    initialRating: {
-      type: Number,
-      default: 0, // 默认评分
+    data() {
+        return {
+            value: this.initialRating // 从父组件或数据库传入初始评分
+        };
+    },
+    methods: {
+        goToAnswerQuestion() {
+            // 使用编程式导航跳转到问题详情页，并传递问题 ID
+            this.$router.push({ name: 'AnswerQuestion', params: { id: this.questionId } });
+        }
     }
-  },
-  data() {
-    return {
-      value: this.initialRating // 从父组件或数据库传入初始评分
-    };
-  }
 }
 </script>
-  
-  <style scoped>
-  .question-container {
+
+<style scoped>
+.question-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,25 +53,27 @@ export default {
     padding: 20px;
     min-height: 120px !important;
     border: 1px solid #ddd;
-  }
-  
-  .question-title {
+}
+
+.question-title {
     margin: 0;
     flex: 1;
-  }
-  
-  .rating-box {
+}
+
+.rating-box {
     display: flex;
     align-items: center;
-  }
-  
-  .rating-label {
+}
+
+.rating-label {
     margin-right: 10px;
-  }
-  
-  .rating-select {
+}
+
+.rating-select {
     padding: 5px;
     font-size: 16px;
-  }
-  </style>
-  
+}
+.list-rate {
+    margin-left: 10px;
+}
+</style>
