@@ -97,17 +97,19 @@
             </ul>
           </div>
 
-          <div class="nav-btn">
-            <router-link to="" class="default-btn">
-              Log in
-            </router-link>
-            <span>
-              <router-link to="" id="sign-up" class="default-btn">
-                Sign up
-              </router-link>
-            </span>
-          </div>
         </nav>
+
+        <div class="nav-btn">
+            <button @click="showLoginForm"to="" class="default-btn">
+              Log in
+            </button>
+            <span>
+              <button @click="showLoginForm" to="" id="sign-up" class="default-btn">
+                Sign up
+              </button>
+            </span>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -116,6 +118,8 @@
 
 
 <script>
+import { EventBus } from '@/eventBus';
+
 export default {
   data() {
     return {
@@ -141,6 +145,9 @@ export default {
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       this.isSticky = scrollTop > 50; // Adjust as needed
+    },
+    showLoginForm() {
+      EventBus.$emit('toggle-login-form');
     },
   },
 };
@@ -204,6 +211,12 @@ export default {
 
 .nav-btn {
   padding-left: 40px;
+}
+
+.edumim-nav .container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Space between nav and nav-btn */
 }
 
 .edumim-nav .navbar .navbar-nav {
