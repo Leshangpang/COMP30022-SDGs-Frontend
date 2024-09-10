@@ -10,6 +10,7 @@
           >
             Login
           </h2>
+          <div class="divider"></div>
           <h2 
             :class="{'auth-option': true, 'active': !isLogin}" 
             @click="isLogin = false"
@@ -69,9 +70,9 @@
       </form>
     </div>
   </div>
-  </template>
+</template>
   
-  <script>
+<script>
   export default {
     data() {
       return {
@@ -80,9 +81,9 @@
     },
 
     props: {
-    isLogin: {
-      type: Boolean,
-      default: true,
+      isLogin: {
+        type: Boolean,
+        default: true,
       },
     },
 
@@ -101,13 +102,12 @@
       },
     },
   };
-  </script>
+</script>
   
-  <style scoped>
-  .auth-container {
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 30px;
+<style scoped>
+.auth-container {
+  max-width: 600px;
+  padding: 100px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -126,7 +126,7 @@
 
 .auth-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   border-bottom: 1px solid #ddd;
@@ -134,15 +134,23 @@
 }
 
 .auth-header h2 {
-  margin: 0 15px;
+  flex: 1;
+  margin: 0 30px;
   cursor: pointer;
-  font-size: 18px;
-  color: #666;
+  font-size: 24px;
+  color: #999;
+  font-weight: 500;
 }
 
 .auth-header h2.active {
   font-weight: bold;
   color: black;
+}
+
+.divider {
+  height: 30px; /* Adjust based on the height of your headers */
+  width: 1px;
+  background-color: #ccc; /* Color of the line */
 }
 
 .auth-option {
@@ -171,20 +179,21 @@
 
 .auth-input {
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 16px;
+  margin-bottom: none;
 }
 
 .login-button {
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   background-color: #fff4c7;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -281,12 +290,12 @@ header img {
 
 .login-popup {
   background: white;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
   position: relative;
 }
 
-  </style>
+</style>
   

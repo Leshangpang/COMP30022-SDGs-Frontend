@@ -22,11 +22,11 @@ export default {
     };
   },
   methods: {
-  toggleLoginForm(isSignUp = false) {
-    console.log('Toggling login form visibility');
-    this.isLoginVisible = !this.isLoginVisible;
-    this.isLogin = !isSignUp;
-  }
+    toggleLoginForm(isSignUp = false) {
+      console.log('Toggling login form visibility');
+      this.isLoginVisible = !this.isLoginVisible;
+      this.isLogin = !isSignUp;
+    }
   },
   created() {
     EventBus.$on('toggle-login-form', this.toggleLoginForm);
@@ -34,7 +34,7 @@ export default {
   beforeDestroy() {
     EventBus.$off('toggle-login-form', this.toggleLoginForm);
   }
-
+  
 }
 </script>
 
