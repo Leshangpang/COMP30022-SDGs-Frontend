@@ -16,10 +16,12 @@
 
           <div class="collapse navbar-collapse" :class="{ show: active }">
             <ul class="navbar-nav">
+              <!-- Home Link: Use 'exact' to match only when exactly on '/' -->
               <li class="nav-item">
                 <router-link
                   to="/"
                   class="nav-link"
+                  exact
                   exact-active-class="active"
                 >
                   Home page
@@ -110,6 +112,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
