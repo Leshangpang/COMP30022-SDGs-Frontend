@@ -77,5 +77,37 @@
   </script>
   
   <style scoped>
+  .auth-container {
+  /* Style the auth container */
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-header {
+  /* Style for the header containing Login and Sign Up options */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.auth-header h2 {
+  margin: 0 15px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+.auth-header h2.active {
+  font-weight: bold;
+  color: black;
+}
   </style>
   
