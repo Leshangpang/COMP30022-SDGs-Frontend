@@ -10,7 +10,7 @@
         <li v-for="(option, index) in options" :key="index" class="option-item">
           <!-- 显示字母 ABCD -->
           <!-- 使用 Element UI 按钮 -->
-          <el-button type="primary" plain @click="selectOption(option)">
+          <el-button type="primary" plain @click="selectOption(option)" class ="option-button">
             {{ getOptionLabel(index) }}. {{ option }}
           </el-button>
         </li>
@@ -123,8 +123,22 @@ export default {
   margin-top: 20px;
 }
 .el-button {
-  max-width: 100%; /* 设置按钮的最大宽度 */
+  max-width: 100%; /* 固定按钮宽度 */
   white-space: normal; /* 允许按钮内的文本换行 */
+}
+.option-button{
+  width: 400px; /* 固定按钮宽度 */
+  height: 100px; /* 固定按钮高度 */
+  font-size: clamp(12px, 2vw, 18px); /* 动态调整字体大小，字体会根据按钮大小和视口宽度自动变化 */
+  white-space: normal; /* 允许文本换行 */
+  word-wrap: break-word; /* 如果单词过长，允许换行 */
+  padding: 10px; /* 内边距 */
+  line-height: 1.5; /* 设置行高，确保文本有足够的行间距 */
+  display: flex; /* 使用 flex 布局 */
+  justify-content: center; /* 水平居中文本 */
+  align-items: center; /* 垂直居中文本 */
+  text-align: center; /* 确保文本居中显示 */
+  overflow-wrap: break-word; /* 长单词换行 */
 }
 .question-option {
   list-style-type: none;
@@ -145,9 +159,13 @@ export default {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  white-space: normal; /* 允许文本换行 */
-  word-wrap: break-word; /* 长单词会换行 */
-  word-break: break-word; /* 长单词强制换行 */
+  justify-content: center; /* 水平居中 */
+
+  
+}
+.el-button span {
+  white-space: normal !important; /* 确保按钮文本允许换行 */
+  word-break: break-word !important; /* 长单词换行 */
 }
 
 .discussion-submit-button {
