@@ -25,7 +25,10 @@
       <div class="discussion-submit-container">
         <div class = "rate-section">
           <p> Rate the question: &nbsp;&nbsp;</p>
-          <el-rate v-model="value" show-text :score-template="'Rating: {value} stars'" class="discussion-rate"></el-rate>
+          <div class = "rating-star">
+            <el-rate v-model="value"></el-rate>
+            <span class = "rating-text">{{ ratingText }}</span>
+          </div>
         </div>
         
         <el-button type="primary" @click="submitDiscussion" class="discussion-submit-button">
@@ -95,6 +98,12 @@ export default {
       } else {
         alert('Please enter a comment.');
       }
+    }
+  },
+  computed: {
+    ratingText() {
+      const stars = this.value; // 当前评分值
+      return stars === 1 ? `${stars} star` : `${stars} stars`;
     }
   }
 }
@@ -187,7 +196,7 @@ export default {
 
 .rate-section{
   display: flex;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 .no-border-input .el-textarea__inner {
   border: none !important; /* 移除边框 */
@@ -196,6 +205,15 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* 添加阴影 */
 }
 
+.rating-star{
+  display: flex;
+  margin-top: 5px;
+}
+.rating-text{
+  margin-left: 5px;
+  color: rgb(93, 89, 89);
+
+}
 
 /* 可选：当输入框聚焦时增加阴影 */
 

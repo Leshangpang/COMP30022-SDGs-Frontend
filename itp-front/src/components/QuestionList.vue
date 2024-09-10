@@ -2,7 +2,7 @@
     <section class="question-container" @click="goToAnswerQuestion">
         <p class="question-title">{{ question }}</p>
         <div class="rating-box">
-            <span class="rating-label">Rate:</span>
+            <span class="rating-label">Rating:</span>
             <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template="{value}" class = "list-rate">
             </el-rate>
         </div>
