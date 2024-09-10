@@ -1,6 +1,7 @@
 <template>
   <div class="login-overlay">
     <div class="login-popup auth-container">
+      <button class="close-button" @click="closeForm">X</button>
       <form class="login-form">
         <header class="auth-header">
           <h2 
@@ -86,7 +87,10 @@
       },
       signInWithFacebook() {
         // Handle Facebook sign-in
-      }
+      },
+      closeForm() {
+      this.$emit('closeLogin');  // Emit event to close the form
+      },
     },
   };
   </script>
@@ -101,6 +105,16 @@
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .auth-header {
