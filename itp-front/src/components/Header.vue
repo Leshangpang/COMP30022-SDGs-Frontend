@@ -408,8 +408,12 @@ export default {
   color: var(--blackColor);
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
-  color: var(--mainColor);
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.router-link-active {
+  background-color: #ffffff; /* Keep background white */
+  color: #d7787d; 
+  font-weight: 600;
 }
 
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a {
