@@ -1,5 +1,6 @@
 <template>
-    <div class="auth-container">
+  <div class="login-overlay">
+    <div class="login-popup auth-container">
       <form class="login-form">
         <header class="auth-header">
           <h2 
@@ -66,6 +67,7 @@
         </footer>
       </form>
     </div>
+  </div>
   </template>
   
   <script>
@@ -238,5 +240,28 @@ header img {
   top: 20px;
   right: 20px;
 }
+
+.login-overlay {
+  position: fixed; /* Ensures the overlay covers the entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background */
+  display: flex;
+  justify-content: center; /* Horizontally centers the form */
+  align-items: center; /* Vertically centers the form */
+  z-index: 1000; /* Ensures the form is on top */
+}
+
+.login-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
   </style>
   
