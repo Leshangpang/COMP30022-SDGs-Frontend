@@ -4,7 +4,8 @@
     <div class="badge-section">
       <router-link 
         to="/badges"
-        :class="['text', { current: $route.name === 'BadgePage' }]"
+        class="text"
+        active-class="active"
       >
         My Badges
       </router-link>
@@ -15,7 +16,8 @@
     <div class="certification-section">
       <router-link 
         to="/certificate"
-        :class="['text certification', { current: $route.name === 'CertificatePage' }]"
+        class="text certification"
+        active-class="active"
       >
         My Certificate
       </router-link>
@@ -64,9 +66,8 @@ export default {
   margin-bottom: 20px;
 }
 
-.badge-section .text.current {
-  color: #ff0000; /* Highlight the current active page */
-  font-weight: bold; /* Make the text bold for better visibility */
+.badge-section .text.active {
+  color: #000000; /* Highlight the current active page */
 }
 
 .badge-section .text:hover {
@@ -89,9 +90,8 @@ export default {
   text-decoration: none;
 }
 
-.certification-section .text.certification.current {
-  color: #ff0000; /* Highlight the current active page */
-  font-weight: bold; /* Make the text bold for better visibility */
+.certification-section .text.certification.active {
+  color: #000000; /* Highlight the current active page */
 }
 
 .certification-section .text.certification:hover {
@@ -100,11 +100,11 @@ export default {
 
 /* Icon styles */
 .icon {
-  font-size: 30px;
-  color: #333; /* Dark icon color */
+  font-size: 35px;
 }
 
 .icon.certification-icon {
-  font-size: 25px; /* Slightly bigger icon for Certification */
+  font-size: 25px; 
+  margin-top: 10px;
 }
 </style>
