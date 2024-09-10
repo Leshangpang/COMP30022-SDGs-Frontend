@@ -129,7 +129,6 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
 
@@ -145,12 +144,13 @@
 .auth-header h2.active {
   font-weight: bold;
   color: black;
+  border-bottom: none;
 }
 
 .divider {
-  height: 30px; /* Adjust based on the height of your headers */
+  height: 30px;
   width: 1px;
-  background-color: #ccc; /* Color of the line */
+  background-color: #ccc;
 }
 
 .auth-option {
@@ -170,7 +170,7 @@
 }
 
 .auth-option.active::after {
-  display: block;
+  display: none;
 }
 
 .input-group {
