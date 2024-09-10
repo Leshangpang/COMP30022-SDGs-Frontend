@@ -67,6 +67,10 @@ export default {
   color: #333; /* Darker text when Badge page is active */
 }
 
+.badge-section .text:hover {
+  color: #000000; /* Darken the text when hovering */
+}
+
 /* Section for Certification */
 .certification-section {
   display: flex;
@@ -81,6 +85,10 @@ export default {
   font-size: 20px;
   color: #a89a9a; /* Grayish text for non-active Certification */
   text-decoration: none;
+}
+
+.certification-section .text.certification:hover {
+  color: #333; /* Darken the text when hovering */
 }
 
 /* Icon styles */
