@@ -42,69 +42,47 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly; /* Equal spacing between items */
-  align-items: center; /* Center items horizontally */
-  width: 150px; /* Adjust width as necessary */
+  align-items: flex-start; /* Align items to the left */
+  width: 180px; /* Adjust width as necessary */
   height: 200px; /* Increase height for better spacing */
   margin-left: 35px; /* Adjust margin as necessary */
 }
 
-/* Section for Badge */
-.badge-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 8px; /* Space between the text and the icon */
-}
-
-/* Badge text styling */
-.badge-section .text {
-  font-size: 20px;
-  color: #a89a9a; /* Grayish text for non-active Badge */
-  text-decoration: none;
-  margin-left: -8px;
-  margin-bottom: 20px;
-}
-
-.badge-section .text.active {
-  color: #000000; /* Highlight the current active page */
-}
-
-.badge-section .text:hover {
-  color: #000000; /* Darken the text when hovering */
-}
-
-/* Section for Certification */
+/* Badge and Certification Section Styles */
+.badge-section,
 .certification-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center; /* Vertically center text and icon */
+  justify-content: space-between; /* Add space between text and icon */
   width: 100%;
-  gap: 8px; /* Space between the text and the icon */
+  margin-bottom: 15px; /* Add spacing between sections */
 }
 
-/* Certification text styling */
-.certification-section .text.certification {
+/* Text styles for both sections */
+.badge-section .text,
+.certification-section .text {
   font-size: 20px;
-  color: #a89a9a; /* Grayish text for non-active Certification */
+  color: #a89a9a; /* Grayish text for non-active state */
   text-decoration: none;
+  margin-right: 10px; /* Add space between text and icon */
 }
 
+.badge-section .text.active,
 .certification-section .text.certification.active {
   color: #000000; /* Highlight the current active page */
 }
 
+.badge-section .text:hover,
 .certification-section .text.certification:hover {
-  color: #333; /* Darken the text when hovering */
+  color: #000000; /* Darken the text when hovering */
 }
 
 /* Icon styles */
 .icon {
-  font-size: 35px;
+  font-size: 30px;
 }
 
-.icon.certification-icon {
+.certification-icon {
   font-size: 25px; 
-  margin-top: 10px;
 }
 </style>
