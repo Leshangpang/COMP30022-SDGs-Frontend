@@ -48,13 +48,6 @@ export default {
   
 }
 
-.edu-banner-image img {
-  width: 110%; /* 图片宽度设为100% */
-  height: auto; /* 图片高度自适应 */
-  object-fit: cover; /* 确保图片填充容器 */
-  transform: scale(1.3); /* 将图片放大10%来填充留白 */
-  margin-left: 50px;
-}
 
 .edu-banner-content h1 {
   font-size: 75px;

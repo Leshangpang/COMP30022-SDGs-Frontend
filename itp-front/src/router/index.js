@@ -6,6 +6,7 @@ import BadgesPage from '../views/BadgesPage.vue';
 import CertificatePage from '../views/CertificatePage.vue';
 import LearningPage from '../views/LearningPage.vue';
 import CommunityPage from '../views/CommunityPage.vue';
+import FlashCard from "../components/FlashCard.vue";
 
 
 
@@ -19,7 +20,8 @@ const routes = [
   { path: '/learning', name: 'learn', component: LearningPage },
   { path: '/badges', name: 'Badges', component: BadgesPage },
   { path: '/certificate', name: 'Certificate', component: CertificatePage },
-  { path: '/communitychallenge', name: 'CommunityChallenge', component: CommunityPage }
+  { path: '/communitychallenge', name: 'CommunityChallenge', component: CommunityPage },
+  { path: '/flashcard', name: 'FlashCard', component:FlashCard}
 
 
 ]
