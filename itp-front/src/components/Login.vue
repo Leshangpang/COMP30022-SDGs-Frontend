@@ -2,7 +2,7 @@
   <div class="login-overlay">
     <div class="login-popup auth-container">
       <button class="close-button" @click="closeForm">X</button>
-      <form class="login-form">
+      <form class="login-form" @submit.prevent="handleSubmit">
         <header class="auth-header">
           <h2 
             :class="{'auth-option': true, 'active': isLogin}" 
@@ -78,6 +78,14 @@
         isLogin: true,
       };
     },
+
+    props: {
+    isLogin: {
+      type: Boolean,
+      default: true,
+      },
+    },
+
     methods: {
       handleSubmit() {
         // Handle form submission

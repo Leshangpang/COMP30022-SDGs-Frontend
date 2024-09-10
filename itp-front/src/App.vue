@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view><!-- 路由视图，用于渲染匹配的路由组件 -->
-    <Login v-if="isLoginVisible" @closeLogin="toggleLoginForm" />
+    <Login v-if="isLoginVisible" :isLogin="isLogin" @closeLogin="toggleLoginForm" />
   </div>
 </template>
 
@@ -18,16 +18,14 @@ export default {
   data() {
     return {
       isLoginVisible: false,
+      isLogin: true,
     };
   },
   methods: {
-    showLoginForm() {
-    console.log('Login/Signup button clicked');
-    EventBus.$emit('toggle-login-form');
-  },
-  toggleLoginForm() {
+  toggleLoginForm(isSignUp = false) {
     console.log('Toggling login form visibility');
     this.isLoginVisible = !this.isLoginVisible;
+    this.isLogin = !isSignUp;
   }
   },
   created() {

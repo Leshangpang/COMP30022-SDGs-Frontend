@@ -100,11 +100,11 @@
         </nav>
 
         <div class="nav-btn">
-            <button @click="showLoginForm"to="" class="default-btn">
+            <button @click="showLoginForm(false)" class="default-btn">
               Log in
             </button>
             <span>
-              <button @click="showLoginForm" to="" id="sign-up" class="default-btn">
+              <button @click="showLoginForm(true)" id="sign-up" class="default-btn">
                 Sign up
               </button>
             </span>
@@ -146,8 +146,8 @@ export default {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       this.isSticky = scrollTop > 50; // Adjust as needed
     },
-    showLoginForm() {
-      EventBus.$emit('toggle-login-form');
+    showLoginForm(isSignUp) {
+      EventBus.$emit('toggle-login-form', isSignUp);
     },
   },
 };
