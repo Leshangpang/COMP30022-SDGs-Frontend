@@ -67,8 +67,8 @@
                 </ul>
               </li>
 
-              <!-- Profile Dropdown -->
-              <li class="nav-item dropdown" :class="{ active: isProfileActive }">
+              <!-- Profile Dropdown: Apply the 'active' class when isProfileActive is true -->
+              <li class="nav-item dropdown" :class="{ 'active': isProfileActive }">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                   Profile
                   <i class="bx bx-chevron-down"></i>
@@ -114,19 +114,22 @@
 </template>
 
 
+
 <script>
 export default {
   data() {
     return {
       isSticky: false,
-      button_active_state: false
+      button_active_state: false,
     };
   },
   computed: {
     // Check if either 'Badges' or 'Certificate' routes are active
     isProfileActive() {
-      return this.$route.name === 'Badges' || this.$route.name === 'Certificate';
-    }
+      return (
+        this.$route.name === 'Badges' || this.$route.name === 'Certificate'
+      );
+    },
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
@@ -138,8 +141,8 @@ export default {
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       this.isSticky = scrollTop > 50; // Adjust as needed
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -216,16 +219,26 @@ export default {
 .edumim-nav .navbar .navbar-nav .nav-item a {
   color: var(--paragraphColor);
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 300; /* Normal weight */
   padding-left: 0;
   padding-right: 0;
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item a:hover, .edumim-nav .navbar .navbar-nav .nav-item a.router-link-active {
+/* Apply slight bold styling to active links */
+.edumim-nav .navbar .navbar-nav .nav-item a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item a.router-link-active,
+.edumim-nav .navbar .navbar-nav .nav-item.active a {
   color: var(--blackColor);
+  font-weight: 500; 
 }
+
+/* Profile dropdown should be bold when either badges or certificate is active */
+.edumim-nav .navbar .navbar-nav .nav-item.active > a {
+  font-weight: 500; /* Slightly bold */
+}
+
 
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-toggle {
   padding-right: 0px;
