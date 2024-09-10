@@ -51,10 +51,10 @@
         <footer>
           <div class="auth-methods">
             <button @click="signInWithGoogle" class="google-auth">
-              <img src="google-icon.png" alt="Google" />
+              <img src="../assets/image/svg/google.svg" alt="Google" />
             </button>
             <button @click="signInWithFacebook" class="facebook-auth">
-              <img src="facebook-icon.png" alt="Facebook" />
+              <img src="../assets/image/svg/facebook.svg" alt="Facebook" />
             </button>
           </div>
         </footer>
