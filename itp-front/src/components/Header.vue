@@ -1,84 +1,94 @@
 <template>
-    <div :class="['edu-navbar-area navbar-area', { 'is-sticky': isSticky }]">
-  <!--    <div class="edumim-responsive-nav">-->
-  <!--      <div class="container">-->
-  <!--        <div class="edumim-responsive-menu">-->
-  <!--          <div class="logo">-->
-  <!--            <router-link to="/">-->
-  <!--              <img src="../../assets/img/logo/logo-1.png" alt="logo" />-->
-  <!--            </router-link>-->
-  <!--          </div>-->
-  <!--        </div>-->
-  <!--      </div>-->
-  <!--    </div>-->
-      <div class="edumim-nav">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg navbar-light">
-            
-  
-            <div
-              class="navbar-toggler"
-              @click="active = !active"
-              :aria-pressed="active ? 'true' : 'false'"
-              v-bind:class="{ active: button_active_state }"
-              v-on:click="button_active_state = !button_active_state"
-            >
-              <i class="bx bx-menu"></i>
-              <i class="bx bx-x"></i>
-            </div>
-  
-            <div class="collapse navbar-collapse" :class="{ show: active }">
-              <ul class="navbar-nav">
-                <li class="nav-item ">
-                  <router-link to="/" class="nav-link">
-                    Home page
-                  </router-link>
-                </li>
+  <div :class="['edu-navbar-area navbar-area', { 'is-sticky': isSticky }]">
+    <div class="edumim-nav">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div
+            class="navbar-toggler"
+            @click="active = !active"
+            :aria-pressed="active ? 'true' : 'false'"
+            v-bind:class="{ active: button_active_state }"
+            v-on:click="button_active_state = !button_active_state"
+          >
+            <i class="bx bx-menu"></i>
+            <i class="bx bx-x"></i>
+          </div>
 
-                <li class="nav-item ">
-                  <router-link to="/learning" class="dropdown-toggle nav-link">
-                   
-                    Learning
-                  
+          <div class="collapse navbar-collapse" :class="{ show: active }">
+            <ul class="navbar-nav">
+              <!-- Home Link: Use 'exact' to match only when exactly on '/' -->
+              <li class="nav-item">
+                <router-link
+                  to="/"
+                  class="nav-link"
+                  exact
+                  exact-active-class="active"
+                >
+                  Home page
                 </router-link>
-                  
-                </li>
-                
-                
-                <li class="nav-item">
-                  <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                    Question Hub
-                    <i class='bx bx-chevron-down'></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <router-link to="/blog" class="nav-link">
-                        My Question
-                      </router-link>
-                    </li>
-                    
-                    <li class="nav-item">
-                      <router-link to="/blog-standard" class="nav-link">
-                        Upload Question
-                      </router-link>
-                    </li>
-                  </ul>
-                </li>
-                
-                <!--Profile Dropdown box--> 
-                <li class="nav-item dropdown">
+              </li>
+
+              <li class="nav-item">
+                <router-link
+                  to="/learning"
+                  class="dropdown-toggle nav-link"
+                  exact-active-class="active"
+                >
+                  Learning
+                </router-link>
+              </li>
+
+              <!-- Question Hub -->
+              <li class="nav-item">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                  Profile
-                  <i class='bx bx-chevron-down'></i>
+                  Question Hub
+                  <i class="bx bx-chevron-down"></i>
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <router-link to="/badges" class="nav-link">
+                    <router-link
+                      to="/blog"
+                      class="nav-link"
+                      exact-active-class="active"
+                    >
+                      My Question
+                    </router-link>
+                  </li>
+
+                  <li class="nav-item">
+                    <router-link
+                      to="/blog-standard"
+                      class="nav-link"
+                      exact-active-class="active"
+                    >
+                      Upload Question
+                    </router-link>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Profile Dropdown: Apply the 'active' class when isProfileActive is true -->
+              <li class="nav-item dropdown" :class="{ 'active': isProfileActive }">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                  Profile
+                  <i class="bx bx-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <router-link
+                      to="/badges"
+                      class="nav-link"
+                      exact-active-class="active"
+                    >
                       Badges
                     </router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/certificate" class="nav-link">
+                    <router-link
+                      to="/certificate"
+                      class="nav-link"
+                      exact-active-class="active"
+                    >
                       Certificate
                     </router-link>
                   </li>
@@ -87,27 +97,39 @@
             </ul>
           </div>
 
-            <div class="nav-btn">
-              <router-link to="" class="default-btn">
-                Log in
-              </router-link>
-              <span>
-                <router-link to="" id = 'sign-up' class="default-btn">
+          <div class="nav-btn">
+            <router-link to="" class="default-btn">
+              Log in
+            </router-link>
+            <span>
+              <router-link to="" id="sign-up" class="default-btn">
                 Sign up
-              </router-link></span>
-            </div>
-          </nav>
-        </div>
+              </router-link>
+            </span>
+          </div>
+        </nav>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
+  </div>
+</template>
+
+
+
+<script>
+export default {
   data() {
     return {
-      isSticky: false
+      isSticky: false,
+      button_active_state: false,
     };
+  },
+  computed: {
+    // Check if either 'Badges' or 'Certificate' routes are active
+    isProfileActive() {
+      return (
+        this.$route.name === 'Badges' || this.$route.name === 'Certificate'
+      );
+    },
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
@@ -118,12 +140,13 @@
   methods: {
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      this.isSticky = scrollTop > 50; // 可以根据需要调整这个值
-    }
-  }
+      this.isSticky = scrollTop > 50; // Adjust as needed
+    },
+  },
 };
-  
-  </script>
+</script>
+
+
 
   <style scoped>
   .edu-navbar-area.is-sticky {
@@ -196,16 +219,26 @@
 .edumim-nav .navbar .navbar-nav .nav-item a {
   color: var(--paragraphColor);
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 300; /* Normal weight */
   padding-left: 0;
   padding-right: 0;
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item a:hover, .edumim-nav .navbar .navbar-nav .nav-item a.router-link-active {
+/* Apply slight bold styling to active links */
+.edumim-nav .navbar .navbar-nav .nav-item a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item a.router-link-active,
+.edumim-nav .navbar .navbar-nav .nav-item.active a {
   color: var(--blackColor);
+  font-weight: 500; 
 }
+
+/* Profile dropdown should be bold when either badges or certificate is active */
+.edumim-nav .navbar .navbar-nav .nav-item.active > a {
+  font-weight: 500; /* Slightly bold */
+}
+
 
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-toggle {
   padding-right: 0px;
@@ -375,8 +408,12 @@
   color: var(--blackColor);
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
-  color: var(--mainColor);
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.router-link-active {
+  background-color: #ffffff; /* Keep background white */
+  color: #d7787d; 
+  font-weight: 600;
 }
 
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a {
@@ -478,6 +515,7 @@
 .navbar-toggler.active i:nth-child(2) {
   display: block;
 }
+
 
   
   </style>
