@@ -52,10 +52,10 @@ export default {
 .badge-section,
 .certification-section {
   display: flex;
-  align-items: center; /* Vertically center text and icon */
+  align-items: center; 
   justify-content: space-between; /* Add space between text and icon */
   width: 100%;
-  margin-bottom: 15px; /* Add spacing between sections */
+  margin-bottom: 15px; 
 }
 
 /* Text styles for both sections */
