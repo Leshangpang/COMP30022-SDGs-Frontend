@@ -8,7 +8,7 @@
       >
         My Badges
       </router-link>
-      <p class="icon">🥇</p> <!-- Replace with a suitable icon -->
+      <p class="icon">🥇</p> 
     </div>
 
     <!-- Certificate Section -->
@@ -19,7 +19,7 @@
       >
         My Certificate
       </router-link>
-      <p class="icon certification-icon">📜</p> <!-- Replace with a suitable icon -->
+      <p class="icon certification-icon">📜</p> 
     </div>
   </div>
 </template>
@@ -43,6 +43,7 @@ export default {
   align-items: center; /* Center items horizontally */
   width: 150px; /* Adjust width as necessary */
   height: 200px; /* Increase height for better spacing */
+  margin-left: 35px; /* Adjust margin as necessary */
 }
 
 /* Section for Badge */
@@ -64,7 +65,8 @@ export default {
 }
 
 .badge-section .text.current {
-  color: #333; /* Darker text when Badge page is active */
+  color: #ff0000; /* Highlight the current active page */
+  font-weight: bold; /* Make the text bold for better visibility */
 }
 
 .badge-section .text:hover {
@@ -85,6 +87,11 @@ export default {
   font-size: 20px;
   color: #a89a9a; /* Grayish text for non-active Certification */
   text-decoration: none;
+}
+
+.certification-section .text.certification.current {
+  color: #ff0000; /* Highlight the current active page */
+  font-weight: bold; /* Make the text bold for better visibility */
 }
 
 .certification-section .text.certification:hover {

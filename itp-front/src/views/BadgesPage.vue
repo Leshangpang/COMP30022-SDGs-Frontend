@@ -137,6 +137,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 100%;
 }
 
 /* Flex container for sidebar and badge content */
@@ -144,6 +145,7 @@ export default {
   display: flex;
   flex: 1;
   padding: 20px;
+  width: 100%;
 }
 
 /* Sidebar styles */
@@ -162,9 +164,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin-left: -130px;
-  margin-right: -250px;
+  width: 100%;
 }
 
 .badge-list {

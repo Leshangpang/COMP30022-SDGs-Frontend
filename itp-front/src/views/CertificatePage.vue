@@ -69,6 +69,7 @@ export default {
   justify-content: space-between;
   padding: 20px;
   flex: 1;
+  width: 100%;
   margin-top: -60px; /* Adjust based on your design */
   margin-right: -250px;
   margin-left: -50px;
