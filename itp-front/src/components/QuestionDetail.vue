@@ -1,7 +1,7 @@
 <template>
   <div class="question-detail">
     <div class="question-section">
-      <h2>Question {{ questionId }}</h2>
+      <!----<h2>Question {{ questionId }}</h2> -->
       <p class = "question-in-answer-section">{{ questionDetail }}</p>
     </div>
     <div class="question-detail-options">
@@ -113,10 +113,11 @@ export default {
 .question-in-answer-section {
   color:rgb(93, 89, 89);
   font-size: larger;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 .question-detail {
-  padding: 20px;
+  
+  padding-top:0px;
 }
 
 .question-detail-options {
