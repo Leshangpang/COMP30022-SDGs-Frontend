@@ -42,7 +42,8 @@
           <button type="submit" class="login-button" @click="handleSubmit">
             {{ isLogin ? 'Login' : 'Create' }}
           </button>
-  
+          <p>
+          </p>
           <!-- Forgot Password link only for Login -->
           <a href="#" v-if="isLogin" class="forgot-password">forgot password?</a>
 
@@ -57,6 +58,11 @@
               <img src="../assets/image/svg/facebook.svg" alt="Facebook" />
             </button>
           </div>
+          <p>
+          </p>
+          <p v-if="!isLogin" class="switch-login">
+            <a href="#" @click="isLogin = true">already has an account? </a>
+          </p>
         </footer>
       </form>
     </div>
