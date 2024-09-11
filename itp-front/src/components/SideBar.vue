@@ -4,7 +4,7 @@
             <li class = "choose"><router-link to="" data-text="Learning">Learning</router-link></li>
         </div>
         <div class ="choose-section">
-            <li class = "choose"><router-link to="" data-text="FlashCard">FlashCard</router-link></li>
+            <li class = "choose"><router-link to="flashcard" data-text="FlashCard">FlashCard</router-link></li>
         </div>
         <div class ="choose-section">
             <li class = "choose"><router-link to="" data-text="Quiz">Quiz</router-link></li>

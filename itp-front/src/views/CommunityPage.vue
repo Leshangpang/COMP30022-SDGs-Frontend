@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #CommunityChallenge {
     display: grid;
     grid-template-rows: auto 1fr auto;
