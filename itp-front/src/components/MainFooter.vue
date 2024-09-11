@@ -94,7 +94,7 @@ export default {
   color: white; /* 为 h2 和 h4 元素都设置白色字体 */
 }
 .edu-footer-area {
-  background-image: url(../assets/image/footer-bg-1.png);
+  background-image: url(../assets/image/footer-image.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
