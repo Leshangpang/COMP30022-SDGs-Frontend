@@ -2,7 +2,7 @@
   <div id="BadgesPage">
     <Header></Header>
     
-    <BadgeBanner></BadgeBanner>
+    <BadgePageBanner></BadgePageBanner>
 
     <div class="content-container">
       <!-- Profile Sidebar -->
@@ -119,14 +119,14 @@
 <script>
 import Header from '../components/WebHeader.vue';
 import MainFooter from '@/components/MainFooter.vue';
-import BadgeBanner from '@/components/BadgeBanner.vue';
+import BadgePageBanner from '@/components/BadgePageBanner.vue';
 import ProfileSidebar from '@/components/ProfileSidebar.vue';
 
 export default {
   name: 'BadgePage',
   components: {
     Header,
-    BadgeBanner,
+    BadgePageBanner,
     ProfileSidebar,
     MainFooter,
   },
