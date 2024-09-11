@@ -1,5 +1,30 @@
 {
+  "name": "itp-front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
   "dependencies": {
-    "swiper": "^5.4.5"
+    "axios": "^1.7.4",
+    "bootstrap-vue": "^2.23.1",
+    "core-js": "^3.8.3",
+    "echarts": "^5.5.1",
+    "element-ui": "^2.4.5",
+    "eslint-plugin-vue": "^7.20.0",
+    "swiper": "^5.4.5",
+    "vue": "^2.6.14",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-router": "^3.6.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "babel-plugin-component": "^1.1.1",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-template-compiler": "^2.6.14"
   }
 }
