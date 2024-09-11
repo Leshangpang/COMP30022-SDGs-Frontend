@@ -68,7 +68,7 @@ export default {
 }
 
 .edu-banner-content span {
-  color: var(--secounderyColor);
+  color: var(--secoundaryColor);
 }
 
 .shape01 {

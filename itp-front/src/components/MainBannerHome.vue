@@ -53,7 +53,7 @@ edu-banner-content h1 {
 }
 
 .edu-banner-content span {
-  color: var(--secounderyColor);
+  color: var(--secoundaryColor);
 }
 
 .edu-banner-content .fl-default-btn {
