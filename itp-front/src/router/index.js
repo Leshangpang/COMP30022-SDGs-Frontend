@@ -2,11 +2,12 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import HomePage from '../views/HomePage.vue';
 import CoursePage from '../views/CoursePage.vue';
-import BadgesPage from '../views/BadgesPage.vue';
-import CertificatePage from '../views/CertificatePage.vue';
+import BandgesPage from '../views/BandgesPage.vue';
+import CertificationPage from '../views/CertificationPage.vue';
 import LearningPage from '../views/LearningPage.vue';
 import CommunityPage from '../views/CommunityPage.vue';
-import FlashCard from "../components/FlashCard.vue";
+import QuestionDetailPage from '../components/QuestionDetail.vue';
+import AnswerQuestionPage from '../views/AnswerQuestionPage.vue';
 
 
 
@@ -18,10 +19,10 @@ const routes = [
   { path: '/', name: 'Home', component: HomePage },
   { path: '/course', name: 'Course', component: CoursePage },
   { path: '/learning', name: 'learn', component: LearningPage },
-  { path: '/badges', name: 'Badges', component: BadgesPage },
-  { path: '/certificate', name: 'Certificate', component: CertificatePage },
+  { path: '/bandges', name: 'Bandges', component: BandgesPage },
+  { path: '/certification', name: 'Certification', component: CertificationPage },
   { path: '/communitychallenge', name: 'CommunityChallenge', component: CommunityPage },
-  { path: '/flashcard', name: 'FlashCard', component:FlashCard}
+  { path: '/answerquestion', name: 'AnswerQuestion', component: AnswerQuestionPage, children: [{ path: '/question/:id', name: 'QuestionDetailPage', component: QuestionDetailPage }] }
 
 
 ]
