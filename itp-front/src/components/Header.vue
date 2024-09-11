@@ -221,6 +221,7 @@ export default {
 
 .edumim-nav .navbar .navbar-nav {
   margin: auto;
+  margin-left: 30px;
 }
 
 .edumim-nav .navbar .navbar-nav .nav-item {
