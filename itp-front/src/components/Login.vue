@@ -1,7 +1,7 @@
 <template>
   <div class="login-overlay">
     <div class="login-popup auth-container">
-      <i class="el-icon-close" @click="closeForm"></i>
+      <i class="el-icon-close close-button" @click="closeForm"></i>
       <form class="login-form" @submit.prevent="handleSubmit">
         <header class="auth-header">
           <h2 
@@ -42,8 +42,12 @@
             <input type="password" id="confirm-password" class="auth-input" placeholder="confirm password" />
           </div>
   
+          <div class="input-group">
+            <img src="../assets/image/cloudflare.png"/>
+          </div>
+
           <button type="submit" class="login-button" @click="handleSubmit">
-            {{ isLogin ? 'Login' : 'Create' }}
+            {{ isLogin ? 'Log in' : 'Sign up' }}
           </button>
           <p>
           </p>
