@@ -1,21 +1,21 @@
 <template>
   <div class="login-overlay">
     <div class="login-popup auth-container">
-      <button class="close-button" @click="closeForm">X</button>
+      <i class="el-icon-close" @click="closeForm"></i>
       <form class="login-form" @submit.prevent="handleSubmit">
         <header class="auth-header">
           <h2 
             :class="{'auth-option': true, 'active': isLogin}" 
             @click="isLogin = true"
           >
-            Login
+            Log in
           </h2>
           <div class="divider"></div>
           <h2 
             :class="{'auth-option': true, 'active': !isLogin}" 
             @click="isLogin = false"
           >
-            Sign Up
+            Sign up
           </h2>
         </header>
         <main>
