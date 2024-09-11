@@ -6,7 +6,7 @@ import BadgesPage from '../views/BadgesPage.vue';
 import CertificatePage from '../views/CertificatePage.vue';
 import LearningPage from '../views/LearningPage.vue';
 import CommunityPage from '../views/CommunityPage.vue';
-import QuestionDetailPage from '../components/QuestionDetail.vue';
+import QuestionDetailPage from '../components/CommunityChallengeQuestionDetail.vue';
 import AnswerQuestionPage from '../views/AnswerQuestionPage.vue';
 
 
