@@ -64,7 +64,7 @@
           <p>
           </p>
           <p v-if="!isLogin" class="switch-login">
-            <button class="forgot-password" @click="isLogin = true">already has an account? </button>
+            <button class="forgot-password" @click="isLogin = true">already have an account? </button>
           </p>
         </footer>
       </form>
@@ -142,7 +142,6 @@
 }
 
 .auth-header h2.active {
-  font-weight: bold;
   color: black;
   border-bottom: none;
 }
@@ -285,7 +284,7 @@ header img {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 .login-popup {
