@@ -3,7 +3,7 @@
     <Header></Header>
     <MainBanner></MainBanner>
     <swiper-list></swiper-list>
-    <ask-menu></ask-menu>
+    <HomePageQnA></HomePageQnA>
     <MainFooter></MainFooter>
     <main class="content">
       <router-view></router-view>
@@ -15,7 +15,7 @@
 import Header from "../components/Header.vue";
 import MainBanner from "../components/MainBannerHome.vue";
 import SwiperList from "../components/SwiperList.vue";
-import AskMenu from "../components/AskMenu.vue";
+import HomePageQnA from "../components/HomePageQnA.vue";
 import MainFooter from "../components/MainFooter.vue";
 
 export default {
@@ -25,7 +25,7 @@ export default {
     MainBanner,
     MainFooter,
     SwiperList,
-    AskMenu,
+    HomePageQnA,
   },
 };
 </script>
