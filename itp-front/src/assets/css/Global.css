@@ -2,10 +2,11 @@
 Default CSS
 =================================================*/
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
 :root {
   --fontFamily: 'DM Sans', sans-serif;
   --mainColor: #d7787d;
-  --secounderyColor: #30bead;
+  --secoundaryColor: #30bead;
   --paragraphColor: #7b7b8a;
   --whiteColor: #ffffff;
   --blackColor: #000000;
@@ -21,7 +22,18 @@ body {
   font-family: var(--fontFamily);
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
 }
 
@@ -92,7 +104,7 @@ p:last-child {
   padding-bottom: 70px;
 }
 
-.pr-line{
+.pr-line {
   height: 1px;
   max-width: 100%;
   background-color: #e2e3e4;
@@ -100,162 +112,161 @@ p:last-child {
 
 /*default-btn*/
 .default-btn {
-    background-color: var(--mainColor);
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-    padding: 15px 32px;
-    color: var(--whiteColor);
-    display: inline-block;
-    border-radius: 5px;
-    position: relative;
-    border: none;
-    font-size: var(--fontSize);
-    font-weight: 300;
-    font-size: 18px;
-  }
-  
-  .default-btn:hover {
-    background-color: var(--mainColor);
-    color: var(--whiteColor);
-    box-shadow: 0px 0px 0px 2.5px var(--whiteColor) inset, 0px 0px 0px 3px var(--mainColor);
-  }
-  
-  .primery-black{
-    background-color: var(--blackColor) !important ;
-  }
-  
-  .primery-black:hover{
-    background-color: var(--blackColor) !important ;
-    box-shadow: 0px 0px 0px 2.5px var(--whiteColor) inset, 0px 0px 0px 3px var(--blackColor);
-  }
-  
-  /*edu-section-title*/
-  .edu-section-title {
-    max-width: 750px;
-    position: relative;
-    text-align: center;
-    margin-bottom: 55px;
-    margin-right: auto;
-    margin-top: -7px;
-    margin-left: auto;
-  }
-  
-  .edu-section-title h2 {
-    margin-bottom: 0;
-    font-size: 44px;
-  }
-  
-  .edu-section-title p {
-    margin-top: 12px;
-    margin-bottom: 0;
-  }
-  
-  .edu-section-title .sub-title {
-    display: block;
-    font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: var(--secounderyColor);
-  }
-  
-  .edu-section-title .link-btn {
-    text-decoration: underline;
-    display: inline-block;
-    position: absolute;
-    font-weight: 500;
-    bottom: 5px;
-    right: 0;
-  }
-  
-  .edu-section-title .link-btn:hover {
-    color: var(--paragraphColor);
-    text-decoration: none;
-  }
-  
-  .edu-section-title h2 span {
-    color: var(--mainColor);
-    padding-bottom: 15px;
-  }
-  
-  .edu-section-title.text-start {
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  .edu-section-title .default-btn {
-      display: inline-block;
-      position: absolute;
-      font-weight: 500;
-      bottom: 5px;
-      right: 0;
-  }
-  
-  .edu-section-title .sorting-menu {
-      position: absolute;
-      font-weight: 500;
-      bottom: 5px;
-      right: 0;
-  }
-  
-  /*form-control*/
-  .form-control {
-    border-radius: 0;
-    background-color: #f5f5f5 !important;
-    -webkit-box-shadow: unset !important;
-            box-shadow: unset !important;
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-    border: none !important;
-    border-radius: 3px;
-    height: 60px;
-    padding-left: 15px;
-    color: var(--paragraphColor);
-    font-size: 18px;
-  }
-  
-  .form-control::-webkit-input-placeholder {
-    color: var(--paragraphColor);
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-  }
-  
-  .form-control:-ms-input-placeholder {
-    color: var(--paragraphColor);
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-  }
-  
-  .form-control::-ms-input-placeholder {
-    color: var(--paragraphColor);
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-  }
-  
-  .form-control::placeholder {
-    color: var(--paragraphColor);
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-  }
-  
-  .form-control:focus::-webkit-input-placeholder {
-    color: transparent;
-  }
-  
-  .form-control:focus:-ms-input-placeholder {
-    color: transparent;
-  }
-  
-  .form-control:focus::-ms-input-placeholder {
-    color: transparent;
-  }
-  
-  .form-control:focus::placeholder {
-    color: transparent;
-  }
-  
-  textarea.form-control {
-    padding-top: 15px;
-    height: auto;
-  }
-  
+  background-color: var(--mainColor);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  padding: 15px 32px;
+  color: var(--whiteColor);
+  display: inline-block;
+  border-radius: 5px;
+  position: relative;
+  border: none;
+  font-size: var(--fontSize);
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.default-btn:hover {
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
+  box-shadow: 0px 0px 0px 2.5px var(--whiteColor) inset, 0px 0px 0px 3px var(--mainColor);
+}
+
+.primery-black {
+  background-color: var(--blackColor) !important;
+}
+
+.primery-black:hover {
+  background-color: var(--blackColor) !important;
+  box-shadow: 0px 0px 0px 2.5px var(--whiteColor) inset, 0px 0px 0px 3px var(--blackColor);
+}
+
+/*edu-section-title*/
+.edu-section-title {
+  max-width: 750px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 55px;
+  margin-right: auto;
+  margin-top: -7px;
+  margin-left: auto;
+}
+
+.edu-section-title h2 {
+  margin-bottom: 0;
+  font-size: 44px;
+}
+
+.edu-section-title p {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.edu-section-title .sub-title {
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: var(--secounderyColor);
+}
+
+.edu-section-title .link-btn {
+  text-decoration: underline;
+  display: inline-block;
+  position: absolute;
+  font-weight: 500;
+  bottom: 5px;
+  right: 0;
+}
+
+.edu-section-title .link-btn:hover {
+  color: var(--paragraphColor);
+  text-decoration: none;
+}
+
+.edu-section-title h2 span {
+  color: var(--mainColor);
+  padding-bottom: 15px;
+}
+
+.edu-section-title.text-start {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.edu-section-title .default-btn {
+  display: inline-block;
+  position: absolute;
+  font-weight: 500;
+  bottom: 5px;
+  right: 0;
+}
+
+.edu-section-title .sorting-menu {
+  position: absolute;
+  font-weight: 500;
+  bottom: 5px;
+  right: 0;
+}
+
+/*form-control*/
+.form-control {
+  border-radius: 0;
+  background-color: #f5f5f5 !important;
+  -webkit-box-shadow: unset !important;
+  box-shadow: unset !important;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  border: none !important;
+  border-radius: 3px;
+  height: 60px;
+  padding-left: 15px;
+  color: var(--paragraphColor);
+  font-size: 18px;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: var(--paragraphColor);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.form-control:-ms-input-placeholder {
+  color: var(--paragraphColor);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.form-control::-ms-input-placeholder {
+  color: var(--paragraphColor);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.form-control::placeholder {
+  color: var(--paragraphColor);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.form-control:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-control:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-control:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-control:focus::placeholder {
+  color: transparent;
+}
+
+textarea.form-control {
+  padding-top: 15px;
+  height: auto;
+}
