@@ -1,7 +1,7 @@
 <template>
     <div id="LearningPage">
       <Header></Header>
-      <MainBanner></MainBanner>
+      <Goal5LearningBanner></Goal5LearningBanner>
       <SideBar class="sidebar"></SideBar>
       <MainFooter></MainFooter>
  
@@ -14,7 +14,7 @@
 
 <script>
 import Header from '../components/Header.vue';
-import MainBanner from '../components/MainBannerLearn.vue'
+import Goal5LearningBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
 
@@ -25,7 +25,7 @@ export default {
   name: 'LearningPage',
   components: {
     Header,
-    MainBanner,
+    Goal5LearningBanner,
     MainFooter,
     SideBar,
 
