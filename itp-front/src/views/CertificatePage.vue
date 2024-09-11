@@ -2,7 +2,7 @@
   <div id="CertificatePage">
     <Header></Header>
 
-    <CertificateBanner></CertificateBanner>
+    <CertificatePageBanner></CertificatePageBanner>
 
     <!-- Main Content: Sidebar, Unlock Info, and Certificate -->
     <div class="content-container">
@@ -45,14 +45,14 @@
 <script>
 import Header from '../components/Header.vue';
 import MainFooter from '@/components/MainFooter.vue';
-import CertificateBanner from '@/components/CertificateBanner.vue';
+import CertificatePageBanner from '@/components/CertificatePageBanner.vue';
 import ProfileSidebar from '@/components/ProfileSidebar.vue';
 
 export default {
   name: 'CertificatePage',
   components: {
     Header,
-    CertificateBanner,
+    CertificatePageBanner,
     ProfileSidebar,
     MainFooter,
   },
