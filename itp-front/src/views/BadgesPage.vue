@@ -38,7 +38,7 @@
 
               <!-- Bold text for completed - need dynamic changes in future-->
               <div class="badge-item">
-                <img src="../assets/image/Gender-equality-badge.png" alt="Gender-equality-badge">
+                <img src="../assets/image/gender-equality-badge.png" alt="gender-equality-badge">
                 <p class="bold-goal">GENDER EQUALITY<br><span>GOAL 5</span></p>
               </div>
 
