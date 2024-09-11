@@ -68,7 +68,7 @@ export default {
       this.step = val;
       // 如果点击了 Community Challenge (step === 4)，跳转到 CommunityPage
       if (val === 4) {
-        this.$router.push("/");
+        this.$router.push("/communitychallenge");
       }
     },
   },
