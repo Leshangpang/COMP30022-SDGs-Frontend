@@ -3,13 +3,7 @@
     <Header></Header>
     <MainBanner></MainBanner>
     <swiper-list></swiper-list>
-    <ask-menu></ask-menu>
-    <div class="pic">
-        <img src="../assets/image/education.png" alt="education img">
-        <div class="text">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/7dzFbP2AgFo?si=bp-4xFxVXj-0V2Tv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </div>
+    <HomePageQnA></HomePageQnA>
     <MainFooter></MainFooter>
     <main class="content">
       <router-view></router-view>
@@ -21,7 +15,7 @@
 import Header from "../components/WebHeader.vue";
 import MainBanner from "../components/MainBannerHome.vue";
 import SwiperList from "../components/SwiperList.vue";
-import AskMenu from "../components/AskMenu.vue";
+import HomePageQnA from "../components/HomePageQnA.vue";
 import MainFooter from "../components/MainFooter.vue";
 
 export default {
@@ -31,7 +25,7 @@ export default {
     MainBanner,
     MainFooter,
     SwiperList,
-    AskMenu,
+    HomePageQnA,
   },
 };
 </script>
