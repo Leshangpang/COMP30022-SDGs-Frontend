@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Header from "../components/WebHeader.vue";
-import MainBanner from "../components/MainBannerHome.vue";
+import Header from "../components/Header.vue";
+import MainBanner from "../components/HomePageBanner.vue";
 import SwiperList from "../components/SwiperList.vue";
 import HomePageQnA from "../components/HomePageQnA.vue";
 import MainFooter from "../components/MainFooter.vue";
