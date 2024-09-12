@@ -9,6 +9,7 @@
       <ul class="question-option">
         <li v-for="(option, index) in options" :key="index" class="option-item">
           <!-- 显示字母 ABCD -->
+           <!-- 显示字母 ABCD -->
           <!-- 使用 Element UI 按钮 -->
           <el-button type="primary" plain @click="selectOption(option)" class ="option-button">
             {{ getOptionLabel(index) }}. {{ option }}

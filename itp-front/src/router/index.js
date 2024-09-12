@@ -8,7 +8,8 @@ import LearningPage from '../views/LearningPage.vue';
 import CommunityPage from '../views/CommunityPage.vue';
 import QuestionDetailPage from '../components/QuestionDetail.vue';
 import AnswerQuestionPage from '../views/AnswerQuestionPage.vue';
-
+import AnswerFlashCard from '../views/AnswerFlashCard.vue';
+import TakeQuizPage from '../views/TakeQuizPage.vue';
 
 
 
@@ -24,7 +25,9 @@ const routes = [
   { path: '/certificate', name: 'Certificate', component: CertificatePage },
   { path: '/communitychallenge', name: 'CommunityChallenge', component: CommunityPage },
 
-  { path: '/answerquestion', name: 'AnswerQuestion', component: AnswerQuestionPage, children: [{ path: '/question/:id', name: 'QuestionDetailPage', component: QuestionDetailPage }] }
+  { path: '/answerquestion', name: 'AnswerQuestion', component: AnswerQuestionPage, children: [{ path: '/question/:id', name: 'QuestionDetailPage', component: QuestionDetailPage }] },
+  { path: '/flashcard', name: 'FlashCard', component: AnswerFlashCard },
+  { path: '/quiz', name: 'Quiz', component: TakeQuizPage }
 ]
 
 const router = new Router({
