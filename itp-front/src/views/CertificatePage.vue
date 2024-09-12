@@ -4,12 +4,23 @@
 
     <CertificateBanner></CertificateBanner>
 
-    <!-- Main Content: Sidebar and Certificate -->
+    <!-- Main Content: Sidebar, Unlock Info, and Certificate -->
     <div class="content-container">
       <!-- Profile Sidebar -->
       <aside class="sidebar">
         <ProfileSidebar></ProfileSidebar>
       </aside>
+
+      <!-- Unlock Info Section -->
+      <section class="unlock-info">
+        <p>
+          Hi, {{ accountName }}, <br> 
+          You have currently unlocked: {{ badgesUnlocked }}/17 badges. 
+          Collect all 17 badges to unlock your certificate. 
+          <br> View your progress 
+          <router-link to="/badges">here</router-link>.
+        </p>
+      </section>
 
       <!-- Main Certificate Section -->
       <main class="certificate-content">
@@ -20,7 +31,6 @@
             <!-- Overlay to show a locked state -->
             <div v-if="!isUnlocked" class="overlay">
               <p>Certificate Locked</p>
-              <p>Collect all 17 SDG Badges to Unlock</p>
             </div>
           </div>
         </section>
@@ -48,13 +58,15 @@ export default {
   },
   data() {
     return {
-      isUnlocked: false,
+      isUnlocked: false, // Assuming locked by default
+      badgesUnlocked: 1, // Can dynamically load this value
+      accountName: 'AccountName', // Replace with the actual account name from data
     };
   },
 };
 </script>
 
-<style>
+<style scoped>
 /* General Page Layout */
 #CertificatePage {
   display: flex;
@@ -62,23 +74,45 @@ export default {
   min-height: 100vh;
 }
 
-/* Flex container for sidebar and certificate */
+/* Flex container for sidebar, unlock info, and certificate */
 .content-container {
   display: flex;
-  align-items: flex-start; /* Align the sidebar and certificate top-aligned */
+  align-items: flex-start;
   justify-content: space-between;
   padding: 20px;
   flex: 1;
   width: 100%;
-  margin-top: -60px; /* Adjust based on your design */
+  margin-top: -60px;
   margin-right: -250px;
   margin-left: -50px;
   margin-bottom: 30px;
 }
 
+/* Unlock Info Section */
+.unlock-info {
+  flex-basis: 25%;
+  background-color: #FFF3CF; /* Light blue background */
+  padding: 20px;
+  border-radius: 0; /* No rounded corners */
+  font-size: 20px;
+  line-height: 1.5;
+  box-shadow: none; /* Remove any box shadow */
+  text-align: left;
+  margin-top: 90px;
+}
+
+/* set text for unlock info to black */
+.unlock-info p {
+  color: black;
+}
+/* change the router link colour here to grey*/ 
+.unlock-info a {
+  color: #7b7b8a;
+}
+
 /* Main certificate section layout */
 .certificate-content {
-  flex-basis: 75%; /* Certificate takes up the remaining 75% */
+  flex-basis: 50%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -102,7 +136,6 @@ export default {
   overflow: hidden;
   transition: filter 0.5s ease, opacity 0.5s ease;
 }
-
 
 /* Image styling */
 .certificate-image img {

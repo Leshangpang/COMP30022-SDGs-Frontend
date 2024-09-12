@@ -45,7 +45,7 @@ export default {
   align-items: flex-start; /* Align items to the left */
   width: 180px; /* Adjust width as necessary */
   height: 200px; /* Increase height for better spacing */
-  margin-left: 35px; /* Adjust margin as necessary */
+  margin-left: 25px; /* Adjust margin as necessary */
 }
 
 /* Badge and Certification Section Styles */
