@@ -64,7 +64,7 @@ export default {
 .sidebar {
   margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
   margin-top: 100px;
-  margin-bottom: 100px
+  margin-bottom: 100px;
 }
 .main-content {
   display: flex; /* 使用 flexbox 布局 */
