@@ -2,7 +2,11 @@
     <div id="TakeQuizPage">
       <Header></Header>
       <MainBanner></MainBanner>
-      <SideBar class="sidebar"></SideBar>
+      <EachGoalBar></EachGoalBar>
+      <div class="main-content">
+        <SideBar class="sidebar"></SideBar>
+        <MultipleChoice></MultipleChoice>
+      </div>
       <MainFooter></MainFooter>
  
       <main class="content">
@@ -13,10 +17,12 @@
   </template>
 
 <script>
+import EachGoalBar from '@/components/EachGoalBar.vue';
 import Header from '../components/Header.vue';
 import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
+import MultipleChoice from '@/components/MultipleChoice.vue';
 
 
 
@@ -28,8 +34,9 @@ export default {
     MainBanner,
     MainFooter,
     SideBar,
-
-  }
+    EachGoalBar,
+    MultipleChoice
+}
 
 }
 </script>

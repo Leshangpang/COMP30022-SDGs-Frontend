@@ -13,9 +13,10 @@
       </div>
       <el-progress
         :show-text="false"
-        :stroke-width="8"
+        :stroke-width="32"
         :percentage="((currentIndex + 1) / question.length) * 100"
-      ></el-progress>
+        status="success" 
+        class= "progress"></el-progress>
       <p class="name">{{ question[currentIndex].text }}</p>
       <ul class="list">
         <li
@@ -60,67 +61,221 @@
         question: [
           {
             id: "1",
-            text: "问题1",
+            text: "Question1",
             select: [
               {
                 subId: "1",
-                text: "选项",
+                text: "choice1",
               },
               {
                 subId: "2",
-                text: "选项",
+                text: "choice2",
               },
               {
                 subId: "3",
-                text: "选项",
+                text: "choice3",
               },
               {
                 subId: "4",
-                text: "选项",
+                text: "choice4",
               },
             ],
           },
           {
             id: "2",
-            text: "问题2",
+            text: "Question2",
             select: [
               {
                 subId: "1",
-                text: "选项",
+                text: "choice1",
               },
               {
                 subId: "2",
-                text: "选项",
+                text: "choice2",
               },
               {
                 subId: "3",
-                text: "选项",
+                text: "choice3",
               },
               {
                 subId: "4",
-                text: "选项",
+                text: "choice4",
               },
             ],
           },
           {
             id: "3",
-            text: "问题3",
+            text: "Question3",
             select: [
               {
                 subId: "1",
-                text: "选项",
+                text: "choice1",
               },
               {
                 subId: "2",
-                text: "选项",
+                text: "choice2",
               },
               {
                 subId: "3",
-                text: "选项",
+                text: "choice3",
               },
               {
                 subId: "4",
-                text: "选项",
+                text: "choice4",
+              },
+            ],
+          },
+          {
+            id: "4",
+            text: "Question4",
+            select: [
+              {
+                subId: "1",
+                text: "choice1",
+              },
+              {
+                subId: "2",
+                text: "choice2",
+              },
+              {
+                subId: "3",
+                text: "choice3",
+              },
+              {
+                subId: "4",
+                text: "choice4",
+              },
+            ],
+          },
+          {
+            id: "5",
+            text: "Question5",
+            select: [
+              {
+                subId: "1",
+                text: "choice1",
+              },
+              {
+                subId: "2",
+                text: "choice2",
+              },
+              {
+                subId: "3",
+                text: "choice3",
+              },
+              {
+                subId: "4",
+                text: "choice4",
+              },
+            ],
+          },
+          {
+            id: "6",
+            text: "Question6",
+            select: [
+              {
+                subId: "1",
+                text: "choice1",
+              },
+              {
+                subId: "2",
+                text: "choice2",
+              },
+              {
+                subId: "3",
+                text: "choice3",
+              },
+              {
+                subId: "4",
+                text: "choice4",
+              },
+            ],
+          },
+          {
+            id: "7",
+            text: "Question7",
+            select: [
+              {
+                subId: "1",
+                text: "choice1",
+              },
+              {
+                subId: "2",
+                text: "choice2",
+              },
+              {
+                subId: "3",
+                text: "choice3",
+              },
+              {
+                subId: "4",
+                text: "choice4",
+              },
+            ],
+          },
+          {
+            id: "8",
+            text: "Question8",
+            select: [
+              {
+                subId: "1",
+                text: "choice1",
+              },
+              {
+                subId: "2",
+                text: "choice2",
+              },
+              {
+                subId: "3",
+                text: "choice3",
+              },
+              {
+                subId: "4",
+                text: "choice4",
+              },
+            ],
+          },
+          {
+            id: "9",
+            text: "Question9",
+            select: [
+              {
+                subId: "1",
+                text: "choice1",
+              },
+              {
+                subId: "2",
+                text: "choice2",
+              },
+              {
+                subId: "3",
+                text: "choice3",
+              },
+              {
+                subId: "4",
+                text: "choice4",
+              },
+            ],
+          },
+          {
+            id: "10",
+            text: "Question10",
+            select: [
+              {
+                subId: "1",
+                text: "choice1",
+              },
+              {
+                subId: "2",
+                text: "choice2",
+              },
+              {
+                subId: "3",
+                text: "choice3",
+              },
+              {
+                subId: "4",
+                text: "choice4",
               },
             ],
           },
@@ -158,7 +313,7 @@
           this.isSubmit = true;
           this.$message({
             type: "success",
-            message: "提交成功!",
+            message: "submit successful!!",
           });
         });
         this.isSubmit = false;
@@ -174,6 +329,9 @@
   .question-submit {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin-right: 100px;
+    margin-left: 50px;
   }
   .head {
     display: flex;
@@ -195,20 +353,23 @@
     width: 100%;
     grid-template-columns: repeat(2, minmax(200px, 300px));
     justify-content: space-around;
-    grid-row-gap: 40px;
+    grid-row-gap: 50px;
   }
   .list li {
     height: 150px;
-    background-color: #ccc;
     border-radius: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #3b764b;
+    background-color: hwb(25 54% 15% / 0.722);
     color: #fff;
     transition: all 0.5s;
     cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .list li.active {
     box-shadow: 0px 0px 0px 2.5px var(--whiteColor) inset,
@@ -247,4 +408,7 @@
     flex-direction: column;
     align-items: center;
   }
+  
+ 
+
   </style>
