@@ -11,9 +11,7 @@
         </div>
       </el-carousel-item>
     </el-carousel>
-    <el-button  type="primary" @click="toggleFlash" round
-      >Click to flash</el-button
-    >
+    <el-button  type="primary" @click="toggleFlash" round class="btn">Click to flash</el-button>
   </div>
 </template>
 
@@ -24,8 +22,8 @@ export default {
   data() {
     return {
       questionList: [
-        { question: "Question1", answer: "Answer1" },
-        { question: "Question2", answer: "Answer2" },
+        { question: "Question 1", answer: "Answer 1" },
+        { question: "Question 2", answer: "Answer 2" },
         { question: "Question3", answer: "Answer3" },
         { question: "Question4", answer: "Answer4" },
       ],
@@ -102,6 +100,16 @@ export default {
   justify-content: center;
   color: white;
   font-size: 40px;
+}
+
+.btn{
+  background-color: bisque;
+  border-color: burlywood;
+  border:5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 28px;
+  color: hsl(21, 86%, 53%);
+  margin-bottom: 30px;
 }
 
 
