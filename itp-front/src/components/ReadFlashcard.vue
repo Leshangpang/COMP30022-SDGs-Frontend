@@ -49,14 +49,16 @@ export default {
 
 <style scoped>
 .flash-card {
-display: flex;
-flex-direction: column;
-align-items: center;
-row-gap: 40px;
-background-color: hsla(160, 60%, 70%, 0.312);
-height: 400px; /* 设置明确的高度 */
-width: 600px;  /* 设置明确的宽度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+  background-color: rgba(254, 118, 40, 0.81);
+  height: 400px; /* 设置明确的高度 */
+  width: 100%;
+  margin-right: 40px;
 }
+
 
 .el-carousel {
   height: 100%;
@@ -66,7 +68,7 @@ width: 600px;  /* 设置明确的宽度 */
   height: 100%;
 }
 .question-card {
-  background: #9eeb99a5;
+  background: hwb(120 92% 7% / 0.406);
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
@@ -82,7 +84,7 @@ width: 600px;  /* 设置明确的宽度 */
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(159, 235, 153, 0.334);
+  background-color: hwb(60 93% 7% / 0.192);
   backface-visibility: hidden;
 }
 .question-card .font {

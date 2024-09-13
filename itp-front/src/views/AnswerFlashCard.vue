@@ -2,8 +2,8 @@
     <div id="AnswerFlashCard">
       <Header></Header>
       <MainBanner></MainBanner>
-  
-      <!-- 使用一个容器包裹 Sidebar 和 Flashcard -->
+      <!-- 使用一个容器包裹 Sidebar 和 Flashcard --> 
+      <EachGoalBar></EachGoalBar>
       <div class="main-content">
         <SideBar class="sidebar"></SideBar>
         <Flashcard class="flashcard"></Flashcard>
@@ -24,6 +24,7 @@ import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
 import Flashcard from '../components/ReadFlashcard.vue';
+import EachGoalBar from '../components/EachGoalBar.vue';
 
 
 
@@ -34,14 +35,15 @@ export default {
     MainBanner,
     MainFooter,
     SideBar,
-    Flashcard
-
-  }
+    Flashcard,
+    EachGoalBar
+}
 
 }
 </script>
 
 <style scpoed>
+
 #AnswerFlashCard {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -62,7 +64,6 @@ export default {
     margin-left: 100px;
     margin-top: 100px;
 }
-
   
 </style>
   
