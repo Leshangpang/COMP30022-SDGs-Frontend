@@ -52,6 +52,10 @@ export default {
   align-items: center;
   row-gap: 40px;
   background-color: rgba(254, 118, 40, 0.81);
+  background-image: url('../assets/image/background_mc.jpg');
+  background-size: cover; /* 使图片覆盖整个div */
+  background-position: center; /* 居中显示图片 */
+  background-repeat: no-repeat;
   height: 400px; /* 设置明确的高度 */
   width: 100%;
   margin-right: 40px;
@@ -66,7 +70,12 @@ export default {
   height: 100%;
 }
 .question-card {
-  background: hwb(120 92% 7% / 0.406);
+  background-color: #fff;
+  background-image: url('../assets/image/flashcard_bg.png');
+  /* background: hwb(120 92% 7% / 0.406); */
+  background-size: cover; /* 使图片覆盖整个div */
+  background-position: center; /* 居中显示图片 */
+  background-repeat: no-repeat;
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
@@ -103,12 +112,12 @@ export default {
 }
 
 .btn{
-  background-color: bisque;
+  background-color: #ae1f1f;
   border-color: burlywood;
   border:5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 28px;
-  color: hsl(21, 86%, 53%);
+  color: hwb(0 98% 2%);
   margin-bottom: 30px;
 }
 

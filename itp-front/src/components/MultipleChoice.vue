@@ -44,8 +44,12 @@
     </div>
     <div class="submit-result" v-else>
       <img />
+      <div class="div-container">
+            <img src="../assets/image/crown.png" alt="image description" class="rotated-image" />
+        </div>
       <p>Your answer has been submitted</p>
-      <h3>Thankyou for tasking Quiz</h3>
+      <h3>Thank you for taking Quiz</h3>
+      
     </div>
   </template>
   
@@ -354,6 +358,10 @@
     grid-template-columns: repeat(2, minmax(200px, 300px));
     justify-content: space-around;
     grid-row-gap: 50px;
+    background-image: url('../assets/image/background_flash.jpg');
+    background-size: cover; /* 使图片覆盖整个div */
+  background-position: center; /* 居中显示图片 */
+  background-repeat: no-repeat;
   }
   .list li {
     height: 150px;
@@ -362,7 +370,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: hwb(25 54% 15% / 0.722);
+    background-color: hwb(0 0% 46% / 0.773);
     color: #fff;
     transition: all 0.5s;
     cursor: pointer;
@@ -395,6 +403,7 @@
     cursor: pointer;
     user-select: none;
     transition: all 0.4s;
+    margin-bottom: 10px;
   }
   .operate .empty {
     opacity: 0.7;
@@ -407,8 +416,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 600px;
   }
-  
- 
+
+  .div-container {
+  width: 606px;
+  height: 410px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.rotated-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 向左旋转90度 */
+}
 
   </style>
