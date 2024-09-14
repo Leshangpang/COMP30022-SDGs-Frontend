@@ -8,14 +8,12 @@
           size="small"
           @click="submitHandle"
           plain
-          >Submit</el-button
-        >
+          >Submit</el-button>
       </div>
       <el-progress
         :show-text="false"
         :stroke-width="32"
         :percentage="((currentIndex + 1) / question.length) * 100"
-        status="success" 
         class= "progress"></el-progress>
       <p class="name">{{ question[currentIndex].text }}</p>
       <ul class="list">
@@ -45,7 +43,7 @@
     <div class="submit-result" v-else>
       <img />
       <div class="div-container">
-            <img src="../assets/image/crown.png" alt="image description" class="rotated-image" />
+            <img src="../assets/image/bear.png" alt="image description" class="rotated-image" style="width: 664px;" />
         </div>
       <p>Your answer has been submitted</p>
       <h3>Thank you for taking Quiz</h3>
@@ -309,9 +307,9 @@
       },
       submitHandle() {
         // todo
-        this.$confirm("是否提交当前选项?", {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
+        this.$confirm("Do you want to submit the answer right now?", {
+          confirmButtonText: "Continue",
+          cancelButtonText: "Cancal",
           type: "warning",
         }).then(() => {
           this.isSubmit = true;
@@ -358,7 +356,7 @@
     grid-template-columns: repeat(2, minmax(200px, 300px));
     justify-content: space-around;
     grid-row-gap: 50px;
-    background-image: url('../assets/image/background_flash.jpg');
+    background-image: url('../assets/image/bg_mc.jpg');
     background-size: cover; /* 使图片覆盖整个div */
   background-position: center; /* 居中显示图片 */
   background-repeat: no-repeat;
@@ -370,7 +368,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: hwb(0 0% 46% / 0.773);
+    background-color: hsla(188, 28%, 65%, 0.909);
     color: #fff;
     transition: all 0.5s;
     cursor: pointer;
@@ -399,9 +397,9 @@
     height: 48px;
     border-radius: 8px;
     color: #fff;
-    background-color: #3b764b;
+    background-color: #5bbdc882;
     cursor: pointer;
-    user-select: none;
+    user-select: none; 
     transition: all 0.4s;
     margin-bottom: 10px;
   }
@@ -421,8 +419,8 @@
   }
 
   .div-container {
-  width: 606px;
-  height: 410px;
+  width: 400px;
+  height:688px;
   display: flex;
   align-items: center;
   justify-content: center;

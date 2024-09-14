@@ -62,17 +62,17 @@ export default {
 }
 
 .sidebar {
-  margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
+  margin-left: 100px; 
   margin-top: 100px;
   margin-bottom: 100px;
+  margin-right: 100px;
 }
 .main-content {
-  display: flex; /* 使用 flexbox 布局 */
-  
+  display: flex; 
 }
 
 .flashcard{
-    margin-left: 100px;
+    margin-left: 120px;
     margin-top: 100px;
 }
 
@@ -89,8 +89,8 @@ export default {
   height: 295px;
   width: 150px;
   background-image: url('../assets/image/alice.png');
-  background-size: cover; /* 使图片覆盖整个div */
-  background-position: left; /* 居中显示图片 */
+  background-size: cover; 
+  background-position: left; 
   background-repeat: no-repeat;
   transform: rotateY(180deg);
 }
@@ -112,7 +112,7 @@ export default {
   height: 520px;
   width: 80px;
   flex: 1;
-  background-color: hwb(0 0% 46% / 0.773);
+  background-color: hwb(187 38% 21% / 0.547);
   border-radius: 60px;
   margin-left: 20px;
   margin-right: 20px;
