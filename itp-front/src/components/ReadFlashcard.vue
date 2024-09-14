@@ -51,14 +51,13 @@ export default {
   flex-direction: column;
   align-items: center;
   row-gap: 40px;
-  background-color: rgba(254, 118, 40, 0.81);
   background-image: url('../assets/image/flashhcardbg.jpg');
-  background-size: cover; /* 使图片覆盖整个div */
-  background-position: center; /* 居中显示图片 */
+  background-size: cover; 
+  background-position: center; 
   background-repeat: no-repeat;
-  height: 450px; /* 设置明确的高度 */
+  height: 400px; 
   width: 50%;
-  margin-right: 150px;
+  margin-right: 30px;
 }
 
 
@@ -89,7 +88,7 @@ export default {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: hwb(60 93% 7% / 0.192);
+  background-color: hwb(191 32% 9% / 0.192);
   backface-visibility: hidden;
 }
 .question-card .font {
@@ -118,7 +117,5 @@ export default {
   color: hwb(0 98% 2%);
   margin-bottom: 30px;
 }
-
-
 </style>
 
