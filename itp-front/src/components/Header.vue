@@ -47,7 +47,7 @@
                 <ul class="dropdown-menu">
                   <li class="nav-item">
                     <router-link
-                      to="/blog"
+                      to="/myquestion"
                       class="nav-link"
                       exact-active-class="active"
                     >
