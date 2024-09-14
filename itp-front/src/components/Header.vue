@@ -57,7 +57,7 @@
 
                   <li class="nav-item">
                     <router-link
-                      to="/blog-standard"
+                      to="/uploadquestion"
                       class="nav-link"
                       exact-active-class="active"
                     >
