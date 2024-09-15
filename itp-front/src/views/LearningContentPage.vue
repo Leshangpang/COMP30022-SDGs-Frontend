@@ -4,8 +4,13 @@
       <MainBanner></MainBanner>
       <div style="height: 20px;"></div>
       <div class="goal-banner">
-        <h1 class="goal-title">Goal 5: Gender Equality</h1>
-        <p class="goal-subtitle">Achieve gender equality and empower all women and girls</p>
+        <div class="goal-image-container">
+          <img src="../assets/image/goal5Icon.png" alt="Goal 5: Gender Equality" class="goal-image" />
+        </div>
+        <div class="goal-text-container">
+          <h1 class="goal-title">Goal 5: Gender Equality</h1>
+          <p class="goal-subtitle">Achieve gender equality and empower all women and girls</p>
+        </div>
       </div>
       <ProgressBar class="progress-bar"></ProgressBar>
       <div class="sidebar-container">
@@ -59,7 +64,7 @@ export default {
 
 .sidebar-container {
   display: flex;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 100px;
 }
 .sidebar {
@@ -69,17 +74,39 @@ export default {
 }
 
 .goal-banner {
-  width: 80%;
-  background-color: #E1503A;
+  display: flex;
   padding: 20px;
-  color: white;
   border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.goal-image-container {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.goal-image {
+  width: 159px;
+  height: auto;
+}
+
+.goal-text-container {
+  background-color: #E1503A;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 159px;
+  padding: 20px;
+  padding-right: 200px;
+  margin: 0;
 }
 
 .goal-title {
   margin: 0;
   font-size: 36px;
   font-weight: bold;
+  color: white;
 }
 
 .goal-subtitle {
