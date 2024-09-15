@@ -3,6 +3,10 @@
       <Header></Header>
       <MainBanner></MainBanner>
       <div style="height: 20px;"></div>
+      <div class="goal-banner">
+        <h1 class="goal-title">Goal 5: Gender Equality</h1>
+        <p class="goal-subtitle">Achieve gender equality and empower all women and girls</p>
+      </div>
       <ProgressBar class="progress-bar"></ProgressBar>
       <div class="sidebar-container">
         <SideBar class="sidebar"></SideBar>
@@ -22,30 +26,24 @@
 import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue';
-import QuestionList from '../components/QuestionList.vue'
 import Header from '../components/Header.vue';
 import ProgressBar from '../components/ProgressBar.vue';
 
-
-
-
-
 export default {
-  name: 'CommunityChallenge',
+  name: 'LearningContentPage',
   components: {
     Header,
     MainBanner,
     MainFooter,
     SideBar,
     ProgressBar,
-    QuestionList,
   }
 
 }
 </script>
 
 <style scoped>
-#CommunityChallenge {
+#LearningContentPage {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
@@ -68,6 +66,27 @@ export default {
   margin:0;
   margin-left: 100px;
   flex: 1;
+}
+
+.goal-banner {
+  width: 80%;
+  background-color: #E1503A;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+}
+
+.goal-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.goal-subtitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: normal;
+  color: white;
 }
 
 </style>
