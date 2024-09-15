@@ -332,7 +332,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-left: 50px;
   }
   .head {
@@ -355,30 +355,30 @@
     width: 100%;
     grid-template-columns: repeat(2, minmax(200px, 300px));
     justify-content: space-around;
-    grid-row-gap: 50px;
-    background-image: url('../assets/image/bg_mc.jpg');
+    grid-row-gap: 30px;
+    background-image: url('../assets/image/Goal5-mc_bg_1.jpg');
     background-size: cover; /* 使图片覆盖整个div */
-  background-position: center; /* 居中显示图片 */
-  background-repeat: no-repeat;
+    background-position: center; /* 居中显示图片 */
+    background-repeat: no-repeat;
+    height:460px;
   }
   .list li {
-    height: 150px;
+    height: 170px;
+    width: 350px;
     border-radius: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: hsla(188, 28%, 65%, 0.909);
+    background-color: hwb(2 55% 25% / 0.558);
     color: #fff;
     transition: all 0.5s;
     cursor: pointer;
-    margin-left: 20px;
-    margin-right: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
   .list li.active {
-    box-shadow: 0px 0px 0px 2.5px var(--whiteColor) inset,
+    box-shadow: 0px 0px 0px 5px var(--whiteColor) inset,
       0px 0px 0px 3px var(--mainColor);
   }
   .operate {
@@ -397,7 +397,7 @@
     height: 48px;
     border-radius: 8px;
     color: #fff;
-    background-color: #5bbdc882;
+    background-color: hsla(3, 50%, 57%, 0.51);
     cursor: pointer;
     user-select: none; 
     transition: all 0.4s;

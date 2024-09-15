@@ -1,6 +1,6 @@
 <template>
   <div class="flash-card">
-    <el-carousel trigger="click" @change="changeIndex" :autoplay="false">
+    <el-carousel trigger="click" @change="changeIndex" :autoplay="false" arrow="always">
       <el-carousel-item v-for="(item, index) in questionList" :key="index">
         <div
           class="question-card"
@@ -51,11 +51,12 @@ export default {
   flex-direction: column;
   align-items: center;
   row-gap: 40px;
-  background-image: url('../assets/image/flashhcardbg.jpg');
+  background-color: #fff;
+  background-image: url('../assets/image/Goal5 flash_card_bg.jpg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
-  height: 400px; 
+  height: 450px; 
   width: 50%;
   margin-right: 30px;
 }
@@ -69,10 +70,6 @@ export default {
   height: 100%;
 }
 .question-card {
-  /* background: hwb(120 92% 7% / 0.406); */
-  background-size: cover; /* 使图片覆盖整个div */
-  background-position: center; /* 居中显示图片 */
-  background-repeat: no-repeat;
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
@@ -88,7 +85,7 @@ export default {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: hwb(191 32% 9% / 0.192);
+  background-color: #52c0e824;
   backface-visibility: hidden;
 }
 .question-card .font {
@@ -117,5 +114,6 @@ export default {
   color: hwb(0 98% 2%);
   margin-bottom: 30px;
 }
+
 </style>
 
