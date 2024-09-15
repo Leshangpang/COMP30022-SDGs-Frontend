@@ -15,7 +15,18 @@
       <ProgressBar class="progress-bar"></ProgressBar>
       <div class="sidebar-container">
         <SideBar class="sidebar"></SideBar>
-        
+        <div class="content-container">
+            <div class="video-container">
+                <iframe
+                width="560"
+                height="315"
+                :src="videoUrl"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                ></iframe>
+            </div>
+        </div>
       </div>
       
       <MainFooter></MainFooter>
@@ -42,6 +53,11 @@ export default {
     MainFooter,
     SideBar,
     ProgressBar,
+  },
+  data() {
+    return {
+        videoUrl: "https://www.youtube.com/embed/-hc0kZh6CnM",
+    }
   }
 
 }
@@ -114,6 +130,32 @@ export default {
   font-size: 24px;
   font-weight: normal;
   color: white;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column; /* 让问题在右侧垂直排列 */
+  margin-left: 70px;
+  flex: 2; /* 控制右侧问题部分的宽度 */
+  max-height: 400px; /* 控制右侧问题列表的最大高度 */
+  overflow-y: auto; /* 让问题列表可垂直滚动 */
+  padding-right: 10px; /* 防止滚动条遮挡内容 */
+}
+
+.video-container {
+  max-width: 100%;
+  overflow: hidden;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 </style>
