@@ -22,14 +22,14 @@ export default {
   data() {
     return {
       questionList: [
-        { question: "Question 1", answer: "Answer 1" },
-        { question: "Question 2", answer: "Answer 2" },
-        { question: "Question3", answer: "Answer3" },
-        { question: "Question4", answer: "Answer4" },
+        { question: "Why does the gender pay gap still exist? ", answer: "The gap exists due to discrimination, unequal opportunities, and differences in industries and roles dominated by men or women." },
+        { question: " How does girls' education affect gender equality? ", answer: "Educated girls are empowered, which leads to better health, economic opportunities, and stronger communities, reducing gender inequality." },
+        { question: "What helps reduce gender-based violence?", answer: "Legal reforms, awareness campaigns, and providing support services for survivors are key in reducing violence." },
+        { question: "Why is female political representation important? ", answer: "More women in politics ensures diverse perspectives and leads to policies that support gender equality and social progress." },
       ],
       isRotate: false,
       activeIndex: 0,
-      url: "https://img0.baidu.com/it/u=2426072799,1960439289&fm=253&fmt=auto&app=120&f=JPEG?w=747&h=500",
+      // url: "https://img0.baidu.com/it/u=2426072799,1960439289&fm=253&fmt=auto&app=120&f=JPEG?w=747&h=500",
     };
   },
   methods: {
@@ -52,16 +52,15 @@ export default {
   align-items: center;
   row-gap: 40px;
   background-color: #fff;
-  background-image: url('../assets/image/Goal5 flash_card_bg.jpg');
+  background-image: url('../assets/image/222.png');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
-  height: 450px; 
-  width: 50%;
+  height: 475px; 
+  width: 625px;
   margin-right: 30px;
+  border-radius: 10%;
 }
-
-
 .el-carousel {
   height: 100%;
   width: 100%;
@@ -84,25 +83,32 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
-  background-color: #52c0e824;
+  height: 75%;
+  background-color: #fff;
   backface-visibility: hidden;
+  border: 5px solid #525cebc3; /* You can change #000 to any color you like */
+  box-sizing: border-box;
+  border-radius: 10%;
+}
+.content{
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .question-card .font {
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 40px;
+  color: hwb(0 55% 44%);
+  font-size: 22px;
 }
 .question-card .back {
   transform: rotateY(-180deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 40px;
+  color: hwb(0 55% 44%);
+  font-size: 22px;
 }
 
 .btn{
@@ -112,7 +118,7 @@ export default {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 28px;
   color: hwb(0 98% 2%);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 </style>

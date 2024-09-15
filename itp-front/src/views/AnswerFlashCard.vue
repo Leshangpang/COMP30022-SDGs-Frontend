@@ -61,7 +61,8 @@ export default {
 
 .flashcard{
     margin-left: 100px;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .catton{
