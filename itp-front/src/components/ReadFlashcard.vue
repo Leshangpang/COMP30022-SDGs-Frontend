@@ -3,6 +3,7 @@
     <el-carousel trigger="click" @change="changeIndex" :autoplay="false" arrow="always">
       <el-carousel-item v-for="(item, index) in questionList" :key="index">
         <div
+        
           class="question-card"
           :class="{ rotate: index === activeIndex && isRotate }"
         >
