@@ -50,6 +50,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   row-gap: 40px;
   background-color: #fff;
   background-image: url('../assets/image/genderEquality.jpg');
@@ -60,6 +61,7 @@ export default {
   width: 625px;
   margin-right: 30px;
   border-radius: 10%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .el-carousel {
   height: 100%;
@@ -90,34 +92,35 @@ export default {
   box-sizing: border-box;
   border-radius: 10%;
 }
-.content{
-  margin-left: 20px;
-  margin-right: 20px;
-}
+
 .question-card .font {
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: hwb(0 55% 44%);
-  font-size: 22px;
+  text-align: center;
+  color: hsl(0, 4%, 33%);
+  font-size: 28px;
+  padding: 10px;
 }
+
 .question-card .back {
   transform: rotateY(-180deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: hwb(0 55% 44%);
-  font-size: 22px;
+  color: hsl(0, 4%, 33%);
+  font-size: 24px;
+  padding: 10px;
 }
 
 .btn{
-  background-color: hwb(194 54% 4% / 0.839);
+  background-color: #fff;
   border-color: rgba(135, 222, 150, 0.704);
   border:5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 28px;
-  color: hwb(0 98% 2%);
+  color: #514f4f;
   margin-bottom: 40px;
 }
 

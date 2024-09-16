@@ -26,8 +26,6 @@ import SideBar from '../components/SideBar.vue'
 import MultipleChoice from '@/components/MultipleChoice.vue';
 
 
-
-
 export default {
   name: 'TakeQuizPage',
   components: {
@@ -56,16 +54,17 @@ export default {
 }
 
 .catton{
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 40px;
-  width: 200px ;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-top: 20px;
+  width: 180px ;
+  height: 480px;
   background-color: hsl(0, 0%, 100%);
   margin-bottom: 50px;
-  background-image: url('../assets/image/Goal5-mc_dec.png');
+  background-image: url('../assets/image/Goal5_Decor.jpg');
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
+  transform: rotateY(180deg);
 }
-  
 </style>
