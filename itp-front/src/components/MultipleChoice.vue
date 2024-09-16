@@ -412,6 +412,7 @@ export default {
   overflow: hidden;
   margin-top: 15px;
   margin-left: 50px;
+  
 }
 .rotated-image {
   width: 100%;
