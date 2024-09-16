@@ -52,11 +52,11 @@ export default {
   align-items: center;
   row-gap: 40px;
   background-color: #fff;
-  background-image: url('../assets/image/bg_flash_main.png');
+  background-image: url('../assets/image/genderEquality.jpg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
-  height: 475px; 
+  height: 450px; 
   width: 625px;
   margin-right: 30px;
   border-radius: 10%;
@@ -83,7 +83,7 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
-  height: 75%;
+  height: 85%;
   background-color: #fff;
   backface-visibility: hidden;
   border: 5px solid #525cebc3; /* You can change #000 to any color you like */
@@ -112,7 +112,7 @@ export default {
 }
 
 .btn{
-  background-color: hsla(194, 83%, 75%, 0.704);
+  background-color: hwb(194 54% 4% / 0.839);
   border-color: rgba(135, 222, 150, 0.704);
   border:5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

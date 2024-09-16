@@ -331,7 +331,7 @@
   .question-submit {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 650px;
     margin-right: 50px;
     margin-left: 50px;
   }
@@ -356,26 +356,28 @@
     grid-template-columns: repeat(2, minmax(200px, 300px));
     justify-content: space-around;
     grid-row-gap: 30px;
-    background-image: url('../assets/image/Goal5-mc_bg_1.jpg');
-    background-size: cover; /* 使图片覆盖整个div */
-    background-position: center; /* 居中显示图片 */
+    background-image: url('../assets/image/genderEquality1.jpg');
+    background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat;
-    height:460px;
+    height:480px;
   }
   .list li {
-    height: 170px;
-    width: 350px;
+    border: 3px solid rgba(0, 204, 255, 0.54);
+    height: 150px;
+    width: 250px;
     border-radius: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: hwb(2 55% 25% / 0.558);
+    background-color: hwb(145 71% 3%);
     color: #fff;
     transition: all 0.5s;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 22px;
   }
   .list li.active {
     box-shadow: 0px 0px 0px 5px var(--whiteColor) inset,
@@ -397,7 +399,7 @@
     height: 48px;
     border-radius: 8px;
     color: #fff;
-    background-color: hsla(3, 50%, 57%, 0.51);
+    background-color: hsla(185, 76%, 62%, 0.696);
     cursor: pointer;
     user-select: none; 
     transition: all 0.4s;

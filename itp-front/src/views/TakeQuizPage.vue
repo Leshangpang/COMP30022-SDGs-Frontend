@@ -6,6 +6,7 @@
       <div class="main-content">
         <SideBar class="sidebar"></SideBar>
         <MultipleChoice></MultipleChoice>
+        <div class="catton"></div>
       </div>
       <MainFooter></MainFooter>
  
@@ -52,6 +53,19 @@ export default {
   margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
   margin-top: 100px;
   margin-bottom: 100px
+}
+
+.catton{
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 40px;
+  width: 200px ;
+  background-color: hsl(0, 0%, 100%);
+  margin-bottom: 50px;
+  background-image: url('../assets/image/Goal5-mc_dec.png');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
 }
   
 </style>
