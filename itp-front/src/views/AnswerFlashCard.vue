@@ -2,14 +2,15 @@
     <div id="AnswerFlashCard">
       <Header></Header>
       <MainBanner></MainBanner>
-      <!-- 使用一个容器包裹 Sidebar 和 Flashcard --> 
-      <EachGoalBar></EachGoalBar>
+  
+      <!-- 使用一个容器包裹 Sidebar 和 Flashcard -->
       <div class="main-content">
         <SideBar class="sidebar"></SideBar>
         <Flashcard class="flashcard"></Flashcard>
-        <div class="catton"></div>
       </div>
+  
       <MainFooter></MainFooter>
+  
       <main class="content">
         <router-view></router-view>
       </main>
@@ -23,7 +24,6 @@ import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
 import Flashcard from '../components/ReadFlashcard.vue';
-import EachGoalBar from '../components/EachGoalBar.vue';
 
 
 
@@ -34,15 +34,14 @@ export default {
     MainBanner,
     MainFooter,
     SideBar,
-    Flashcard,
-    EachGoalBar
-}
+    Flashcard
+
+  }
 
 }
 </script>
 
 <style scpoed>
-
 #AnswerFlashCard {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -50,33 +49,20 @@ export default {
 }
 
 .sidebar {
-  margin-left: 100px; 
-  margin-top: 40px;
-  margin-bottom: 100px;
-  /* margin-right: 100px; */
+  margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
+  margin-top: 100px;
+  margin-bottom: 100px
 }
 .main-content {
-  display: flex; 
+  display: flex; /* 使用 flexbox 布局 */
+  
 }
 
 .flashcard{
     margin-left: 100px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 100px;
 }
 
-.catton{
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 40px;
-  width: 200px ;
-  background-color: hsl(0, 0%, 100%);
-  margin-bottom: 50px;
-  background-image: url('../assets/image/Goal5_flash_dec.png');
-  background-size: cover; /* 使图片覆盖整个div */
-  background-position: center; /* 居中显示图片 */
-  background-repeat: no-repeat;
-}
-
+  
 </style>
   

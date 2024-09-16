@@ -33,7 +33,7 @@
       <div class="show-image">
         <img :src="imgUrl1" alt="" />
         <img :src="imgUrl2" alt="" />
-        <img :src="imgUrl3" alt="" />
+        <img :src="imgUrl1" alt="" />
       </div>
     </div>
   </template>
@@ -45,11 +45,9 @@
     data() {
       return {
         imgUrl1:
-        "https://learningfactor.com.au/wp-content/uploads/2018/10/brain-map.jpg",
+        "https://digitalpromise.org/wp-content/uploads/2022/05/DigiLrnPlybk-06.png",
         imgUrl2:
-        "https://www.yourmembership.com/wp-content/uploads/2023/02/YM-BLG2302-3-easy-ways-to-support-professional-growth-for-your-associations-members-NP.png",
-        imgUrl3:
-        "https://www.aihr.com/wp-content/uploads/learning-vs-training-cover.png"
+        "https://www.yourmembership.com/wp-content/uploads/2023/02/YM-BLG2302-3-easy-ways-to-support-professional-growth-for-your-associations-members-NP.png"
       };
     },
   };
@@ -61,7 +59,7 @@
     justify-content: space-between;
     align-items: flex-start;
     background-color: #f5f5f5;
-    padding: 50px 150px;
+    padding: 50px 100px;
   }
   .side-left {
     flex: 1;
@@ -105,7 +103,7 @@
   .show-image {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    grid-column-gap: 30px;
+    grid-column-gap: 20px;
     align-items: center;
   }
   .show-image img {
