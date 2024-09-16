@@ -319,14 +319,16 @@ export default {
 .question-submit {
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 700px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 48px;
-  margin-left: 10px;
+  height: 40px;
+  margin-left: 30px;
   p {
     margin: 0;
   }
@@ -342,10 +344,12 @@ export default {
   width: 100%;
   grid-template-columns: repeat(2, minmax(200px, 300px));
   justify-content: space-around;
-  grid-row-gap: 40px;
+  grid-row-gap: 30px;
+  grid-column-gap:40px;
+  padding: 10px;
 }
 .list li {
-  height: 150px;
+  height: 140px;
   background-color: #ccc;
   border-radius: 60px;
   display: flex;

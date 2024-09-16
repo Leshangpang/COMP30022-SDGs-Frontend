@@ -53,8 +53,8 @@ components: {
 margin-left: 100px; 
 margin-top: 40px;
 margin-bottom: 100px;
-/* margin-right: 100px; */
 }
+
 .main-content {
 display: flex; 
 }
@@ -66,15 +66,15 @@ display: flex;
 }
 
 .catton{
-margin-right: 10px;
-margin-left: 10px;
-margin-top: 40px;
+margin-right: 30px;
+margin-left: 30px;
+margin-top: 20px;
 width: 200px ;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
 background-image: url('../assets/image/Goal5_flash_dec.png');
-background-size: cover; /* 使图片覆盖整个div */
-background-position: center; /* 居中显示图片 */
+background-size: cover; 
+background-position: center; 
 background-repeat: no-repeat;
 }
 

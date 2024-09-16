@@ -59,7 +59,8 @@ export default {
   background-repeat: no-repeat;
   height: 450px; 
   width: 625px;
-  margin-right: 30px;
+  margin-right: 50px;
+  margin-left: 50px;
   border-radius: 10%;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
