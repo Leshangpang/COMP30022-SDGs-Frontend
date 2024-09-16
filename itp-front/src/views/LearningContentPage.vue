@@ -117,6 +117,16 @@
                 <h2>Things To Do</h2>
             </div>
 
+            <div class="grid-container">
+                <div class="grid-container">
+                    <div v-for="(item, index) in tips" :key="index" class="grid-item">
+                        <img src="../assets/image/lightBulb.png" class="bulb-icon" />
+                        <p class="tip-text">{{ item }}</p>
+                    </div>
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -151,6 +161,15 @@ export default {
     return {
         topicNum: 3,
         videoUrl: "https://www.youtube.com/embed/-hc0kZh6CnM",
+        tips: [
+        "Women earn 10 to 30 per cent less than men for the same work. Pay inequality persists everywhere. Voice your support for equal pay for equal work.",
+        "Find a Goal 5 charity you want to support. Any donation, big or small, can make a difference!",
+        "Be aware of gender stereotypes. Recognize them, avoid them and educate others about them.",
+        "Stand up against harassment. Whenever you see or become aware of harassment, whether in the workplace, streets, home or the online space, raise your voice against it.",
+        "Find female mentors/leaders. Ensure that some of your role models or mentors are women. There’s a lot you can learn from women in positions of authority.",
+        "Share the workload at home. Sharing domestic responsibilities ensures the work burden doesn’t fall only on one person and instills the value of gender equality and essential life skills in children.",
+        "Stay informed. Follow your local news and stay in touch with the Global Goals online or on social media at @TheGlobalGoals."
+      ]
     }
   }
 
@@ -202,7 +221,7 @@ export default {
 }
 
 .goal-text-container {
-  background-color: #DC462E;
+  background-color: hwb(10 14% 13%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -266,6 +285,36 @@ export default {
 
 h4{
     font-size: 18px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px; /* Space between grid items */
+  align-items: start;
+  padding-bottom: 20px;
+}
+
+.grid-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bulb-icon {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 15px; /* Space between image and text */
+}
+
+.tip-text {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
 }
 
 </style>
