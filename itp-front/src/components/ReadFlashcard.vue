@@ -1,6 +1,6 @@
 <template>
   <div class="flash-card">
-    <el-carousel trigger="click" @change="changeIndex" :autoplay="false">
+    <el-carousel trigger="click" @change="changeIndex" :autoplay="false" arrow="always">
       <el-carousel-item v-for="(item, index) in questionList" :key="index">
         <div
           class="question-card"
@@ -11,9 +11,7 @@
         </div>
       </el-carousel-item>
     </el-carousel>
-    <el-button  type="primary" @click="toggleFlash" round
-      >Click to flash</el-button
-    >
+    <el-button  type="primary" @click="toggleFlash" round class="btn">Click to flash</el-button>
   </div>
 </template>
 
@@ -24,14 +22,14 @@ export default {
   data() {
     return {
       questionList: [
-        { question: "Question1", answer: "Answer1" },
-        { question: "Question2", answer: "Answer2" },
-        { question: "Question3", answer: "Answer3" },
-        { question: "Question4", answer: "Answer4" },
+        { question: "Why does the gender pay gap still exist? ", answer: "The gap exists due to discrimination, unequal opportunities, and differences in industries and roles dominated by men or women." },
+        { question: " How does girls' education affect gender equality? ", answer: "Educated girls are empowered, which leads to better health, economic opportunities, and stronger communities, reducing gender inequality." },
+        { question: "What helps reduce gender-based violence?", answer: "Legal reforms, awareness campaigns, and providing support services for survivors are key in reducing violence." },
+        { question: "Why is female political representation important? ", answer: "More women in politics ensures diverse perspectives and leads to policies that support gender equality and social progress." },
       ],
       isRotate: false,
       activeIndex: 0,
-      url: "https://img0.baidu.com/it/u=2426072799,1960439289&fm=253&fmt=auto&app=120&f=JPEG?w=747&h=500",
+      // url: "https://img0.baidu.com/it/u=2426072799,1960439289&fm=253&fmt=auto&app=120&f=JPEG?w=747&h=500",
     };
   },
   methods: {
@@ -49,15 +47,22 @@ export default {
 
 <style scoped>
 .flash-card {
-display: flex;
-flex-direction: column;
-align-items: center;
-row-gap: 40px;
-background-color: hsla(160, 60%, 70%, 0.312);
-height: 400px; /* 设置明确的高度 */
-width: 600px;  /* 设置明确的宽度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 40px;
+  background-color: #fff;
+  background-image: url('../assets/image/genderEquality.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  height: 450px; 
+  width: 625px;
+  margin-right: 30px;
+  border-radius: 10%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
 .el-carousel {
   height: 100%;
   width: 100%;
@@ -66,7 +71,6 @@ width: 600px;  /* 设置明确的宽度 */
   height: 100%;
 }
 .question-card {
-  background: #9eeb99a5;
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
@@ -81,27 +85,46 @@ width: 600px;  /* 设置明确的宽度 */
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(159, 235, 153, 0.334);
+  height: 85%;
+  background-color: #fff;
   backface-visibility: hidden;
+  border: 5px solid #525cebc3; /* You can change #000 to any color you like */
+  box-sizing: border-box;
+  border-radius: 10%;
 }
+
 .question-card .font {
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 40px;
+  text-align: center;
+  color: hsl(0, 4%, 33%);
+  font-size: 28px;
+  padding: 10px;
 }
+
 .question-card .back {
   transform: rotateY(-180deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 40px;
+  color: hsl(0, 4%, 33%);
+  font-size: 24px;
+  padding: 10px;
 }
 
+.btn{
+  background-color: #fff;
+  border-color: rgba(135, 222, 150, 0.704);
+  border:5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 28px;
+  color: #514f4f;
+  margin-bottom: 40px;
+}
 
 </style>
+
+
 
