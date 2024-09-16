@@ -183,6 +183,27 @@ export default {
         "Stay informed. Follow your local news and stay in touch with the Global Goals online or on social media at @TheGlobalGoals."
       ]
     }
+  },
+  created() {
+    this.updateTopicFromRoute();
+  },
+  watch: {
+    // Watch for route changes
+    $route(to, from) {
+      this.updateTopicFromRoute();
+    }
+  },
+  methods: {
+    updateTopicFromRoute() {
+      const topic = this.$route.query.topic;
+      if (topic === 'overview') {
+        this.topicNum = 1;
+      } else if (topic === 'targets') {
+        this.topicNum = 2;
+      } else if (topic === 'actions') {
+        this.topicNum = 3;
+      }
+    }
   }
 
 }
