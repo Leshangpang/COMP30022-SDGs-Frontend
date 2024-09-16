@@ -52,7 +52,7 @@ export default {
   align-items: center;
   row-gap: 40px;
   background-color: #fff;
-  background-image: url('../assets/image/222.png');
+  background-image: url('../assets/image/bg_flash_main.png');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
