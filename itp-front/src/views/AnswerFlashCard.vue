@@ -24,8 +24,6 @@ import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
 import Flashcard from '../components/ReadFlashcard.vue';
 import EachGoalBar from '../components/EachGoalBar.vue';
-import EachGoalBar from '../components/EachGoalBar.vue';
-
 
 
 export default {

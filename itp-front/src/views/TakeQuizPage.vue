@@ -19,14 +19,11 @@
 
 <script>
 import EachGoalBar from '@/components/EachGoalBar.vue';
-import EachGoalBar from '@/components/EachGoalBar.vue';
 import Header from '../components/Header.vue';
 import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
 import MultipleChoice from '@/components/MultipleChoice.vue';
-import MultipleChoice from '@/components/MultipleChoice.vue';
-
 
 export default {
 name: 'TakeQuizPage',
