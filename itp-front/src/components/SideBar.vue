@@ -1,19 +1,64 @@
 <template>
     <ul class="learning-modules">
         <div class ="choose-section">
-            <li class = "choose"><router-link to="" data-text="Learning">Learning</router-link></li>
+          <el-dropdown @command="handleDropdownCommand">
+            <li 
+            @click="$emit('update', 1)"
+            :class="{ active: active === 1 }"
+            class="choose el-dropdown-link">
+            <router-link to="" data-text="Learning" >Learning</router-link>
+            <!-- <span><i class="el-icon-arrow-down el-icon--right"></i></span> -->
+            <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item command="1">Publications</el-dropdown-item>
+          <el-dropdown-item command="2">News</el-dropdown-item>
+          <el-dropdown-item command="3">Actions</el-dropdown-item>
+          <!-- <el-dropdown-item disabled>dd</el-dropdown-item> -->
+          <!-- <el-dropdown-item divided command="4">Divided Item</el-dropdown-item> -->
+        </el-dropdown-menu>
+            </li>
+          </el-dropdown>
+        </div>
+
+        <div class ="choose-section">
+            <li 
+            @click="$emit('update', 2)"
+            :class="{ active: active === 2 }"
+            class="choose">
+            <router-link to="flashcard" data-text="FlashCard">FlashCard</router-link></li>
         </div>
         <div class ="choose-section">
-            <li class = "choose"><router-link to="" data-text="FlashCard">FlashCard</router-link></li>
+            <li 
+            @click="$emit('update', 3)"
+            :class="{ active: active === 3 }"
+            class="choose">
+            <router-link to="quiz" data-text="Quiz">Quiz</router-link></li>
         </div>
         <div class ="choose-section">
-            <li class = "choose"><router-link to="" data-text="Quiz">Quiz</router-link></li>
-        </div>
-        <div class ="choose-section">
-            <li class = "choose"><router-link to="/communitychallenge" data-text="Community Chanllenge">Community Chanllenge</router-link></li>
+            <li 
+            @click="$emit('update', 4)"
+            :class="{ active: active === 4 }"
+            class="choose">
+            <router-link to="/communitychallenge" data-text="Community Chanllenge">Community Chanllenge</router-link></li>
         </div>
     </ul>
 </template>
+
+<script>
+export default {
+  name: "SideBar",
+  props: {
+    active: {
+      type: Number,
+      default: 1,
+    },
+  },
+  emits: ["update"],
+  components: {},
+  data() {
+    return {};
+  },
+};
+</script>
 
 <style scoped>
 .learning-modules {
