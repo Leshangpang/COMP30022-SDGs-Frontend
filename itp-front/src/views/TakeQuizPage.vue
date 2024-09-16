@@ -2,7 +2,12 @@
     <div id="TakeQuizPage">
       <Header></Header>
       <MainBanner></MainBanner>
-      <SideBar class="sidebar"></SideBar>
+      <EachGoalBar></EachGoalBar>
+      <div class="main-content">
+        <SideBar class="sidebar"></SideBar>
+        <MultipleChoice></MultipleChoice>
+        <div class="catton"></div>
+      </div>
       <MainFooter></MainFooter>
  
       <main class="content">
@@ -13,10 +18,12 @@
   </template>
 
 <script>
+import EachGoalBar from '@/components/EachGoalBar.vue';
 import Header from '../components/Header.vue';
 import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
+import MultipleChoice from '@/components/MultipleChoice.vue';
 
 
 
@@ -28,8 +35,9 @@ export default {
     MainBanner,
     MainFooter,
     SideBar,
-
-  }
+    EachGoalBar,
+    MultipleChoice
+}
 
 }
 </script>
@@ -45,6 +53,19 @@ export default {
   margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
   margin-top: 100px;
   margin-bottom: 100px
+}
+
+.catton{
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 40px;
+  width: 200px ;
+  background-color: hsl(0, 0%, 100%);
+  margin-bottom: 50px;
+  background-image: url('../assets/image/Goal5-mc_dec.png');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
 }
   
 </style>
