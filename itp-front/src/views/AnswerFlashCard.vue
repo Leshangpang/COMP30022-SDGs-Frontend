@@ -72,7 +72,7 @@ export default {
   width: 200px ;
   background-color: hsl(0, 0%, 100%);
   margin-bottom: 50px;
-  background-image: url('../assets/image/bg_flash.png');
+  background-image: url('../assets/image/Goal5_flash_dec.png');
   background-size: cover; /* 使图片覆盖整个div */
   background-position: center; /* 居中显示图片 */
   background-repeat: no-repeat;
