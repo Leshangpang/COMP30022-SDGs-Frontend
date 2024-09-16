@@ -171,7 +171,7 @@ export default {
   },
   data() {
     return {
-        topicNum: 3,
+        topicNum: 1,
         videoUrl: "https://www.youtube.com/embed/-hc0kZh6CnM",
         tips: [
         "Women earn 10 to 30 per cent less than men for the same work. Pay inequality persists everywhere. Voice your support for equal pay for equal work.",
