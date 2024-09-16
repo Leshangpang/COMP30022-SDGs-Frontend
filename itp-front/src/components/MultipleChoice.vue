@@ -371,7 +371,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: hwb(145 71% 3%);
+    background-color: rgb(61, 141, 232);
     color: #fff;
     transition: all 0.5s;
     cursor: pointer;
