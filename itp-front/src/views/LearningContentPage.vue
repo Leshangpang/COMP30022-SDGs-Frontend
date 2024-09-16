@@ -126,6 +126,18 @@
                 </div>
 
             </div>
+            
+            <div class="foot-images">
+                <div>
+                    <img src="../assets/image/bear.png"/>
+                </div>
+                <div class="take-action-image">
+                    <img src="../assets/image/takeAction.png"/>
+                </div>
+                <div>
+                    <img src="../assets/image/bear.png"/>
+                </div>
+            </div>
 
 
         </div>
@@ -256,7 +268,7 @@ export default {
 }
 
 .video-container {
-  max-width: 100%;
+  max-width: 90%;
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
@@ -317,5 +329,21 @@ h4{
   margin: 0;
 }
 
+.foot-images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.take-action-image{
+    text-align: center;
+}
+
+.take-action-image img{
+    width: 60%;
+    height: 90%;
+    object-fit: fill;
+}
 </style>
   
