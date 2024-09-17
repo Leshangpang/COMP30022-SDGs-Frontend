@@ -73,7 +73,7 @@ export default {
 }
 
 .fill-upload-question {
-    margin-top: 160px;
+    margin-top: 70px;
     /* 设置上间距 */
     margin-bottom: 200px;
     /* 设置下间距 */

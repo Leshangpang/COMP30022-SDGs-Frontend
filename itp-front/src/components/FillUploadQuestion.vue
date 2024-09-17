@@ -1,51 +1,51 @@
 <template>
-    <div class="outer-container">
-        <div class="center-container">
-            <h3 class="form-title">Create New Question</h3>
-            <div class="form-container">
-                <div class="form-group">
-                    <h5>Question</h5>
-                    <el-input type="text" placeholder="Type Your Question Here" style="width: 100%;" v-model="question" maxlength="150" show-word-limit>
+    <div class="question-hub-outer-container">
+        <div class="question-hub-center-container">
+            <h3 class="question-hub-form-title">Create New Question</h3>
+            <div class="question-hub-form-container">
+                <div class="question-hub-form-group">
+                    <h5 class="question-hub-question-heading">Question: </h5>
+                    <el-input class="question-hub-custom-question-textarea" type="textarea" :rows="5" placeholder="Type Your Question Here" style="width: 100%;" v-model="question" maxlength="150" show-word-limit>
                     </el-input>
                 </div>
-                <div class="form-group">
-                    <h5>Select SDGs Category</h5>
-                    <el-select class="select-goal" v-model="selectedGoal" clearable placeholder="Please choose a Goal">
+                <div class="question-hub-form-group">
+                    <h5 class="question-hub-question-heading">Select SDGs Category: </h5>
+                    <el-select class="question-hub-select-goal" v-model="selectedGoal" clearable placeholder="Please choose a Goal">
                         <el-option v-for="item in options1" :key="item.value" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </div>
-                <div class="form-group">
-                    <h5 class="choose-title">Choices: </h5>
-                    <div class="choice-item">
-                        <h6>Choice A:</h6>
+                <div class="question-hub-form-group">
+                    <h5 class="question-hub-choose-title question-hub-question-heading">Choices: </h5>
+                    <div class="question-hub-choice-item">
+                        <h6 class = "question-hub-choice">Choice A:</h6>
                         <el-input type="text" placeholder="Please Fill the Choice" style="width: 100%;" v-model="choiceA" maxlength="35" show-word-limit>
                         </el-input>
                     </div>
-                    <div class="choice-item">
-                        <h6>Choice B:</h6>
+                    <div class="question-hub-choice-item">
+                        <h6 class = "question-hub-choice">Choice B:</h6>
                         <el-input type="text" placeholder="Please Fill the Choice" style="width: 100%;" v-model="choiceB" maxlength="35" show-word-limit>
                         </el-input>
                     </div>
-                    <div class="choice-item">
-                        <h6>Choice C:</h6>
+                    <div class="question-hub-choice-item">
+                        <h6 class = "question-hub-choice">Choice C:</h6>
                         <el-input type="text" placeholder="Please Fill the Choice" style="width: 100%;" v-model="choiceC" maxlength="35" show-word-limit>
                         </el-input>
                     </div>
-                    <div class="choice-item">
-                        <h6>Choice D:</h6>
+                    <div class="question-hub-choice-item">
+                        <h6 class = "question-hub-choice">Choice D:</h6>
                         <el-input type="text" placeholder="Please Fill the Choice" style="width: 100%;" v-model="choiceD" maxlength="35" show-word-limit>
                         </el-input>
                     </div>
                 </div>
-                <div class="form-group">
-                    <h5>Correct Answer:</h5>
-                    <el-select class="choose-answer" v-model="correctAnswer" clearable placeholder="Please Choose Correct Answer">
+                <div class="question-hub-form-group">
+                    <h5 class="question-hub-question-heading">Correct Answer:</h5>
+                    <el-select class="question-hub-choose-answer" v-model="correctAnswer" clearable placeholder="Please Choose Correct Answer">
                         <el-option v-for="item in options2" :key="item.value" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </div>
-                <div class="form-group buttons">
+                <div class="question-hub-form-group question-hub-buttons">
                     <el-button type="success">View uploaded Question</el-button>
                     <el-button type="primary" @click="clearForm">Clear</el-button>
                     <el-button type="primary" @click="validateForm">Publish</el-button>
@@ -131,54 +131,102 @@ export default {
 }
 </script>
 
-<style scoped>
-.outer-container {
+<style>
+.question-hub-outer-container {
     display: flex;
     flex-direction: column;
     align-items: center; /* 保持内容水平居中 */
-    margin-top: 20px; /* 可选: 为外部容器添加顶部间距 */
+    margin-top: 10px; /* 减小顶部间距 */
 }
 
-.center-container {
+.question-hub-center-container {
     width: 70%; /* 设置宽度以控制表单和标题 */
     max-width: 1200px; /* 最大宽度 */
 }
 
-.form-title {
+.question-hub-form-title {
     text-align: left; /* 将标题左对齐 */
-    margin-bottom: 40px; /* 添加标题与表单之间的间距 */
-    margin-top: 40px;
+    margin-bottom: 20px; /* 添加标题与表单之间的间距 */
+    margin-top: 10px; /* 减小标题顶部的空白区域 */
 }
 
-.form-container {
+.question-hub-form-container {
     background-color: #fff; /* 可选: 添加背景颜色 */
     padding: 40px 60px; /* 可选: 添加内边距 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 可选: 添加阴影 */
     border-radius: 8px; /* 可选: 添加圆角 */
-    
 }
 
-.form-group {
+.question-hub-form-group {
     margin-bottom: 40px; /* 为每个部分增加下边距 */
 }
 
-.select-goal {
+.question-hub-select-goal {
     width: 400px;
+    font-size: 16px; /* 设置字体大小 */
 }
 
-.buttons {
+/* 修改 el-select 的 placeholder 的样式 */
+.question-hub-select-goal ::v-deep .el-input__inner {
+    font-size: 16px; /* 设置 el-select 的文本字体大小 */
+}
+
+.question-hub-select-goal ::v-deep .el-input__inner::placeholder {
+    font-size: 16px !important; /* 设置 placeholder 的字体大小 */
+    color: #c8c5c5; /* 可选：设置 placeholder 的颜色 */
+}
+
+.question-hub-buttons {
     display: flex;
     justify-content: flex-end; /* 将按钮靠右对齐 */
     gap: 10px; /* 添加按钮之间的间距 */
 }
 
-.choice-item {
+.question-hub-choice-item {
     margin-bottom: 20px; /* 设置选择间距 */
 }
-.choose-title {
+
+.question-hub-choose-title {
     margin-bottom: 20px;
 }
-.choose-answer {
+
+.question-hub-choose-answer {
     width: 400px;
+    font-size: 16px; /* 设置字体大小 */
+}
+
+/* 修改 el-select 的 placeholder */
+.question-hub-choose-answer ::v-deep .el-input__inner {
+    font-size: 16px; /* 设置 el-select 的文本字体大小 */
+}
+
+.question-hub-choose-answer ::v-deep .el-input__inner::placeholder {
+    font-size: 16px !important; /* 设置 placeholder 的字体大小 */
+    color: #c8c5c5; /* 可选：设置 placeholder 的颜色 */
+}
+
+.question-hub-question-heading {
+    margin-bottom: 22px;
+    font-size: 25px;
+}
+
+.question-hub-custom-question-textarea .el-textarea__inner {
+    font-size: 16px; /* 调整输入文本的字体大小 */
+}
+
+/* 使用更具体的选择器来调整 placeholder 字体大小 */
+.question-hub-custom-question-textarea .el-textarea__inner::placeholder {
+    font-size: 16px; /* 设置 placeholder 的字体大小 */
+    color: #c8c5c5; /* 可选：设置 placeholder 的颜色 */
+}
+
+.question-hub-choice {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.question-hub-choice-item .el-input__inner::placeholder {
+    font-size: 16px !important; /* 设置 placeholder 的字体大小 */
+    color: #c8c5c5; /* 可选：设置 placeholder 的颜色 */
 }
 </style>
