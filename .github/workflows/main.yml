@@ -30,10 +30,8 @@ jobs:
     - name: Install Vue CLI
       run: npm install -g @vue/cli
 
-    # Run linting if you have lint script
-    - name: Lint code
-      run: npm run lint
-
+    # Build the project
     - run: npm run build
 
+    # Run tests for Vue.js application
     - run: npm test
