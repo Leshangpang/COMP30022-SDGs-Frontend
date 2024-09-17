@@ -23,7 +23,7 @@
   import MainFooter from '../components/MainFooter.vue';
   import SideBar from '../components/SideBar.vue';
   import QuestionDetail from '../components/QuestionDetail.vue';
-  import Header from '../components/Header.vue';
+  import Header from '../components/WebHeader.vue';
   
   export default {
     name: 'AnswerQuestion',

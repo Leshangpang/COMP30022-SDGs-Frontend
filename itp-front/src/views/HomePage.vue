@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
+import Header from "../components/WebHeader.vue";
 import MainBanner from "../components/MainBannerHome.vue";
 import SwiperList from "../components/SwiperList.vue";
 import AskMenu from "../components/AskMenu.vue";
