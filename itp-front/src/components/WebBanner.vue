@@ -18,7 +18,7 @@
 <script>
 /** @vue/component */
 export default {
-  name: 'Banner',
+  name: 'WebBanner',
   props: {
     /** @type {string} */
     pageTitle: String,
