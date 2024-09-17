@@ -40,13 +40,17 @@ jobs:
     - name: Install Vue CLI
       run: npm install -g @vue/cli
 
+    # Run linting for the project
+    - name: Lint the code
+      run: npm run lint
+      working-directory: ./itp-front
+
     # Build the Vue.js project
     - name: Build the project
       run: npm run build
       working-directory: ./itp-front
 
-    # Run tests for Vue.js application if applicable
-    # Uncomment the following lines if you have tests set up
+    # for tests set up
     # - name: Run tests
     #   run: npm test
     #   working-directory: ./itp-front
