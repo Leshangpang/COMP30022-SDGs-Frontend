@@ -2,8 +2,8 @@
     <div class="banner" :style="{ backgroundImage: `url(${backgroundImage})` }">
       <div class="banner-content">
         <!-- You can place any content inside the banner here -->
-        <h1>{{  }}</h1>
-        <p>{{  }}</p>
+        <h1>{{ title }}</h1>
+        <p>{{ subtitle  }}</p>
       </div>
     </div>
   </template>

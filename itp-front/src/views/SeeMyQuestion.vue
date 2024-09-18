@@ -1,10 +1,10 @@
 <template>
-    <div id="UploadQuestionPage">
+    <div id="SeeMyQuestionPage">
         <Header class="upload-question-header"></Header>
         <div class="main-content">
-            <BannerForUploadQuestion :backgroundImage="require('@/assets/image/UploadQuestion.png')" 
-                title="" subtitle=""></BannerForUploadQuestion>
-            <FillUploadQuestion class="fill-upload-question"></FillUploadQuestion>
+            <BannerForUploadQuestion :backgroundImage="require('@/assets/image/banner-my-question.png')" 
+                title="My Question" subtitle="See Your Uploaded Question Here"></BannerForUploadQuestion>
+            <MyQuestionList></MyQuestionList>
             <main class="content">
                 <router-view></router-view>
             </main>
@@ -17,22 +17,23 @@
 import Header from "../components/Header.vue";
 import MainFooter from "../components/MainFooter.vue";
 import BannerForUploadQuestion from "../components/BannerForUploadQuestion.vue";
-import FillUploadQuestion from "@/components/FillUploadQuestion.vue";
+import MyQuestionList from "@/components/MyQuestionList.vue";
+
 
 
 export default {
-    name: "UploadQuestionPage",
+    name: "SeeMyQuestionPage",
     components: {
         Header,
         MainFooter,
         BannerForUploadQuestion,
-        FillUploadQuestion
+        MyQuestionList
     },
 };
 </script>
 
 <style>
-#UploadQuestionPage {
+#SeeMyQuestionPage {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -73,7 +74,7 @@ export default {
 }
 
 .fill-upload-question {
-    margin-top: 70px;
+    margin-top: 160px;
     /* 设置上间距 */
     margin-bottom: 200px;
     /* 设置下间距 */
