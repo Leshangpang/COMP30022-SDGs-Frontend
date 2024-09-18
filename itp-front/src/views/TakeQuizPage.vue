@@ -1,4 +1,3 @@
-<template>
     <div id="TakeQuizPage">
       <Header></Header>
       <MainBanner></MainBanner>

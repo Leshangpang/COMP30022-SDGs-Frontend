@@ -3,7 +3,7 @@
       <div class="banner-content">
         <!-- You can place any content inside the banner here -->
         <h1>{{ title }}</h1>
-        <p>{{ subtitle }}</p>
+        <p>{{ subtitle  }}</p>
       </div>
     </div>
   </template>
@@ -42,7 +42,7 @@
     position: relative;
     /* Optional: Add an overlay for better text visibility */
     background-blend-mode: overlay;
-    background-color: rgba(241, 237, 237, 0.235); /* Adjust the color and opacity as needed */
+    /* Adjust the color and opacity as needed */
   }
   
   .banner-content {

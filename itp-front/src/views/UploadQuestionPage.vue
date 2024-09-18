@@ -3,7 +3,7 @@
         <Header class="upload-question-header"></Header>
         <div class="main-content">
             <BannerForUploadQuestion :backgroundImage="require('@/assets/image/UploadQuestion.png')" 
-                title="Write Your Question" subtitle="Publish Your Question Here"></BannerForUploadQuestion>
+                title="" subtitle=""></BannerForUploadQuestion>
             <FillUploadQuestion class="fill-upload-question"></FillUploadQuestion>
             <main class="content">
                 <router-view></router-view>
@@ -73,7 +73,7 @@ export default {
 }
 
 .fill-upload-question {
-    margin-top: 160px;
+    margin-top: 70px;
     /* 设置上间距 */
     margin-bottom: 200px;
     /* 设置下间距 */

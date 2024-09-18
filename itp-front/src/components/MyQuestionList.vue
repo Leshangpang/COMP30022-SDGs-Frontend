@@ -32,22 +32,22 @@ export default {
         return {
             questions: [
                 {
-                    question: 'What is Vue.js?',
-                    category: 'JavaScript Framework',
+                    question: 'What measures can be implemented to effectively prevent and address gender-based violence, including domestic violence and sexual harassment?',
+                    category: 'Goal 5',
                     uploadTime: '2023-09-15T10:30:00',
                     views: 150,
                     averageScore: 4.5
                 },
                 {
-                    question: 'Explain event handling in Vue.js.',
-                    category: 'JavaScript Framework',
+                    question: 'What are the main challenges preventing universal access to clean and safe drinking water in different regions of the world?',
+                    category: 'Goal 6',
                     uploadTime: '2023-09-16T12:45:00',
                     views: 200,
                     averageScore: 4.8
                 },
                 {
-                    question: 'What is the purpose of Vuex?',
-                    category: 'State Management',
+                    question: 'What are the main barriers preventing universal access to affordable and reliable energy, especially in developing regions?',
+                    category: 'Goal 7',
                     uploadTime: '2023-09-17T14:20:00',
                     views: 180,
                     averageScore: 4.7
