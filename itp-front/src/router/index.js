@@ -20,7 +20,6 @@ Vue.use(Router)
 
 const routes = [
   { path: '/', name: 'Home', component: HomePage },
-  { path: '/course', name: 'Course', component: CoursePage },
   { path: '/learning', name: 'learn', component: LearningPage },
   { path: '/badges', name: 'Badges', component: BadgesPage },
   { path: '/certificate', name: 'Certificate', component: CertificatePage },
@@ -29,8 +28,8 @@ const routes = [
   { path: '/answerquestion', name: 'AnswerQuestion', component: AnswerQuestionPage, children: [{ path: '/question/:id', name: 'QuestionDetailPage', component: QuestionDetailPage }] },
   { path: '/flashcard', name: 'FlashCard', component: AnswerFlashCard },
   { path: '/quiz', name: 'Quiz', component: TakeQuizPage },
-  { path: '/uploadquestion', name: 'UploadQuestion', component: UploadQuestionPage},
-  { path: '/myquestion', name: 'MyQuestion', component: SeeMyQuestion}
+  { path: '/uploadquestion', name: 'UploadQuestion', component: UploadQuestionPage },
+  { path: '/myquestion', name: 'MyQuestion', component: SeeMyQuestion }
 
 ]
 
