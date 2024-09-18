@@ -2,7 +2,6 @@
   <div id="AnswerFlashCard">
     <Header></Header>
     <MainBanner></MainBanner>
-    <!-- 使用一个容器包裹 Sidebar 和 Flashcard --> 
     <EachGoalBar></EachGoalBar>
     <div class="main-content">
       <SideBar class="sidebar"></SideBar>
