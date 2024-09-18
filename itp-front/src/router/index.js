@@ -9,6 +9,8 @@ import QuestionDetailPage from '../components/QuestionDetail.vue';
 import AnswerQuestionPage from '../views/AnswerQuestionPage.vue';
 import AnswerFlashCard from '../views/AnswerFlashCard.vue';
 import TakeQuizPage from '../views/TakeQuizPage.vue';
+import UploadQuestionPage from '../views/UploadQuestionPage.vue';
+import SeeMyQuestion from '@/views/SeeMyQuestion.vue';
 
 
 
@@ -26,7 +28,10 @@ const routes = [
 
   { path: '/answerquestion', name: 'AnswerQuestion', component: AnswerQuestionPage, children: [{ path: '/question/:id', name: 'QuestionDetailPage', component: QuestionDetailPage }] },
   { path: '/flashcard', name: 'FlashCard', component: AnswerFlashCard },
-  { path: '/quiz', name: 'Quiz', component: TakeQuizPage }
+  { path: '/quiz', name: 'Quiz', component: TakeQuizPage },
+  { path: '/uploadquestion', name: 'UploadQuestion', component: UploadQuestionPage},
+  { path: '/myquestion', name: 'MyQuestion', component: SeeMyQuestion}
+
 ]
 
 const router = new Router({
