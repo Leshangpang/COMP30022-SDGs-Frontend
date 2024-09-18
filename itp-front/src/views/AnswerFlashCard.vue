@@ -18,7 +18,7 @@
   
 
 <script>
-import Header from '../components/Header.vue';
+import Header from '../components/NavigationBar.vue';
 import MainBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'

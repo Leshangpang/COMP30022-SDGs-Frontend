@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import HomePage from '../views/HomePage.vue';
-import CoursePage from '../views/CoursePage.vue';
 import BadgesPage from '../views/BadgesPage.vue';
 import CertificatePage from '../views/CertificatePage.vue';
 import LearningPage from '../views/LearningPage.vue';

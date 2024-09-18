@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
+import Header from "../components/NavigationBar.vue";
 import MainBanner from "../components/HomePageBanner.vue";
 import SwiperList from "../components/SwiperList.vue";
 import HomePageQnA from "../components/HomePageQnA.vue";
