@@ -16,25 +16,25 @@
                     </el-select>
                 </div>
                 <div class="question-hub-form-group">
-                    <h5 class="question-hub-choose-title question-hub-question-heading">Choices: </h5>
+                    <h5 class="question-hub-choose-title question-hub-question-heading">Options: </h5>
                     <div class="question-hub-choice-item">
-                        <h6 class = "question-hub-choice">Choice A:</h6>
-                        <el-input type="text" placeholder="Please Fill the Choice" style="width: 100%;" v-model="choiceA" maxlength="35" show-word-limit>
+                        <h6 class = "question-hub-choice">Option A:</h6>
+                        <el-input type="textarea" :rows="2" placeholder="Option 1" style="width: 100%;" v-model="choiceA" maxlength="35" show-word-limit>
                         </el-input>
                     </div>
                     <div class="question-hub-choice-item">
-                        <h6 class = "question-hub-choice">Choice B:</h6>
-                        <el-input type="text" placeholder="Please Fill the Choice" style="width: 100%;" v-model="choiceB" maxlength="35" show-word-limit>
+                        <h6 class = "question-hub-choice">Option B:</h6>
+                        <el-input type="textarea" :rows="2" placeholder="Option 2" style="width: 100%;" v-model="choiceB" maxlength="35" show-word-limit>
                         </el-input>
                     </div>
                     <div class="question-hub-choice-item">
-                        <h6 class = "question-hub-choice">Choice C:</h6>
-                        <el-input type="text" placeholder="Please Fill the Choice" style="width: 100%;" v-model="choiceC" maxlength="35" show-word-limit>
+                        <h6 class = "question-hub-choice">Option C:</h6>
+                        <el-input type="textarea" :rows="2" placeholder="Option 3" style="width: 100%;" v-model="choiceC" maxlength="35" show-word-limit>
                         </el-input>
                     </div>
                     <div class="question-hub-choice-item">
-                        <h6 class = "question-hub-choice">Choice D:</h6>
-                        <el-input type="text" placeholder="Please Fill the Choice" style="width: 100%;" v-model="choiceD" maxlength="35" show-word-limit>
+                        <h6 class = "question-hub-choice">Option D:</h6>
+                        <el-input type="textarea" :rows="2" placeholder="Option 4" style="width: 100%;" v-model="choiceD" maxlength="35" show-word-limit>
                         </el-input>
                     </div>
                 </div>
