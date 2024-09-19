@@ -61,6 +61,7 @@ margin-right: 40px;
 margin-left: 40px;
 margin-top: 0px;
 width: 200px;
+height:450px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
 background-image: url('../assets/image/Goal5_Decor.jpg');
