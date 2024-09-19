@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue';
+import Header from '../components/WebHeader.vue';
 import MainFooter from '@/components/MainFooter.vue';
 import BadgeBanner from '@/components/BadgeBanner.vue';
 import ProfileSidebar from '@/components/ProfileSidebar.vue';

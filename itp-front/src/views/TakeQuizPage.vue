@@ -3,7 +3,7 @@
     <Header></Header>
     <MainBanner></MainBanner>
     <EachGoalBar></EachGoalBar>
-    <div class="main-content">
+    <div class="main-container">
       <SideBar class="sidebar"></SideBar>
       <MultipleChoice></MultipleChoice>
       <div class="catton"></div>
@@ -19,7 +19,7 @@
 
 <script>
 import EachGoalBar from '@/components/EachGoalBar.vue';
-import Header from '../components/Header.vue';
+import Header from '../components/WebHeader.vue';
 import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
@@ -46,6 +46,10 @@ components: {
   min-height: 100vh;
 }
 
+.main-container{
+  display: flex;
+}
+
 .sidebar {
 margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
 margin-top: 100px;
@@ -57,6 +61,7 @@ margin-right: 40px;
 margin-left: 40px;
 margin-top: 0px;
 width: 200px;
+height:450px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
 background-image: url('../assets/image/Goal5_Decor.jpg');
