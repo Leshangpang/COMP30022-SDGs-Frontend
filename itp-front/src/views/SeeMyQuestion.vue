@@ -1,6 +1,6 @@
 <template>
     <div id="SeeMyQuestionPage">
-        <Header class="upload-question-header"></Header>
+        <Header class="see-my-question-upload-question-header"></Header>
         <div class="main-content">
             <BannerForUploadQuestion :backgroundImage="require('@/assets/image/banner-my-question.png')" 
                 title="My Question" subtitle="See Your Uploaded Question Here"></BannerForUploadQuestion>
@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #SeeMyQuestionPage {
     display: flex;
     flex-direction: column;
