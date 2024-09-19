@@ -17,6 +17,13 @@
         <SideBar class="sidebar"></SideBar>
 
         <div class="content-container" v-if="topicNum == 1">
+            <div class="image-text-container">
+              <img class="background-image" src="../assets/image/genderEquality_banner.png" />
+              <div class="text-overlay">
+                <p class="quote-text">"How important it is for us to recognize and celebrate our heroes and she-roes!"</p>
+                <p class="author-text">- Maya Angelou</p>
+              </div>
+            </div>
             <div class="text-container">
                 <h2>Overview</h2>
                 <p>Gender bias is undermining our social fabric and devalues all of us. It is not just a human rights issue;
@@ -288,6 +295,45 @@ export default {
   padding-right: 10px; /* 防止滚动条遮挡内容 */
 }
 
+.image-text-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.background-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding-bottom: 40px;
+  padding-right: 40px;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  max-width: 40%;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.quote-text {
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.author-text {
+  font-size: 18px;
+  margin-top: 20px;
+  text-align: right;
+}
+
 .video-container {
   max-width: 90%;
   overflow: hidden;
@@ -306,6 +352,7 @@ export default {
 
 .text-container{
     padding-bottom: 40px;
+    padding-right: 40px;
 }
 
 .content-image-container{
