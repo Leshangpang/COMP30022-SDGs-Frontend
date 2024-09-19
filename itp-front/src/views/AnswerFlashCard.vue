@@ -3,7 +3,7 @@
     <Header></Header>
     <MainBanner></MainBanner>
     <EachGoalBar></EachGoalBar>
-    <div class="main-content">
+    <div class="main-container">
       <SideBar class="sidebar"></SideBar>
       <Flashcard class="flashcard"></Flashcard>
       <div class="catton"></div>
@@ -54,7 +54,7 @@ margin-top: 40px;
 margin-bottom: 100px;
 }
 
-.main-content {
+.main-container {
 display: flex; 
 }
 

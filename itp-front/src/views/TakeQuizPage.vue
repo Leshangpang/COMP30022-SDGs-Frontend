@@ -3,7 +3,7 @@
     <Header></Header>
     <MainBanner></MainBanner>
     <EachGoalBar></EachGoalBar>
-    <div class="main-content">
+    <div class="main-container">
       <SideBar class="sidebar"></SideBar>
       <MultipleChoice></MultipleChoice>
       <div class="catton"></div>
@@ -44,6 +44,10 @@ components: {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+}
+
+.main-container{
+  display: flex;
 }
 
 .sidebar {
