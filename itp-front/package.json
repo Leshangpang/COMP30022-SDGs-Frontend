@@ -46,7 +46,6 @@
       "^.+\\.vue$": "vue-jest",
       "^.+\\.js$": "babel-jest"
     },
-   
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|jsx|ts|tsx)?$",
     "collectCoverage": false,
     "collectCoverageFrom": [
