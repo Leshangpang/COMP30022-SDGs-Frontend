@@ -3,7 +3,7 @@
     <Header></Header>
     <MainBanner></MainBanner>
     <EachGoalBar></EachGoalBar>
-    <div class="main-content">
+    <div class="main-container">
       <SideBar class="sidebar"></SideBar>
       <Flashcard class="flashcard"></Flashcard>
       <div class="catton"></div>
@@ -54,7 +54,7 @@ margin-top: 40px;
 margin-bottom: 100px;
 }
 
-.main-content {
+.main-container {
 display: flex; 
 }
 
@@ -69,6 +69,7 @@ margin-right: 30px;
 margin-left: 30px;
 margin-top: 20px;
 width: 200px ;
+height: 450px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
 background-image: url('../assets/image/Goal5_flash_dec.png');
