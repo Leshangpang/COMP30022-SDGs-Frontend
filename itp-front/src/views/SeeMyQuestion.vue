@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
+import Header from "../components/WebHeader.vue";
 import MainFooter from "../components/MainFooter.vue";
 import BannerForUploadQuestion from "../components/BannerForUploadQuestion.vue";
 import MyQuestionList from "@/components/MyQuestionList.vue";

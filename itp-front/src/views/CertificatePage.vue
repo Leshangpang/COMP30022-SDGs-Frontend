@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue';
+import Header from '../components/WebHeader.vue';
 import MainFooter from '@/components/MainFooter.vue';
 import CertificateBanner from '@/components/CertificateBanner.vue';
 import ProfileSidebar from '@/components/ProfileSidebar.vue';

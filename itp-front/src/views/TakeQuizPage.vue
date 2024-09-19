@@ -19,7 +19,7 @@
 
 <script>
 import EachGoalBar from '@/components/EachGoalBar.vue';
-import Header from '../components/Header.vue';
+import Header from '../components/WebHeader.vue';
 import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'

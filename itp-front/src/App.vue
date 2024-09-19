@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <router-view></router-view><!-- 路由视图，用于渲染匹配的路由组件 -->
-    <Login v-if="isLoginVisible" :isLogin="isLogin" @closeLogin="toggleLoginForm" />
+    <UserLogin v-if="isLoginVisible" :isLogin="isLogin" @closeLogin="toggleLoginForm" />
   </div>
 </template>
 
 <script>
   
-import Login from './components/Login.vue';
+import UserLogin from './components/UserLogin.vue';
 import { EventBus } from './eventBus';
 
 export default {
   name: 'app',
   components: {
-    Login
+    UserLogin
   },
   data() {
     return {
