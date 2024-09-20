@@ -32,7 +32,7 @@
 
   <style scouped>
   .banner01{
-  background-image: url(../assets/image/1.png);
+  background-image: url(../assets/image/HomePageBannerBackground.png);
   max-height: 800px;
   max-width: 100%;
   background-repeat: no-repeat;

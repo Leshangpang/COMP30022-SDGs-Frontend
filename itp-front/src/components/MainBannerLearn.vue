@@ -14,7 +14,7 @@
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="edu-banner-image">
-            <img src="../assets/image/goal5-learning-banner-image.jpg" alt="banner-img" />
+            <img src="../assets/image/Learnbg.jpg" alt="banner-img" />
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@ export default {
 }
 
 .edu-banner-content span {
-  color: var(--secoundaryColor);
+  color: var(--secounderyColor);
 }
 
 .shape01 {
