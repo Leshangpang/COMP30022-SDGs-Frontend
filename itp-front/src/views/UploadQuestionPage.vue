@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Header from "../components/WebHeader.vue";
+import Header from "../components/NavigationBar.vue";
 import MainFooter from "../components/MainFooter.vue";
 import BannerForUploadQuestion from "../components/BannerForUploadQuestion.vue";
 import FillUploadQuestion from "@/components/FillUploadQuestion.vue";
