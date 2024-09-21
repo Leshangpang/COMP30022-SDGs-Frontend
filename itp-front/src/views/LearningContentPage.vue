@@ -97,6 +97,8 @@
         </div>
 
         <div class="content-container" v-if="topicNum == 2">
+          <img class="target-banner-image" src="../assets/image/targetBannerImage.webp" />
+
             <div class="text-container">
                 <h2>The Targets</h2>
                 <p>Everyone can help to make sure that we meet the Global Goals. Use these nine targets 
@@ -253,6 +255,10 @@ export default {
       } else if (topic === 'actions') {
         this.topicNum = 3;
       }
+    },
+    navigateToImagePage() {
+      // Use Vue Router to navigate to a specific page where the image can be viewed in detail
+      
     }
   }
 
@@ -511,5 +517,11 @@ h4{
   color: #666;
 }
 
+.target-banner-image{
+  width: 200%;
+  height: 40%;
+  object-fit: cover;
+  padding-bottom: 40px;
+}
 </style>
   
