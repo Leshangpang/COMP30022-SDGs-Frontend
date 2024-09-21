@@ -21,7 +21,7 @@
   <script>
   import Goal5LearningBanner from '../components/Goal5LearningBanner.vue';
   import MainFooter from '../components/MainFooter.vue';
-  import SideBar from '../components/SideBar.vue';
+  import SideBar from '../components/LearningSideBar.vue';
   import QuestionDetail from '../components/CommunityChallengeQuestionDetail.vue';
   import Header from '../components/NavigationBar.vue';
   

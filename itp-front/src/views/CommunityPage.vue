@@ -26,8 +26,8 @@
 <script>
 import Goal5LearningBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
-import SideBar from '../components/SideBar.vue';
-import QuestionList from '../components/QuestionList.vue'
+import SideBar from '../components/LearningSideBar.vue';
+import QuestionList from '../components/CommunityQuestionList.vue'
 import Header from '../components/NavigationBar.vue';
 
 

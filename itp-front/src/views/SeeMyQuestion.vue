@@ -16,7 +16,7 @@
 <script>
 import Header from "../components/NavigationBar.vue";
 import MainFooter from "../components/MainFooter.vue";
-import BannerForUploadQuestion from "../components/BannerForUploadQuestion.vue";
+import BannerForUploadQuestion from "../components/UploadQuestionBanner.vue";
 import MyQuestionList from "@/components/MyQuestionList.vue";
 
 

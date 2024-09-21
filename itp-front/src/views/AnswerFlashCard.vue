@@ -20,9 +20,9 @@
 import Header from '../components/NavigationBar.vue';
 import MainBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
-import SideBar from '../components/SideBar.vue'
+import SideBar from '../components/LearningSideBar.vue'
 import Flashcard from '../components/ReadFlashcard.vue';
-import EachGoalBar from '../components/EachGoalBar.vue';
+import EachGoalBar from '../components/Goal5LogoBar.vue';
 
 
 export default {

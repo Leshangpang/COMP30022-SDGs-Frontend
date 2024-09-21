@@ -16,7 +16,7 @@
 import Header from '../components/NavigationBar.vue';
 import Goal5LearningBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
-import SideBar from '../components/SideBar.vue'
+import SideBar from '../components/LearningSideBar.vue'
 
 
 
