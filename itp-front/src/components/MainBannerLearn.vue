@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .banner01 {
-  background-image: url(../assets/image/HomePageBannerBackground.png);
+  background-image: url(../assets/image/BannerBackground.png);
   height: auto;
   max-width: 100%;
   background-repeat: no-repeat;

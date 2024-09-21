@@ -72,7 +72,7 @@ width: 200px ;
 height: 450px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
-background-image: url('../assets/image/Goal5_flash_dec.png');
+background-image: url('../assets/image/Goal5FlashcardDecoration.png');
 background-size: cover; 
 background-position: center; 
 background-repeat: no-repeat;

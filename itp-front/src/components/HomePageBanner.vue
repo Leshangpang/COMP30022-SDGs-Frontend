@@ -15,7 +15,7 @@
           </div>
           <div class="col-lg-6 col-md-12">
             <div class="edu-banner-image">
-              <img src="../assets/image/homepage-banner-image.png" alt="banner-img" />
+              <img src="../assets/image/HomePageBannerBackground.png" alt="banner-img" />
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
 
   <style scouped>
   .banner01{
-  background-image: url(../assets/image/HomePageBannerBackground.png);
+  background-image: url(../assets/image/BannerBackground.png);
   max-height: 800px;
   max-width: 100%;
   background-repeat: no-repeat;

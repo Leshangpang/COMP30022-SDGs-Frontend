@@ -17,7 +17,7 @@ export default {
 .profile-banner {
   width: 100%;
   height: 400px; /* Adjust height to suit your needs */
-  background-image: url('../assets/image/profile-banner.png'); /* Make sure the path is correct */
+  background-image: url('../assets/image/ProfileBannerBackground.png'); /* Make sure the path is correct */
   background-position: center;
   background-size: cover; /* Ensures the image covers the entire area */
   background-repeat: no-repeat;

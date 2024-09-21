@@ -27,7 +27,7 @@
         <section class="certificate-container">
           <!-- The locked/unlocked certificate effect -->
           <div :class="['certificate-image', { 'unlocked': isUnlocked }]">
-            <img src="../assets/image/certificate-placeholder.png" alt="Certificate" />
+            <img src="../assets/image/CertificatePlaceholder.png" alt="Certificate" />
             <!-- Overlay to show a locked state -->
             <div v-if="!isUnlocked" class="overlay">
               <p>Certificate Locked</p>

@@ -17,90 +17,90 @@
             <div class="badge-list">
               <!-- First row: Goals 1-9 -->
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>NO POVERTY<br><span>GOAL 1</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>ZERO HUNGER<br><span>GOAL 2</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>GOOD HEALTH AND WELL-BEING<br><span>GOAL 3</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>QUALITY EDUCATION<br><span>GOAL 4</span></p>
               </div>
 
               <!-- Bold text for completed - need dynamic changes in future-->
               <div class="badge-item">
-                <img src="../assets/image/goal5-badge.png" alt="goal5-badge">
+                <img src="../assets/image/Goal5Badge.png" alt="goal5-badge">
                 <p class="bold-goal">GENDER EQUALITY<br><span>GOAL 5</span></p>
               </div>
 
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>CLEAN WATER AND SANITASATION<br><span>GOAL 6</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>AFFORDABLE AND CLEAN ENERGY<br><span>GOAL 7</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>DECENT WORK AND ECONOMIC GROWTH<br><span>GOAL 8</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>INDUSTRY, INNOVATION AND INFRASTRUCTURE<br><span>GOAL 9</span></p>
               </div>
 
               <!-- Second row: Goals 10-17 -->
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>REDUCED INEQUALITIES<br><span>GOAL 10</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>SUSTAINABLE CITIES AND COMMUNITIES<br><span>GOAL 11</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>RESPONSIBLE CONSUMPTION AND PRODUCTION<br><span>GOAL 12</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>CLIMATE ACTION<br><span>GOAL 13</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>LIFE BELOW WATER<br><span>GOAL 14</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>LIFE ON LAND<br><span>GOAL 15</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>PEACE, JUSTICE AND STRONG INSTITUTIONS<br><span>GOAL 16</span></p>
               </div>
 
               <div class="badge-item">
-                <img src="../assets/image/badge-lock-icon.png" alt="locked-badge">
+                <img src="../assets/image/BadgePageLockIcon.png" alt="locked-badge">
                 <p>PARTNERSHIP FOR THE GOALS<br><span>GOAL 17</span></p>
               </div>
 

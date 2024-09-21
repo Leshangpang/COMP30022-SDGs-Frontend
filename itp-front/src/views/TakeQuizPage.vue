@@ -64,7 +64,7 @@ width: 200px;
 height:450px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
-background-image: url('../assets/image/Goal5_Decor.jpg');
+background-image: url('../assets/image/Goal5QuizDecoration.jpg');
 background-size: cover; 
 background-position: center;
 background-repeat: no-repeat;

@@ -2,7 +2,7 @@
     <div id="UploadQuestionPage">
         <Header class="upload-question-header"></Header>
         <div class="main-content">
-            <BannerForUploadQuestion :backgroundImage="require('@/assets/image/UploadQuestion.png')" 
+            <BannerForUploadQuestion :backgroundImage="require('@/assets/image/UploadQuestionBannerBackground.png')" 
                 title="" subtitle=""></BannerForUploadQuestion>
             <FillUploadQuestion class="fill-upload-question"></FillUploadQuestion>
             <main class="content">
