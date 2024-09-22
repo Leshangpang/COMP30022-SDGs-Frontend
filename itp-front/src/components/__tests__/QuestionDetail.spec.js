@@ -23,22 +23,22 @@ describe('QuestionDetail.vue', () => {
   });
 
   afterEach(() => {
-    // 清除 mock 的调用记录
+    // Clear mock call history
     window.alert.mockClear();
   });
 
-  it('应该加载问题详情', async () => {
+  it('should load question details', async () => {
     wrapper.vm.fetchQuestionDetail();
-    await Vue.nextTick(); // 等待异步更新
+    await Vue.nextTick(); // Wait for asynchronous update
 
     expect(wrapper.vm.questionDetail).toBe('What percentage of women globally experience physical or sexual violence in their lifetime?');
     expect(wrapper.vm.options).toEqual(['10%', '20%', '30%', '40%']);
   });
 
-  it('应该正确选择选项', async () => {
+  it('should select the correct option', async () => {
     wrapper.vm.questionId = 1;
     wrapper.vm.fetchQuestionDetail();
-    await Vue.nextTick(); // 等待异步更新
+    await Vue.nextTick(); // Wait for asynchronous update
 
     const optionButton = wrapper.findAll('.option-button').at(0);
     await optionButton.trigger('click');
@@ -46,10 +46,10 @@ describe('QuestionDetail.vue', () => {
     expect(wrapper.vm.selectedOption).toBe('10%');
   });
 
-  it('应该显示提交的答案', async () => {
+  it('should show the submitted answer', async () => {
     wrapper.vm.questionId = 1;
     wrapper.vm.fetchQuestionDetail();
-    await Vue.nextTick(); // 等待异步更新
+    await Vue.nextTick(); // Wait for asynchronous update
 
     const optionButton = wrapper.findAll('.option-button').at(0);
     await optionButton.trigger('click');
@@ -60,10 +60,10 @@ describe('QuestionDetail.vue', () => {
     expect(window.alert).toHaveBeenCalledWith('You selected: 10%');
   });
 
-  it('应该提示选择选项', async () => {
+  it('should prompt to select an option', async () => {
     wrapper.vm.questionId = 1;
     wrapper.vm.fetchQuestionDetail();
-    await Vue.nextTick(); // 等待异步更新
+    await Vue.nextTick(); // Wait for asynchronous update
 
     const submitButton = wrapper.find('.submit-button');
     await submitButton.trigger('click');
@@ -71,7 +71,7 @@ describe('QuestionDetail.vue', () => {
     expect(window.alert).toHaveBeenCalledWith('Please select an option.');
   });
 
-  it('应该提交讨论内容', async () => {
+  it('should submit discussion content', async () => {
     const discussionInput = wrapper.find('.discussion-input .el-textarea__inner');
     await discussionInput.setValue('This is a test comment.');
 
@@ -81,9 +81,9 @@ describe('QuestionDetail.vue', () => {
     expect(window.alert).toHaveBeenCalledWith('Your comment: This is a test comment.');
   });
 
-  it('应该显示评分和相应的文本', async () => {
+  it('should display the rating and corresponding text', async () => {
     wrapper.vm.value = 4;
-    await Vue.nextTick(); // 等待异步更新
+    await Vue.nextTick(); // Wait for asynchronous update
 
     expect(wrapper.find('.rating-text').text()).toBe('4 stars');
   });

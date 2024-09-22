@@ -5,7 +5,7 @@ import Vue from 'vue';
 
 Vue.use(ElementUI);
 
-describe('QuestionHub.vue', () => {
+describe('FillUploadQuestion.vue', () => {
   let wrapper;
 
   beforeEach(() => {
