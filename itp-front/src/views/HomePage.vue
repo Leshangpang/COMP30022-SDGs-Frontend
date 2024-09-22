@@ -41,7 +41,6 @@ export default {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  padding-left: 95px;
 }
 .navbar-area.is-sticky {
   top: 0;
