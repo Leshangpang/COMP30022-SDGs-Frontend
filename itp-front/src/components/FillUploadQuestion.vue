@@ -102,23 +102,23 @@ export default {
     },
     methods: {
         clearForm() {
-            this.text = '';
-            this.selectedCategory = '';
+            this.question = '';
+            this.selectedGoal = '';
             this.choiceA = '';
             this.choiceB = '';
             this.choiceC = '';
             this.choiceD = '';
-            this.selectedAnswer = '';
+            this.correctAnswer = '';
         },
         validateForm() {
             let errors = [];
-            if (!this.text) errors.push('Question is required.');
-            if (!this.selectedCategory) errors.push('SDGs Category is required.');
+            if (!this.question) errors.push('Question is required.');
+            if (!this.selectedGoal) errors.push('SDGs Category is required.');
             if (!this.choiceA) errors.push('Choice A is required.');
             if (!this.choiceB) errors.push('Choice B is required.');
             if (!this.choiceC) errors.push('Choice C is required.');
             if (!this.choiceD) errors.push('Choice D is required.');
-            if (!this.selectedAnswer) errors.push('Correct Answer is required.');
+            if (!this.correctAnswer) errors.push('Correct Answer is required.');
             
             if (errors.length > 0) {
                 alert(errors.join('\n')); // 显示错误信息
