@@ -23,7 +23,7 @@ export default {
     return {
       questionList: [
         { question: "Why does the gender pay gap still exist? ", answer: "The gap exists due to discrimination, unequal opportunities, and differences in industries and roles dominated by men or women." },
-        { question: " How does girls' education affect gender equality? ", answer: "Educated girls are empowered, which leads to better health, economic opportunities, and stronger communities, reducing gender inequality." },
+        { question: "How does girls' education affect gender equality? ", answer: "Educated girls are empowered, which leads to better health, economic opportunities, and stronger communities, reducing gender inequality." },
         { question: "What helps reduce gender-based violence?", answer: "Legal reforms, awareness campaigns, and providing support services for survivors are key in reducing violence." },
         { question: "Why is female political representation important? ", answer: "More women in politics ensures diverse perspectives and leads to policies that support gender equality and social progress." },
       ],
