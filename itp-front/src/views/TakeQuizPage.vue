@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import EachGoalBar from '@/components/EachGoalBar.vue';
-import Header from '../components/WebHeader.vue';
-import MainBanner from '../components/MainBannerLearn.vue'
+import EachGoalBar from '@/components/Goal5LogoBar.vue';
+import Header from '../components/NavigationBar.vue';
+import MainBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
-import SideBar from '../components/SideBar.vue'
+import SideBar from '../components/LearningSideBar.vue'
 import MultipleChoice from '@/components/MultipleChoice.vue';
 
 export default {
@@ -64,7 +64,7 @@ width: 200px;
 height:450px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
-background-image: url('../assets/image/Goal5_Decor.jpg');
+background-image: url('../assets/image/Goal5QuizDecoration.jpg');
 background-size: cover; 
 background-position: center;
 background-repeat: no-repeat;

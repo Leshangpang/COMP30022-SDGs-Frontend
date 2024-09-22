@@ -2,7 +2,7 @@
   <div id="CertificatePage">
     <Header></Header>
 
-    <CertificateBanner></CertificateBanner>
+    <CertificatePageBanner></CertificatePageBanner>
 
     <!-- Main Content: Sidebar, Unlock Info, and Certificate -->
     <div class="content-container">
@@ -27,7 +27,7 @@
         <section class="certificate-container">
           <!-- The locked/unlocked certificate effect -->
           <div :class="['certificate-image', { 'unlocked': isUnlocked }]">
-            <img src="../assets/image/certificate-placeholder.png" alt="Certificate" />
+            <img src="../assets/image/CertificatePlaceholder.png" alt="Certificate" />
             <!-- Overlay to show a locked state -->
             <div v-if="!isUnlocked" class="overlay">
               <p>Certificate Locked</p>
@@ -43,16 +43,16 @@
 </template>
 
 <script>
-import Header from '../components/WebHeader.vue';
+import Header from '../components/NavigationBar.vue';
 import MainFooter from '@/components/MainFooter.vue';
-import CertificateBanner from '@/components/CertificateBanner.vue';
+import CertificatePageBanner from '@/components/CertificatePageBanner.vue';
 import ProfileSidebar from '@/components/ProfileSidebar.vue';
 
 export default {
   name: 'CertificatePage',
   components: {
     Header,
-    CertificateBanner,
+    CertificatePageBanner,
     ProfileSidebar,
     MainFooter,
   },

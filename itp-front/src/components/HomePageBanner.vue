@@ -2,14 +2,15 @@
     <div class="edu-banner-area banner01">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-6 col-md-10">
+          <div class="col-lg-6 col-md-12">
             <div class="edu-banner-content">
               <h1>
-                Sustinable Development Goal <span class="shape01"> Equaility</span>
+                Sustinable Development Goals: Gender<span class="shape01"> Equaility</span>
               </h1>
               <p>
                 Achieve gender equality and empower all women and girls
               </p>
+              
             </div>
           </div>
           <div class="col-lg-6 col-md-12">
@@ -21,7 +22,7 @@
       </div>
     </div>
   </template>
-
+  
   <script>
   
   export default({
@@ -31,17 +32,18 @@
 
   <style scouped>
   .banner01{
-  background-image: url(../assets/image/1.png); 
+  background-image: url(../assets/image/1.png);
   max-height: 800px;
   max-width: 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
   overflow: hidden;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 edu-banner-content h1 {
   font-size: 75px;
+  margin-bottom: 18px;
   line-height: 105px;
 }
 
