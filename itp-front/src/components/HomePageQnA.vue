@@ -1,10 +1,6 @@
 <template>
   <div class="ask-question">
     <div class="side-left">
-      <h4>
-        Why
-        <span>Learn SDGs</span>
-      </h4>
       <el-collapse v-model="activeNames">
         <el-collapse-item title="Global Awareness" name="1">
           <div class="sub-item">Recognizes interconnected global challenges (e.g., poverty, climate change).</div>
@@ -73,7 +69,7 @@ export default {
   max-width: 500px;
 }
 .side-left p {
-  font-size: 20px;
+  font-size: 40px;
   color: hsl(171, 44%, 29%);
 }
 .side-left h4 {
