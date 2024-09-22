@@ -4,6 +4,12 @@
     <MainBanner></MainBanner>
     <swiper-list></swiper-list>
     <HomePageQnA></HomePageQnA>
+    <div class="pic">
+        <img src="../assets/image/HomeEducation.png" alt="education img">
+        <div class="text">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/7dzFbP2AgFo?si=bp-4xFxVXj-0V2Tv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
     <MainFooter></MainFooter>
     <main class="content">
       <router-view></router-view>
@@ -51,5 +57,38 @@ export default {
 .edumim-nav .navbar {
   position: inherit;
   padding: 0;
+}
+
+
+.pic {
+  width: 100%;
+  height: 800px;
+  background-color: #f0ffffb3;
+  display: flex;
+  justify-content: space-between; /* Space between image and text */
+  align-items: center;
+}
+
+.pic img {
+  height: 65%; /* Make image height match the container height */
+  width: 700px;  /* Maintain aspect ratio of the image */
+}
+
+.pic .text{
+  width: 700px;
+  height:70%;
+  background-color: rgba(130, 201, 137, 0.461);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+  border: solid 10px hwb(113 60% 9% / 0.702);
+  border-radius: 50px;
+}
+
+.pic iframe {
+  width: 100%; /* Make the iframe take full width of the .text */
+  height: 100%; /* Ensure the height is constrained by .text */
+  border-radius: 50px;
 }
 </style>
