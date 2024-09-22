@@ -40,7 +40,7 @@
   
   <script>
   export default {
-    name: "AskMenu",
+    name: "HomePageQnA",
     components: {},
     data() {
       return {

@@ -53,7 +53,7 @@ export default {
   text-align: center;
   row-gap: 40px;
   background-color: #fff;
-  background-image: url('../assets/image/genderEquality.jpg');
+  background-image: url('../assets/image/Goal5FlashcardBackground.jpg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;

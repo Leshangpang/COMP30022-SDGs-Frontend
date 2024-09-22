@@ -2,7 +2,7 @@
     <div id="SeeMyQuestionPage">
         <Header class="upload-question-header"></Header>
         <div class="main-content">
-            <BannerForUploadQuestion :backgroundImage="require('@/assets/image/banner-my-question.png')" 
+            <BannerForUploadQuestion :backgroundImage="require('@/assets/image/MyQuestionBannerBackground.png')" 
                 title="My Question" subtitle="See Your Uploaded Question Here"></BannerForUploadQuestion>
             <MyQuestionList></MyQuestionList>
             <main class="content">
@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import Header from "../components/WebHeader.vue";
+import Header from "../components/NavigationBar.vue";
 import MainFooter from "../components/MainFooter.vue";
-import BannerForUploadQuestion from "../components/BannerForUploadQuestion.vue";
+import BannerForUploadQuestion from "../components/UploadQuestionBanner.vue";
 import MyQuestionList from "@/components/MyQuestionList.vue";
 
 

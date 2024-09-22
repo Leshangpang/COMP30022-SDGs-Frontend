@@ -14,7 +14,7 @@
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="edu-banner-image">
-            <img src="../assets/image/Learnbg.jpg" alt="banner-img" />
+            <img src="../assets/image/Goal5LearningBannerBackground.jpg" alt="banner-img" />
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .banner01 {
-  background-image: url(../assets/image/1.png);
+  background-image: url(../assets/image/BannerBackground.png);
   height: auto;
   max-width: 100%;
   background-repeat: no-repeat;
@@ -68,7 +68,7 @@ export default {
 }
 
 .edu-banner-content span {
-  color: var(--secounderyColor);
+  color: var(--secoundaryColor);
 }
 
 .shape01 {

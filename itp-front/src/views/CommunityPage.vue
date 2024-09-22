@@ -1,7 +1,7 @@
 <template>
     <div id="CommunityChallenge">
       <Header></Header>
-      <MainBanner></MainBanner>
+      <Goal5LearningBanner></Goal5LearningBanner>
       <div class="sidebar-container">
         <SideBar class="sidebar"></SideBar>
         <div class="questions-container">
@@ -24,11 +24,11 @@
   </template>
 
 <script>
-import MainBanner from '../components/MainBannerLearn.vue'
+import Goal5LearningBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
-import SideBar from '../components/SideBar.vue';
-import QuestionList from '../components/QuestionList.vue'
-import Header from '../components/WebHeader.vue';
+import SideBar from '../components/LearningSideBar.vue';
+import QuestionList from '../components/CommunityQuestionList.vue'
+import Header from '../components/NavigationBar.vue';
 
 
 
@@ -38,7 +38,7 @@ export default {
   name: 'CommunityChallenge',
   components: {
     Header,
-    MainBanner,
+    Goal5LearningBanner,
     MainFooter,
     SideBar,
     QuestionList

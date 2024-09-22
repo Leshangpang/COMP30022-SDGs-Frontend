@@ -41,7 +41,7 @@
           </div>
   
           <div class="input-group">
-            <img src="../assets/image/cloudflare.png"/>
+            <img src="../assets/image/SignInCloudfarePlaceholder.png"/>
           </div>
 
           <button type="submit" class="login-button">

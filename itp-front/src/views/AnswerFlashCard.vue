@@ -17,12 +17,12 @@
 
 
 <script>
-import Header from '../components/WebHeader.vue';
-import MainBanner from '../components/MainBannerLearn.vue'
+import Header from '../components/NavigationBar.vue';
+import MainBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
-import SideBar from '../components/SideBar.vue'
+import SideBar from '../components/LearningSideBar.vue'
 import Flashcard from '../components/ReadFlashcard.vue';
-import EachGoalBar from '../components/EachGoalBar.vue';
+import EachGoalBar from '../components/Goal5LogoBar.vue';
 
 
 export default {
@@ -72,7 +72,7 @@ width: 200px ;
 height: 450px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
-background-image: url('../assets/image/Goal5_flash_dec.png');
+background-image: url('../assets/image/Goal5FlashcardDecoration.png');
 background-size: cover; 
 background-position: center; 
 background-repeat: no-repeat;

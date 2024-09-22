@@ -6,7 +6,7 @@
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-footer-widget">
               <router-link to="/" class="logo">
-                <img src="../assets/image/logo-1.png" alt="image" width="100px" />
+                <img src="../assets/image/LogoPlaceholder.png" alt="image" width="100px" />
               </router-link>
               <ul class="social-links">
                 <li>
@@ -94,7 +94,7 @@ export default {
   color: white; /* 为 h2 和 h4 元素都设置白色字体 */
 }
 .edu-footer-area {
-  background-image: url(../assets/image/footer-bg-1.png);
+  background-image: url(../assets/image/FooterBackground.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
