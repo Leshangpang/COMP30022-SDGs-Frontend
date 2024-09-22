@@ -1,7 +1,7 @@
 <template>
     <div class="banner01">
       <div class="container">
-        <div class="edu-banner-content">
+        <div class="content-home">
           <h1>
             Sustainable Development Goals
           </h1>
@@ -30,21 +30,17 @@
   background-size: cover;
   padding-top: 100px;
 }
-.edu-banner-content{
+.content-home{
   margin-left: 20px;
   margin-right: 40px;
 }
 
-.edu-banner-content h1 {
+.content-home h1 {
   font-size: 75px;
   line-height: 100px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #0d87a6e9;
   font-weight: bolder;
-}
-
-.edu-banner-content span {
-  color: #4cc1f0;
 }
 
 .container{

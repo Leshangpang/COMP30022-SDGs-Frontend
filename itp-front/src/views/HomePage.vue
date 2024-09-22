@@ -41,6 +41,7 @@ export default {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  padding-left: 95px;
 }
 .navbar-area.is-sticky {
   top: 0;
@@ -68,12 +69,12 @@ export default {
 }
 
 .pic img {
-  height: 60%; /* Make image height match the container height */
+  height: 65%; /* Make image height match the container height */
   width: 700px;  /* Maintain aspect ratio of the image */
 }
 
 .pic .text{
-  width: 800px;
+  width: 700px;
   height:70%;
   background-color: rgba(130, 201, 137, 0.461);
   display: flex;
