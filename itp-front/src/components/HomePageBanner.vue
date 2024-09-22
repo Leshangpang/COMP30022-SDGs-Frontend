@@ -1,6 +1,6 @@
 <template>
   <div class="banner01">
-    <div class="container">
+    <div class="homecontainer">
       <div class="content-home">
         <h1>
           Sustainable Development Goals
@@ -48,7 +48,7 @@ text-shadow:
     -5px -5px 0 #FCE6A9;
 }
 
-.container{
+.homecontainer{
 display: flex;
 justify-content: space-between; /* Align items to the left and right */
 align-items: center;
