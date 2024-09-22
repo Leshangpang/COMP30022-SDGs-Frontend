@@ -16,7 +16,11 @@ module.exports = {
       '!**/node_modules/**'
     ],
     moduleNameMapper: {
-      '^@/(.*)$': '<rootDir>/src/$1'
-    }
+      '^@/(.*)$': '<rootDir>/src/$1',
+      '\\.(css|less|sass|scss)$': 'identity-obj-proxy'
+    },
+    transformIgnorePatterns: [
+      '/node_modules/(?!element-ui)', // 允许对 element-ui 进行转换
+    ],
   };
   
