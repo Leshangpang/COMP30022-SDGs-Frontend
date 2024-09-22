@@ -39,8 +39,13 @@ margin-right: 40px;
 font-size: 75px;
 line-height: 100px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-color: #0d87a6e9;
+color: #9EDCE1;
 font-weight: bolder;
+text-shadow: 
+    5px 5px 0 #FCE6A9, 
+    -5px 5px 0 #FCE6A9, 
+    5px -5px 0 #FCE6A9, 
+    -5px -5px 0 #FCE6A9;
 }
 
 .container{
