@@ -37,7 +37,6 @@ export default {
   created() {
     // todo swiper configeration
   },
-
   data() {
     return {
       swiperOption: {
@@ -297,6 +296,9 @@ export default {
       ],
     };
   },
+  methods:{
+
+  }
 };
 </script>
 

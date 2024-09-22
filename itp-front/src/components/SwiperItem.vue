@@ -6,7 +6,7 @@
       ></div>
     </div>
     <!-- <h4 class="title" style="font-size: 18px;">{{ obj.name }}</h4> -->
-    <button class="navi-to" @click="navigateToLearning">Go to Learning</button>
+    <!-- <button class="navi-to" @click="navigateToLearning">Go to Learning</button> -->
   </div>
 </template>
 
@@ -112,4 +112,10 @@ export default {
 .navi-to:hover {
   background-color: #0056b3; 
 }
+
+.statistics-box {
+  width: 100%;
+  height: 100%; /* Ensure it has a height */
+}
+
 </style>
