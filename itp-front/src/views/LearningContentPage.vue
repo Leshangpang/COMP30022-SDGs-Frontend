@@ -73,13 +73,17 @@
                 </div>
 
                 <div class="main-preview-container">
-                  <div class="image-preview-container" @click="navigateToImagePage">
+                  <div class="image-preview-container">
+                    <a href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-5_Fast-Facts.pdf" target="_blank" class="download-link">
                       <img src="../assets/image/preview1.png" class="preview-image" />
                       <h2 class="image-title">Fast Facts: Gender Equality</h2>
+                    </a>
                   </div>
-                  <div class="image-preview-container" @click="navigateToImagePage">
+                  <div class="image-preview-container">
+                    <a href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/08/2309739_E_SDG_2023_infographics-5-5.pdf" target="_blank" class="download-link">
                       <img src="../assets/image/preview2.png" class="preview-image" />
                       <h2 class="image-title">Infographic: Gender Equality</h2>
+                    </a>
                   </div>
                 </div>
 
@@ -307,8 +311,7 @@ export default {
       }
     },
     navigateToImagePage() {
-      // Use Vue Router to navigate to a specific page where the image can be viewed in detail
-      
+      this.$router.push({ name: "Preview1" });
     }
   }
 

@@ -29,7 +29,8 @@ const routes = [
   { path: '/learningContent', name: 'LearningContent', component: LearningContentPage},
   { path: '/answerquestion', name: 'AnswerQuestion', component: AnswerQuestionPage, children: [{ path: '/question/:id', name: 'QuestionDetailPage', component: QuestionDetailPage }] },
   { path: '/flashcard', name: 'FlashCard', component: AnswerFlashCard },
-  { path: '/quiz', name: 'Quiz', component: TakeQuizPage }
+  { path: '/quiz', name: 'Quiz', component: TakeQuizPage },
+
 ]
 
 const router = new Router({
