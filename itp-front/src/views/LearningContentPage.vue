@@ -102,60 +102,107 @@
                 </p>
             </div>
 
-            <div class="text-container">
-                <h4>5.1 END DISCRIMINATION AGAINST WOMEN AND GIRLS</h4>
-                <p>End allforms of discrimination against all women and girls everywhere.</p>
+            <div class="targets-container">
+              <div class="target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.1.svg" class="target-icon" alt="Target Icon" />
+                <div class="text-container">
+                  <h4>5.1 END DISCRIMINATION AGAINST WOMEN AND GIRLS</h4>
+                  <p>End allforms of discrimination against all women and girls everywhere.</p>
+                </div>
                 <div style="height: 15px;"></div>
 
-                <h4>5.2 END ALL VIOLENCE AGAINST AND EXPLOITATION OF WOMEN AND GIRLS</h4>
-                <p>Eliminate all forms of violence against all women and girls in the public and private 
-                    spheres, including trafficking and sexual and other types of exploitation.
-                </p>
-                <div style="height: 15px;"></div>
+              </div>
 
-                <h4>5.3 ELIMINATE FORCED MARRIAGES AND GENITAL MUTILATION</h4>
-                <p>Eliminate all harmful practices, such as child, early and forced marriage and female genital mutilation.
-                </p>
+              <div class="target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.2.svg" class="target-icon" alt="Target Icon" />
+                <div class="text-container">
+                  <h4>5.2 END ALL VIOLENCE AGAINST AND EXPLOITATION OF WOMEN AND GIRLS</h4>
+                  <p>Eliminate all forms of violence against all women and girls in the public and private 
+                      spheres, including trafficking and sexual and other types of exploitation.
+                  </p>
+                </div>
                 <div style="height: 15px;"></div>
+              </div>
 
-                <h4>5.4 VALUE UNPAID CARE AND PROMOTE SHARED DOMESTIC RESPONSIBILITIES</h4>
-                <p>Recognize and value unpaid care and domestic work through the provision of public services, infrastructure 
-                    and social protection policies and the promotion of shared responsibility within the household and the family 
-                    as nationally appropriate.
-                </p>
+              <div class="target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.3.svg" class="target-icon" alt="Target Icon" />
+                <div class="text-container">
+                  <h4>5.3 ELIMINATE FORCED MARRIAGES AND GENITAL MUTILATION</h4>
+                  <p>Eliminate all harmful practices, such as child, early and forced marriage and female genital mutilation.
+                  </p>
+                </div>
                 <div style="height: 15px;"></div>
+              </div>
 
-                <h4>5.5 ENSURE FULL PARTICIPATION IN LEADERSHIP AND DECISION-MAKING</h4>
-                <p>Ensure women's full and effective participation and equal opportunities for leadership at all levels of 
-                    decision-making in political, economic and public life.
-                </p>
+              <div class="target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.4.svg" class="target-icon" alt="Target Icon" />
+                <div class="text-container">
+                  <h4>5.4 VALUE UNPAID CARE AND PROMOTE SHARED DOMESTIC RESPONSIBILITIES</h4>
+                  <p>Recognize and value unpaid care and domestic work through the provision of public services, infrastructure 
+                      and social protection policies and the promotion of shared responsibility within the household and the family 
+                      as nationally appropriate.
+                  </p>
+                </div>
                 <div style="height: 15px;"></div>
+              </div>
+
+              <div class="target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.5.svg" class="target-icon" alt="Target Icon" />
+                <div class="text-container">
+                  <h4>5.5 ENSURE FULL PARTICIPATION IN LEADERSHIP AND DECISION-MAKING</h4>
+                  <p>Ensure women's full and effective participation and equal opportunities for leadership at all levels of 
+                      decision-making in political, economic and public life.
+                  </p>
+                </div>
+                <div style="height: 15px;"></div>
+              </div>
                 
-                <h4>5.6 UNIVERSAL ACCESS TO REPRODUCTIVE HEALTH AND RIGHTS</h4>
-                <p>Ensure universal access to sexual and reproductive health and reproductive rights as agreed in accordance with 
-                    the Programme of Action of the International Conference on Population and Development and the Beijing Platform 
-                    for Action and the outcome documents of their review conferences.
-                </p>
+              <div class="target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.6.svg" class="target-icon" alt="Target Icon" />
+                <div class="text-container">
+                  <h4>5.6 UNIVERSAL ACCESS TO REPRODUCTIVE HEALTH AND RIGHTS</h4>
+                  <p>Ensure universal access to sexual and reproductive health and reproductive rights as agreed in accordance with 
+                      the Programme of Action of the International Conference on Population and Development and the Beijing Platform 
+                      for Action and the outcome documents of their review conferences.
+                  </p>
+                </div>
                 <div style="height: 15px;"></div>
+              </div>
 
-                <h4>5.7 EQUAL RIGHTS TO ECONOMIC RESOURCES, PROPERTY OWNERSHIP AND FINANCIAL SERVICES</h4>
-                <p>Undertake reforms to give women equal rights to economic resources, as well as access to 
-                    ownership and control over land and other forms of property, financial services, inheritance 
-                    and natural resources, in accordance with national laws.
-                </p>
+              <div class="target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.7.svg" class="target-icon" alt="Target Icon" />
+                <div class="text-container">
+                  <h4>5.7 EQUAL RIGHTS TO ECONOMIC RESOURCES, PROPERTY OWNERSHIP AND FINANCIAL SERVICES</h4>
+                  <p>Undertake reforms to give women equal rights to economic resources, as well as access to 
+                      ownership and control over land and other forms of property, financial services, inheritance 
+                      and natural resources, in accordance with national laws.
+                  </p>
+                </div>
                 <div style="height: 15px;"></div>
+              </div>
 
-                <h4>5.8 PROMOTE EMPOWERMENT OF WOMEN THROUGH TECHNOLOGY</h4>
-                <p>Enhance the use of enabling technology, in particular information
-                     and communications technology, to promote the empowerment of women.
-                </p>
+              <div class="target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.8.svg" class="target-icon" alt="Target Icon" />
+                <div class="text-container">
+                  <h4>5.8 PROMOTE EMPOWERMENT OF WOMEN THROUGH TECHNOLOGY</h4>
+                  <p>Enhance the use of enabling technology, in particular information
+                      and communications technology, to promote the empowerment of women.
+                  </p>
+                </div>
                 <div style="height: 15px;"></div>
+              </div>
 
-                <h4>5.9 ADOPT AND STRENGTHEN POLICIES AND ENFORCEABLE LEGISLATION FOR GENDER EQUALITY</h4>
-                <p>Adopt and strengthen sound policies and enforceable legislation for the promotion of gender equality
-                     and the empowerment of all women and girls at all levels
-                </p>
+              <div class="target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.9.svg" class="target-icon" alt="Target Icon" />
+                <div class="text-container">
+                  <h4>5.9 ADOPT AND STRENGTHEN POLICIES AND ENFORCEABLE LEGISLATION FOR GENDER EQUALITY</h4>
+                  <p>Adopt and strengthen sound policies and enforceable legislation for the promotion of gender equality
+                      and the empowerment of all women and girls at all levels
+                  </p>
+                </div>
                 <div style="height: 15px;"></div>
+              </div>
+
             </div>
                 
         </div>
@@ -458,6 +505,32 @@ export default {
     padding-right: 40px;
 }
 
+.targets-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.target-item {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), /* Bottom shadow */
+                0px -4px 8px rgba(0, 0, 0, 0.05), /* Top shadow */
+                4px 0px 8px rgba(0, 0, 0, 0.05), /* Right shadow */
+                4px 0px 8px rgba(0, 0, 0, 0.05); /* Left shadow */
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.target-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+
 .video-title{
     padding-bottom: 20px;
 }
@@ -471,8 +544,8 @@ h4{
   flex-direction: column;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
   gap: 20px; /* Space between grid items */
-  align-items: start;
   padding-bottom: 20px;
+  padding-right: 20px;
 }
 
 .grid-item {
