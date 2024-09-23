@@ -12,6 +12,7 @@
         <el-dropdown-item command="1">Topic 1: Overview</el-dropdown-item>
         <el-dropdown-item command="2">Topic 2: Targets</el-dropdown-item>
         <el-dropdown-item command="3">Topic 3: Actions</el-dropdown-item>
+        <el-dropdown-item command="4">Topic 4: Events and News</el-dropdown-item>
         <!-- <el-dropdown-item disabled>dd</el-dropdown-item> -->
         <!-- <el-dropdown-item divided command="4">Divided Item</el-dropdown-item> -->
       </el-dropdown-menu>
@@ -66,6 +67,7 @@ methods: {
       "1": "/learningContent?topic=overview",
       "2": "/learningContent?topic=targets",
       "3": "/learningContent?topic=actions",
+      "4": "/learningContent?topic=events and news",
     };
       this.$router.push(routes[command]);
     }

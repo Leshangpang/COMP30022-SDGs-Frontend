@@ -30,7 +30,7 @@
 
               <li class="nav-item">
                 <router-link
-                  to="/learning"
+                  to="learningContent"
                   class="dropdown-toggle nav-link"
                   exact-active-class="active"
                 >

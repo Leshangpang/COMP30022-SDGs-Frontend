@@ -165,6 +165,8 @@
         </div>
 
         <div class="content-container" v-if="topicNum == 3">
+          <img class="background-image" src="../assets/image/actionBannerImage.jpg" />
+
             <div class="text-container">
                 <h2>Things To Do</h2>
             </div>
@@ -176,7 +178,6 @@
                         <p class="tip-text">{{ item }}</p>
                     </div>
                 </div>
-
             </div>
             
             <div class="foot-images">
@@ -191,6 +192,10 @@
                 </div>
             </div>
 
+
+        </div>
+
+        <div class="content-container" v-if="topicNum == 4">
 
         </div>
 
@@ -210,7 +215,7 @@ import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue';
 import Header from '../components/Header.vue';
-import ProgressBar from '../components/ProgressBar.vue';
+import ProgressBar from '../components/LearningProgressBar.vue';
 
 export default {
   name: 'LearningContentPage',
@@ -254,6 +259,8 @@ export default {
         this.topicNum = 2;
       } else if (topic === 'actions') {
         this.topicNum = 3;
+      } else if (topic == 'events and news') {
+        this.topicNum = 4;
       }
     },
     navigateToImagePage() {
@@ -461,6 +468,7 @@ h4{
 }
 
 .main-preview-container{
+    padding-top: 40px;
     display: flex;
 }
 
