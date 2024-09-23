@@ -61,7 +61,7 @@ export default {
 
 .main-content {
   display: flex;
-  margin-top: 40px;
+  margin-top: 60px;
   margin-bottom: 100px;
 }
 

@@ -1,7 +1,7 @@
 <template>
     <div class="progress-bar">
       <div class="progress-item" v-for="(item, index) in progressItems" :key="index">
-        <div class="progress-number">{{ item.number }}</div>
+        <div class="progress-number">{{ item.number }}%</div>
         <div class="progress-label">{{ item.label }}</div>
       </div>
     </div>
@@ -13,9 +13,9 @@ export default {
   data() {
     return {
       progressItems: [
-        { number: 10, label: "topic" },
-        { number: 91, label: "flashcard" },
-        { number: 47, label: "quiz" },
+        { number: 25, label: "topic" },
+        { number: 10, label: "flashcard" },
+        { number: 100, label: "quiz" },
       ],
     };
   },
