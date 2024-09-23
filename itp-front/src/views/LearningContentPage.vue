@@ -656,6 +656,7 @@ h4{
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
+  padding-top: 0px;
   padding-left: 0px;
 }
 
