@@ -56,7 +56,8 @@ props: {
 emits: ["update"],
 components: {},
 data() {
-  return {};
+  return {
+  };
 },
 methods: {
     navigateToLearning() {
@@ -64,12 +65,16 @@ methods: {
     },
     handleDropdownCommand(command) {
       const routes = {
-      "1": "/learningContent?topic=overview",
-      "2": "/learningContent?topic=targets",
-      "3": "/learningContent?topic=actions",
-      "4": "/learningContent?topic=events and news",
-    };
-      this.$router.push(routes[command]);
+      "1": { path: "/learningContent", query: { topic: "overview" } },
+      "2": { path: "/learningContent", query: { topic: "targets" } },
+      "3": { path: "/learningContent", query: { topic: "actions" } },
+      "4": { path: "/learningContent", query: { topic: "events and news" } },
+      };
+      const targetRoute = routes[command];
+
+      if (this.$route.path !== targetRoute.path || this.$route.query.topic !== targetRoute.query.topic) {
+        this.$router.push(targetRoute);
+      }
     }
   }
 
