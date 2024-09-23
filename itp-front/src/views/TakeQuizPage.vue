@@ -51,10 +51,17 @@ export default {
     min-height: 100vh;
 }
 
+.main-content {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
 .sidebar {
-  margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
-  margin-top: 100px;
-  margin-bottom: 100px
+  margin:0;
+  margin-left: 60px;
+  margin-right: 40px;
+  flex: 1;
 }
 
 .catton{

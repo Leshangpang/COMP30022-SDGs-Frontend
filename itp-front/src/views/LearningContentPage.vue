@@ -332,12 +332,12 @@ export default {
 
 .sidebar-container {
   display: flex;
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 100px;
 }
 .sidebar {
   margin:0;
-  margin-left: 100px;
+  margin-left: 60px;
   flex: 1;
 }
 
@@ -388,10 +388,10 @@ export default {
   display: flex;
   flex-direction: column;
   margin-left: 70px;
-  flex: 2; /* 控制右侧问题部分的宽度 */
-  max-height: 800px; /* 控制右侧问题列表的最大高度 */
-  overflow-y: auto; /* 让问题列表可垂直滚动 */
-  padding-right: 10px; /* 防止滚动条遮挡内容 */
+  flex: 2;
+  max-height: 800px;
+  overflow-y: auto;
+  padding-right: 20px;
 }
 
 .image-text-container {

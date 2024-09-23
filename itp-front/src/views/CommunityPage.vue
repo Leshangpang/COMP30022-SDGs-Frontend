@@ -2,6 +2,7 @@
     <div id="CommunityChallenge">
       <Header></Header>
       <MainBanner></MainBanner>
+      <EachGoalBar></EachGoalBar>
       <LearningProgressBar class="progress-bar"></LearningProgressBar>
       <div class="sidebar-container">
         <SideBar class="sidebar"></SideBar>
@@ -31,7 +32,7 @@ import SideBar from '../components/SideBar.vue';
 import QuestionList from '../components/QuestionList.vue'
 import Header from '../components/Header.vue';
 import LearningProgressBar from '../components/LearningProgressBar.vue';
-
+import EachGoalBar from '../components/EachGoalBar.vue';
 
 
 
@@ -44,6 +45,7 @@ export default {
     SideBar,
     QuestionList,
     LearningProgressBar,
+    EachGoalBar,
   }
 
 }
@@ -60,12 +62,12 @@ export default {
 
 .sidebar-container {
   display: flex;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
 }
 .sidebar {
   margin:0;
-  margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
+  margin-left: 60px; /* 调整这个值来设置距离页面左边的边距 */
   
   flex: 1; /* 侧边栏占据左侧的空间 */
 }

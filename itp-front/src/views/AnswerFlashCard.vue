@@ -53,18 +53,20 @@ export default {
 }
 
 .sidebar {
-  margin-left: 100px; 
+  margin:0;
+  margin-left: 60px;
+  margin-right: 20px;
+  flex: 1;
+}
+
+.main-content {
+  display: flex;
   margin-top: 40px;
   margin-bottom: 100px;
-  /* margin-right: 100px; */
-}
-.main-content {
-  display: flex; 
 }
 
 .flashcard{
     margin-left: 100px;
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 
