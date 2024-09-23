@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils';
-import QuestionDetail from '@/components/QuestionDetail.vue';
+import CommunityChallengeQuestionDetail from '@/components/CommunityChallengeQuestionDetail.vue';
 import ElementUI from 'element-ui';
 import Vue from 'vue';
 Vue.use(ElementUI);
 
-describe('QuestionDetail.vue', () => {
+describe('CommunityChallengeQuestionDetail.vue', () => {
   let wrapper;
 
   // Mock window.alert
@@ -13,7 +13,7 @@ describe('QuestionDetail.vue', () => {
   });
 
   beforeEach(() => {
-    wrapper = mount(QuestionDetail, {
+    wrapper = mount(CommunityChallengeQuestionDetail, {
       mocks: {
         $route: {
           params: { id: 1 }

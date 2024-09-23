@@ -1,15 +1,15 @@
 import { mount } from '@vue/test-utils';
-import QuestionList from '@/components/QuestionList.vue';
+import CommunityQuestionList from '@/components/CommunityQuestionList.vue';
 import ElementUI from 'element-ui';
 import Vue from 'vue';
 
 Vue.use(ElementUI);
 
-describe('QuestionList.vue', () => {
+describe('CommunityQuestionList.vue', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(QuestionList, {
+    wrapper = mount(CommunityQuestionList, {
       propsData: {
         question: 'What is the capital of France?',
         initialRating: 4,
