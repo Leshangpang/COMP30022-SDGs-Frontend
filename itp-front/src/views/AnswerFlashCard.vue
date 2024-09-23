@@ -4,6 +4,7 @@
       <MainBanner></MainBanner>
       <!-- 使用一个容器包裹 Sidebar 和 Flashcard --> 
       <EachGoalBar></EachGoalBar>
+      <LearningProgressBar class="progress-bar"></LearningProgressBar>
       <div class="main-content">
         <SideBar class="sidebar"></SideBar>
         <Flashcard class="flashcard"></Flashcard>
@@ -24,6 +25,7 @@ import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
 import Flashcard from '../components/ReadFlashcard.vue';
 import EachGoalBar from '../components/EachGoalBar.vue';
+import LearningProgressBar from '../components/LearningProgressBar.vue';
 
 
 
@@ -35,7 +37,8 @@ export default {
     MainFooter,
     SideBar,
     Flashcard,
-    EachGoalBar
+    EachGoalBar,
+    LearningProgressBar,
 }
 
 }
@@ -76,6 +79,14 @@ export default {
   background-size: cover; /* 使图片覆盖整个div */
   background-position: center; /* 居中显示图片 */
   background-repeat: no-repeat;
+}
+
+.progress-bar{
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px 0;
 }
 
 </style>

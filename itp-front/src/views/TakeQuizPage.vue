@@ -3,6 +3,7 @@
       <Header></Header>
       <MainBanner></MainBanner>
       <EachGoalBar></EachGoalBar>
+      <LearningProgressBar class="progress-bar"></LearningProgressBar>
       <div class="main-content">
         <SideBar class="sidebar"></SideBar>
         <MultipleChoice></MultipleChoice>
@@ -24,7 +25,7 @@ import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue'
 import MultipleChoice from '@/components/MultipleChoice.vue';
-
+import LearningProgressBar from '../components/LearningProgressBar.vue';
 
 
 
@@ -36,7 +37,8 @@ export default {
     MainFooter,
     SideBar,
     EachGoalBar,
-    MultipleChoice
+    MultipleChoice,
+    LearningProgressBar,
 }
 
 }
@@ -68,4 +70,11 @@ export default {
   background-repeat: no-repeat;
 }
   
+.progress-bar{
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px 0;
+}
 </style>

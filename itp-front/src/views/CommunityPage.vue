@@ -2,6 +2,7 @@
     <div id="CommunityChallenge">
       <Header></Header>
       <MainBanner></MainBanner>
+      <LearningProgressBar class="progress-bar"></LearningProgressBar>
       <div class="sidebar-container">
         <SideBar class="sidebar"></SideBar>
         <div class="questions-container">
@@ -29,7 +30,7 @@ import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue';
 import QuestionList from '../components/QuestionList.vue'
 import Header from '../components/Header.vue';
-
+import LearningProgressBar from '../components/LearningProgressBar.vue';
 
 
 
@@ -41,8 +42,8 @@ export default {
     MainBanner,
     MainFooter,
     SideBar,
-    QuestionList
-
+    QuestionList,
+    LearningProgressBar,
   }
 
 }
@@ -80,6 +81,14 @@ export default {
 
 .question-list {
   margin-bottom: 20px; /* 每个问题之间的间距 */
+}
+
+.progress-bar{
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px 0;
 }
 </style>
   

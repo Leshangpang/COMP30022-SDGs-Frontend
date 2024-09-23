@@ -3,16 +3,8 @@
       <Header></Header>
       <MainBanner></MainBanner>
       <div style="height: 20px;"></div>
-      <div class="goal-banner">
-        <div class="goal-image-container">
-          <img src="../assets/image/goal5Icon.png" alt="Goal 5: Gender Equality" class="goal-image" />
-        </div>
-        <div class="goal-text-container">
-          <h1 class="goal-title">Goal 5: Gender Equality</h1>
-          <p class="goal-subtitle">Achieve gender equality and empower all women and girls</p>
-        </div>
-      </div>
-      <ProgressBar class="progress-bar"></ProgressBar>
+      <EachGoalBar></EachGoalBar>
+      <LearningProgressBar class="progress-bar"></LearningProgressBar>
       <div class="sidebar-container">
         <SideBar class="sidebar"></SideBar>
 
@@ -226,7 +218,8 @@ import MainBanner from '../components/MainBannerLearn.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/SideBar.vue';
 import Header from '../components/Header.vue';
-import ProgressBar from '../components/LearningProgressBar.vue';
+import LearningProgressBar from '../components/LearningProgressBar.vue';
+import EachGoalBar from '../components/EachGoalBar.vue';
 
 export default {
   name: 'LearningContentPage',
@@ -235,7 +228,8 @@ export default {
     MainBanner,
     MainFooter,
     SideBar,
-    ProgressBar,
+    LearningProgressBar,
+    EachGoalBar,
   },
   data() {
     return {
