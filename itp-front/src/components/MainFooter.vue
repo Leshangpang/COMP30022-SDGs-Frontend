@@ -37,7 +37,7 @@
               <h3>Quick Links</h3>
               <ul class="links-list">
                 <li><router-link to="/">Home</router-link></li>
-                <li><router-link to="/learning">Learning</router-link></li>
+                <li><router-link to="/learningContent">Learning</router-link></li>
                 <li>
                   <router-link to="">My Question</router-link>
                 </li>
