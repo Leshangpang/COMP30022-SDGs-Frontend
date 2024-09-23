@@ -196,7 +196,18 @@
         </div>
 
         <div class="content-container" v-if="topicNum == 4">
+          <div class="text-container">
+                <h2>Events and News</h2>
+            </div>
 
+          <div class="content-grid">
+            <div v-for="(item, index) in contentItems" :key="index" class="grid-item">
+              <a :href="item.link" target="_blank">
+              <img :src="item.imageSrc" :alt="item.alt" class="content-image" />
+              <p class="content-title">{{ item.title }}</p>
+             </a>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -238,6 +249,44 @@ export default {
         "Find female mentors/leaders. Ensure that some of your role models or mentors are women. There’s a lot you can learn from women in positions of authority.",
         "Share the workload at home. Sharing domestic responsibilities ensures the work burden doesn’t fall only on one person and instills the value of gender equality and essential life skills in children.",
         "Stay informed. Follow your local news and stay in touch with the Global Goals online or on social media at @TheGlobalGoals."
+      ],
+      contentItems: [
+        {
+          imageSrc: require("../assets/image/eventImage1.webp"),
+          alt: "Sustainable Development Goal Five",
+          title: "Explainer: Sustainable Development Goal Five",
+          link: "https://unwomen.org.au/spotlight-on-sustainable-development-goal-5/"
+        },
+        {
+          imageSrc: require("../assets/image/eventImage2.jpeg"),
+          alt: "Close Gender Data Gaps",
+          title: "It will take 22 years to close the SDG gender data gaps",
+          link: "https://www.unwomen.org/en/news-stories/feature-story/2022/09/it-will-take-22-years-to-close-sdg-gender-data-gaps"
+        },
+        {
+          imageSrc: require("../assets/image/eventImage3.png"),
+          alt: "SDG Indicator Dashboard",
+          title: "SDG Indicator Dashboard",
+          link: "https://data.unwomen.org/data-portal/sdg?annex=Gender%20Equality&finic%5B%5D=SG_LGL_GENEQVAW&fiac%5BVC_VAW_MARR%5D%5B%5D=15%2B&fiac%5BSH_STA_FGMS%5D%5B%5D=15-49&fiac%5BSL_DOM_TSPD%5D%5B%5D=ALLAGE&filc%5BSL_DOM_TSPD%5D%5B%5D=ALLAREA&fiac%5BSL_DOM_TSPDCW%5D%5B%5D=ALLAGE&filc%5BSL_DOM_TSPDCW%5D%5B%5D=ALLAREA&fiac%5BSL_DOM_TSPDDC%5D%5B%5D=ALLAGE&filc%5BSL_DOM_TSPDDC%5D%5B%5D=ALLAREA&fyr%5B%5D=Latest%20available&fsr=countries&tab=map"
+        },
+        {
+          imageSrc: require("../assets/image/eventImage4.jpeg"),
+          alt: "Women and Girls at the Centre",
+          title: "Our ability to fulfill the SDG’s promises depends on our decision to put women and girls at the center",
+          link: "https://www.unwomen.org/en/news-stories/speech/2022/07/speech-our-ability-to-fulfil-the-sdgs-promises-depends-on-our-decision-to-put-women-and-girls-at-the-centre"
+        },
+        {
+          imageSrc: require("../assets/image/eventImage5.jpg"),
+          alt: "Track Gender Equality",
+          title: "Are we on track to achieve gender equality by 2030?",
+          link: "https://data.unwomen.org/features/are-we-track-achieve-gender-equality-2030"
+        },
+        {
+          imageSrc: require("../assets/image/eventImage5.png"),
+          alt: "Expert Group Meeting on SDG 5 (Gender equality) and its interlinkages with other SDGs",
+          title: "Expert Group Meeting on SDG 5 (Gender equality) and its interlinkages with other SDGs",
+          link: "https://sdgs.un.org/events/expert-group-meeting-sdg-5-gender-equality-and-its-interlinkages-other-sdgs-46166#background"
+        },
       ]
     }
   },
@@ -530,6 +579,41 @@ h4{
   height: 40%;
   object-fit: cover;
   padding-bottom: 40px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  padding-left: 0px;
+}
+
+.grid-item {
+  text-align: center;
+}
+
+.content-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.content-image:hover {
+  transform: scale(1.05);
+}
+
+.content-title {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.content-title:hover {
+  text-decoration: underline;
 }
 </style>
   
