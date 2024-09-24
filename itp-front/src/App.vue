@@ -23,7 +23,6 @@ export default {
   },
   methods: {
     toggleLoginForm(isSignUp = false) {
-      console.log('Toggling login form visibility');
       this.isLoginVisible = !this.isLoginVisible;
       this.isLogin = !isSignUp;
     }
