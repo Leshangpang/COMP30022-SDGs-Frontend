@@ -212,7 +212,25 @@
 
             <div class="text-container">
                 <h2>Things To Do</h2>
+                <p>Regardless of where you live in, gender equality is a fundamental human right. Advancing gender equality is critical
+                  to all areas of a healthy society, from reducing poverty to promoting the health, education, protection and the well-being
+                  of girls and boys.
+                </p>
+                <p>
+                  If you are a girl, you can stay in school, help empower your female classmates to do the same and fight for your right to 
+                  access sexual and reproductive health services. If you are a woman, you can address unconscious biases and implicit associations
+                  that form an unintended and often an invisible barrier to equal opportunity.
+                </p>
+                <p>
+                  If you are a man or a boy, you can work alongside women and girls to achieve gender equality and embrace healthy, respectful relationships.
+                </p>
+                <p>
+                  You can fund education campaigns to curb cultural practices like female genital mutilation and change harmful laws that limit the
+                   rights of women and girls and prevent them from achieving their full potential.
+                </p>
             </div>
+
+            <img class="target-seperete-image" src="../assets/image/actionImage.jpg" />
 
             <div class="grid-container">
                 <div class="grid-container">
@@ -452,6 +470,14 @@ export default {
 }
 
 .background-image {
+  width: 80%;
+  height: 40%;
+  object-fit: cover;
+  padding-bottom: 40px;
+  padding-right: 40px;
+}
+
+.target-seperete-image{
   width: 100%;
   height: auto;
   object-fit: cover;
