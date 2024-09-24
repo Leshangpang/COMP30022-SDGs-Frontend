@@ -1,19 +1,19 @@
 <template>
-  <div class="edu-banner-area banner01">
+  <div class="edu-banner-area learningbanner">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-12">
-          <div class="edu-banner-content">
+          <div class="edu-banner-content-learning">
             <h1>
-              Sustinable Development Goals: Gender<span class="shape01"> Equaility</span>
+              Sustainable Development Goals: Gender<span class="shape01"> Equaility</span>
             </h1>
             <p>
               Achieve gender equality and empower all women and girls
-            </p>
+            </p >
           </div>
         </div>
         <div class="col-lg-6 col-md-12">
-          <div class="edu-banner-image">
+          <div class="edu-banner-image-learning">
             <img src="../assets/image/Goal5LearningBannerBackground.jpg" alt="banner-img" />
           </div>
         </div>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.banner01 {
+.learningbanner {
   background-image: url(../assets/image/BannerBackground.png);
   height: auto;
   max-width: 100%;
@@ -40,7 +40,7 @@ export default {
   padding-top: 120px;
 }
 
-.edu-banner-image {
+.edu-banner-image-learning{
   width: 100%;
   height: 100%; /* 确保容器高度为100% */
   overflow: visible; /* 保持左右和下方溢出部分可见 */
@@ -48,7 +48,7 @@ export default {
   
 }
 
-.edu-banner-image img {
+.edu-banner-image-learning img {
   width: 110%; /* 图片宽度设为100% */
   height: auto; /* 图片高度自适应 */
   object-fit: cover; /* 确保图片填充容器 */
@@ -56,18 +56,18 @@ export default {
   margin-left: 50px;
 }
 
-.edu-banner-content h1 {
+.edu-banner-content-learning h1 {
   font-size: 75px;
   margin-bottom: 18px;
   line-height: 105px;
 }
 
-.edu-banner-content p {
+.edu-banner-content-learning p {
   font-size: 20px;
   color: var(--paragraphColor);
 }
 
-.edu-banner-content span {
+.edu-banner-content-learning span {
   color: var(--secoundaryColor);
 }
 
