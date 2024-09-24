@@ -1,4 +1,24 @@
 <template>
+    <div class="edu-banner-area banner01">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="edu-banner-content">
+              <h1>
+                Sustainable Development Goals: Gender<span class="shape01"> Equaility</span>
+              </h1>
+              <p>
+                Achieve gender equality and empower all women and girls
+              </p>
+              
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="edu-banner-image">
+              <img src="../assets/image/HomePageBannerBackground.png" alt="banner-img" />
+            </div>
+          </div>
+        </div>
   <div class="banner01">
     <div class="homecontainer">
       <div class="content-home">
