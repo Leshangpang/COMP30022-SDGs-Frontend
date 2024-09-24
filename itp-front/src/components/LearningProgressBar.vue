@@ -31,6 +31,12 @@ export default {
   padding: 10px 20px;
   background-color: #fff;
   border-radius: 15px;
+
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px 0;
 }
 
 .progress-item {

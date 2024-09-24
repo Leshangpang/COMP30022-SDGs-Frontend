@@ -470,8 +470,8 @@ export default {
 }
 
 .background-image {
-  width: 80%;
-  height: 40%;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   padding-bottom: 40px;
   padding-right: 40px;
