@@ -2,10 +2,11 @@
   <div class="swiper-item">
     <div class="show-image">
       <img :src="obj.img" alt="" />
-      <div ref="domRef" class="statistics-box"></div>
+      <div ref="domRef" class="statistics-box"  @click="navigateToLearning"
+      ></div>
     </div>
-    <h4 class="title" style="font-size: 18px;">{{ obj.name }}</h4>
-    <p>{{ obj.intro }}</p>
+    <!-- <h4 class="title" style="font-size: 18px;">{{ obj.name }}</h4> -->
+    <!-- <button class="navi-to" @click="navigateToLearning">Go to Learning</button> -->
   </div>
 </template>
 
@@ -18,6 +19,7 @@ export default {
   name: "SwiperItem",
   props: {
     obj: {
+      type:Object,
       required: true,
     },
   },
@@ -36,7 +38,6 @@ export default {
       nextTick(() => {
         if (!this.echarts) {
           this.myChart = echarts.init(this.$refs.domRef);
-
           this.myChart.setOption(
             getOptions(this.$props.obj.name, this.$props.obj.data)
           );
@@ -46,6 +47,12 @@ export default {
           );
         }
       });
+    },
+    navigateToLearning() {
+      const learningItem = this.obj.data.find(item => item.name === 'Learning');
+      if (learningItem && learningItem.link) {
+        this.$router.push(learningItem.link);
+      }
     },
   },
 };
@@ -90,4 +97,25 @@ export default {
 .swiper-item .title {
   margin: 8px 0;
 }
+
+.navi-to{
+  margin-bottom: 10px; /* Ensure consistent spacing */
+  margin-top: 20px;
+  grid-template-columns: 20px;
+  background-color: hsla(192, 65%, 46%, 0.413);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.navi-to:hover {
+  background-color: #0056b3; 
+}
+
+.statistics-box {
+  width: 100%;
+  height: 100%; /* Ensure it has a height */
+}
+
 </style>
