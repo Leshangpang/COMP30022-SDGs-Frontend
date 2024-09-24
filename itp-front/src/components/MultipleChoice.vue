@@ -3,12 +3,13 @@
     <div class="head">
       <p>QUESTION {{ currentIndex + 1 }}/{{ question.length }}</p>
       <el-button
-        v-if="Object.keys(selectMap).length === question.length"
+        v-if="Object.keys(selectMap).length === question.length" 
         type="success"
         size="small"
         @click="submitHandle"
         plain
         style="background-color: #0084ff; color: #fff;"
+        class="submit"
         >Submit</el-button
       >
     </div>
@@ -45,8 +46,7 @@
   </div>
   <div class="submit-result" v-else>
     <div class="div-container">
-
-            <img src="../assets/image/Goal5QuizCompletionPage.jpg" alt="image description" class="rotated-image" style="width: 664px;" />
+            <img src="../assets/image/Goal5_DoneQuiz.jpg" alt="image description" class="rotated-image" style="width: 664px;" />
     </div> 
     <p>Your answer has been submitted</p>
     <h3>Thank you for taking the Quiz</h3>
@@ -289,11 +289,14 @@ export default {
       if (this.currentSub === "") return;
       if (this.currentIndex !== this.question.length - 1) {
         this.currentIndex++;
-
         this.currentSub = this.selectMap?.[this.getId] ?? "";
       }
     },
     submitHandle() {
+      if (Object.keys(this.selectMap).length !== this.question.length) {
+      console.log("Not all questions answered");
+      return; // 如果还有未回答的问题，不允许提交
+      }
       // todo
       this.$confirm("Comfirm to submit the Answer", {
         confirmButtonText: "Continue",
@@ -310,7 +313,9 @@ export default {
     },
   },
   computed: {
-    getId: (state) => state.question[state.currentIndex].id ?? "",
+    getId() {
+    return this.question[this.currentIndex].id ?? "";
+  }
   },
 };
 </script>
