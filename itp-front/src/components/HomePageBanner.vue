@@ -30,17 +30,18 @@ background-position: center;
 background-size: cover;
 padding-top: 100px;
 }
+
 .content-home{
-margin-left: 20px;
-margin-right: 40px;
+margin-left: 40px;
 }
 
 .content-home h1 {
-font-size: 75px;
-line-height: 100px;
+font-size: 70px;
+line-height: 120px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 color: #9EDCE1;
 font-weight: bolder;
+margin-left: 20px;
 text-shadow: 
     5px 5px 0 #FCE6A9, 
     -5px 5px 0 #FCE6A9, 
@@ -59,7 +60,6 @@ height: 100%;
 .edu-banner-image img {
 max-width: none;
 width: 800px;
-margin-right: 20px;
 padding-right: 95px;
 margin-bottom: 40px;
 }

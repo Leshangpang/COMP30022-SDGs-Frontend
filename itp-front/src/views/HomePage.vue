@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="hometitle">
-      the History of the Sustainable Development Goals (SDGs)
+      History of the Sustainable Development Goals
     </div>
     <div class="history">
     <div class="text">
@@ -120,6 +120,7 @@ export default {
   font-weight: bolder;
   background-color: hsla(166, 64%, 88%, 0.571);
   padding-left: 100px;
+  padding-top: 100px;
 }
 
 .history{
