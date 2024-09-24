@@ -38,7 +38,7 @@
           @click="$emit('update', 4)"
           :class="{ active: active === 4 }"
           class="choose">
-          <router-link to="/communitychallenge" data-text="Community Chanllenge">Community Challenge</router-link></li>
+          <router-link to="/communitychallenge" data-text="Community Chanllenge">Community Chanllenge</router-link></li>
       </div>
   </ul>
 </template>
