@@ -211,6 +211,8 @@ export default {
 
 .nav-btn {
   padding-left: 40px;
+  position: absolute;
+  margin-left: 870px;
 }
 
 .edumim-nav .container {
