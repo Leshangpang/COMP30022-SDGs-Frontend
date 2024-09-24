@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="hometitle">
-      History of the Sustainable Development Goals (SDGs)?
+      History of the Sustainable Development Goals (SDGs)
     </div>
     <div class="history">
     <div class="text">
