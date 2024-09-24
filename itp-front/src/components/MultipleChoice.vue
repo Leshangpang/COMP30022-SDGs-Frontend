@@ -46,7 +46,7 @@
   </div>
   <div class="submit-result" v-else>
     <div class="div-container">
-            <img src="../assets/image/Goal5_DoneQuiz.jpg" alt="image description" class="rotated-image" style="width: 664px;" />
+      <img src="../assets/image/Goal5QuizCompletionPage.jpg" alt="image description" class="rotated-image" style="width: 664px;" />
     </div> 
     <p>Your answer has been submitted</p>
     <h3>Thank you for taking the Quiz</h3>
