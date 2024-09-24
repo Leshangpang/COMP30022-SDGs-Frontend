@@ -16,7 +16,8 @@ module.exports = {
       '!**/node_modules/**'
     ],
     moduleNameMapper: {
-      '^@/(.*)$': '<rootDir>/src/$1'
+      '^@/(.*)$': '<rootDir>/src/$1',
+      '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
     }
   };
   

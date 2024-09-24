@@ -24,6 +24,7 @@
         <!-- <div class="swiper-button-next" slot="button-next"></div> -->
       </swiper>
     </div>
+    
   </div>
 </template>
 <script>
@@ -36,7 +37,6 @@ export default {
   created() {
     // todo swiper configeration
   },
-
   data() {
     return {
       swiperOption: {
@@ -61,9 +61,9 @@ export default {
           img: "https://www.monash.edu/msdi/assets/images/icons/E_SDG-goals_icons-individual-rgb-01.png",
           // intro: "No poverty",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
+            { value: 50, name: "Learning", link:"/learning"},
+            { value: 0, name: "FlashCard" , link:"/quiz"},
+            { value: 40, name: "Quiz" ,link:"/quiz"},
             { value: 0, name: "Publication" },
             { value: 0, name: "News" },
             { value: 10, name: "not Finished"}
@@ -296,6 +296,9 @@ export default {
       ],
     };
   },
+  methods:{
+
+  }
 };
 </script>
 
@@ -307,6 +310,9 @@ export default {
 }
 .title {
   text-align: center;
+  color: hsla(192, 57%, 29%, 0.804);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bolder;
 }
 .swiper-content {
   position: relative;
