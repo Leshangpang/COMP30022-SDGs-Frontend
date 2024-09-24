@@ -628,21 +628,31 @@ h4{
   background: #f8f9fa;
   padding-bottom: 40px;
 }
+
 .stat-item {
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+  width: 200px; /* Set a fixed width for consistency */
 }
+
+.stat-item img {
+  margin-bottom: 20px; /* Add some space below the image */
+}
+
 .stat-text h3 {
+  margin-bottom: 10px;
   font-size: 24px;
   color: #333;
 }
+
 .stat-text p {
-  text-align: center;
-  padding: 10px;
   font-size: 16px;
   color: #666;
+  padding: 0 10px;
 }
+
 
 .target-banner-image{
   width: 200%;
