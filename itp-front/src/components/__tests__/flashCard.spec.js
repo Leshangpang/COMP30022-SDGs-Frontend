@@ -44,7 +44,6 @@ describe('ReadFlashcard.vue', () => {
 
   it('calls toggleFlash on button click', async () => {
     const toggleFlashSpy = jest.spyOn(wrapper.vm, 'toggleFlash');
-    const button = wrapper.find('.btn');
     await wrapper.vm.$nextTick(); // wait for Vue update DOM
     wrapper.vm.toggleFlash(); 
     expect(toggleFlashSpy).toHaveBeenCalledTimes(1);
