@@ -92,6 +92,39 @@ export default {
             }, {
                 value: 'option6',
                 label: 'Goal 6: Clean Water And Sanitation'
+            }, {
+                value: 'option7',
+                label: 'Goal 7: Affordable and Clean Energy'
+            }, {
+                value: 'option8',
+                label: 'Goal 8: Decent Work and Economic Growth'
+            }, {
+                value: 'option9',
+                label: 'Goal 9: Industry, Innovation, and Infrastructure'
+            }, {
+                value: 'option10',
+                label: 'Goal 10: Reduced Inequality'
+            }, {
+                value: 'option11',
+                label: 'Goal 11: Sustainable Cities and Communities'
+            }, {
+                value: 'option12',
+                label: 'Goal 12: Responsible Consumption and Production'
+            }, {
+                value: 'option13',
+                label: 'Goal 13: Climate Action'
+            }, {
+                value: 'option14',
+                label: 'Goal 14: Life Below Water'
+            }, {
+                value: 'option15',
+                label: 'Goal 15: Life on Land'
+            }, {
+                value: 'option16',
+                label: 'Goal 16: Peace, Justice, and Strong Institutions'
+            }, {
+                value: 'option17',
+                label: 'Goal 17: Partnerships for the Goals'
             }],
             options2: [{
                 value: 'option1',

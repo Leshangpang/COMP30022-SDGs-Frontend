@@ -400,7 +400,7 @@ export default {
   transition: all 0.2s ease-in-out;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* 使内容可以在垂直方向上滑动 */
+  overflow-y: auto; /* can scroll down */
 }
 
 .navbar .nav-item:hover .learning-dropdown {
