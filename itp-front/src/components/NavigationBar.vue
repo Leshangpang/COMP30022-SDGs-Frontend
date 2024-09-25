@@ -376,7 +376,7 @@ export default {
   color: var(--blackColor);
 }
 .learning-dropdown {
-  max-height: 300px; /* 设置固定高度 */
+  max-height: 300px; 
  
 }
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu {

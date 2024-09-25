@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view></router-view><!-- 路由视图，用于渲染匹配的路由组件 -->
+    <router-view></router-view><!-- Routing view, used to render the matched route components."-->
     <UserLogin v-if="isLoginVisible" :isLogin="isLogin" @closeLogin="toggleLoginForm" />
   </div>
 </template>

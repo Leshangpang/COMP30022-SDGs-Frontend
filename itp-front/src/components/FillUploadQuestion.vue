@@ -67,13 +67,13 @@
 export default {
     data() {
         return {
-            question: '', // 问题的文本
-            choiceA: '', // 选择A的文本
-            choiceB: '', // 选择B的文本
-            choiceC: '', // 选择C的文本
-            choiceD: '', // 选择D的文本
-            selectedGoal: '', // 选择的目标
-            correctAnswer: '', // 正确答案
+            question: '', // Question
+            choiceA: '', 
+            choiceB: '', 
+            choiceC: '', 
+            choiceD: '', 
+            selectedGoal: '', 
+            correctAnswer: '', // correct answer
             options1: [{
                 value: 'option1',
                 label: 'Goal 1: No Poverty'
@@ -143,7 +143,7 @@ export default {
     },
     methods: {
         clearForm() {
-            this.question = '';  // 确保所有字段被清空
+            this.question = '';  // clear all inpput
             this.choiceA = '';
             this.choiceB = '';
             this.choiceC = '';
@@ -162,9 +162,9 @@ export default {
             if (!this.correctAnswer) errors.push('Correct Answer is required.');
 
             if (errors.length > 0) {
-                alert(errors.join('\n')); // 显示错误信息
+                alert(errors.join('\n')); // show error message
             } else {
-                alert('Form is valid! Submitting...'); // 表单通过验证
+                alert('Form is valid! Submitting...'); // The form is validated
             }
         }
     }
@@ -176,73 +176,74 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 保持内容水平居中 */
+    /* Keep content horizontally centered */
     margin-top: 10px;
-    /* 减小顶部间距 */
+    /* Reduce top margin */
 }
 
 .question-hub-center-container {
     width: 70%;
-    /* 设置宽度以控制表单和标题 */
+    /* Set width to control the form and title */
     max-width: 1200px;
-    /* 最大宽度 */
+    /* Maximum width */
 }
 
 .question-hub-form-title {
     text-align: left;
-    /* 将标题左对齐 */
+    /* Align the title to the left */
     margin-bottom: 20px;
-    /* 添加标题与表单之间的间距 */
+    /* Add spacing between the title and the form */
     margin-top: 10px;
-    /* 减小标题顶部的空白区域 */
+    /* Reduce the top margin of the title */
 }
+
 
 .question-hub-form-container {
     background-color: #fff;
-    /* 可选: 添加背景颜色 */
+    /* Optional: Add background color */
     padding: 40px 60px;
-    /* 可选: 添加内边距 */
+    /* Optional: Add padding */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* 可选: 添加阴影 */
+    /* Optional: Add shadow */
     border-radius: 8px;
-    /* 可选: 添加圆角 */
+    /* Optional: Add border radius */
 }
 
 .question-hub-form-group {
     margin-bottom: 40px;
-    /* 为每个部分增加下边距 */
+    /* Add bottom margin for each section */
 }
 
 .question-hub-select-goal {
     width: 400px;
     font-size: 16px;
-    /* 设置字体大小 */
+    /* Set font size */
 }
 
-/* 修改 el-select 的 placeholder 的样式 */
+/* Modify the placeholder style of el-select */
 .question-hub-select-goal ::v-deep .el-input__inner {
     font-size: 16px;
-    /* 设置 el-select 的文本字体大小 */
+    /* Set font size of the text in el-select */
 }
 
 .question-hub-select-goal ::v-deep .el-input__inner::placeholder {
     font-size: 16px !important;
-    /* 设置 placeholder 的字体大小 */
+    /* Set font size of the placeholder */
     color: #c8c5c5;
-    /* 可选：设置 placeholder 的颜色 */
+    /* Optional: Set placeholder color */
 }
 
 .question-hub-buttons {
     display: flex;
     justify-content: flex-end;
-    /* 将按钮靠右对齐 */
+    /* Align buttons to the right */
     gap: 10px;
-    /* 添加按钮之间的间距 */
+    /* Add spacing between the buttons */
 }
 
 .question-hub-choice-item {
     margin-bottom: 20px;
-    /* 设置选择间距 */
+    /* Set spacing between choices */
 }
 
 .question-hub-choose-title {
@@ -252,20 +253,20 @@ export default {
 .question-hub-choose-answer {
     width: 400px;
     font-size: 16px;
-    /* 设置字体大小 */
+    /* Set font size */
 }
 
-/* 修改 el-select 的 placeholder */
+/* Modify the placeholder of el-select */
 .question-hub-choose-answer ::v-deep .el-input__inner {
     font-size: 16px;
-    /* 设置 el-select 的文本字体大小 */
+    /* Set font size of the text in el-select */
 }
 
 .question-hub-choose-answer ::v-deep .el-input__inner::placeholder {
     font-size: 16px !important;
-    /* 设置 placeholder 的字体大小 */
+    /* Set font size of the placeholder */
     color: #c8c5c5;
-    /* 可选：设置 placeholder 的颜色 */
+    /* Optional: Set placeholder color */
 }
 
 .question-hub-question-heading {
@@ -275,15 +276,15 @@ export default {
 
 .question-hub-custom-question-textarea .el-textarea__inner {
     font-size: 16px;
-    /* 调整输入文本的字体大小 */
+    /* Adjust the font size of the input text */
 }
 
-/* 使用更具体的选择器来调整 placeholder 字体大小 */
+/* Use a more specific selector to adjust the placeholder font size */
 .question-hub-custom-question-textarea .el-textarea__inner::placeholder {
     font-size: 16px;
-    /* 设置 placeholder 的字体大小 */
+    /* Set the font size of the placeholder */
     color: #c8c5c5;
-    /* 可选：设置 placeholder 的颜色 */
+    /* Optional: Set the placeholder color */
 }
 
 .question-hub-choice {
@@ -293,8 +294,8 @@ export default {
 
 .question-hub-choice-item .el-input__inner::placeholder {
     font-size: 16px !important;
-    /* 设置 placeholder 的字体大小 */
+    /* Set the font size of the placeholder */
     color: #c8c5c5;
-    /* 可选：设置 placeholder 的颜色 */
+    /* Optional: Set the placeholder color */
 }
 </style>

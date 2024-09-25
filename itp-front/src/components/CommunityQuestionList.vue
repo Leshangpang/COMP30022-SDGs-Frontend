@@ -14,11 +14,11 @@ export default {
     props: {
         question: {
             type: String,
-            required: true, // 确保传入问题
+            required: true, // Ensure incoming questions
         },
         initialRating: {
             type: Number,
-            default: 0, // 默认评分
+            default: 0, // Default rating
         },
         questionId: {
             type: Number,
@@ -27,12 +27,12 @@ export default {
     },
     data() {
         return {
-            value: this.initialRating // 从父组件或数据库传入初始评分
+            value: this.initialRating // Pass in the initial score from the parent component or database
         };
     },
     methods: {
         goToAnswerQuestion() {
-            // 使用编程式导航跳转到问题详情页，并传递问题 ID
+            // Use programmatic navigation to jump to the issue details page and pass the issue ID
             this.$router.push({ name: 'AnswerQuestion', params: { id: this.questionId } });
         }
     }

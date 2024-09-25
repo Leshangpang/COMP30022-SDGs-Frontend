@@ -63,23 +63,24 @@ export default {
   margin-bottom: 100px;
 }
 .sidebar {
-  margin:0;
-  margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
+  margin: 0;
+  margin-left: 100px; /* Adjust this value to set the margin from the left side of the page */
   
-  flex: 1; /* 侧边栏占据左侧的空间 */
+  flex: 1; /* Sidebar takes up the left-side space */
 }
 .questions-container {
   display: flex;
-  flex-direction: column; /* 让问题在右侧垂直排列 */
+  flex-direction: column; /* Arrange the questions vertically on the right side */
   margin-left: 70px;
-  flex: 2; /* 控制右侧问题部分的宽度 */
-  max-height: 400px; /* 控制右侧问题列表的最大高度 */
-  overflow-y: auto; /* 让问题列表可垂直滚动 */
-  padding-right: 10px; /* 防止滚动条遮挡内容 */
+  flex: 2; /* Control the width of the right-side questions section */
+  max-height: 400px; /* Control the maximum height of the right-side question list */
+  overflow-y: auto; /* Allow vertical scrolling of the question list */
+  padding-right: 10px; /* Prevent the scrollbar from covering content */
 }
 
 .question-list {
-  margin-bottom: 20px; /* 每个问题之间的间距 */
+  margin-bottom: 20px; /* Spacing between each question */
 }
+
 </style>
   

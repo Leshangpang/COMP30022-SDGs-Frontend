@@ -94,16 +94,17 @@ transition: background-color 0.3s ease, color 0.3s ease;
 
 
 .choose a {
-color: inherit; /* 继承父元素的颜色 */
-text-decoration: none; /* 移除下划线 */
-display: block; /* 使链接填充整个 li 区域 */
-padding: 10px; /* 添加内边距，增加可点击区域 */
-transition: color 0.3s ease;
-font-size: 23px;
+  color: inherit; /* Inherit the color from the parent element */
+  text-decoration: none; /* Remove the underline */
+  display: block; /* Make the link fill the entire li area */
+  padding: 10px; /* Add padding to increase the clickable area */
+  transition: color 0.3s ease;
+  font-size: 23px;
 }
 
 .choose:hover a {
-color: black; /* 悬停时链接文本变为白色 */
+  color: black; /* Change the link text color to black when hovered */
 }
+
 
 </style>

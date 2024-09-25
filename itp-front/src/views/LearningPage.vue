@@ -42,7 +42,7 @@ export default {
 }
 
 .sidebar {
-  margin-left: 100px; /* 调整这个值来设置距离页面左边的边距 */
+  margin-left: 100px; /* margin from left */
   margin-top: 100px;
   margin-bottom: 100px
 }

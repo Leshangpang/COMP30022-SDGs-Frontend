@@ -44,9 +44,9 @@
   height: 150px;
   background-color: #d15a43;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Sustainable_Development_Goal_05GenderEquality.svg/1200px-Sustainable_Development_Goal_05GenderEquality.svg.png");
-  background-size: cover; /* 使图片覆盖整个元素 */
-  background-position: center; /* 使图片在元素中心对齐 */
-  background-repeat: no-repeat; /* 避免图片重复 */
+  background-size: cover; /* Make the image cover the entire element */
+  background-position: center; /* Align the image to the center of the element */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
 }
 .content .desc {
   display: flex;
