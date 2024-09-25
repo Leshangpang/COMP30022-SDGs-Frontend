@@ -16,7 +16,7 @@
 
           <div class="collapse navbar-collapse" :class="{ show: active }">
             <ul class="navbar-nav">
-              <!-- Home Link: Use 'exact' to match only when exactly on '/' -->
+              <!-- Home Link -->
               <li class="nav-item">
                 <router-link
                   to="/"
@@ -28,14 +28,103 @@
                 </router-link>
               </li>
 
+              <!-- Learning Dropdown -->
               <li class="nav-item">
-                <router-link
-                  to="/learning"
-                  class="dropdown-toggle nav-link"
-                  exact-active-class="active"
-                >
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                   Learning
-                </router-link>
+                  <i class="bx bx-chevron-down"></i> <!-- 添加向下箭头 -->
+                </a>
+                <ul class="dropdown-menu learning-dropdown">
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 1: No Poverty
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 2: Zero Hunger
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 3: Good Health and Well-being
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 4: Quality Education
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <router-link
+                      to="/learning"
+                      class="nav-link"
+                      exact-active-class="active"
+                    >
+                      Goal 5: Gender Equality
+                    </router-link>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 6: Clean Water and Sanitation
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 7: Affordable and Clean Energy
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 8: Decent Work and Economic Growth
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 9: Industry, Innovation, and Infrastructure
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 10: Reduced Inequality
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 11: Sustainable Cities and Communities
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 12: Responsible Consumption and Production
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 13: Climate Action
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 14: Life Below Water
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 15: Life on Land
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 16: Peace, Justice, and Strong Institutions
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link" @click.prevent>
+                      Goal 17: Partnerships for the Goals
+                    </a>
+                  </li>
+                </ul>
               </li>
 
               <!-- Question Hub -->
@@ -67,7 +156,7 @@
                 </ul>
               </li>
 
-              <!-- Profile Dropdown: Apply the 'active' class when isProfileActive is true -->
+              <!-- Profile Dropdown -->
               <li class="nav-item dropdown" :class="{ 'active': isProfileActive }">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                   Profile
@@ -114,6 +203,7 @@
     </div>
   </div>
 </template>
+
 
 
 
@@ -285,7 +375,10 @@ export default {
 .edumim-nav .navbar .navbar-nav .nav-item:hover a, .edumim-nav .navbar .navbar-nav .nav-item.active a {
   color: var(--blackColor);
 }
-
+.learning-dropdown {
+  max-height: 300px; /* 设置固定高度 */
+ 
+}
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu {
   left: 100%;
 
@@ -307,8 +400,14 @@ export default {
   transition: all 0.2s ease-in-out;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* 使内容可以在垂直方向上滑动 */
 }
 
+.navbar .nav-item:hover .learning-dropdown {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0;
+}
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li {
   margin: 0;
 }
