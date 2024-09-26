@@ -1,7 +1,7 @@
 <template>
     <div class="user-questions">
-        
-        <!-- 顶部的列标题 -->
+
+        <!-- Top column headings -->
         <div class="question-header">
             <span class="header-title">Question</span>
             <div class="header-right">
@@ -11,7 +11,7 @@
                 <span>Average Score</span>
             </div>
         </div>
-        <!-- 问题列表 -->
+        <!-- Question List -->
         <div v-for="(question, index) in questions" :key="index" class="question-card">
             <div class="question-left">
                 <h3 class="exact-question">{{ question.question }}</h3>
@@ -56,28 +56,30 @@ export default {
         };
     },
     methods: {
-    formatDate(dateString) {
-        const date = new Date(dateString); // 将字符串转换为 Date 对象
-        const day = String(date.getDate()).padStart(2, '0'); // 获取日，确保两位数
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // 获取月，确保两位数
-        const year = date.getFullYear(); // 获取年
-        return `${day}/${month}/${year}`; // 返回 DD/MM/YYYY 格式
+        formatDate(dateString) {
+            const date = new Date(dateString); // Convert the string to a Date object
+            const day = String(date.getDate()).padStart(2, '0'); // Get the day, ensure it's two digits
+            const month = String(date.getMonth() + 1).padStart(2, '0'); // Get the month, ensure it's two digits
+            const year = date.getFullYear(); // Get the year
+            return `${day}/${month}/${year}`; // Return the date in DD/MM/YYYY format
+
+        }
     }
-}
 };
 </script>
 
 <style scoped>
 .user-questions {
     width: 1300px;
-    /* 设置最大宽度 */
+    /* Set the maximum width */
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 30px;
-    /* 居中显示 */
+    /* Center the display */
     padding: 20px;
-    /* 为内容添加一些内边距 */
+    /* Add some padding to the content */
 }
+
 
 .question-header {
     display: flex;
@@ -97,8 +99,9 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 50%;
-    /* 确保右边的宽度与 question-right 对齐 */
+    /* Ensure the right side's width aligns with question-right */
 }
+
 
 .header-right span {
     flex: 1;
@@ -109,17 +112,17 @@ export default {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
-    /* 间隙 */
+    /* Spacing */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
-    /* 左右对齐 */
+    /* Align left and right */
 }
 
 .question-left {
     flex: 1;
-    /* 左边内容占据剩余空间 */
+    /* Left content takes up the remaining space */
     margin-right: 20px;
 }
 
@@ -127,7 +130,7 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 50%;
-    /* 与 header-right 相同的宽度 */
+    /* Same width as header-right */
 }
 
 .question-right span {

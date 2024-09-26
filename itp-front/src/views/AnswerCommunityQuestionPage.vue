@@ -5,7 +5,7 @@
       <div class="sidebar-container">
         <SideBar class="sidebar"></SideBar>
         <div class="questions-detail">
-          <!-- 嵌入 QuestionDetail 组件 -->
+          <!-- integrate QuestionDetail component -->
           <QuestionDetail :questionId="$route.params.id"></QuestionDetail>
         </div>
       </div>

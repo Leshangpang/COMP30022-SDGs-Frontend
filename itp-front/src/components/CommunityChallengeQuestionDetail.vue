@@ -8,9 +8,8 @@
       <p>Select an option:</p>
       <ul class="question-option">
         <li v-for="(option, index) in options" :key="index" class="option-item">
-          <!-- 显示字母 ABCD -->
-           <!-- 显示字母 ABCD -->
-          <!-- 使用 Element UI 按钮 -->
+          <!-- Show letter ABCD -->
+          <!-- use Element UI button -->
           <el-button type="primary" plain @click="selectOption(option)" class ="option-button">
             {{ getOptionLabel(index) }}. {{ option }}
           </el-button>
@@ -18,7 +17,7 @@
       </ul>
       <el-button type="success" @click="submitAnswer" class="submit-button">Submit Answer</el-button>
     </div>
-    <!-- 讨论区 -->
+    <!-- discussion area -->
     <div class="discussion-section">
       <h3>Discussion</h3>
       <el-input type="textarea" class="discussion-input no-border-input" v-model="discussionContent"
@@ -44,12 +43,12 @@
 export default {
   data() {
     return {
-      questionId: this.$route.params.id, // 从路由获取 questionId
-      questionDetail: '', // 通过 API 加载的问题详情
-      options: [], // 问题选项
-      selectedOption: '',// 记录选择的选项
-      discussionContent: '', // 用户输入的讨论内容
-      value: 0, // 评分初始值
+      questionId: this.$route.params.id, // get questionId from router
+      questionDetail: '', // use api to load question
+      options: [], // question options
+      selectedOption: '',// record selected option
+      discussionContent: '', // User input discussion content
+      value: 0, // Initial score value
     };
   },
   mounted() {
@@ -57,7 +56,7 @@ export default {
   },
   methods: {
     fetchQuestionDetail() {
-      // 模拟从数据库通过 API 调用获取问题详情
+      // Simulates getting problem details from the database via an API call
       const questionData = {
         1: {
           detail: 'What percentage of women globally experience physical or sexual violence in their lifetime?',
@@ -69,7 +68,7 @@ export default {
         }
       };
 
-      // 根据 questionId 加载具体的问题详情
+      // Load specific question details based on questionId
       const data = questionData[this.questionId];
       if (data) {
         this.questionDetail = data.detail;
@@ -79,8 +78,8 @@ export default {
       }
     },
     getOptionLabel(index) {
-      // 将索引转换成 ABCD 字母
-      return String.fromCharCode(65 + index); // 65 是 'A' 的 Unicode 编码
+      // Convert the index to ABCD letters
+      return String.fromCharCode(65 + index); // 65 is the Unicode code point for 'A'
     },
     selectOption(option) {
       this.selectedOption = option;
@@ -95,7 +94,7 @@ export default {
     submitDiscussion() {
       if (this.discussionContent.trim()) {
         alert(`Your comment: ${this.discussionContent}`);
-        this.discussionContent = ''; // 清空输入框
+        this.discussionContent = ''; // clear input box
       } else {
         alert('Please enter a comment.');
       }
@@ -103,7 +102,7 @@ export default {
   },
   computed: {
     ratingText() {
-      const stars = this.value; // 当前评分值
+      const stars = this.value; // Current rating value
       return stars === 1 ? `${stars} star` : `${stars} stars`;
     }
   }
@@ -125,50 +124,51 @@ export default {
   margin-top: 20px;
 }
 .el-button {
-  max-width: 100%; /* 固定按钮宽度 */
-  white-space: normal; /* 允许按钮内的文本换行 */
+  max-width: 100%; /* Fix the button width */
+  white-space: normal; /* Allow text within the button to wrap */
 }
 .option-button{
-  width: 400px; /* 固定按钮宽度 */
-  height: 100px; /* 固定按钮高度 */
-  font-size: clamp(12px, 2vw, 18px); /* 动态调整字体大小，字体会根据按钮大小和视口宽度自动变化 */
-  white-space: normal; /* 允许文本换行 */
-  word-wrap: break-word; /* 如果单词过长，允许换行 */
-  padding: 10px; /* 内边距 */
-  line-height: 1.5; /* 设置行高，确保文本有足够的行间距 */
-  display: flex; /* 使用 flex 布局 */
-  justify-content: center; /* 水平居中文本 */
-  align-items: center; /* 垂直居中文本 */
-  text-align: center; /* 确保文本居中显示 */
-  overflow-wrap: break-word; /* 长单词换行 */
+  width: 400px; /* Fix the button width */
+  height: 100px; /* Fix the button height */
+  font-size: clamp(12px, 2vw, 18px); /* Dynamically adjust the font size, it will automatically change based on the button size and viewport width */
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Allow text to wrap if the word is too long */
+  padding: 10px; /* Padding inside the button */
+  line-height: 1.5; /* Set line height to ensure adequate spacing between lines of text */
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  text-align: center; /* Ensure text is centered */
+  overflow-wrap: break-word; /* Allow long words to wrap */
 }
+
 .question-option {
   list-style-type: none;
-  /* 去掉 ul 列表的 dot points */
+  /* Remove the dot points from the ul list */
   padding-left: 0;
-  /* 去掉默认的 padding */
+  /* Remove the default padding */
   display: flex;
-  /* 使用 Flexbox */
+  /* Use Flexbox */
   flex-wrap: wrap;
-  /* 允许选项换行，以实现多列布局 */
+  /* Allow options to wrap for multi-column layout */
   gap: 50px;
-  /* 使用 gap 调整选项之间的间距 */
+  /* Use gap to adjust the spacing between options */
 }
+
 
 .option-item {
   width: calc(50% - 100px);
-  /* 每个选项占据50%的宽度 */
+  /* Each option takes up 50% of the width */
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: center; /* 水平居中 */
-
-  
+  justify-content: center; /* Horizontally center the content */
 }
 .el-button span {
-  white-space: normal !important; /* 确保按钮文本允许换行 */
-  word-break: break-word !important; /* 长单词换行 */
+  white-space: normal !important; /* Ensure button text allows wrapping */
+  word-break: break-word !important; /* Wrap long words */
 }
+
 
 .discussion-submit-button {
   margin-top: 20px !important;
@@ -193,21 +193,18 @@ export default {
 
 .discussion-input .el-textarea__inner {
   background-color: #F1F1F1 !important;
-  /* 设置灰色背景 */
+  /* grey background */
   min-height: 100px !important;
 }
 
 .discussion-submit-container {
   display: flex;
   justify-content: space-between;
-
-  /* 将按钮推到最右边 */
   margin-top: 20px;
 }
 
 .discussion-submit-button {
   margin-left: auto;
-  /* 确保按钮在最右边 */
 }
 
 .discussion-rate {
@@ -219,12 +216,11 @@ export default {
   margin-top: 30px;
 }
 .no-border-input .el-textarea__inner {
-  border: none !important; /* 移除边框 */
+  border: none !important; /* Remove border */
   
-  transition: box-shadow 0.3s ease !important; /* 增加过渡效果 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* 添加阴影 */
+  transition: box-shadow 0.3s ease !important; /* Add transition effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Add shadow */
 }
-
 .rating-star{
   display: flex;
   margin-top: 5px;
@@ -232,9 +228,5 @@ export default {
 .rating-text{
   margin-left: 5px;
   color: rgb(93, 89, 89);
-
 }
-
-/* 可选：当输入框聚焦时增加阴影 */
-
 </style>

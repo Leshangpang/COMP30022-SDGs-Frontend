@@ -40,21 +40,21 @@ export default {
   padding-top: 120px;
 }
 
-.edu-banner-image-learning{
+.edu-banner-image-learning {
   width: 100%;
-  height: 100%; /* 确保容器高度为100% */
-  overflow: visible; /* 保持左右和下方溢出部分可见 */
-  clip-path: inset(0px -300px -100px -50px); /* 向上隐藏20px，你可以根据需求调整 */
-  
+  height: 100%; /* Ensure the container height is 100% */
+  overflow: visible; /* Keep the overflow on the sides and bottom visible */
+  clip-path: inset(0px -300px -100px -50px); /* Hide 20px from the top, you can adjust as needed */
 }
 
 .edu-banner-image-learning img {
-  width: 110%; /* 图片宽度设为100% */
-  height: auto; /* 图片高度自适应 */
-  object-fit: cover; /* 确保图片填充容器 */
-  transform: scale(1.3); /* 将图片放大10%来填充留白 */
+  width: 110%; /* Set the image width to 100% */
+  height: auto; /* Make the image height adapt */
+  object-fit: cover; /* Ensure the image covers the container */
+  transform: scale(1.3); /* Scale the image up by 10% to fill any gaps */
   margin-left: 50px;
 }
+
 
 .edu-banner-content-learning h1 {
   font-size: 75px;

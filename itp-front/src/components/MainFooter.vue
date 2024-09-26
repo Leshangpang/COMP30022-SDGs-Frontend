@@ -10,6 +10,7 @@
               </router-link>
               <ul class="social-links">
                 <li>
+                  <!-- icons -->
                   <a href="https://www.facebook.com/" target="_blank">
                     <i class="bx bxl-facebook"></i>
                   </a>
@@ -32,6 +33,7 @@
               </ul>
             </div>
           </div>
+          <!-- router link -->
           <div class="col-lg-2 col-md-6 col-sm-6" id = "links">
             <div class="single-footer-widget">
               <h3>Quick Links</h3>
@@ -91,7 +93,7 @@ export default {
   margin-left: 250px;
 }
 #try h2, #try h4 {
-  color: white; /* 为 h2 和 h4 元素都设置白色字体 */
+  color: white; 
 }
 .edu-footer-area {
   background-image: url(../assets/image/FooterBackground.png);
