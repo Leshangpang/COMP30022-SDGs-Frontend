@@ -29,7 +29,14 @@ const routes = [
   { path: '/flashcard', name: 'FlashCard', component: AnswerFlashCard },
   { path: '/quiz', name: 'Quiz', component: TakeQuizPage },
   { path: '/uploadquestion', name: 'UploadQuestion', component: UploadQuestionPage },
-  { path: '/myquestion', name: 'MyQuestion', component: SeeMyQuestion }
+  { path: '/myquestion', name: 'MyQuestion', component: SeeMyQuestion },
+  {
+    path: '/question/:id',
+    name: 'QuestionDetail',
+    component: () => import('@/components/QuestionHubQuestionDetail.vue'),
+    props: true
+  }
+  
 
 ]
 
