@@ -31,7 +31,7 @@ const routes = [
   { path: '/uploadquestion', name: 'UploadQuestion', component: UploadQuestionPage },
   { path: '/myquestion', name: 'MyQuestion', component: SeeMyQuestion },
   {
-    path: '/question/:id',
+    path: '/myquestion/:id',
     name: 'QuestionDetail',
     component: () => import('@/components/QuestionHubQuestionDetail.vue'),
     props: true
