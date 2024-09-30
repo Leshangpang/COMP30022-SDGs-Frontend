@@ -14,7 +14,7 @@
         <!-- Question List -->
         <div v-for="(question, index) in questions" :key="index" class="question-card">
             <div class="question-left">
-                <h3 class="exact-question">{{ question.question }}</h3>
+                <h3 class="exact-question" @click="goToDetail(index)">{{ question.question }}</h3>
             </div>
             <div class="question-right">
                 <span>{{ question.category }}</span>
@@ -63,6 +63,9 @@ export default {
             const year = date.getFullYear(); // Get the year
             return `${day}/${month}/${year}`; // Return the date in DD/MM/YYYY format
 
+        },
+        goToDetail(index) {
+            this.$router.push({ name: 'QuestionDetail', params: { id: index } });
         }
     }
 };
