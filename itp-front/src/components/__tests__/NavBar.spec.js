@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue, mount } from '@vue/test-utils';
+import { shallowMount, createLocalVue } from '@vue/test-utils';
 import VueRouter from 'vue-router';
 import Navbar from '@/components/NavigationBar.vue'; // Path to your component
 import { EventBus } from '@/eventBus';
