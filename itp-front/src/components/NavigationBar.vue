@@ -215,6 +215,7 @@ export default {
     return {
       isSticky: false,
       button_active_state: false,
+      isSignUp:false,
     };
   },
   computed: {
@@ -237,7 +238,8 @@ export default {
       this.isSticky = scrollTop > 50; // Adjust as needed
     },
     showLoginForm(isSignUp) {
-      EventBus.$emit('toggle-login-form', isSignUp);
+      this.isSignUp = isSignUp;
+      EventBus.$emit('toggle-login-form', this.isSignUp);
     },
   },
 };
