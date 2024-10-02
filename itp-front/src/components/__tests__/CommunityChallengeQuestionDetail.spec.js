@@ -1,7 +1,8 @@
+import Vue from 'vue';
+import ElementUI from 'element-ui';
 import { mount } from '@vue/test-utils';
 import CommunityChallengeQuestionDetail from '@/components/CommunityChallengeQuestionDetail.vue';
-import ElementUI from 'element-ui';
-import Vue from 'vue';
+
 Vue.use(ElementUI);
 
 describe('CommunityChallengeQuestionDetail.vue', () => {
