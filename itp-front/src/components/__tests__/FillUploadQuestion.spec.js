@@ -1,6 +1,6 @@
-import ElementUI from 'element-ui';
 import { mount } from '@vue/test-utils';
 import FillUploadQuestion from '@/components/FillUploadQuestion.vue';
+import ElementUI from 'element-ui';
 import Vue from 'vue';
 
 Vue.use(ElementUI);
