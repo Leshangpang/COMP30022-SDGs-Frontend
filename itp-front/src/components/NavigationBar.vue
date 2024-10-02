@@ -232,6 +232,7 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
+    //
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       this.isSticky = scrollTop > 50; // Adjust as needed
