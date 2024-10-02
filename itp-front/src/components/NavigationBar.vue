@@ -229,6 +229,11 @@ export default {
 
 
 <style scoped>
+.after-login-username{
+  margin-left: 50px;
+  font-weight: 500; /* 加粗字体 */
+  font-size: 25px; /* 增大字体 */
+}
 .edu-navbar-area.is-sticky {
   background-color: rgba(255, 255, 255, 1);
   background: linear-gradient(90deg, rgba(237, 252, 253) 0%, #FFFFFF 54%, #FFFFFF 56%);
