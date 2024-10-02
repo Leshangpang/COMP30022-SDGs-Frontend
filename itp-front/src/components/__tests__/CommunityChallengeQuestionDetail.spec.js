@@ -1,6 +1,6 @@
+import ElementUI from 'element-ui';
 import { mount } from '@vue/test-utils';
 import CommunityChallengeQuestionDetail from '@/components/CommunityChallengeQuestionDetail.vue';
-import ElementUI from 'element-ui';
 import Vue from 'vue';
 Vue.use(ElementUI);
 
@@ -56,7 +56,7 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
 
     const submitButton = wrapper.find('.submit-button');
     await submitButton.trigger('click');
-    
+
     expect(window.alert).toHaveBeenCalledWith('You selected: 10%');
   });
 
@@ -67,7 +67,7 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
 
     const submitButton = wrapper.find('.submit-button');
     await submitButton.trigger('click');
-    
+
     expect(window.alert).toHaveBeenCalledWith('Please select an option.');
   });
 
@@ -77,7 +77,7 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
 
     const discussionSubmitButton = wrapper.find('.discussion-submit-button');
     await discussionSubmitButton.trigger('click');
-    
+
     expect(window.alert).toHaveBeenCalledWith('Your comment: This is a test comment.');
   });
 
