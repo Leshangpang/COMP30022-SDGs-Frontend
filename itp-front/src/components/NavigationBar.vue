@@ -30,7 +30,7 @@
 
               <!-- Learning Dropdown -->
               <li class="nav-item">
-                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link" id="learning">
                   Learning
                   <i class="bx bx-chevron-down"></i> <!-- 添加向下箭头 -->
                 </a>
@@ -60,6 +60,7 @@
                       to="/learning"
                       class="nav-link"
                       exact-active-class="active"
+                      id="Goal5"
                     >
                       Goal 5: Gender Equality
                     </router-link>
@@ -139,6 +140,7 @@
                       to="/myquestion"
                       class="nav-link"
                       exact-active-class="active"
+                      id="myQuestion"
                     >
                       My Question
                     </router-link>
@@ -149,6 +151,7 @@
                       to="/uploadquestion"
                       class="nav-link"
                       exact-active-class="active"
+                      id="uploadQuestion"
                     >
                       Upload Question
                     </router-link>
@@ -168,6 +171,7 @@
                       to="/badges"
                       class="nav-link"
                       exact-active-class="active"
+                      id="badges"
                     >
                       Badges
                     </router-link>
@@ -177,6 +181,7 @@
                       to="/certificate"
                       class="nav-link"
                       exact-active-class="active"
+                      id="certificate"
                     >
                       Certificate
                     </router-link>
@@ -215,6 +220,7 @@ export default {
     return {
       isSticky: false,
       button_active_state: false,
+      isSignUp:false,
     };
   },
   computed: {
@@ -237,7 +243,8 @@ export default {
       this.isSticky = scrollTop > 50; // Adjust as needed
     },
     showLoginForm(isSignUp) {
-      EventBus.$emit('toggle-login-form', isSignUp);
+      this.isSignUp = isSignUp;
+      EventBus.$emit('toggle-login-form', this.isSignUp);
     },
   },
 };
