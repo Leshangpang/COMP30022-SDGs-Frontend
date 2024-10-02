@@ -537,6 +537,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-left: 5px;
+    margin-right: 20px;
 }
 
 .learning-targets-container h4{
