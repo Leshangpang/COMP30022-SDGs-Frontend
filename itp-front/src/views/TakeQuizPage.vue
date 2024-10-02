@@ -2,7 +2,8 @@
   <div id="TakeQuizPage">
     <Header></Header>
     <MainBanner></MainBanner>
-    <EachGoalBar></EachGoalBar>
+    <Goal5LogoBar></Goal5LogoBar>
+    <learningProgressBar></learningProgressBar>
     <div class="main-container">
       <SideBar class="sidebar"></SideBar>
       <MultipleChoice></MultipleChoice>
@@ -24,6 +25,8 @@ import MainBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/LearningSideBar.vue'
 import MultipleChoice from '@/components/MultipleChoice.vue';
+import learningProgressBar from '../components/learningProgressBar.vue';
+import Goal5LogoBar from '../components/Goal5LogoBar.vue';
 
 export default {
 name: 'TakeQuizPage',
@@ -33,7 +36,9 @@ components: {
   MainFooter,
   SideBar,
   EachGoalBar,
-  MultipleChoice
+  MultipleChoice,
+  learningProgressBar,
+  Goal5LogoBar,
 }
 
 }
@@ -48,18 +53,21 @@ components: {
 
 .main-container{
   display: flex;
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
 
 .sidebar {
-margin-left: 100px;
-margin-top: 100px;
-margin-bottom: 100px
+  margin: 0;
+  margin-left: 60px;
+  margin-right: 40px;
+  flex: 1;
 }
 
 .catton{
-margin-right: 40px;
-margin-left: 40px;
-margin-top: 0px;
+margin-right: 10px;
+margin-left: 10px;
+margin-top: 40px;
 width: 200px;
 height:450px;
 background-color: hsl(0, 0%, 100%);

@@ -2,9 +2,11 @@
     <div id="AnswerQuestion">
       <Header></Header>
       <Goal5LearningBanner></Goal5LearningBanner>
+      <Goal5LogoBar></Goal5LogoBar>
+      <learningProgressBar></learningProgressBar>
       <div class="sidebar-container">
         <SideBar class="sidebar"></SideBar>
-        <div class="questions-detail">
+        <div class="s-questions-detail">
           <!-- integrate QuestionDetail component -->
           <QuestionDetail :questionId="$route.params.id"></QuestionDetail>
         </div>
@@ -24,6 +26,8 @@
   import SideBar from '../components/LearningSideBar.vue';
   import QuestionDetail from '../components/CommunityChallengeQuestionDetail.vue';
   import Header from '../components/NavigationBar.vue';
+  import learningProgressBar from '../components/learningProgressBar.vue';
+  import Goal5LogoBar from '../components/Goal5LogoBar.vue';
   
   export default {
     name: 'AnswerQuestion',
@@ -32,7 +36,9 @@
       Goal5LearningBanner,
       MainFooter,
       SideBar,
-      QuestionDetail
+      QuestionDetail,
+      learningProgressBar,
+      Goal5LogoBar,
     }
   }
   </script>
@@ -46,19 +52,20 @@
   
   .sidebar-container {
     display: flex;
-    margin-top: 100px;
+    margin-top: 40px;
     margin-bottom: 100px;
   }
   
   .sidebar {
     margin: 0;
-    margin-left: 100px;
+    margin-left: 60px;
     flex: 1;
   }
   
-  .questions-detail {
+  .s-questions-detail {
     flex: 2;
-    margin-left: 170px;
+    margin-left: 130px;
+    margin-right: 40px;
   }
   </style>
   

@@ -2,7 +2,6 @@
     <div id="LearningPage">
       <Header></Header>
       <Goal5LearningBanner></Goal5LearningBanner>
-      <div style="height: 20px;"></div>
       <Goal5LogoBar></Goal5LogoBar>
       <learningProgressBar class="learning-progress-bar"></learningProgressBar>
 
