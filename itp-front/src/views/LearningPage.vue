@@ -4,20 +4,20 @@
       <Goal5LearningBanner></Goal5LearningBanner>
       <div style="height: 20px;"></div>
       <Goal5LogoBar></Goal5LogoBar>
-      <learningProgressBar class="progress-bar"></learningProgressBar>
+      <learningProgressBar class="learning-progress-bar"></learningProgressBar>
 
-      <div class="sidebar-container">
-        <SideBar class="sidebar"></SideBar>
+      <div class="learning-sidebar-container">
+        <SideBar class="learning-sidebar"></SideBar>
 
-        <div class="content-container" v-if="topicNum == 1">
-            <div class="image-text-container">
-              <img class="background-image" src="../assets/image/Goal5LearningContent/genderEquality_banner.png" />
-              <div class="text-overlay">
-                <p class="quote-text">"How important it is for us to recognize and celebrate our heroes and she-roes!"</p>
-                <p class="author-text">- Maya Angelou</p>
+        <div class="learning-content-container" v-if="topicNum == 1">
+            <div class="learning-image-text-container">
+              <img class="learning-background-image" src="../assets/image/Goal5LearningContent/genderEquality_banner.png" />
+              <div class="learning-text-overlay">
+                <p class="learning-quote-text">"How important it is for us to recognize and celebrate our heroes and she-roes!"</p>
+                <p class="learning-author-text">- Maya Angelou</p>
               </div>
             </div>
-            <div class="text-container">
+            <div class="learning-text-container">
                 <h2>Overview</h2>
                 <p>Gender bias is undermining our social fabric and devalues all of us. It is not just a human rights issue;
                      it is a tremendous waste of the world's human potential. By denying women equal rights, we deny half the 
@@ -27,7 +27,7 @@
                 </p>
             </div>
 
-            <div class="video-container">
+            <div class="learning-video-container">
                 <h2>Understand the SDG Goal</h2>
                 <iframe
                 width="560"
@@ -39,7 +39,7 @@
                 ></iframe>
             </div>
 
-            <div class="text-container">
+            <div class="learning-text-container">
                 <h2>Current Progress</h2>
                 <p>International commitments to advance gender equality have brought about improvements in some areas: child 
                   marriage and female genital mutilation (FGM) have declined in recent years, and women's representation in 
@@ -49,41 +49,41 @@
                   girls are being hit hard by the COVID-19 pandemic.
                 </p>
 
-                <div class="stats-container">
-                  <div class="stat-item">
+                <div class="learning-stats-container">
+                  <div class="learning-stat-item">
                     <img src="../assets/image/Goal5LearningContent/statImage1.png" alt="Legal Reforms">
-                    <div class="stat-text">
+                    <div class="learning-stat-text">
                       <h3>286</h3>
                       <p>At the current rate of progress, it will take another 286 years to reform legal frameworks to promote, enforce and monitor gender equality in public life</p>
                     </div>
                   </div>
-                  <div class="stat-item">
+                  <div class="learning-stat-item">
                     <img src="../assets/image/Goal5LearningContent/statImage2.png" alt="Violence Against Women">
-                    <div class="stat-text">
+                    <div class="learning-stat-text">
                       <h3>1 in 10</h3>
                       <p>Of women and girls aged 15-49, more than 1 in 10 (12.5%) were subjected to sexual and/or physical violence by an intimate partner in the last year</p>
                     </div>
                   </div>
-                  <div class="stat-item">
+                  <div class="learning-stat-item">
                     <img src="../assets/image/Goal5LearningContent/statImage3.png" alt="Child Marriage">
-                    <div class="stat-text">
+                    <div class="learning-stat-text">
                       <h3>17x</h3>
                       <p>To end child marriage by 2030, progress must be 17 times faster than it was over the last decade</p>
                     </div>
                   </div>
                 </div>
 
-                <div class="main-preview-container">
-                  <div class="image-preview-container">
+                <div class="learning-main-preview-container">
+                  <div class="learning-image-preview-container">
                     <a href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/Goal-5_Fast-Facts.pdf" target="_blank" class="download-link">
-                      <img src="../assets/image/Goal5LearningContent/preview1.png" class="preview-image" />
-                      <h2 class="image-title">Fast Facts: Gender Equality</h2>
+                      <img src="../assets/image/Goal5LearningContent/preview1.png" class="learning-preview-image" />
+                      <h2 class="learning-image-title">Fast Facts: Gender Equality</h2>
                     </a>
                   </div>
-                  <div class="image-preview-container">
+                  <div class="learning-image-preview-container">
                     <a href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/08/2309739_E_SDG_2023_infographics-5-5.pdf" target="_blank" class="download-link">
-                      <img src="../assets/image/Goal5LearningContent/preview2.png" class="preview-image" />
-                      <h2 class="image-title">Infographic: Gender Equality</h2>
+                      <img src="../assets/image/Goal5LearningContent/preview2.png" class="learning-preview-image" />
+                      <h2 class="learning-image-title">Infographic: Gender Equality</h2>
                     </a>
                   </div>
                 </div>
@@ -93,20 +93,20 @@
 
         </div>
 
-        <div class="content-container" v-if="topicNum == 2">
-          <img class="target-banner-image" src="../assets/image/Goal5LearningContent/targetBannerImage.webp" />
+        <div class="learning-content-container" v-if="topicNum == 2">
+          <img class="learning-target-banner-image" src="../assets/image/Goal5LearningContent/targetBannerImage.webp" />
 
-            <div class="text-container">
+            <div class="learning-text-container">
                 <h2>The Targets</h2>
                 <p>Everyone can help to make sure that we meet the Global Goals. Use these nine targets 
                     to create action for gender equality.
                 </p>
             </div>
 
-            <div class="targets-container">
-              <div class="target-item">
-                <img src="../assets/image/svg/goal5TargetIcon/target5.1.svg" class="target-icon" alt="Target Icon" />
-                <div class="text-container">
+            <div class="learning-targets-container">
+              <div class="learning-target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.1.svg" class="learning-target-icon" alt="Target Icon" />
+                <div class="learning-text-container">
                   <h4>5.1 END DISCRIMINATION AGAINST WOMEN AND GIRLS</h4>
                   <p>End allforms of discrimination against all women and girls everywhere.</p>
                 </div>
@@ -114,9 +114,9 @@
 
               </div>
 
-              <div class="target-item">
-                <img src="../assets/image/svg/goal5TargetIcon/target5.2.svg" class="target-icon" alt="Target Icon" />
-                <div class="text-container">
+              <div class="learning-target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.2.svg" class="learning-target-icon" alt="Target Icon" />
+                <div class="learning-text-container">
                   <h4>5.2 END ALL VIOLENCE AGAINST AND EXPLOITATION OF WOMEN AND GIRLS</h4>
                   <p>Eliminate all forms of violence against all women and girls in the public and private 
                       spheres, including trafficking and sexual and other types of exploitation.
@@ -125,9 +125,9 @@
                 <div style="height: 15px;"></div>
               </div>
 
-              <div class="target-item">
-                <img src="../assets/image/svg/goal5TargetIcon/target5.3.svg" class="target-icon" alt="Target Icon" />
-                <div class="text-container">
+              <div class="learning-target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.3.svg" class="learning-target-icon" alt="Target Icon" />
+                <div class="learning-text-container">
                   <h4>5.3 ELIMINATE FORCED MARRIAGES AND GENITAL MUTILATION</h4>
                   <p>Eliminate all harmful practices, such as child, early and forced marriage and female genital mutilation.
                   </p>
@@ -135,9 +135,9 @@
                 <div style="height: 15px;"></div>
               </div>
 
-              <div class="target-item">
-                <img src="../assets/image/svg/goal5TargetIcon/target5.4.svg" class="target-icon" alt="Target Icon" />
-                <div class="text-container">
+              <div class="learning-target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.4.svg" class="learning-target-icon" alt="Target Icon" />
+                <div class="learning-text-container">
                   <h4>5.4 VALUE UNPAID CARE AND PROMOTE SHARED DOMESTIC RESPONSIBILITIES</h4>
                   <p>Recognize and value unpaid care and domestic work through the provision of public services, infrastructure 
                       and social protection policies and the promotion of shared responsibility within the household and the family 
@@ -147,9 +147,9 @@
                 <div style="height: 15px;"></div>
               </div>
 
-              <div class="target-item">
-                <img src="../assets/image/svg/goal5TargetIcon/target5.5.svg" class="target-icon" alt="Target Icon" />
-                <div class="text-container">
+              <div class="learning-target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.5.svg" class="learning-target-icon" alt="Target Icon" />
+                <div class="learning-text-container">
                   <h4>5.5 ENSURE FULL PARTICIPATION IN LEADERSHIP AND DECISION-MAKING</h4>
                   <p>Ensure women's full and effective participation and equal opportunities for leadership at all levels of 
                       decision-making in political, economic and public life.
@@ -158,9 +158,9 @@
                 <div style="height: 15px;"></div>
               </div>
                 
-              <div class="target-item">
-                <img src="../assets/image/svg/goal5TargetIcon/target5.6.svg" class="target-icon" alt="Target Icon" />
-                <div class="text-container">
+              <div class="learning-target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.6.svg" class="learning-target-icon" alt="Target Icon" />
+                <div class="learning-text-container">
                   <h4>5.6 UNIVERSAL ACCESS TO REPRODUCTIVE HEALTH AND RIGHTS</h4>
                   <p>Ensure universal access to sexual and reproductive health and reproductive rights as agreed in accordance with 
                       the Programme of Action of the International Conference on Population and Development and the Beijing Platform 
@@ -170,9 +170,9 @@
                 <div style="height: 15px;"></div>
               </div>
 
-              <div class="target-item">
-                <img src="../assets/image/svg/goal5TargetIcon/target5.7.svg" class="target-icon" alt="Target Icon" />
-                <div class="text-container">
+              <div class="learning-target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.7.svg" class="learning-target-icon" alt="Target Icon" />
+                <div class="learning-text-container">
                   <h4>5.7 EQUAL RIGHTS TO ECONOMIC RESOURCES, PROPERTY OWNERSHIP AND FINANCIAL SERVICES</h4>
                   <p>Undertake reforms to give women equal rights to economic resources, as well as access to 
                       ownership and control over land and other forms of property, financial services, inheritance 
@@ -182,9 +182,9 @@
                 <div style="height: 15px;"></div>
               </div>
 
-              <div class="target-item">
-                <img src="../assets/image/svg/goal5TargetIcon/target5.8.svg" class="target-icon" alt="Target Icon" />
-                <div class="text-container">
+              <div class="learning-target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.8.svg" class="learning-target-icon" alt="Target Icon" />
+                <div class="learning-text-container">
                   <h4>5.8 PROMOTE EMPOWERMENT OF WOMEN THROUGH TECHNOLOGY</h4>
                   <p>Enhance the use of enabling technology, in particular information
                       and communications technology, to promote the empowerment of women.
@@ -193,9 +193,9 @@
                 <div style="height: 15px;"></div>
               </div>
 
-              <div class="target-item">
-                <img src="../assets/image/svg/goal5TargetIcon/target5.9.svg" class="target-icon" alt="Target Icon" />
-                <div class="text-container">
+              <div class="learning-target-item">
+                <img src="../assets/image/svg/goal5TargetIcon/target5.9.svg" class="learning-target-icon" alt="Target Icon" />
+                <div class="learning-text-container">
                   <h4>5.9 ADOPT AND STRENGTHEN POLICIES AND ENFORCEABLE LEGISLATION FOR GENDER EQUALITY</h4>
                   <p>Adopt and strengthen sound policies and enforceable legislation for the promotion of gender equality
                       and the empowerment of all women and girls at all levels
@@ -208,10 +208,10 @@
                 
         </div>
 
-        <div class="content-container" v-if="topicNum == 3">
-          <img class="background-image" src="../assets/image/Goal5LearningContent/actionBannerImage.jpg" />
+        <div class="learning-content-container" v-if="topicNum == 3">
+          <img class="learning-background-image" src="../assets/image/Goal5LearningContent/actionBannerImage.jpg" />
 
-            <div class="text-container">
+            <div class="learning-text-container">
                 <h2>Things To Do</h2>
                 <p>Regardless of where you live in, gender equality is a fundamental human right. Advancing gender equality is critical
                   to all areas of a healthy society, from reducing poverty to promoting the health, education, protection and the well-being
@@ -231,16 +231,16 @@
                 </p>
             </div>
 
-            <div class="grid-container">
-                <div class="grid-container">
-                    <div v-for="(item, index) in tips" :key="index" class="grid-item">
-                        <img src="../assets/image/Goal5LearningContent/lightBulb.png" class="bulb-icon" />
-                        <p class="tip-text">{{ item }}</p>
+            <div class="learning-grid-container">
+                <div class="learning-grid-container">
+                    <div v-for="(item, index) in tips" :key="index" class="learning-grid-item">
+                        <img src="../assets/image/Goal5LearningContent/lightBulb.png" class="learning-bulb-icon" />
+                        <p class="learning-tip-text">{{ item }}</p>
                     </div>
                 </div>
             </div>
             
-            <div class="foot-images">
+            <div class="learning-foot-images">
                 <div>
                     <img src="../assets/image/Goal5LearningContent/bear.png"/>
                 </div>
@@ -255,16 +255,16 @@
 
         </div>
 
-        <div class="content-container" v-if="topicNum == 4">
-          <div class="text-container">
+        <div class="learning-content-container" v-if="topicNum == 4">
+          <div class="learning-text-container">
                 <h2>Events and News</h2>
             </div>
 
-          <div class="content-grid">
-            <div v-for="(item, index) in contentItems" :key="index" class="grid-item">
+          <div class="learning-content-grid">
+            <div v-for="(item, index) in contentItems" :key="index" class="learning-grid-item">
               <a :href="item.link" target="_blank">
-              <img :src="item.imageSrc" :alt="item.alt" class="content-image" />
-              <p class="content-title">{{ item.title }}</p>
+              <img :src="item.imageSrc" :alt="item.alt" class="learning-content-image" />
+              <p class="learning-content-title">{{ item.title }}</p>
              </a>
             </div>
           </div>
@@ -275,7 +275,7 @@
 
       <MainFooter></MainFooter>
  
-      <main class="content">
+      <main class="learning-content">
         <router-view></router-view>
       </main>
 
@@ -393,7 +393,7 @@ export default {
     min-height: 100vh;
 }
 
-.progress-bar{
+.learning-progress-bar{
   border-radius: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   width: 50%;
@@ -401,18 +401,18 @@ export default {
   padding: 10px 0;
 }
 
-.sidebar-container {
+.learning-sidebar-container {
   display: flex;
   margin-top: 60px;
   margin-bottom: 100px;
 }
-.sidebar {
+.learning-sidebar {
   margin:0;
   margin-left: 60px;
   flex: 1;
 }
 
-.goal-banner {
+.learning-goal-banner {
   display: flex;
   padding: 20px;
   border-radius: 5px;
@@ -420,17 +420,17 @@ export default {
   justify-content: center;
 }
 
-.goal-image-container {
+.learning-goal-image-container {
   flex-shrink: 0;
   margin-right: 20px;
 }
 
-.goal-image {
+.learning-goal-image {
   width: 159px;
   height: auto;
 }
 
-.goal-text-container {
+.learning-goal-text-container {
   background-color: hwb(10 14% 13%);
   display: flex;
   flex-direction: column;
@@ -441,21 +441,21 @@ export default {
   margin: 0;
 }
 
-.goal-title {
+.learning-goal-title {
   margin: 0;
   font-size: 36px;
   font-weight: bold;
   color: white;
 }
 
-.goal-subtitle {
+.learning-goal-subtitle {
   margin: 0;
   font-size: 24px;
   font-weight: normal;
   color: white;
 }
 
-.content-container {
+.learning-content-container {
   display: flex;
   flex-direction: column;
   margin-left: 70px;
@@ -465,14 +465,14 @@ export default {
   padding-right: 20px;
 }
 
-.image-text-container {
+.learning-image-text-container {
   position: relative;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.background-image {
+.learning-background-image {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -480,7 +480,7 @@ export default {
   padding-right: 40px;
 }
 
-.target-seperete-image{
+.learning-target-seperete-image{
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -488,7 +488,7 @@ export default {
   padding-right: 40px;
 }
 
-.text-overlay {
+.learning-text-overlay {
   position: absolute;
   top: 20%;
   left: 10%;
@@ -500,19 +500,19 @@ export default {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.quote-text {
+.learning-quote-text {
   font-size: 24px;
   font-style: italic;
   line-height: 1.4;
 }
 
-.author-text {
+.learning-author-text {
   font-size: 18px;
   margin-top: 20px;
   text-align: right;
 }
 
-.video-container {
+.learning-video-container {
   max-width: 90%;
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -520,7 +520,7 @@ export default {
   height: 0;
 }
 
-.video-container iframe {
+.learning-video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -529,18 +529,22 @@ export default {
   padding-bottom: 40px;
 }
 
-.text-container{
+.learning-text-container{
     padding-bottom: 40px;
     padding-right: 40px;
 }
 
-.targets-container {
+.learning-targets-container {
     display: flex;
     flex-direction: column;
     margin-left: 5px;
 }
 
-.target-item {
+.learning-targets-container h4{
+  font-size: 18px;
+}
+
+.learning-target-item {
     display: flex;
     align-items: flex-start;
     border-radius: 8px;
@@ -552,7 +556,7 @@ export default {
     padding-top: 20px;
 }
 
-.target-icon {
+.learning-target-icon {
     width: 60px;
     height: 60px;
     margin-right: 20px;
@@ -560,15 +564,12 @@ export default {
 }
 
 
-.video-title{
+.learning-video-title{
     padding-bottom: 20px;
 }
 
-h4{
-    font-size: 18px;
-}
 
-.grid-container {
+.learning-grid-container {
   display: flex;
   flex-direction: column;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
@@ -577,7 +578,7 @@ h4{
   padding-right: 20px;
 }
 
-.grid-item {
+.learning-grid-item {
   display: flex;
   align-items: flex-start;
   background-color: white;
@@ -586,41 +587,41 @@ h4{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.bulb-icon {
+.learning-bulb-icon {
   width: 50px; /* Adjust size as needed */
   height: auto;
   margin-right: 15px; /* Space between image and text */
 }
 
-.tip-text {
+.learning-tip-text {
   font-size: 16px;
   color: #333;
   margin: 0;
 }
 
-.foot-images{
+.learning-foot-images{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.take-action-image{
+.learning-take-action-image{
     text-align: center;
 }
 
-.take-action-image img{
+.learning-take-action-image img{
     width: 60%;
     height: 90%;
     object-fit: fill;
 }
 
-.main-preview-container{
+.learning-main-preview-container{
     padding-top: 40px;
     display: flex;
 }
 
-.image-preview-container {
+.learning-image-preview-container {
   position: relative;
   cursor: pointer;
   text-align: center;
@@ -633,24 +634,24 @@ h4{
   padding-right: 20px;
 }
 
-.image-preview-container:hover {
+.learning-image-preview-container:hover {
   transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
-.preview-image {
+.learning-preview-image {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-.image-title {
+.learning-image-title {
   margin-top: 20px;
   font-size: 24px;
   color: #333;
   font-family: 'Arial', sans-serif;
 }
 
-.stats-container {
+.learning-stats-container {
   display: flex;
   justify-content: space-around;
   padding: 20px;
@@ -658,7 +659,7 @@ h4{
   padding-bottom: 40px;
 }
 
-.stat-item {
+.learning-stat-item {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -666,31 +667,31 @@ h4{
   width: 200px; /* Set a fixed width for consistency */
 }
 
-.stat-item img {
+.learning-stat-item img {
   margin-bottom: 20px; /* Add some space below the image */
 }
 
-.stat-text h3 {
+.learning-stat-text h3 {
   margin-bottom: 10px;
   font-size: 24px;
   color: #333;
 }
 
-.stat-text p {
+.learning-stat-text p {
   font-size: 16px;
   color: #666;
   padding: 0 10px;
 }
 
 
-.target-banner-image{
+.learning-target-banner-image{
   width: 200%;
   height: 40%;
   object-fit: cover;
   padding-bottom: 40px;
 }
 
-.content-grid {
+.learning-content-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -699,22 +700,22 @@ h4{
   padding-left: 0px;
 }
 
-.grid-item {
+.learning-grid-item {
   text-align: center;
 }
 
-.content-image {
+.learning-content-image {
   width: 100%;
   height: auto;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
-.content-image:hover {
+.learning-content-image:hover {
   transform: scale(1.05);
 }
 
-.content-title {
+.learning-content-title {
   margin-top: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -722,7 +723,7 @@ h4{
   text-decoration: none;
 }
 
-.content-title:hover {
+.learning-content-title:hover {
   text-decoration: underline;
 }
 </style>
