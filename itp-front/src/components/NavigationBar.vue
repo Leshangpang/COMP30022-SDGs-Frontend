@@ -3,13 +3,8 @@
     <div class="edumim-nav">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <div
-            class="navbar-toggler"
-            @click="active = !active"
-            :aria-pressed="active ? 'true' : 'false'"
-            v-bind:class="{ active: button_active_state }"
-            v-on:click="button_active_state = !button_active_state"
-          >
+          <div class="navbar-toggler" @click="active = !active" :aria-pressed="active ? 'true' : 'false'"
+            v-bind:class="{ active: button_active_state }" v-on:click="button_active_state = !button_active_state">
             <i class="bx bx-menu"></i>
             <i class="bx bx-x"></i>
           </div>
@@ -18,12 +13,7 @@
             <ul class="navbar-nav">
               <!-- Home Link -->
               <li class="nav-item">
-                <router-link
-                  to="/"
-                  class="nav-link"
-                  exact
-                  exact-active-class="active"
-                >
+                <router-link to="/" class="nav-link" exact exact-active-class="active">
                   Home page
                 </router-link>
               </li>
@@ -56,11 +46,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <router-link
-                      to="/learning"
-                      class="nav-link"
-                      exact-active-class="active"
-                    >
+                    <router-link to="/learning" class="nav-link" exact-active-class="active">
                       Goal 5: Gender Equality
                     </router-link>
                   </li>
@@ -135,21 +121,13 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <router-link
-                      to="/myquestion"
-                      class="nav-link"
-                      exact-active-class="active"
-                    >
+                    <router-link to="/myquestion" class="nav-link" exact-active-class="active">
                       My Question
                     </router-link>
                   </li>
 
                   <li class="nav-item">
-                    <router-link
-                      to="/uploadquestion"
-                      class="nav-link"
-                      exact-active-class="active"
-                    >
+                    <router-link to="/uploadquestion" class="nav-link" exact-active-class="active">
                       Upload Question
                     </router-link>
                   </li>
@@ -164,20 +142,12 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <router-link
-                      to="/badges"
-                      class="nav-link"
-                      exact-active-class="active"
-                    >
+                    <router-link to="/badges" class="nav-link" exact-active-class="active">
                       Badges
                     </router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link
-                      to="/certificate"
-                      class="nav-link"
-                      exact-active-class="active"
-                    >
+                    <router-link to="/certificate" class="nav-link" exact-active-class="active">
                       Certificate
                     </router-link>
                   </li>
@@ -189,16 +159,18 @@
         </nav>
 
         <div class="nav-btn">
-            <button @click="showLoginForm(false)" class="default-btn">
-              Log in
-            </button>
+          <!-- 判断是否登录 -->
+          <template v-if="isLoggedIn">
+            <span class = "after-login-username">Hi, {{ username }}</span>
+          </template>
+          <template v-else>
+            <button @click="showLoginForm(false)" class="default-btn">Log in</button>
             <span>
-              <button @click="showLoginForm(true)" id="sign-up" class="default-btn">
-                Sign up
-              </button>
+              <button @click="showLoginForm(true)" id="sign-up" class="default-btn">Sign up</button>
             </span>
+          </template>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -215,6 +187,8 @@ export default {
     return {
       isSticky: false,
       button_active_state: false,
+      isLoggedIn: true, // 初始化为未登录状态
+      username: 'TestUser', // 存储用户名
     };
   },
   computed: {
@@ -225,7 +199,10 @@ export default {
       );
     },
   },
+  //生命周期钩子函数created()和destroyed()的使用，它们分别定义了组件在创建和销毁时的行为
   created() {
+    // 模拟从后端获取登录状态和用户名
+    this.checkLoginStatus();
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed() {
@@ -239,23 +216,31 @@ export default {
     showLoginForm(isSignUp) {
       EventBus.$emit('toggle-login-form', isSignUp);
     },
+    // 模拟登录状态检查
+    checkLoginStatus() {
+      // 假设已经登录，用户名为 "Alice"
+      this.isLoggedIn = true; // 设置为已登录
+      this.username = 'Alice'; // 从后端获取的用户名
+    }
   },
 };
 </script>
 
 
 
-  <style scoped>
-  .edu-navbar-area.is-sticky {
+<style scoped>
+.edu-navbar-area.is-sticky {
   background-color: rgba(255, 255, 255, 1);
-   background: linear-gradient(90deg, rgba(237, 252, 253) 0%, #FFFFFF 54%, #FFFFFF 56%); /* 滚动时保持不透明 */
+  background: linear-gradient(90deg, rgba(237, 252, 253) 0%, #FFFFFF 54%, #FFFFFF 56%);
+  /* 滚动时保持不透明 */
 }
- 
-  #sign-up{
-    margin-left: 20px;
-  
-  }
-  .navbar-area {
+
+#sign-up {
+  margin-left: 20px;
+
+}
+
+.navbar-area {
   top: 0;
   left: 0;
   right: 0;
@@ -272,10 +257,10 @@ export default {
   z-index: 999;
   position: fixed;
   -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-          box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
 
   -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
-          animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
 }
 
 .edumim-responsive-nav {
@@ -307,8 +292,10 @@ export default {
 
 .edumim-nav .container {
   display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: space-between; /* Space between nav and nav-btn */
+  align-items: center;
+  /* Center vertically */
+  justify-content: space-between;
+  /* Space between nav and nav-btn */
 }
 
 .edumim-nav .navbar .navbar-nav {
@@ -325,7 +312,8 @@ export default {
 .edumim-nav .navbar .navbar-nav .nav-item a {
   color: var(--paragraphColor);
   font-size: 18px;
-  font-weight: 300; /* Normal weight */
+  font-weight: 300;
+  /* Normal weight */
   padding-left: 0;
   padding-right: 0;
   padding-top: 25px;
@@ -337,12 +325,13 @@ export default {
 .edumim-nav .navbar .navbar-nav .nav-item a.router-link-active,
 .edumim-nav .navbar .navbar-nav .nav-item.active a {
   color: var(--blackColor);
-  font-weight: 500; 
+  font-weight: 500;
 }
 
 /* Profile dropdown should be bold when either badges or certificate is active */
-.edumim-nav .navbar .navbar-nav .nav-item.active > a {
-  font-weight: 500; /* Slightly bold */
+.edumim-nav .navbar .navbar-nav .nav-item.active>a {
+  font-weight: 500;
+  /* Slightly bold */
 }
 
 
@@ -355,7 +344,7 @@ export default {
 }
 
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-toggle::before {
-  
+
   position: absolute;
   right: -4px;
   top: 22px;
@@ -372,13 +361,16 @@ export default {
   margin-left: 0;
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item:hover a, .edumim-nav .navbar .navbar-nav .nav-item.active a {
+.edumim-nav .navbar .navbar-nav .nav-item:hover a,
+.edumim-nav .navbar .navbar-nav .nav-item.active a {
   color: var(--blackColor);
 }
+
 .learning-dropdown {
-  max-height: 300px; 
- 
+  max-height: 300px;
+
 }
+
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu {
   left: 100%;
 
@@ -400,7 +392,8 @@ export default {
   transition: all 0.2s ease-in-out;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* can scroll down */
+  overflow-y: auto;
+  /* can scroll down */
 }
 
 .navbar .nav-item:hover .learning-dropdown {
@@ -408,6 +401,7 @@ export default {
   visibility: visible;
   margin-top: 0;
 }
+
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li {
   margin: 0;
 }
@@ -427,11 +421,13 @@ export default {
   top: 50%;
   font-size: 20px;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   right: 15px;
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.router-link-active {
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.router-link-active {
   background-color: #ffffff;
   color: var(--whiteColor);
 }
@@ -448,7 +444,9 @@ export default {
   color: var(--blackColor);
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.router-link-active {
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.router-link-active {
   color: var(--mainColor);
 }
 
@@ -463,7 +461,9 @@ export default {
   color: var(--blackColor);
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
   color: var(--mainColor);
 }
 
@@ -478,7 +478,9 @@ export default {
   color: var(--blackColor);
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
   color: var(--mainColor);
 }
 
@@ -493,7 +495,9 @@ export default {
   color: var(--blackColor);
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
   color: var(--mainColor);
 }
 
@@ -508,7 +512,9 @@ export default {
   color: var(--blackColor);
 }
 
-.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus,
+.edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.router-link-active {
   color: var(--mainColor);
 }
 
@@ -526,8 +532,9 @@ export default {
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover,
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus,
 .edumim-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.router-link-active {
-  background-color: #ffffff; /* Keep background white */
-  color: #d7787d; 
+  background-color: #ffffff;
+  /* Keep background white */
+  color: #d7787d;
   font-weight: 600;
 }
 
@@ -596,7 +603,7 @@ export default {
   top: 50px;
 }
 
-.edu-fixed-nav{
+.edu-fixed-nav {
   position: initial;
 }
 
@@ -630,7 +637,4 @@ export default {
 .navbar-toggler.active i:nth-child(2) {
   display: block;
 }
-
-
-  
-  </style>
+</style>
