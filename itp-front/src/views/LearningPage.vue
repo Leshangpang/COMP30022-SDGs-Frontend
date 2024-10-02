@@ -359,7 +359,7 @@ export default {
   },
   watch: {
     // Watch for route changes
-    $route(to, from) {
+    $route() {
       this.updateTopicFromRoute();
     }
   },

@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import EachGoalBar from '@/components/Goal5LogoBar.vue';
 import Header from '../components/NavigationBar.vue';
 import MainBanner from '../components/Goal5LearningBanner.vue'
 import MainFooter from '../components/MainFooter.vue';
@@ -35,7 +34,6 @@ components: {
   MainBanner,
   MainFooter,
   SideBar,
-  EachGoalBar,
   MultipleChoice,
   learningProgressBar,
   Goal5LogoBar,
