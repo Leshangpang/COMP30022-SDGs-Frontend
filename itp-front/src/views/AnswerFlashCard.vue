@@ -3,6 +3,7 @@
     <Header></Header>
     <MainBanner></MainBanner>
     <EachGoalBar></EachGoalBar>
+    <learningProgressBar class="progress-bar"></learningProgressBar>
     <div class="main-container">
       <SideBar class="sidebar"></SideBar>
       <Flashcard class="flashcard"></Flashcard>
@@ -23,7 +24,7 @@ import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/LearningSideBar.vue'
 import Flashcard from '../components/ReadFlashcard.vue';
 import EachGoalBar from '../components/Goal5LogoBar.vue';
-
+import learningProgressBar from '../components/learningProgressBar.vue';
 
 export default {
 name: 'AnswerFlashCard',
@@ -33,7 +34,8 @@ components: {
   MainFooter,
   SideBar,
   Flashcard,
-  EachGoalBar
+  EachGoalBar,
+  learningProgressBar,
 }
 
 }
@@ -49,18 +51,20 @@ components: {
 }
 
 .sidebar {
-margin-left: 100px; 
-margin-top: 40px;
-margin-bottom: 100px;
+  margin: 0;
+  margin-left: 60px;
+  margin-right: 20px;
+  flex: 1;
 }
 
 .main-container {
-display: flex; 
+  display: flex; 
+  margin-top: 60px;
+  margin-bottom: 100px;
 }
 
 .flashcard{
   margin-left: 100px;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 

@@ -2,6 +2,8 @@
     <div id="CommunityChallenge">
       <Header></Header>
       <Goal5LearningBanner></Goal5LearningBanner>
+      <Goal5LogoBar></Goal5LogoBar>
+      <LearningProgressBar class="learning-progress-bar"></learningProgressBar>
       <div class="sidebar-container">
         <SideBar class="sidebar"></SideBar>
         <div class="questions-container">
@@ -29,7 +31,8 @@ import MainFooter from '../components/MainFooter.vue';
 import SideBar from '../components/LearningSideBar.vue';
 import QuestionList from '../components/CommunityQuestionList.vue'
 import Header from '../components/NavigationBar.vue';
-
+import LearningProgressBar from '../components/learningProgressBar.vue';
+import Goal5LogoBar from '../components/Goal5LogoBar.vue';
 
 
 
@@ -41,8 +44,9 @@ export default {
     Goal5LearningBanner,
     MainFooter,
     SideBar,
-    QuestionList
-
+    QuestionList,
+    LearningProgressBar,
+    Goal5LogoBar,
   }
 
 }
@@ -59,12 +63,12 @@ export default {
 
 .sidebar-container {
   display: flex;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
 }
 .sidebar {
   margin: 0;
-  margin-left: 100px; /* Adjust this value to set the margin from the left side of the page */
+  margin-left: 60px; /* Adjust this value to set the margin from the left side of the page */
   
   flex: 1; /* Sidebar takes up the left-side space */
 }

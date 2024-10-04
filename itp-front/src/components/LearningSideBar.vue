@@ -9,9 +9,10 @@
           <router-link to="" data-text="Learning" >Learning</router-link>
           <!-- <span><i class="el-icon-arrow-down el-icon--right"></i></span> -->
           <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item command="1">Publications</el-dropdown-item>
-        <el-dropdown-item command="2">News</el-dropdown-item>
-        <el-dropdown-item command="3">Actions</el-dropdown-item>
+        <el-dropdown-item command="1">Topic 1: Overview</el-dropdown-item>
+        <el-dropdown-item command="2">Topic 2: Targets</el-dropdown-item>
+        <el-dropdown-item command="3">Topic 3: Actions</el-dropdown-item>
+        <el-dropdown-item command="4">Topic 4: Events and News</el-dropdown-item>
         <!-- <el-dropdown-item disabled>dd</el-dropdown-item> -->
         <!-- <el-dropdown-item divided command="4">Divided Item</el-dropdown-item> -->
       </el-dropdown-menu>
@@ -57,6 +58,24 @@ components: {},
 data() {
   return {};
 },
+methods: {
+  navigateToLearning() {
+    this.$router.push({ name: "/learning" });
+  },
+  handleDropdownCommand(command) {
+    const routes = {
+    "1": { path: "/learning", query: { topic: "overview" } },
+    "2": { path: "/learning", query: { topic: "targets" } },
+    "3": { path: "/learning", query: { topic: "actions" } },
+    "4": { path: "/learning", query: { topic: "events and news" } },
+    };
+    const targetRoute = routes[command];
+
+    if (this.$route.path !== targetRoute.path || this.$route.query.topic !== targetRoute.query.topic) {
+      this.$router.push(targetRoute);
+    }
+  }
+}
 };
 </script>
 
