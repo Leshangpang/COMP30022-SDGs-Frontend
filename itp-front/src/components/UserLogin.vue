@@ -21,23 +21,47 @@
         <main>
           <div class="input-group">
             <label for="username" class="visually-hidden"></label>
-            <input type="text" id="username" class="auth-input" placeholder="username" />
+            <input 
+              type="text" 
+              id="username" 
+              class="auth-input" 
+              placeholder="username" 
+              v-model="username"
+            />
           </div>
 
           <div class="input-group" v-if="!localIsLogin">
             <label for="email" class="visually-hidden"></label>
-            <input type="text" id="email" class="auth-input" placeholder="email" />
+            <input 
+              type="text" 
+              id="email" 
+              class="auth-input" 
+              placeholder="email" 
+              v-model="email"
+            />
           </div>
 
           <div class="input-group">
             <label for="password" class="visually-hidden"></label>
-            <input type="password" id="password" class="auth-input" placeholder="password" />
+            <input 
+              type="password" 
+              id="password" 
+              class="auth-input" 
+              placeholder="password" 
+              v-model="password"
+            />
           </div>
   
           <!-- Confirm Password only for Sign Up -->
           <div class="input-group" v-if="!localIsLogin">
             <label for="confirm-password" class="visually-hidden"></label>
-            <input type="password" id="confirm-password" class="auth-input" placeholder="confirm password" />
+            <input 
+              type="password" 
+              id="confirm-password" 
+              class="auth-input" 
+              placeholder="confirm password" 
+              v-model="confirmPassword"
+            />
           </div>
   
           <div class="input-group">
@@ -81,6 +105,10 @@ export default {
   data() {
     return {
       localIsLogin: this.isLogin, // Use local data to manage state
+      username: '',  // Added data property for username
+      password: '',  // Added data property for password
+      confirmPassword: '',  // Added data property for confirm password
+      email: '', // Added email for sign up
     };
   },
   methods: {
@@ -89,7 +117,43 @@ export default {
       this.$emit('update:isLogin', state); // Emit an event to the parent
     },
     handleSubmit() {
-      // Handle form submission
+      if (!this.localIsLogin) {  // Only validate if signing up
+        if (this.isSignUpValid()) {
+          // Proceed with form submission for sign-up
+          alert('Form is valid. Submitting...');
+        } else {
+          // Invalid input, prevent form submission
+          alert('Form is invalid. Please check your input.');
+        }
+      } else {
+        // Handle login logic
+        alert('Logging in...');
+      }
+    },
+    isSignUpValid() {
+      // Check if username is not empty
+      if (this.username.trim() === '') {
+        alert('Username cannot be empty.');
+        return false;
+      }
+
+      // Check if password meets criteria (at least 1 character, 6 digits long)
+      const hasCharacter = /[a-zA-Z]/.test(this.password);
+      const isLongEnough = this.password.length >= 6;
+
+      if (!hasCharacter || !isLongEnough) {
+        alert('Password must contain at least one character and be at least 6 characters long.');
+        return false;
+      }
+
+      // Check if passwords match
+      if (this.password !== this.confirmPassword) {
+        alert('Passwords do not match.');
+        return false;
+      }
+
+      // Add other validations as needed (e.g., email format)
+      return true;
     },
     signInWithGoogle() {
       // Handle Google sign-in
@@ -103,6 +167,7 @@ export default {
   },
 };
 </script>
+
   
 <style scoped>
 /* Your existing styles */
