@@ -5,7 +5,7 @@
         <div class="col-lg-6 col-md-12">
           <div class="edu-banner-content-learning">
             <h1>
-              Sustainable Development Goals: Gender<span class="shape01"> Equaility</span>
+              Sustainable Development Goal: Gender<span class="shape01"> Equality</span>
             </h1>
             <p>
               Achieve gender equality and empower all women and girls
