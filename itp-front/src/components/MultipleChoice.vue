@@ -51,7 +51,7 @@
     <!-- <p>Your answer has been submitted</p> -->
     <h1 class="score-font">{{ submitMessage }}</h1>
     <p>Thank you for taking the Quiz</p>
-    <el-button type="primary" @click="refreshPage" style="margin-top: 30px;">Try Again</el-button>
+    <el-button type="primary" @click="refreshPage" style="margin-top: 20px;">Try Again</el-button>
   </div>
 </template>
 
