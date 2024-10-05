@@ -190,7 +190,7 @@ export default {
     return {
       isSticky: false,
       button_active_state: false,
-      isLoggedIn: true, // 初始化为未登录状态
+      isLoggedIn: false, // 初始化为未登录状态, 可切换
       username: 'TestUser', // 存储用户名
     };
   },
