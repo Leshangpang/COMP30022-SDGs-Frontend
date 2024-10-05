@@ -161,7 +161,10 @@
         <div class="nav-btn">
           <!-- 判断是否登录 -->
           <template v-if="isLoggedIn">
-            <span class = "after-login-username">Hi, {{ username }}</span>
+            <div class="user-info-container">
+              <span class="after-login-username">Hi, {{ username }}</span>
+              <el-progress :percentage="50" class="nav-bar-progress"></el-progress>
+            </div>
           </template>
           <template v-else>
             <button @click="showLoginForm(false)" class="default-btn">Log in</button>
@@ -229,11 +232,23 @@ export default {
 
 
 <style scoped>
-.after-login-username{
-  margin-left: 50px;
-  font-weight: 500; /* 加粗字体 */
-  font-size: 25px; /* 增大字体 */
+.user-info-container {
+  display: flex;
+  flex-direction: column; /* 垂直方向排列 */
+  align-items: center; /* 水平方向居中对齐 */
 }
+.nav-bar-progress {
+  width: 100%; /* 让进度条的宽度适应容器或调整为固定值 */
+  min-width: 200px; /* 可根据需要设置最大宽度 */
+}
+
+.after-login-username {
+  margin-bottom: 5px; 
+  margin-right: 30px;
+  font-weight: 460; /* 加粗字体 */
+  font-size: 23px; /* 增大字体 */
+}
+
 .edu-navbar-area.is-sticky {
   background-color: rgba(255, 255, 255, 1);
   background: linear-gradient(90deg, rgba(237, 252, 253) 0%, #FFFFFF 54%, #FFFFFF 56%);
