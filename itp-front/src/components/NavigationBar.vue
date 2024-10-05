@@ -163,7 +163,7 @@
           <template v-if="isLoggedIn">
             <div class="user-info-container">
               <span class="after-login-username">Hi, {{ username }}</span>
-              <el-progress :percentage="50" class="nav-bar-progress"></el-progress>
+              <el-progress :text-inside="false" :stroke-width="15" :percentage="70" class="nav-bar-progress"></el-progress>
             </div>
           </template>
           <template v-else>
@@ -240,13 +240,14 @@ export default {
 .nav-bar-progress {
   width: 100%; /* 让进度条的宽度适应容器或调整为固定值 */
   min-width: 200px; /* 可根据需要设置最大宽度 */
+
 }
 
 .after-login-username {
   margin-bottom: 5px; 
   margin-right: 30px;
   font-weight: 460; /* 加粗字体 */
-  font-size: 23px; /* 增大字体 */
+  font-size: 20px; /* 增大字体 */
 }
 
 .edu-navbar-area.is-sticky {
