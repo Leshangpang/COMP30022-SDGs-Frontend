@@ -127,13 +127,18 @@ export default {
         }
       } else {
         // Handle login logic
-        alert('Logging in...');
+        if (this.isLoginValid()) {
+          // Proceed with form submission for sign-up
+          alert('Form is valid. Submitting...');
+        } else {
+          // Invalid input, prevent form submission
+        }
       }
     },
     isSignUpValid() {
       // Check if username is not empty
-      if (this.username.trim() === '') {
-        alert('Username cannot be empty.');
+      if (this.username.trim() === '' || this.password.trim() === '') {
+        alert('Username and password cannot be empty.');
         return false;
       }
 
@@ -155,6 +160,16 @@ export default {
       // Add other validations as needed (e.g., email format)
       return true;
     },
+
+    isLoginValid() {
+    // Check if username is not empty
+    if (this.username.trim() === '' || this.password.trim() === '') {
+      alert('Username and password cannot be empty.');
+      return false;
+    }
+
+    return true;
+  },
     signInWithGoogle() {
       // Handle Google sign-in
     },
