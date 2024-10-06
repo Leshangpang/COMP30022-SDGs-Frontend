@@ -1,16 +1,13 @@
 <template>
   <div class="question-detail">
     <div class="question-section">
-      <!----<h2>Question {{ questionId }}</h2> -->
-      <p class = "question-in-answer-section">{{ questionDetail }}</p>
+      <p class="question-in-answer-section">{{ questionDetail }}</p>
     </div>
     <div class="question-detail-options">
       <p>Select an option:</p>
       <ul class="question-option">
         <li v-for="(option, index) in options" :key="index" class="option-item">
-          <!-- Show letter ABCD -->
-          <!-- use Element UI button -->
-          <el-button type="primary" plain @click="selectOption(option)" class ="option-button">
+          <el-button type="primary" plain @click="selectOption(option)" class="option-button">
             {{ getOptionLabel(index) }}. {{ option }}
           </el-button>
         </li>
@@ -23,11 +20,11 @@
       <el-input type="textarea" class="discussion-input no-border-input" v-model="discussionContent"
         placeholder="Write your Thoughts..." rows="3"></el-input>
       <div class="discussion-submit-container">
-        <div class = "rate-section">
-          <p> Rate the question: &nbsp;&nbsp;</p>
-          <div class = "rating-star">
+        <div class="rate-section">
+          <p>Rate the question: &nbsp;&nbsp;</p>
+          <div class="rating-star">
             <el-rate v-model="value"></el-rate>
-            <span class = "rating-text">{{ ratingText }}</span>
+            <span class="rating-text">{{ ratingText }}</span>
           </div>
         </div>
         
@@ -40,46 +37,46 @@
 </template>
 
 <script>
+import axios from 'axios'; // 引入 axios
+
 export default {
   data() {
     return {
-      questionId: this.$route.params.id, // get questionId from router
-      questionDetail: '', // use api to load question
-      options: [], // question options
-      selectedOption: '',// record selected option
-      discussionContent: '', // User input discussion content
-      value: 0, // Initial score value
+      questionId: this.$route.params.id, // 从路由中获取 questionId
+      questionDetail: '', // 问题详情
+      options: [], // 问题选项
+      selectedOption: '', // 记录用户选择的选项
+      discussionContent: '', // 讨论内容
+      value: 0, // 评分值
     };
   },
   mounted() {
-    this.fetchQuestionDetail();
+    this.fetchQuestionDetail(); // 页面加载时获取问题详情
   },
   methods: {
-    fetchQuestionDetail() {
-      // Simulates getting problem details from the database via an API call
-      const questionData = {
-        1: {
-          detail: 'What percentage of women globally experience physical or sexual violence in their lifetime?',
-          options: ['10%', '20%', '30%', '40%']
-        },
-        2: {
-          detail: 'Which of the following best describes "gender parity"?',
-          options: ['Equal pay for equal work', 'Women’s participation in politics', 'Equal representation of women and men in a given area, such as education or employment', 'Laws protecting women from discrimination']
-        }
-      };
+    async fetchQuestionDetail() {
+      try {
+        const apiUrl = `https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/2`;  // 根据 questionId 获取问题详情的 API
 
-      // Load specific question details based on questionId
-      const data = questionData[this.questionId];
-      if (data) {
-        this.questionDetail = data.detail;
-        this.options = data.options;
-      } else {
-        this.questionDetail = 'Question not found.';
+        // 发送 GET 请求获取问题详情
+        const response = await axios.get(apiUrl);
+
+        if (response.data.code === 1) {
+          // 设置问题详情和选项
+          const questionData = response.data.data;
+          this.questionDetail = questionData.question;
+          this.options = questionData.choice.split(',,,'); // 选项通过三逗号分隔
+        } else {
+          this.questionDetail = 'Failed to fetch question details.';
+        }
+      } catch (error) {
+        console.error('Error fetching question details:', error);
+        this.questionDetail = 'An error occurred while fetching the question details.';
       }
     },
     getOptionLabel(index) {
-      // Convert the index to ABCD letters
-      return String.fromCharCode(65 + index); // 65 is the Unicode code point for 'A'
+      // 根据索引值返回 ABCD 选项标签
+      return String.fromCharCode(65 + index); // 65 是 'A' 的 Unicode 码点
     },
     selectOption(option) {
       this.selectedOption = option;
@@ -94,7 +91,7 @@ export default {
     submitDiscussion() {
       if (this.discussionContent.trim()) {
         alert(`Your comment: ${this.discussionContent}`);
-        this.discussionContent = ''; // clear input box
+        this.discussionContent = ''; // 清空输入框
       } else {
         alert('Please enter a comment.');
       }
@@ -102,7 +99,7 @@ export default {
   },
   computed: {
     ratingText() {
-      const stars = this.value; // Current rating value
+      const stars = this.value; // 当前评分
       return stars === 1 ? `${stars} star` : `${stars} stars`;
     }
   }
