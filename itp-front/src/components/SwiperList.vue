@@ -10,7 +10,7 @@
           :key="item"
           class="swiper_slide_item"
         >
-          <swiper-item :obj="item"></swiper-item>
+          <swiper-item :obj="item" :isLoggedIn="userLoggedIn"></swiper-item>
         </swiper-slide>
 
         <!--previous and next button-->
@@ -39,6 +39,7 @@ export default {
   },
   data() {
     return {
+      userLoggedIn: false, // Change to `true` if user is logged in
       swiperOption: {
         //swipe direction
         direction: "horizontal", 
@@ -50,7 +51,6 @@ export default {
           nextEl: ".swiper-next",
           prevEl: ".swiper-prev",
         },
-
         //view config
         speed: 1000, // speed of swipe
       },
@@ -62,11 +62,7 @@ export default {
           // intro: "No poverty",
           data: [
             { value: 50, name: "Learning", link:"/learning"},
-            { value: 0, name: "FlashCard" , link:"/quiz"},
-            { value: 40, name: "Quiz" ,link:"/quiz"},
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished",link:"/learning"}
           ],
         },
         {
@@ -75,12 +71,8 @@ export default {
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJVnlWRrUv2gCqi7gNG8QGN9SSe5LdX0Kv-Q&s",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished",link:"/learning"}
           ],
         },
         {
@@ -89,12 +81,8 @@ export default {
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpnJfRu7E9X9N5Ejel_oHQKLezo3ZicGaQ1A&s",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished",link:"/learning"}
           ],
         },
         {
@@ -103,12 +91,8 @@ export default {
           img: "https://www.monash.edu/__data/assets/image/0005/1442732/E_SDG-goals_icons-individual-rgb-04.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -117,12 +101,8 @@ export default {
           img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Sustainable_Development_Goal_05GenderEquality.svg/1200px-Sustainable_Development_Goal_05GenderEquality.svg.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -131,12 +111,8 @@ export default {
           img: "https://australia.iom.int/sites/g/files/tmzbdl1001/files/sdgs-icon/e_print_06.jpg",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -145,12 +121,8 @@ export default {
           img: "https://www.unsw.edu.au/content/unsw-sites/au/en/edi/sustainability-matters/sdg7/_jcr_content/root/responsivegrid-layout-fixed-width/responsivegrid-full-top/column_layout_copy_c/par_2_1_25/image.coreimg.82.1170.png/1692332065541/2023-08-edi-sustainability-goal-07.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -159,12 +131,8 @@ export default {
           img: "https://www.monash.edu/__data/assets/image/0004/1442758/E_SDG-goals_icons-individual-rgb-08.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -173,12 +141,8 @@ export default {
           img: "https://hlw.org.au/images/icons/SDG-Goal-09.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -188,11 +152,7 @@ export default {
           // intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -202,11 +162,7 @@ export default {
           // intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -216,11 +172,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -230,11 +182,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -244,11 +192,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -258,11 +202,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -272,11 +212,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -286,18 +222,34 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
       ],
     };
   },
   methods:{
-
+    login() {
+      this.userLoggedIn = true;
+    },
+    logout() {
+      this.userLoggedIn = false;
+    },
+    updateValue(itemName, newValue) {
+      // Find the item by name
+      const item = this.list.find(i => i.name === itemName);
+      if (item) {
+        // Update the Learning value
+        const learningData = item.data.find(d => d.name === "Learning");
+        if (learningData) {
+          learningData.value = newValue; // Update the value
+        }
+        const NotDone= item.data.find(d => d.name === "not Finished");
+        if(NotDone){
+          NotDone.value = 100 - newValue;
+        }
+      }
+    },
   }
 };
 </script>
