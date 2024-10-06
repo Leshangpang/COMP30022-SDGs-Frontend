@@ -46,6 +46,7 @@ export default {
       questionDetail: '', // 问题详情
       options: [], // 问题选项
       selectedOption: '', // 记录用户选择的选项
+      correctAnswer: null,  // 正确答案的索引
       discussionContent: '', // 讨论内容
       value: 0, // 评分值
     };
@@ -56,7 +57,7 @@ export default {
   methods: {
     async fetchQuestionDetail() {
       try {
-        const apiUrl = `https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/2`;  // 根据 questionId 获取问题详情的 API
+        const apiUrl = `https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/${this.questionId}`;  // 根据 questionId 获取问题详情的 API
 
         // 发送 GET 请求获取问题详情
         const response = await axios.get(apiUrl);
@@ -66,6 +67,7 @@ export default {
           const questionData = response.data.data;
           this.questionDetail = questionData.question;
           this.options = questionData.choice.split(',,,'); // 选项通过三逗号分隔
+          this.correctAnswer = questionData.answer;  // 保存正确答案的索引
         } else {
           this.questionDetail = 'Failed to fetch question details.';
         }
@@ -83,7 +85,13 @@ export default {
     },
     submitAnswer() {
       if (this.selectedOption) {
-        alert(`You selected: ${this.selectedOption}`);
+        // 获取用户选择的选项索引
+        const selectedOptionIndex = this.options.indexOf(this.selectedOption) + 1; 
+        if (selectedOptionIndex === this.correctAnswer) {
+          alert('Correct answer!');
+        } else {
+          alert('Wrong answer. Try again.');
+        }
       } else {
         alert('Please select an option.');
       }
