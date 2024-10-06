@@ -98,15 +98,39 @@ export default {
     },
     async submitRating() {
       try {
+        // 在提交前进行验证
+      if (this.value < 1) {
+        alert('Please provide at least a 1-star rating.');
+        return;
+      }
+      if (!this.discussionContent.trim()) {
+        alert('Please enter a comment.');
+        return;
+      }
         //const apiUrl = `https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/rate`;
         // 发送评分请求
-        const response = await axios.post('https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/rate?questionId=2&personalRating=4.0');
-
+        //const response = await axios.post('https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/rate?questionId=2&personalRating=4.0');
+        const response = await axios.post(`https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/rate?questionId=${this.questionId}&personalRating=${this.value}`);
         if (response.data.code === 1) {
           alert('Rating submitted successfully!');
         } else {
           alert('Failed to submit rating.');
         }
+
+        // 发送评论请求
+        const discussionResponse = await axios.put('https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/comment', {
+          questionId: this.questionId,
+          comment: this.discussionContent
+        });
+
+        if (discussionResponse.data.code === 1) {
+          alert('Comment submitted successfully!');
+          
+        } else {
+          alert('Failed to submit comment.');
+        }
+        this.value = 0; // 重置评分为 0
+        this.discussionContent = ''; // 清空输入框
       } catch (error) {
         if (error.response) {
     // 服务器响应了错误信息
