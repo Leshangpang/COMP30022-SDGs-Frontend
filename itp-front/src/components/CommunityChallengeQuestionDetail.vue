@@ -28,7 +28,7 @@
           </div>
         </div>
         
-        <el-button type="primary" @click="submitDiscussion" class="discussion-submit-button">
+        <el-button type="primary" @click="submitRating" class="discussion-submit-button">
           Submit
         </el-button>
       </div>
@@ -94,6 +94,31 @@ export default {
         }
       } else {
         alert('Please select an option.');
+      }
+    },
+    async submitRating() {
+      try {
+        //const apiUrl = `https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/rate`;
+        // 发送评分请求
+        const response = await axios.post('https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/rate?questionId=2&personalRating=4.0');
+
+        if (response.data.code === 1) {
+          alert('Rating submitted successfully!');
+        } else {
+          alert('Failed to submit rating.');
+        }
+      } catch (error) {
+        if (error.response) {
+    // 服务器响应了错误信息
+    console.error('Server error response:', error.response.data);
+  } else if (error.request) {
+    // 请求已发出，但没有收到响应
+    console.error('No response received:', error.request);
+  } else {
+    // 其他类型的错误
+    console.error('Error:', error.message);
+  }
+  alert('An error occurred while submitting the rating.');
       }
     },
     submitDiscussion() {
