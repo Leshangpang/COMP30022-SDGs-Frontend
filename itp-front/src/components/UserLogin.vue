@@ -4,68 +4,39 @@
       <i class="el-icon-close close-button" @click="closeForm"></i>
       <form class="login-form" @submit.prevent="handleSubmit">
         <header class="auth-header">
-          <h2 
-            :class="{'auth-option': true, 'active': localIsLogin}" 
-            @click="setLoginState(true)"
-          >
+          <h2 :class="{ 'auth-option': true, 'active': localIsLogin }" @click="setLoginState(true)">
             Log in
           </h2>
           <div class="divider"></div>
-          <h2 
-            :class="{'auth-option': true, 'active': !localIsLogin}" 
-            @click="setLoginState(false)"
-          >
+          <h2 :class="{ 'auth-option': true, 'active': !localIsLogin }" @click="setLoginState(false)">
             Sign up
           </h2>
         </header>
         <main>
           <div class="input-group">
             <label for="username" class="visually-hidden"></label>
-            <input 
-              type="text" 
-              id="username" 
-              class="auth-input" 
-              placeholder="username" 
-              v-model="username"
-            />
+            <input type="text" id="username" class="auth-input" placeholder="username" v-model="username" />
           </div>
 
           <div class="input-group" v-if="!localIsLogin">
             <label for="email" class="visually-hidden"></label>
-            <input 
-              type="text" 
-              id="email" 
-              class="auth-input" 
-              placeholder="email" 
-              v-model="email"
-            />
+            <input type="text" id="email" class="auth-input" placeholder="email" v-model="email" />
           </div>
 
           <div class="input-group">
             <label for="password" class="visually-hidden"></label>
-            <input 
-              type="password" 
-              id="password" 
-              class="auth-input" 
-              placeholder="password" 
-              v-model="password"
-            />
+            <input type="password" id="password" class="auth-input" placeholder="password" v-model="password" />
           </div>
-  
+
           <!-- Confirm Password only for Sign Up -->
           <div class="input-group" v-if="!localIsLogin">
             <label for="confirm-password" class="visually-hidden"></label>
-            <input 
-              type="password" 
-              id="confirm-password" 
-              class="auth-input" 
-              placeholder="confirm password" 
-              v-model="confirmPassword"
-            />
+            <input type="password" id="confirm-password" class="auth-input" placeholder="confirm password"
+              v-model="confirmPassword" />
           </div>
-  
+
           <div class="input-group">
-            <img src="../assets/image/SignInCloudfarePlaceholder.png"/>
+            <img src="../assets/image/SignInCloudfarePlaceholder.png" />
           </div>
 
           <button type="submit" class="login-button">
@@ -92,7 +63,7 @@
     </div>
   </div>
 </template>
-  
+
 <script>
 export default {
   name: 'UserLogin', // Update the component name to multi-word
@@ -119,30 +90,24 @@ export default {
     handleSubmit() {
       if (!this.localIsLogin) {  // Only validate if signing up
         if (this.isSignUpValid()) {
-          // Proceed with form submission for sign-up
-          alert('Form is valid. Submitting...');
+          this.submitSignUpForm();
         } else {
-          // Invalid input, prevent form submission
-          alert('Form is invalid. Please check your input.');
         }
       } else {
         // Handle login logic
         if (this.isLoginValid()) {
-          // Proceed with form submission for sign-up
-          alert('Form is valid. Submitting...');
+          this.submitLoginForm();
         } else {
           // Invalid input, prevent form submission
         }
       }
     },
+
     isSignUpValid() {
-      // Check if username is not empty
       if (this.username.trim() === '' || this.password.trim() === '') {
         alert('Username and password cannot be empty.');
         return false;
       }
-
-      // Check if password meets criteria (at least 1 character, 6 digits long)
       const hasCharacter = /[a-zA-Z]/.test(this.password);
       const isLongEnough = this.password.length >= 6;
 
@@ -151,39 +116,99 @@ export default {
         return false;
       }
 
-      // Check if passwords match
       if (this.password !== this.confirmPassword) {
         alert('Passwords do not match.');
         return false;
       }
 
-      // Add other validations as needed (e.g., email format)
       return true;
     },
 
     isLoginValid() {
-    // Check if username is not empty
-    if (this.username.trim() === '' || this.password.trim() === '') {
-      alert('Username and password cannot be empty.');
-      return false;
-    }
+      if (this.username.trim() === '' || this.password.trim() === '') {
+        alert('Username and password cannot be empty.');
+        return false;
+      }
 
-    return true;
-  },
+      return true;
+    },
+
     signInWithGoogle() {
       // Handle Google sign-in
     },
     signInWithFacebook() {
       // Handle Facebook sign-in
     },
+
     closeForm() {
       this.$emit('closeLogin');
     },
+
+    submitLoginForm() {
+      const loginData = {
+        name: this.username,  // replace with actual username field
+        password: this.password  // replace with actual password field
+      };
+
+      fetch('https://e5981544-da30-461b-8164-403f6c1442a2.mock.pstmn.io/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginData)
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.code === 1) {
+            // Login successful, handle the success scenario
+            alert('Login successful: ' + data.msg);
+            console.log('Token:', data.data);  // This is your token
+            // You can save the token to localStorage or Vuex for further use
+            this.closeForm(); 
+          } else {
+            // Handle login failure
+            alert('Login failed: ' + data.msg);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    },
+
+    submitSignUpForm() {
+      const signUpData = {
+        name: this.username,  // replace with actual username field
+        password: this.password  // replace with actual password field
+      };
+
+      fetch('https://e5981544-da30-461b-8164-403f6c1442a2.mock.pstmn.io/signup', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(signUpData)
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.code === 1) {
+            // Sign-up successful, handle the success scenario
+            alert('Sign-up successful: ' + data.msg);
+            this.closeForm(); 
+          } else {
+            // Handle sign-up failure
+            alert('Sign-up failed: ' + data.msg);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+
   },
 };
 </script>
 
-  
+
 <style scoped>
 /* Your existing styles */
 .auth-container {
