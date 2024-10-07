@@ -202,7 +202,7 @@ export default {
     },
     submitHandle() {
       if (Object.keys(this.selectMap).length !== this.question.length) {
-        console.log("Not all questions answered");
+        // console.log("Not all questions answered");
         return; // Prevent submission if not all questions are answered
       }
 
