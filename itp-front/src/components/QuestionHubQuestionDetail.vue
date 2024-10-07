@@ -1,104 +1,101 @@
 <template>
-    <div id="SeeMyQuestionPage">
-      <!-- Navigation bar -->
-      <Header class="upload-question-header"></Header>
-  
-      <!-- Main content -->
-      <div class="main-content">
-        <!-- Banner -->
-        <BannerForUploadQuestion 
-          :backgroundImage="require('@/assets/image/MyQuestionBannerBackground.png')" 
-          title="Question Detail" 
-          subtitle="See the details and comments for this question"></BannerForUploadQuestion>
-  
-        <!-- Back button -->
-        <div class="back-button-container">
-          <div class="back-button" @click="goBack">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            <span>Back to My Questions</span>
-          </div>
+  <div id="QuestionDetailPage">
+    <Header class="upload-question-header"></Header>
+
+    <div class="main-content">
+      <BannerForUploadQuestion 
+        :backgroundImage="require('@/assets/image/MyQuestionBannerBackground.png')" 
+        title="Question Detail" 
+        subtitle="See the details and comments for this question" />
+
+      <div class="back-button-container">
+        <div class="back-button" @click="goBack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Questions</span>
         </div>
-  
-        <!-- Question details and comments -->
-        <div class="question-detail-container">
-          <div class="question-detail">
-            <h3 class="specific-question">Question: </h3>
-            <h3 class="specific-question">{{ questionTitle }}</h3>
-            <div class="comments-section">
-              <h4>Discussion: </h4>
-              <ul>
-                <li v-for="comment in comments" :key="comment.id" class="comment-item">
-                  <div class="comment-content">{{ comment.content }}</div>
-                  <div class="comment-rating">
-                    <el-rate v-model="comment.rating" disabled></el-rate> <!-- Display rating -->
-                  </div>
-                </li>
-              </ul>
-            </div>
+      </div>
+
+      <div class="question-detail-container">
+        <div class="question-detail">
+          <h3 class="specific-question">Question: {{ questionTitle }}</h3>
+          <div class="comments-section">
+            <h4>Discussion: </h4>
+            <ul>
+              <li v-for="comment in comments" :key="comment.id" class="comment-item">
+                <div class="comment-content">{{ comment.comment }}</div>
+                <div class="comment-rating">
+                  <el-rate v-model="comment.personalRating" disabled></el-rate> <!-- Display rating -->
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-  
-      <!-- Footer -->
-      <MainFooter></MainFooter>
     </div>
-  </template>
-  
-  <script>
-  import Header from "../components/NavigationBar.vue";
-  import BannerForUploadQuestion from "../components/UploadQuestionBanner.vue";
-  import MainFooter from "../components/MainFooter.vue";
-  
-  export default {
-    props: ['id'], 
-    data() {
-      return {
-        questionTitle: '',
-        comments: []
-      };
-    },
-    created() {
-      this.fetchQuestionDetails();
-      this.fetchComments();
-    },
-    components: {
-      Header,
-      BannerForUploadQuestion,
-      MainFooter
-    },
-    methods: {
-      fetchQuestionDetails() {
-        const questions = [
-          { question: 'What measures can be implemented to effectively prevent and address gender-based violence, including domestic violence and sexual harassment?', id: 0 },
-          { question: 'What are the main challenges preventing universal access to clean and safe drinking water in different regions of the world?', id: 1 },
-          { question: 'What are the main barriers preventing universal access to affordable and reliable energy, especially in developing regions?', id: 2 }
-        ];
-        this.questionTitle = questions[this.id].question;
-      },
-      fetchComments() {
-        const commentsByQuestionId = {
-          0: [
-            { id: 1, content: 'This is indeed a global issue that requires the joint efforts of governments around the world.', rating: 4 },
-            { id: 2, content: 'Education is an important tool in preventing gender-based violence.', rating: 5 }
-          ],
-          1: [
-            { id: 3, content: 'Water scarcity and management are key issues.', rating: 3 }
-          ],
-          2: [
-            { id: 4, content: 'The lack of investment in energy infrastructure is the biggest challenge.', rating: 4 }
-          ]
-        };
-        this.comments = commentsByQuestionId[this.id] || [];
-      },
-      goBack() {
-        this.$router.push('/myquestion'); // Navigate back to My Questions page
+
+    <MainFooter></MainFooter>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+import Header from "../components/NavigationBar.vue";
+import BannerForUploadQuestion from "../components/UploadQuestionBanner.vue";
+import MainFooter from "../components/MainFooter.vue";
+
+export default {
+  data() {
+    return {
+      questionTitle: '',  // 存储问题标题
+      comments: []  // 存储评论
+    };
+  },
+  created() {
+    this.fetchQuestionDetails();
+    this.fetchComments();
+  },
+  components: {
+    Header,
+    BannerForUploadQuestion,
+    MainFooter
+  },
+  methods: {
+    // 获取问题详情
+    async fetchQuestionDetails() {
+      try {
+        const response = await axios.get(`https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/${this.$route.params.id}`);
+        if (response.data.code === 1) {
+          this.questionTitle = response.data.data.question;
+        } else {
+          alert('Failed to fetch question details.');
+        }
+      } catch (error) {
+        console.error('Error fetching question details:', error);
       }
+    },
+    // 获取问题的评论
+    async fetchComments() {
+      try {
+        const response = await axios.get(`https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/comment?questionId=${this.$route.params.id}`);
+        if (response.data.code === 1) {
+          this.comments = response.data.data;
+        } else {
+          alert('Failed to fetch comments.');
+        }
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+      }
+    },
+    goBack() {
+      this.$router.push('/myquestion'); // Navigate back to the questions page
     }
-  };
-  </script>
+  }
+};
+</script>
+
   
   <style scoped>
   .main-content {
