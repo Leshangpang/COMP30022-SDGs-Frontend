@@ -25,7 +25,7 @@
             <h4>Discussion: </h4>
             <ul>
               <li v-for="comment in comments" :key="comment.id" class="comment-item">
-                <div class="comment-content">{{ comment.comment }}</div>
+                <div class="comment-content">{{ comment.userName }} - {{ comment.comment }}</div>
                 <div class="comment-rating">
                   <el-rate v-model="comment.personalRating" disabled></el-rate> <!-- Display rating -->
                 </div>
@@ -76,12 +76,26 @@ export default {
         console.error('Error fetching question details:', error);
       }
     },
-    // 获取问题的评论
+    // 获取问题的评论并为每个评论获取用户名
     async fetchComments() {
       try {
         const response = await axios.get(`https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community/comment?questionId=${this.$route.params.id}`);
         if (response.data.code === 1) {
-          this.comments = response.data.data;
+          const comments = response.data.data;
+
+          // 创建一个异步请求的数组来获取所有用户的用户名
+          const promises = comments.map(async (comment) => {
+            const userResponse = await axios.get(`https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/users?userId=2`);
+            if (userResponse.data.code === 1) {
+              comment.userName = userResponse.data.data.name; // 将用户名添加到评论
+            } else {
+              comment.userName = 'Unknown'; // 若未找到用户，则使用默认值
+            }
+            return comment;
+          });
+
+          // 等待所有请求完成后将结果保存到 comments 数组
+          this.comments = await Promise.all(promises);
         } else {
           alert('Failed to fetch comments.');
         }
@@ -95,6 +109,7 @@ export default {
   }
 };
 </script>
+
 
   
   <style scoped>
