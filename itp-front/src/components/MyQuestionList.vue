@@ -6,8 +6,8 @@
             <span class="header-title">Question</span>
             <div class="header-right">
                 <span>Category</span>
-                <span>Upload Time</span>
-                <span>Views</span>
+                <!-- <span>Upload Time</span>
+                <span>Views</span> -->
                 <span>Average Score</span>
             </div>
         </div>
@@ -18,8 +18,8 @@
             </div>
             <div class="question-right">
                 <span>{{ question.category }}</span>
-                <span>{{ formatDate(question.uploadTime) }}</span>
-                <span>{{ question.views }}</span>
+                <!-- <span>{{ formatDate(question.uploadTime) }}</span>
+                <span>{{ question.views }}</span> -->
                 <span>{{ question.averageScore }}</span>
             </div>
         </div>
