@@ -25,9 +25,11 @@
             <h4>Discussion: </h4>
             <ul>
               <li v-for="comment in comments" :key="comment.id" class="comment-item">
-                <div class="comment-content">{{ comment.userName }} - {{ comment.comment }}</div>
+                <div class="comment-content">
+                  <span class="username">{{ comment.userName }}</span>: {{ comment.comment }}
+                </div>
                 <div class="comment-rating">
-                  <el-rate v-model="comment.personalRating" disabled></el-rate> <!-- Display rating -->
+                  <el-rate v-model="comment.personalRating" disabled></el-rate> <!-- 显示评分 -->
                 </div>
               </li>
             </ul>
@@ -50,12 +52,12 @@ export default {
   data() {
     return {
       questionTitle: '',  // 存储问题标题
-      comments: []  // 存储评论
+      comments: []  // 存储评论及用户名
     };
   },
   created() {
     this.fetchQuestionDetails();
-    this.fetchComments();
+    this.fetchComments();  // 获取评论及用户名
   },
   components: {
     Header,
@@ -83,18 +85,21 @@ export default {
         if (response.data.code === 1) {
           const comments = response.data.data;
 
-          // 创建一个异步请求的数组来获取所有用户的用户名
+          // 使用 map 创建 Promise 数组以获取每个评论的用户名
           const promises = comments.map(async (comment) => {
-            const userResponse = await axios.get(`https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/users?userId=2`);
+            // 使用 comment.userId 发起获取用户名的请求
+            const userResponse = await axios.get(`https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/users?userId=${comment.userId}`, { cache: 'no-store' });
+            //console.log(JSON.stringify(userResponse.data, null, 2))
+            //console.log('User response code:', userResponse.data.code);
             if (userResponse.data.code === 1) {
-              comment.userName = userResponse.data.data.name; // 将用户名添加到评论
+              comment.userName = userResponse.data.data.name;  // 添加用户名到评论中
             } else {
-              comment.userName = 'Unknown'; // 若未找到用户，则使用默认值
+              comment.userName = 'Unknown';  // 若未找到用户，设为 'Unknown'
             }
-            return comment;
+            return comment;  // 返回带有用户名的评论
           });
 
-          // 等待所有请求完成后将结果保存到 comments 数组
+          // 等待所有 Promise 完成并更新 comments 数组
           this.comments = await Promise.all(promises);
         } else {
           alert('Failed to fetch comments.');
@@ -104,15 +109,21 @@ export default {
       }
     },
     goBack() {
-      this.$router.push('/myquestion'); // Navigate back to the questions page
+      this.$router.push('/myquestion');  // 返回问题列表页面
     }
   }
 };
 </script>
 
 
+
   
   <style scoped>
+  .username {
+  font-weight: 600; /* 加粗 */
+  font-size: 1.2em;  /* 字体变大 */
+}
+
   .main-content {
     display: flex;
     flex-direction: column;
