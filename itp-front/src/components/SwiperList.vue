@@ -7,7 +7,7 @@
         <!--each swiper item use the swiper-slide as tip-->
         <swiper-slide
           v-for="item in list"
-          :key="item"
+          :key="item.indexOfModule"
           class="swiper_slide_item"
         >
           <swiper-item :obj="item" :isLoggedIn="userLoggedIn"></swiper-item>
@@ -29,9 +29,14 @@
 </template>
 <script>
 import SwiperItem from "./SwiperItem.vue";
+import axios from 'axios';
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+
 export default {
   name: "SwiperList",
   components: {
+    Swiper,
+    SwiperSlide,
     SwiperItem,
   },
   created() {
@@ -39,7 +44,7 @@ export default {
   },
   data() {
     return {
-      userLoggedIn: false, // Change to `true` if user is logged in
+      userLoggedIn: true, // Change to `true` if user is logged in
       swiperOption: {
         //swipe direction
         direction: "horizontal", 
@@ -225,7 +230,7 @@ export default {
             { value: 50, name: "not Finished"}
           ],
         },
-      ],
+      ].map((item, index) => ({ ...item, indexOfModule: index })),
     };
   },
   methods:{
@@ -235,21 +240,41 @@ export default {
     logout() {
       this.userLoggedIn = false;
     },
-    updateValue(itemName, newValue) {
-      // Find the item by name
-      const item = this.list.find(i => i.name === itemName);
+    async updateValue(moduleId) {
+      try {
+      // Send GET request using moduleId as a path argument
+        const response = await axios.get(`https://ba8a701b-07d5-4191-8556-da47d8974118.mock.pstmn.io/process/${moduleId}`);
+        if (response.data.code === 1) {
+          // Extract data from the response
+          const { cardsFinishedNum, quizPassed } = response.data.data;
+          const percentage = (cardsFinishedNum + quizPassed)/2
+          // Find the item by indexOfModule (moduleId in your case)
+          const item = this.list.find(i => i.indexOfModule === moduleId);
       if (item) {
-        // Update the Learning value
+        // Update the 'Learning' value based on cardsFinishedNum
         const learningData = item.data.find(d => d.name === "Learning");
         if (learningData) {
-          learningData.value = newValue; // Update the value
+          learningData.value = percentage; // Update with cardsFinishedNum from response
         }
-        const NotDone= item.data.find(d => d.name === "not Finished");
-        if(NotDone){
-          NotDone.value = 100 - newValue;
+        // Update the 'not Finished' value
+        const notFinishedData = item.data.find(d => d.name === "not Finished");
+        if (notFinishedData) {
+          notFinishedData.value = 100 - percentage; // Adjust based on cardsFinishedNum
         }
+        // Optionally, you could store quizPassed or other data if needed
       }
-    },
+    } else {
+      console.error('Error in response:', response.data.msg);
+    }
+  } catch (error) {
+    console.error('Error sending GET request:', error);
+  }
+  },
+  async updateAllModules() {
+    for (let module of this.list) {
+      await this.updateValue(module.indexOfModule); // Assuming indexOfModule is used as moduleId
+    }
+  },
   }
 };
 </script>
