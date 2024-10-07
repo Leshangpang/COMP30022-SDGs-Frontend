@@ -64,6 +64,7 @@
 </template>
 
 <script>
+import axios from 'axios'; // Import axios
 export default {
     data() {
         return {
@@ -75,55 +76,55 @@ export default {
             selectedGoal: '', 
             correctAnswer: '', // correct answer
             options1: [{
-                value: 'option1',
+                value: '1',
                 label: 'Goal 1: No Poverty'
             }, {
-                value: 'option2',
+                value: '2',
                 label: 'Goal 2: Zero Hunger'
             }, {
-                value: 'option3',
+                value: '3',
                 label: 'Goal 3: Good Health and Well-being'
             }, {
-                value: 'option4',
+                value: '4',
                 label: 'Goal 4: Quality Education'
             }, {
-                value: 'option5',
+                value: '5',
                 label: 'Goal 5: Gender Equality'
             }, {
-                value: 'option6',
+                value: '6',
                 label: 'Goal 6: Clean Water And Sanitation'
             }, {
-                value: 'option7',
+                value: '7',
                 label: 'Goal 7: Affordable and Clean Energy'
             }, {
-                value: 'option8',
+                value: '8',
                 label: 'Goal 8: Decent Work and Economic Growth'
             }, {
-                value: 'option9',
+                value: '9',
                 label: 'Goal 9: Industry, Innovation, and Infrastructure'
             }, {
-                value: 'option10',
+                value: '10',
                 label: 'Goal 10: Reduced Inequality'
             }, {
-                value: 'option11',
+                value: '11',
                 label: 'Goal 11: Sustainable Cities and Communities'
             }, {
-                value: 'option12',
+                value: '12',
                 label: 'Goal 12: Responsible Consumption and Production'
             }, {
-                value: 'option13',
+                value: '13',
                 label: 'Goal 13: Climate Action'
             }, {
-                value: 'option14',
+                value: '14',
                 label: 'Goal 14: Life Below Water'
             }, {
-                value: 'option15',
+                value: '15',
                 label: 'Goal 15: Life on Land'
             }, {
-                value: 'option16',
+                value: '16',
                 label: 'Goal 16: Peace, Justice, and Strong Institutions'
             }, {
-                value: 'option17',
+                value: '17',
                 label: 'Goal 17: Partnerships for the Goals'
             }],
             options2: [{
@@ -152,19 +153,43 @@ export default {
             this.correctAnswer = '';
         },
         validateForm() {
-            let errors = [];
-            if (!this.question) errors.push('Question is required.');
-            if (!this.selectedGoal) errors.push('SDGs Category is required.');
-            if (!this.choiceA) errors.push('Choice A is required.');
-            if (!this.choiceB) errors.push('Choice B is required.');
-            if (!this.choiceC) errors.push('Choice C is required.');
-            if (!this.choiceD) errors.push('Choice D is required.');
-            if (!this.correctAnswer) errors.push('Correct Answer is required.');
+        // 这里可以进行表单验证逻辑，如果表单无误则调用 submitForm
+        if (!this.question || !this.choiceA || !this.choiceB || !this.choiceC || !this.choiceD || !this.correctAnswer || !this.selectedGoal) {
+            alert('Please fill in all required fields.');
+        } else {
+            this.submitForm();
+        }
+    },
+        async submitForm() {
+            
 
-            if (errors.length > 0) {
-                alert(errors.join('\n')); // show error message
-            } else {
-                alert('Form is valid! Submitting...'); // The form is validated
+            // 组织 choice 数据
+            const choices = `${this.choiceA},,,${this.choiceB},,,${this.choiceC},,,${this.choiceD}`;
+            const mockServerUrl = 'https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io';
+            // 构造提交数据的 payload
+            const payload = {
+                userId: 1,  // 假设用户 ID 是 1
+                moduleId: parseInt(this.selectedGoal),  // 选中的 SDG 类别
+                question: this.question,
+                choice: choices,
+                answer: this.correctAnswer === 'option1' ? 1 :
+                        this.correctAnswer === 'option2' ? 2 :
+                        this.correctAnswer === 'option3' ? 3 : 4
+            };
+
+            try {
+                // 发送 PUT 请求，将问题数据提交到后端
+                const response = await axios.put(`${mockServerUrl}/community`, payload);
+
+                if (response.data.code === 1) {
+                    alert('Question submitted successfully!');
+                    this.clearForm();  // 提交成功后清空表单
+                } else {
+                    alert('Failed to submit the question.');
+                }
+            } catch (error) {
+                console.error('Error submitting the question:', error);
+                alert('An error occurred while submitting the question.');
             }
         }
     }
