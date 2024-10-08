@@ -1,71 +1,82 @@
 <template>
     <div class="user-questions">
-
         <!-- Top column headings -->
         <div class="question-header">
             <span class="header-title">Question</span>
             <div class="header-right">
                 <span>Category</span>
-                <span>Upload Time</span>
-                <span>Views</span>
                 <span>Average Score</span>
             </div>
         </div>
         <!-- Question List -->
         <div v-for="(question, index) in questions" :key="index" class="question-card">
             <div class="question-left">
-                <h3 class="exact-question" @click="goToDetail(index)">{{ question.question }}</h3>
+                <h3 class="exact-question" @click="goToDetail(question.questionId)">{{ question.question }}</h3>
             </div>
             <div class="question-right">
-                <span>{{ question.category }}</span>
-                <span>{{ formatDate(question.uploadTime) }}</span>
-                <span>{{ question.views }}</span>
-                <span>{{ question.averageScore }}</span>
+                <span>{{ getGoalLabel(question.moduleId) }}</span>
+                <span>{{ question.averageRating || 'N/A' }}</span>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
-            questions: [
-                {
-                    question: 'What measures can be implemented to effectively prevent and address gender-based violence, including domestic violence and sexual harassment?',
-                    category: 'Goal 5',
-                    uploadTime: '2023-09-15T10:30:00',
-                    views: 150,
-                    averageScore: 4.5
-                },
-                {
-                    question: 'What are the main challenges preventing universal access to clean and safe drinking water in different regions of the world?',
-                    category: 'Goal 6',
-                    uploadTime: '2023-09-16T12:45:00',
-                    views: 200,
-                    averageScore: 4.8
-                },
-                {
-                    question: 'What are the main barriers preventing universal access to affordable and reliable energy, especially in developing regions?',
-                    category: 'Goal 7',
-                    uploadTime: '2023-09-17T14:20:00',
-                    views: 180,
-                    averageScore: 4.7
-                }
-            ]
+            questions: []  // 将问题数据存储到这里
         };
     },
+    mounted() {
+        this.fetchQuestions();  // 页面加载时获取问题列表
+    },
     methods: {
-        formatDate(dateString) {
-            const date = new Date(dateString); // Convert the string to a Date object
-            const day = String(date.getDate()).padStart(2, '0'); // Get the day, ensure it's two digits
-            const month = String(date.getMonth() + 1).padStart(2, '0'); // Get the month, ensure it's two digits
-            const year = date.getFullYear(); // Get the year
-            return `${day}/${month}/${year}`; // Return the date in DD/MM/YYYY format
+        async fetchQuestions() {
+            try {
+                // 假设你的 Postman Mock Server 的 URL 是这个
+                const apiUrl = 'https://4106d498-ed1a-41dc-85cc-c733a827f038.mock.pstmn.io/community';
+                const response = await axios.get(apiUrl);
 
+                if (response.data.code === 1) {
+                    // 将从后端获取的问题列表存储到 data 中
+                    this.questions = response.data.data;
+                } else {
+                    alert('Failed to fetch questions.');
+                }
+            } catch (error) {
+                console.error('Error fetching questions:', error);
+                alert('An error occurred while fetching the questions.');
+            }
         },
-        goToDetail(index) {
-            this.$router.push({ name: 'QuestionDetail', params: { id: index } });
+        goToDetail(questionId) {
+            // 使用问题 ID 作为参数跳转到详细页面
+            this.$router.push({ name: 'QuestionDetail', params: { id: questionId } });
+        },
+        getGoalLabel(moduleId) {
+            const goalMapping = {
+                1: 'Goal 1: No Poverty',
+                2: 'Goal 2: Zero Hunger',
+                3: 'Goal 3: Good Health and Well-being',
+                4: 'Goal 4: Quality Education',
+                5: 'Goal 5: Gender Equality',
+                6: 'Goal 6: Clean Water and Sanitation',
+                7: 'Goal 7: Affordable and Clean Energy',
+                8: 'Goal 8: Decent Work and Economic Growth',
+                9: 'Goal 9: Industry, Innovation and Infrastructure',
+                10: 'Goal 10: Reduced Inequality',
+                11: 'Goal 11: Sustainable Cities and Communities',
+                12: 'Goal 12: Responsible Consumption and Production',
+                13: 'Goal 13: Climate Action',
+                14: 'Goal 14: Life Below Water',
+                15: 'Goal 15: Life on Land',
+                16: 'Goal 16: Peace, Justice and Strong Institutions',
+                17: 'Goal 17: Partnerships for the Goals'
+            };
+
+            return goalMapping[moduleId] || 'Unknown Goal';
         }
     }
 };
