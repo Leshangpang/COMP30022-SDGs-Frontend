@@ -1,13 +1,12 @@
 import { createLocalVue, mount } from '@vue/test-utils';
 import CommunityChallengeQuestionDetail from '@/components/CommunityChallengeQuestionDetail.vue';
-import { Button, Input, Rate, Textarea } from 'element-ui'; // On-demand import of required Element UI components
+import { Button, Input, Rate } from 'element-ui'; // No Textarea, Input covers both input and textarea use cases
 
 // Create a scoped Vue instance to isolate tests
 const localVue = createLocalVue();
 localVue.component(Button.name, Button);
 localVue.component(Input.name, Input);
 localVue.component(Rate.name, Rate);
-localVue.component(Textarea.name, Textarea);
 
 describe('CommunityChallengeQuestionDetail.vue', () => {
   let wrapper;
@@ -100,7 +99,7 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
   });
 
   it('should submit discussion content', async () => {
-    const discussionInput = wrapper.find('.discussion-input .el-textarea__inner');
+    const discussionInput = wrapper.find('.discussion-input .el-input__inner'); // Use input for text input
     await discussionInput.setValue('This is a test comment.');
 
     const discussionSubmitButton = wrapper.find('.discussion-submit-button');
