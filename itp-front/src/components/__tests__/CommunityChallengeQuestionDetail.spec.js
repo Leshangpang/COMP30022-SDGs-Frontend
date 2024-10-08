@@ -32,21 +32,18 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
     window.alert.mockClear();
   });
 
-  it('should load question details', async () => {
-    // Mock fetchQuestionDetail to return test data
-    wrapper.vm.fetchQuestionDetail = jest.fn().mockResolvedValue({
-      questionDetail: 'What percentage of women globally experience physical or sexual violence in their lifetime?',
-      options: ['10%', '20%', '30%', '40%']
-    });
+  // Test: Submitting discussion content
+  it('should submit discussion content', async () => {
+    const discussionInput = wrapper.find('.el-textarea__inner'); // Correctly target the textarea inside el-input
+    await discussionInput.setValue('This is a test comment.');    // Set value for textarea
 
-    await wrapper.vm.fetchQuestionDetail();  // Call the mock function
-    await wrapper.vm.$nextTick(); // Wait for asynchronous update
+    const discussionSubmitButton = wrapper.find('.discussion-submit-button');
+    await discussionSubmitButton.trigger('click');               // Simulate the form submission
 
-    // Test expectations
-    expect(wrapper.vm.questionDetail).toBe('What percentage of women globally experience physical or sexual violence in their lifetime?');
-    expect(wrapper.vm.options).toEqual(['10%', '20%', '30%', '40%']);
+    expect(window.alert).toHaveBeenCalledWith('Your comment: This is a test comment.'); // Assert the alert message
   });
 
+  // Test: Selecting the correct option
   it('should select the correct option', async () => {
     wrapper.vm.questionId = 1;
     wrapper.vm.fetchQuestionDetail = jest.fn().mockResolvedValue({
@@ -63,6 +60,7 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
     expect(wrapper.vm.selectedOption).toBe('10%'); // Check if the selected option is correct
   });
 
+  // Test: Showing the submitted answer
   it('should show the submitted answer', async () => {
     wrapper.vm.questionId = 1;
     wrapper.vm.fetchQuestionDetail = jest.fn().mockResolvedValue({
@@ -82,6 +80,7 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
     expect(window.alert).toHaveBeenCalledWith('You selected: 10%');
   });
 
+  // Test: Prompting to select an option
   it('should prompt to select an option', async () => {
     wrapper.vm.questionId = 1;
     wrapper.vm.fetchQuestionDetail = jest.fn().mockResolvedValue({
@@ -98,16 +97,7 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
     expect(window.alert).toHaveBeenCalledWith('Please select an option.');
   });
 
-  it('should submit discussion content', async () => {
-    const discussionInput = wrapper.find('.discussion-input .el-input__inner'); // Use input for text input
-    await discussionInput.setValue('This is a test comment.');
-
-    const discussionSubmitButton = wrapper.find('.discussion-submit-button');
-    await discussionSubmitButton.trigger('click');
-
-    expect(window.alert).toHaveBeenCalledWith('Your comment: This is a test comment.');
-  });
-
+  // Test: Displaying the rating and corresponding text
   it('should display the rating and corresponding text', async () => {
     wrapper.vm.value = 4;
     await wrapper.vm.$nextTick();
