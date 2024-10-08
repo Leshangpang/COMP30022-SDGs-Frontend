@@ -39,10 +39,12 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
 
     // Find and set the discussion input value
     const discussionInput = wrapper.find('.el-textarea__inner'); // Correctly target the textarea inside el-input
+    expect(discussionInput.exists()).toBe(true);  // Check if the input exists
     await discussionInput.setValue('This is a test comment.');
 
     // Find and click the submit button
     const discussionSubmitButton = wrapper.find('.discussion-submit-button');
+    expect(discussionSubmitButton.exists()).toBe(true); // Check if the button exists
     await discussionSubmitButton.trigger('click');               // Simulate the form submission
 
     // Assert the alert message
@@ -61,8 +63,12 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
     await wrapper.vm.fetchQuestionDetail();
     await wrapper.vm.$nextTick(); // Wait for asynchronous update
 
+    // Ensure the options are rendered
+    expect(wrapper.vm.options.length).toBeGreaterThan(0);
+
     // Find the first option button and simulate a click
     const optionButton = wrapper.findAll('.option-button').at(0); // Find first option button
+    expect(optionButton.exists()).toBe(true); // Check if the button exists
     await optionButton.trigger('click');
 
     // Check if the selected option is correct
@@ -81,12 +87,17 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
     await wrapper.vm.fetchQuestionDetail();
     await wrapper.vm.$nextTick();
 
+    // Ensure the options are rendered
+    expect(wrapper.vm.options.length).toBeGreaterThan(0);
+
     // Find the first option button and simulate a click
     const optionButton = wrapper.findAll('.option-button').at(0);
+    expect(optionButton.exists()).toBe(true); // Check if the button exists
     await optionButton.trigger('click');
 
     // Find and click the submit button
     const submitButton = wrapper.find('.submit-button');
+    expect(submitButton.exists()).toBe(true); // Check if the submit button exists
     await submitButton.trigger('click');
 
     // Assert the alert message
@@ -105,8 +116,12 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
     await wrapper.vm.fetchQuestionDetail();
     await wrapper.vm.$nextTick();
 
+    // Ensure the options are rendered
+    expect(wrapper.vm.options.length).toBeGreaterThan(0);
+
     // Find and click the submit button without selecting an option
     const submitButton = wrapper.find('.submit-button');
+    expect(submitButton.exists()).toBe(true); // Check if the submit button exists
     await submitButton.trigger('click');
 
     // Assert the alert message
