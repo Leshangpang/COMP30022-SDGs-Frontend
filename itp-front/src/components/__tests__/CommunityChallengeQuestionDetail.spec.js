@@ -1,12 +1,12 @@
 import { createLocalVue, mount } from '@vue/test-utils';
 import CommunityChallengeQuestionDetail from '@/components/CommunityChallengeQuestionDetail.vue';
-import { Button, Input, Rate } from 'element-ui'; // No Textarea, Input covers both input and textarea use cases
+import { Button, Input, Rate } from 'element-ui'; // Correctly import Button, Input, and Rate from Element UI
 
 // Create a scoped Vue instance to isolate tests
 const localVue = createLocalVue();
-localVue.component(Button.name, Button);
-localVue.component(Input.name, Input);
-localVue.component(Rate.name, Rate);
+localVue.use(Button);  // Register Button
+localVue.use(Input);   // Register Input
+localVue.use(Rate);    // Register Rate
 
 describe('CommunityChallengeQuestionDetail.vue', () => {
   let wrapper;
