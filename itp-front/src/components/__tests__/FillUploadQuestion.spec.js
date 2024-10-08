@@ -54,7 +54,7 @@ describe('FillUploadQuestion.vue', () => {
   });
 
   it('should validate form and show error messages', async () => {
-    jest.spyOn(window, 'alert').mockImplementation(() => {});
+    jest.spyOn(window, 'alert').mockImplementation(() => { });
 
     // Call validateForm without filling the form
     await wrapper.vm.validateForm();
@@ -68,7 +68,7 @@ describe('FillUploadQuestion.vue', () => {
   });
 
   it('should submit form when valid', async () => {
-    jest.spyOn(window, 'alert').mockImplementation(() => {});
+    jest.spyOn(window, 'alert').mockImplementation(() => { });
 
     // Set valid data
     await wrapper.setData({
