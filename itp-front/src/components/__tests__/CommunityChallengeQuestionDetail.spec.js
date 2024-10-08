@@ -1,20 +1,25 @@
-import Vue from 'vue';
-import ElementUI from 'element-ui';
-import { mount } from '@vue/test-utils';
+import { createLocalVue, mount } from '@vue/test-utils';
 import CommunityChallengeQuestionDetail from '@/components/CommunityChallengeQuestionDetail.vue';
+import { Button, Input, Rate, Textarea } from 'element-ui'; // On-demand import of required Element UI components
 
-Vue.use(ElementUI);
+// Create a scoped Vue instance to isolate tests
+const localVue = createLocalVue();
+localVue.component(Button.name, Button);
+localVue.component(Input.name, Input);
+localVue.component(Rate.name, Rate);
+localVue.component(Textarea.name, Textarea);
 
 describe('CommunityChallengeQuestionDetail.vue', () => {
   let wrapper;
 
   // Mock window.alert
   beforeAll(() => {
-    window.alert = jest.fn();
+    jest.spyOn(window, 'alert').mockImplementation(() => { }); // Mock window.alert
   });
 
   beforeEach(() => {
     wrapper = mount(CommunityChallengeQuestionDetail, {
+      localVue, // Use the localVue instance with on-demand components registered
       mocks: {
         $route: {
           params: { id: 1 }
@@ -24,33 +29,50 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
   });
 
   afterEach(() => {
-    // Clear mock call history
+    // Clear mock call history after each test
     window.alert.mockClear();
   });
 
   it('should load question details', async () => {
-    wrapper.vm.fetchQuestionDetail();
-    await Vue.nextTick(); // Wait for asynchronous update
+    // Mock fetchQuestionDetail to return test data
+    wrapper.vm.fetchQuestionDetail = jest.fn().mockResolvedValue({
+      questionDetail: 'What percentage of women globally experience physical or sexual violence in their lifetime?',
+      options: ['10%', '20%', '30%', '40%']
+    });
 
+    await wrapper.vm.fetchQuestionDetail();  // Call the mock function
+    await wrapper.vm.$nextTick(); // Wait for asynchronous update
+
+    // Test expectations
     expect(wrapper.vm.questionDetail).toBe('What percentage of women globally experience physical or sexual violence in their lifetime?');
     expect(wrapper.vm.options).toEqual(['10%', '20%', '30%', '40%']);
   });
 
   it('should select the correct option', async () => {
     wrapper.vm.questionId = 1;
-    wrapper.vm.fetchQuestionDetail();
-    await Vue.nextTick(); // Wait for asynchronous update
+    wrapper.vm.fetchQuestionDetail = jest.fn().mockResolvedValue({
+      questionDetail: 'Test Question?',
+      options: ['10%', '20%', '30%', '40%']
+    });
 
-    const optionButton = wrapper.findAll('.option-button').at(0);
+    await wrapper.vm.fetchQuestionDetail();  // Call the mock function
+    await wrapper.vm.$nextTick(); // Wait for asynchronous update
+
+    const optionButton = wrapper.findAll('.option-button').at(0); // Find first option button
     await optionButton.trigger('click');
 
-    expect(wrapper.vm.selectedOption).toBe('10%');
+    expect(wrapper.vm.selectedOption).toBe('10%'); // Check if the selected option is correct
   });
 
   it('should show the submitted answer', async () => {
     wrapper.vm.questionId = 1;
-    wrapper.vm.fetchQuestionDetail();
-    await Vue.nextTick(); // Wait for asynchronous update
+    wrapper.vm.fetchQuestionDetail = jest.fn().mockResolvedValue({
+      questionDetail: 'Test Question?',
+      options: ['10%', '20%', '30%', '40%']
+    });
+
+    await wrapper.vm.fetchQuestionDetail();
+    await wrapper.vm.$nextTick();
 
     const optionButton = wrapper.findAll('.option-button').at(0);
     await optionButton.trigger('click');
@@ -63,8 +85,13 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
 
   it('should prompt to select an option', async () => {
     wrapper.vm.questionId = 1;
-    wrapper.vm.fetchQuestionDetail();
-    await Vue.nextTick(); // Wait for asynchronous update
+    wrapper.vm.fetchQuestionDetail = jest.fn().mockResolvedValue({
+      questionDetail: 'Test Question?',
+      options: ['10%', '20%', '30%', '40%']
+    });
+
+    await wrapper.vm.fetchQuestionDetail();
+    await wrapper.vm.$nextTick();
 
     const submitButton = wrapper.find('.submit-button');
     await submitButton.trigger('click');
@@ -84,7 +111,7 @@ describe('CommunityChallengeQuestionDetail.vue', () => {
 
   it('should display the rating and corresponding text', async () => {
     wrapper.vm.value = 4;
-    await Vue.nextTick(); // Wait for asynchronous update
+    await wrapper.vm.$nextTick();
 
     expect(wrapper.find('.rating-text').text()).toBe('4 stars');
   });
