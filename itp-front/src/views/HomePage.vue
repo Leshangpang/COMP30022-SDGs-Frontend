@@ -45,6 +45,7 @@ import MainBanner from "../components/HomePageBanner.vue";
 import SwiperList from "../components/SwiperList.vue";
 import HomePageQnA from "../components/HomePageQnA.vue";
 import MainFooter from "../components/MainFooter.vue";
+import { EventBus } from './eventBus';
 
 export default {
   name: "HomePage",
@@ -54,6 +55,19 @@ export default {
     MainFooter,
     SwiperList,
     HomePageQnA,
+  },
+  data() {
+    return {
+      isLoggedIn: localStorage.getItem('isLoggedIn') === 'true',
+    };
+  },
+  mounted() {
+    EventBus.$on('loginStatusChanged', (status) => {
+      this.isLoggedIn = status;
+    });
+  },
+  beforeDestroy() {
+    EventBus.$off('loginStatusChanged'); // Clean up event listener
   },
 };
 </script>

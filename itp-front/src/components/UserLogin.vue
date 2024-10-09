@@ -64,7 +64,10 @@
   </div>
 </template>
 
+
 <script>
+import { EventBus } from '@/eventBus';
+
 export default {
   name: 'UserLogin', // Update the component name to multi-word
   props: {
@@ -164,6 +167,8 @@ export default {
             alert('Login successful: ' + data.msg);
             console.log('Token:', data.data);  // This is your token
             // You can save the token to localStorage or Vuex for further use
+            localStorage.setItem('isLoggedIn', 'true');
+            EventBus.$emit('loginStatusChanged', true);
             this.closeForm(); 
           } else {
             // Handle login failure
@@ -193,6 +198,8 @@ export default {
           if (data.code === 1) {
             // Sign-up successful, handle the success scenario
             alert('Sign-up successful: ' + data.msg);
+            localStorage.setItem('isLoggedIn', 'true');
+            EventBus.$emit('loginStatusChanged', true);
             this.closeForm(); 
           } else {
             // Handle sign-up failure
