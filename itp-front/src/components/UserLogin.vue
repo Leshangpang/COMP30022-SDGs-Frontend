@@ -94,14 +94,11 @@ export default {
       if (!this.localIsLogin) {  // Only validate if signing up
         if (this.isSignUpValid()) {
           this.submitSignUpForm();
-        } else {
         }
       } else {
         // Handle login logic
         if (this.isLoginValid()) {
           this.submitLoginForm();
-        } else {
-          // Invalid input, prevent form submission
         }
       }
     },
