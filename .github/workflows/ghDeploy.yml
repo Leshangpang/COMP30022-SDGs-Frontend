@@ -30,14 +30,14 @@ jobs:
         run: npm install
 
       # Build the Vue.js project
-      - name: Build the site
+      - name: Build the project
         run: npm run build
+        working-directory: ./itp-front
 
       # Conditionally deploy to GitHub Pages only on main branch
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'  # Only deploy if it's the main branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages  # The branch where the website will be deployed
+          publish_branch: gh-pages 
