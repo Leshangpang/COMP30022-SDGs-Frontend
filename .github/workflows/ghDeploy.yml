@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feature/TASK-285-CD-GitHub-Pages
 
 jobs:
   build:
@@ -16,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.17.0'
+          node-version: '20.x'
 
       - name: Change to itp-front directory
         run: cd itp-front
