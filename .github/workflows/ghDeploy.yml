@@ -1,6 +1,5 @@
 name: Deploy to GitHub Pages
 
-# Trigger the workflow when code is pushed to the 'main' or 'feature/TASK-285-CD-GitHub-Pages' branches
 on:
   push:
     branches:
@@ -11,36 +10,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [20.17.0]
-
     steps:
-      # Check out the repository code
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Set up Node.js for the specific version
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: '20.17.0'
 
-      # Change to the itp-front directory
       - name: Change to itp-front directory
         run: cd itp-front
 
-      # Install dependencies using npm
       - name: Install dependencies
         run: npm ci
         working-directory: ./itp-front
 
-      # Install Vue CLI globally if needed
       - name: Install Vue CLI
         run: npm install -g @vue/cli
 
-      # Build the Vue.js project
       - name: Build the project
         run: npm run build
         working-directory: ./itp-front
@@ -49,6 +37,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
-          publish_dir: ./itp-front/dist  # The output directory after Vue.js build
-          publish_branch: gh-pages  # The branch where GitHub Pages deploys from
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./itp-front/dist
+          publish_branch: gh-pages
