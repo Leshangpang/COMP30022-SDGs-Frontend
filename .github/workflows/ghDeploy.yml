@@ -1,6 +1,6 @@
 name: Deploy to GitHub Pages
 
-# Trigger this workflow when code is pushed to the 'main' or 'feature/TASK-285-CD-GitHub-Pages' branch
+# Trigger the workflow when code is pushed to the 'main' or 'feature/TASK-285-CD-GitHub-Pages' branches
 on:
   push:
     branches:
@@ -30,10 +30,11 @@ jobs:
       - name: Build the site
         run: npm run build
 
-      # Deploy to GitHub Pages
+      # Conditionally deploy to GitHub Pages only on main branch
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'  # Only deploy if it's the main branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  
+          publish_dir: ./dist
           publish_branch: gh-pages  # The branch where the website will be deployed
