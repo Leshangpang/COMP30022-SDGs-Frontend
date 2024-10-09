@@ -11,27 +11,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      # Checkout the repository code
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    strategy:
+      matrix:
+        node-version: [20.17.0]
 
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+    steps:
+      # Check out the repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Node.js for the specific version
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: '20.17.0'
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       # Change to the itp-front directory
       - name: Change to itp-front directory
         run: cd itp-front
 
-      # Install dependencies
+      # Install dependencies using npm
       - name: Install dependencies
-        run: npm install
+        run: npm ci
         working-directory: ./itp-front
 
-      # Install Vue CLI globally
+      # Install Vue CLI globally if needed
       - name: Install Vue CLI
         run: npm install -g @vue/cli
 
@@ -40,10 +45,10 @@ jobs:
         run: npm run build
         working-directory: ./itp-front
 
-      # Conditionally deploy to GitHub Pages only on main branch
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
+          publish_dir: ./itp-front/dist  # The output directory after Vue.js build
+          publish_branch: gh-pages  # The branch where GitHub Pages deploys from
