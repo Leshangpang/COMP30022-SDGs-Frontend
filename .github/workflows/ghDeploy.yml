@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - feature/TASK-285-CD-GitHub-Pages
 
 jobs:
   build:
