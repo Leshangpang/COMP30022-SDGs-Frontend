@@ -1,10 +1,11 @@
 name: Deploy to GitHub Pages
 
-# Trigger this workflow when code is pushed to the 'main' branch
+# Trigger this workflow when code is pushed to the 'main' or 'feature/TASK-285-CD-GitHub-Pages' branch
 on:
   push:
     branches:
       - main
+      - feature/TASK-285-CD-GitHub-Pages
 
 jobs:
   build:
@@ -35,4 +36,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist  
-          publish_branch: gh-pages  
+          publish_branch: gh-pages  # The branch where the website will be deployed
