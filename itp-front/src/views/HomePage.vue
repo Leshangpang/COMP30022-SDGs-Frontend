@@ -45,7 +45,7 @@ import MainBanner from "../components/HomePageBanner.vue";
 import SwiperList from "../components/SwiperList.vue";
 import HomePageQnA from "../components/HomePageQnA.vue";
 import MainFooter from "../components/MainFooter.vue";
-import { EventBus } from './eventBus';
+import { EventBus } from '@/eventBus';
 
 export default {
   name: "HomePage",
