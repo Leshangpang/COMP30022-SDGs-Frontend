@@ -41,7 +41,9 @@
         <div class="content">Learning List - Select the learning that you want and build your own learning list!</div>
         <div class="content">Recommadations - Take self-assessments and get your customized learning recommendations!</div>
         <div class="content">Certificates - Get your SDG certification based on assessments!</div>
-        <el-button class="btn"> Register now  ^_^</el-button>
+        <el-button class="btn" @click="showLoginForm(true)"> 
+          Register now  ^_^ 
+        </el-button>
       </div>
     </div>
     <MainFooter></MainFooter>
@@ -57,6 +59,7 @@ import MainBanner from "../components/HomePageBanner.vue";
 import SwiperList from "../components/SwiperList.vue";
 import HomePageQnA from "../components/HomePageQnA.vue";
 import MainFooter from "../components/MainFooter.vue";
+import { EventBus } from '@/eventBus';
 
 export default {
   name: "HomePage",
@@ -66,6 +69,12 @@ export default {
     MainFooter,
     SwiperList,
     HomePageQnA,
+  },
+  methods: {
+    showLoginForm(isSignUp) {
+      this.isSignUp = isSignUp;
+      EventBus.$emit('toggle-login-form', this.isSignUp);
+    },
   },
 };
 </script>
@@ -188,7 +197,7 @@ export default {
   background-color: #80d7ffeb;
   padding: 10px;
   color: hsl(220, 89%, 48%), 89%, 48%;
-  font-size: 22px;
+  font-size: 20px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 800;
 }
@@ -203,7 +212,7 @@ export default {
 }
 
 .thirdpart img{
-  height: 70%; /* Make image height match the container height */
+  height: 80%; /* Make image height match the container height */
   width: auto;
 } 
 
