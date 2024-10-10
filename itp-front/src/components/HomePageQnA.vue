@@ -59,7 +59,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #f5f5f5;
+  background-color:  #f0ffffb3;;
   padding-left: 150px;
   padding-bottom: 100px;
   padding-top: 50px;
@@ -83,11 +83,17 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 30px;
   margin-top: 20px;
 }
 .el-collapse {
   border: none;
+  border-radius: 15%;
+  border: rgb(255, 244, 43) solid 10px;
+  justify-content: center;
+  background-color: #6dcbc8;
+  height: 400px;
+  padding: 40px;
   :deep(.el-collapse-item__content) {
     padding: 12px;
   }
@@ -99,8 +105,9 @@ export default {
   border: none;
 }
 .el-collapse .el-collapse-item {
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
+  background-color: #6dcbc8;
 }
 
 .show-image {
@@ -112,10 +119,10 @@ export default {
 }
 .show-image img {
   height: 350px;
-  border-radius: 4px;
+  border-radius: 15px;
   overflow: hidden;
   object-fit: cover;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px hwb(167 46% 16% / 0.7);
 }
 .show-image img:nth-child(2) {
   height: 400px;
