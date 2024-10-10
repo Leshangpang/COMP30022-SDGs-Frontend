@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
 import VueAwesomeSwiper from "vue-awesome-swiper";
-
 import "swiper/css/swiper.css";
 
 // global css for whole page
@@ -20,6 +19,7 @@ Vue.use(VueAwesomeSwiper);
 
 
 Vue.config.productionTip = false
+
 
 new Vue({
   router,
