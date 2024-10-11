@@ -22,7 +22,7 @@
               <li class="nav-item">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                   Learning
-                  <i class="bx bx-chevron-down"></i> <!-- 添加向下箭头 -->
+                  <i class="bx bx-chevron-down"></i> 
                 </a>
                 <ul class="dropdown-menu learning-dropdown">
                   <li class="nav-item">
