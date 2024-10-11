@@ -8,7 +8,6 @@
             <i class="bx bx-menu"></i>
             <i class="bx bx-x"></i>
           </div>
-
           <div class="collapse navbar-collapse" :class="{ show: active }">
             <ul class="navbar-nav">
               <!-- Home Link -->
@@ -174,7 +173,10 @@
           <!-- 判断是否登录 -->
           <template v-if="isLoggedIn">
             <div class="user-info-container">
-              <span class="after-login-username">Hi, {{ username }}</span>
+              <span class="after-login-username">
+                Hi, {{ username }}
+                <i class="el-icon-right"  @click="checkLoginStatus"></i>
+              </span>
               <el-progress :text-inside="false" :stroke-width="15" :percentage="70" class="nav-bar-progress"></el-progress>
             </div>
           </template>
@@ -217,7 +219,7 @@ export default {
   //生命周期钩子函数created()和destroyed()的使用，它们分别定义了组件在创建和销毁时的行为
   created() {
     // 模拟从后端获取登录状态和用户名
-    // this.checkLoginStatus();
+    this.checkLoginStatus();
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed() {
@@ -234,7 +236,7 @@ export default {
     //simulate the status of user changing
     checkLoginStatus() {
       // 假设已经登录，用户名为 "Alice"
-      this.isLoggedIn = true; // 设置为已登录
+      this.isLoggedIn = !this.isLoggedIn; // 设置为已登录
       this.username = 'Alice'; // 从后端获取的用户名
     }
   },
@@ -247,14 +249,14 @@ export default {
 .user-info-container {
   display: flex;
   flex-direction: column; /* 垂直方向排列 */
-  align-items: center; /* 水平方向居中对齐 */
+  align-items: center;
+  width: 100%;
 }
 .nav-bar-progress {
   width: 100%; /* 让进度条的宽度适应容器或调整为固定值 */
   min-width: 200px; /* 可根据需要设置最大宽度 */
 
 }
-
 .after-login-username {
   margin-bottom: 5px; 
   margin-right: 30px;
