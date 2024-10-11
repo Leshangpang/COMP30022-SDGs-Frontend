@@ -121,15 +121,21 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <router-link to="/myquestion" class="nav-link" exact-active-class="active">
+                    <router-link v-if="isLoggedIn" to="/myquestion" class="nav-link" exact-active-class="active">
                       My Question
                     </router-link>
+                    <a v-else  @click="showLoginForm(false)">
+                      My Question
+                    </a>
                   </li>
 
                   <li class="nav-item">
-                    <router-link to="/uploadquestion" class="nav-link" exact-active-class="active">
+                    <router-link v-if = "isLoggedIn" to="/uploadquestion" class="nav-link" exact-active-class="active">
                       Upload Question
                     </router-link>
+                    <a v-else  @click="showLoginForm(false)">
+                      Upload Question
+                    </a>
                   </li>
                 </ul>
               </li>
@@ -142,14 +148,20 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <router-link to="/badges" class="nav-link" exact-active-class="active">
+                    <router-link v-if= "isLoggedIn" to="/badges" class="nav-link" exact-active-class="active">
                       Badges
                     </router-link>
+                    <a v-else  @click="showLoginForm(false)">
+                      Badges
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/certificate" class="nav-link" exact-active-class="active">
+                    <router-link v-if="isLoggedIn" to="/certificate" class="nav-link" exact-active-class="active">
                       Certificate
                     </router-link>
+                    <a v-else  @click="showLoginForm(false)">
+                      Certificate
+                    </a>
                   </li>
                 </ul>
               </li>
@@ -205,7 +217,7 @@ export default {
   //生命周期钩子函数created()和destroyed()的使用，它们分别定义了组件在创建和销毁时的行为
   created() {
     // 模拟从后端获取登录状态和用户名
-    this.checkLoginStatus();
+    // this.checkLoginStatus();
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed() {
@@ -219,7 +231,7 @@ export default {
     showLoginForm(isSignUp) {
       EventBus.$emit('toggle-login-form', isSignUp);
     },
-    // 模拟登录状态检查
+    //simulate the status of user changing
     checkLoginStatus() {
       // 假设已经登录，用户名为 "Alice"
       this.isLoggedIn = true; // 设置为已登录

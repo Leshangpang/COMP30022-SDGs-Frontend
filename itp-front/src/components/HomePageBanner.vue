@@ -36,12 +36,13 @@ margin-left: 40px;
 }
 
 .content-home h1 {
-font-size: 70px;
+font-size: 80px;
 line-height: 120px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-color: #9EDCE1;
+color: rgb(90, 196, 220);
 font-weight: bolder;
 margin-left: 20px;
+text-align: center;
 text-shadow: 
     5px 5px 0 #FCE6A9, 
     -5px 5px 0 #FCE6A9, 
