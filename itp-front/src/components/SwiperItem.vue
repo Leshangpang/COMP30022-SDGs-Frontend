@@ -1,8 +1,16 @@
 <template>
   <div class="swiper-item">
     <div class="show-image">
-      <img :src="obj.img" alt="" />
-      <div ref="domRef" class="statistics-box"  @click="navigateToLearning"
+      <img 
+        :src="obj.img" 
+        alt=""
+        @click="handleImageClick(obj.name)"
+      />
+      <div 
+         v-if="isLoggedIn"
+        ref="domRef" 
+        class="statistics-box"  
+        @click="navigateToLearning"
       ></div>
     </div>
     <!-- <h4 class="title" style="font-size: 18px;">{{ obj.name }}</h4> -->
@@ -20,6 +28,10 @@ export default {
   props: {
     obj: {
       type:Object,
+      required: true,
+    },
+    isLoggedIn: {
+      type: Boolean,
       required: true,
     },
   },
@@ -48,6 +60,12 @@ export default {
         }
       });
     },
+    handleImageClick(name) {
+    // Check if the user is not logged in and the name is "Gender Equality"
+    if (!this.isLoggedIn && name === "Gender Equality") {
+      this.$router.push('/learning');
+    }
+  },
     navigateToLearning() {
       const learningItem = this.obj.data.find(item => item.name === 'Learning');
       if (learningItem && learningItem.link) {

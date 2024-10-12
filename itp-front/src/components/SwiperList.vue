@@ -7,10 +7,10 @@
         <!--each swiper item use the swiper-slide as tip-->
         <swiper-slide
           v-for="item in list"
-          :key="item"
+          :key="item.indexOfModule"
           class="swiper_slide_item"
         >
-          <swiper-item :obj="item"></swiper-item>
+          <swiper-item :obj="item" :isLoggedIn="userLoggedIn"></swiper-item>
         </swiper-slide>
 
         <!--previous and next button-->
@@ -29,9 +29,14 @@
 </template>
 <script>
 import SwiperItem from "./SwiperItem.vue";
+import axios from 'axios';
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+
 export default {
   name: "SwiperList",
   components: {
+    Swiper,
+    SwiperSlide,
     SwiperItem,
   },
   created() {
@@ -39,6 +44,7 @@ export default {
   },
   data() {
     return {
+      userLoggedIn: true, // Change to `true` if user is logged in
       swiperOption: {
         //swipe direction
         direction: "horizontal", 
@@ -50,7 +56,6 @@ export default {
           nextEl: ".swiper-next",
           prevEl: ".swiper-prev",
         },
-
         //view config
         speed: 1000, // speed of swipe
       },
@@ -62,11 +67,7 @@ export default {
           // intro: "No poverty",
           data: [
             { value: 50, name: "Learning", link:"/learning"},
-            { value: 0, name: "FlashCard" , link:"/quiz"},
-            { value: 40, name: "Quiz" ,link:"/quiz"},
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished",link:"/learning"}
           ],
         },
         {
@@ -75,12 +76,8 @@ export default {
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJVnlWRrUv2gCqi7gNG8QGN9SSe5LdX0Kv-Q&s",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished",link:"/learning"}
           ],
         },
         {
@@ -89,12 +86,8 @@ export default {
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpnJfRu7E9X9N5Ejel_oHQKLezo3ZicGaQ1A&s",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished",link:"/learning"}
           ],
         },
         {
@@ -103,12 +96,8 @@ export default {
           img: "https://www.monash.edu/__data/assets/image/0005/1442732/E_SDG-goals_icons-individual-rgb-04.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -117,12 +106,8 @@ export default {
           img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Sustainable_Development_Goal_05GenderEquality.svg/1200px-Sustainable_Development_Goal_05GenderEquality.svg.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -131,12 +116,8 @@ export default {
           img: "https://australia.iom.int/sites/g/files/tmzbdl1001/files/sdgs-icon/e_print_06.jpg",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -145,12 +126,8 @@ export default {
           img: "https://www.unsw.edu.au/content/unsw-sites/au/en/edi/sustainability-matters/sdg7/_jcr_content/root/responsivegrid-layout-fixed-width/responsivegrid-full-top/column_layout_copy_c/par_2_1_25/image.coreimg.82.1170.png/1692332065541/2023-08-edi-sustainability-goal-07.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -159,12 +136,8 @@ export default {
           img: "https://www.monash.edu/__data/assets/image/0004/1442758/E_SDG-goals_icons-individual-rgb-08.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -173,12 +146,8 @@ export default {
           img: "https://hlw.org.au/images/icons/SDG-Goal-09.png",
           // intro: "Quality education",
           data: [
-            { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "Learning",link:"/learning" },
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -188,11 +157,7 @@ export default {
           // intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -202,11 +167,7 @@ export default {
           // intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -216,11 +177,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -230,11 +187,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -244,11 +197,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -258,11 +207,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -272,11 +217,7 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
         {
@@ -286,18 +227,54 @@ export default {
           //intro: "Quality education",
           data: [
             { value: 50, name: "Learning" },
-            { value: 0, name: "FlashCard" },
-            { value: 40, name: "Quiz" },
-            { value: 0, name: "Publication" },
-            { value: 0, name: "News" },
-            { value: 10, name: "not Finished"}
+            { value: 50, name: "not Finished"}
           ],
         },
-      ],
+      ].map((item, index) => ({ ...item, indexOfModule: index })),
     };
   },
   methods:{
-
+    login() {
+      this.userLoggedIn = true;
+    },
+    logout() {
+      this.userLoggedIn = false;
+    },
+    async updateValue(moduleId) {
+      try {
+      // Send GET request using moduleId as a path argument
+        const response = await axios.get(`https://ba8a701b-07d5-4191-8556-da47d8974118.mock.pstmn.io/process/${moduleId}`);
+        if (response.data.code === 1) {
+          // Extract data from the response
+          const { cardsFinishedNum, quizPassed } = response.data.data;
+          const percentage = (cardsFinishedNum + quizPassed)/2
+          // Find the item by indexOfModule (moduleId in your case)
+          const item = this.list.find(i => i.indexOfModule === moduleId);
+      if (item) {
+        // Update the 'Learning' value based on cardsFinishedNum
+        const learningData = item.data.find(d => d.name === "Learning");
+        if (learningData) {
+          learningData.value = percentage; // Update with cardsFinishedNum from response
+        }
+        // Update the 'not Finished' value
+        const notFinishedData = item.data.find(d => d.name === "not Finished");
+        if (notFinishedData) {
+          notFinishedData.value = 100 - percentage; // Adjust based on cardsFinishedNum
+        }
+        // Optionally, you could store quizPassed or other data if needed
+      }
+    } else {
+      console.error('Error in response:', response.data.msg);
+    }
+  } catch (error) {
+    console.error('Error sending GET request:', error);
+  }
+  },
+  async updateAllModules() {
+    for (let module of this.list) {
+      await this.updateValue(module.indexOfModule); // Assuming indexOfModule is used as moduleId
+    }
+  },
   }
 };
 </script>

@@ -48,8 +48,10 @@
     <div class="div-container">
       <img src="../assets/image/Goal5QuizCompletionPage.jpg" alt="image description" class="rotated-image" style="width: 664px;" />
     </div> 
-    <p>Your answer has been submitted</p>
-    <h3>Thank you for taking the Quiz</h3>
+    <!-- <p>Your answer has been submitted</p> -->
+    <h1 class="score-font">{{ submitMessage }}</h1>
+    <p>Thank you for taking the Quiz</p>
+    <el-button type="primary" @click="refreshPage" style="margin-top: 20px;">Try Again</el-button>
   </div>
 </template>
 
@@ -67,211 +69,117 @@ export default {
           id: "1",
           text: "What is gender equality?",
           select: [
-            {
-              subId: "1",
-              text: "A) Equal pay for all genders",
-            },
-            {
-              subId: "2",
-              text: "B) Equal rights and opportunities for all genders",
-            },
-            {
-              subId: "3",
-              text: "C) Only women’s rights",
-            },
-            {
-              subId: "4",
-              text: "D) Only men’s rights",
-            },
+            { subId: "1", text: "A) Equal pay for all genders" },
+            { subId: "2", text: "B) Equal rights and opportunities for all genders" },
+            { subId: "3", text: "C) Only women’s rights" },
+            { subId: "4", text: "D) Only men’s rights" },
           ],
+          correctAnswer: "2", // Correct answer subId
         },
         {
           id: "2",
           text: "Which SDG focuses on gender equality?",
           select: [
-            {
-              subId: "1",
-              text: "A) Goal 1",
-            },
-            {
-              subId: "2",
-              text: "B) Goal 4",
-            },
-            {
-              subId: "3",
-              text: "C) Goal 5",
-            },
-            {
-              subId: "4",
-              text: "D) Goal 10",
-            },
+            { subId: "1", text: "A) Goal 1" },
+            { subId: "2", text: "B) Goal 4" },
+            { subId: "3", text: "C) Goal 5" },
+            { subId: "4", text: "D) Goal 10" },
           ],
+          correctAnswer: "3",
         },
         {
           id: "3",
           text: "What is one of the main barriers to achieving gender equality?",
           select: [
-            {
-              subId: "1",
-              text: "A) Access to education",
-            },
-            {
-              subId: "2",
-              text: "B) Gender stereotypes",
-            },
-            {
-              subId: "3",
-              text: "C) Economic growth",
-            },
-            {
-              subId: "4",
-              text: "D) Environmental changes",
-            },
-          ],},
-          {id: "4",
+            { subId: "1", text: "A) Access to education" },
+            { subId: "2", text: "B) Gender stereotypes" },
+            { subId: "3", text: "C) Economic growth" },
+            { subId: "4", text: "D) Environmental changes" },
+          ],
+          correctAnswer: "2",
+        },
+        {
+          id: "4",
           text: "Which of the following is an example of gender inequality?",
           select: [
-            {
-              subId: "1",
-              text: "A) Equal voting rights",
-            },
-            {
-              subId: "2",
-              text: "B) Unequal access to healthcare",
-            },
-            {
-              subId: "3",
-              text: "C) Equal education for boys and girls",
-            },
-            {
-              subId: "4",
-              text: "D) Equal job opportunities",
-            },
-          ],},
-          {id: "5",
+            { subId: "1", text: "A) Equal voting rights" },
+            { subId: "2", text: "B) Unequal access to healthcare" },
+            { subId: "3", text: "C) Equal education for boys and girls" },
+            { subId: "4", text: "D) Equal job opportunities" },
+          ],
+          correctAnswer: "2",
+        },
+        {
+          id: "5",
           text: "Which sector is often most affected by gender inequality?",
           select: [
-            {
-              subId: "1",
-              text: "A) Education",
-            },
-            {
-              subId: "2",
-              text: "B) Healthcare",
-            },
-            {
-              subId: "3",
-              text: "C) Politics",
-            },
-            {
-              subId: "4",
-              text: "D) All of the above",
-            },
-          ],},
-          {id: "6",
+            { subId: "1", text: "A) Education" },
+            { subId: "2", text: "B) Healthcare" },
+            { subId: "3", text: "C) Politics" },
+            { subId: "4", text: "D) All of the above" },
+          ],
+          correctAnswer: "4",
+        },
+        {
+          id: "6",
           text: "Why is gender equality important?",
           select: [
-            {
-              subId: "1",
-              text: "A) It improves economic development",
-            },
-            {
-              subId: "2",
-              text: "B) It promotes peace and justice",
-            },
-            {
-              subId: "3",
-              text: "C) It supports sustainable development",
-            },
-            {
-              subId: "4",
-              text: "D) All of the above",
-            },
-          ],},
-          {id: "7",
+            { subId: "1", text: "A) It improves economic development" },
+            { subId: "2", text: "B) It promotes peace and justice" },
+            { subId: "3", text: "C) It supports sustainable development" },
+            { subId: "4", text: "D) All of the above" },
+          ],
+          correctAnswer: "4",
+        },
+        {
+          id: "7",
           text: "What is one key indicator of gender inequality?",
           select: [
-            {
-              subId: "1",
-              text: "A) Equal education opportunities",
-            },
-            {
-              subId: "2",
-              text: "B) Gender pay gap",
-            },
-            {
-              subId: "3",
-              text: "C) Increased life expectancy",
-            },
-            {
-              subId: "4",
-              text: "D) Equal political representation",
-            },
-          ],},
-          {id: "8",
+            { subId: "1", text: "A) Equal education opportunities" },
+            { subId: "2", text: "B) Gender pay gap" },
+            { subId: "3", text: "C) Increased life expectancy" },
+            { subId: "4", text: "D) Equal political representation" },
+          ],
+          correctAnswer: "2",
+        },
+        {
+          id: "8",
           text: "Which group is most often affected by gender inequality in education?",
           select: [
-            {
-              subId: "1",
-              text: "A) Boys",
-            },
-            {
-              subId: "2",
-              text: "B) Girls",
-            },
-            {
-              subId: "3",
-              text: "C) Adults",
-            },
-            {
-              subId: "4",
-              text: "D) All of the above",
-            },
-          ],},
-          {id: "9",
+            { subId: "1", text: "A) Boys" },
+            { subId: "2", text: "B) Girls" },
+            { subId: "3", text: "C) Adults" },
+            { subId: "4", text: "D) All of the above" },
+          ],
+          correctAnswer: "2",
+        },
+        {
+          id: "9",
           text: "What is one goal of promoting gender equality?",
           select: [
-            {
-              subId: "1",
-              text: "A) Ensuring more jobs for men",
-            },
-            {
-              subId: "2",
-              text: "B) Achieving equal rights and opportunities for all",
-            },
-            {
-              subId: "3",
-              text: "C) Decreasing women’s participation in politics",
-            },
-            {
-              subId: "4",
-              text: "D) Limiting education access for men",
-            },
-          ],},
-          {id: "10",
+            { subId: "1", text: "A) Ensuring more jobs for men" },
+            { subId: "2", text: "B) Achieving equal rights and opportunities for all" },
+            { subId: "3", text: "C) Decreasing women’s participation in politics" },
+            { subId: "4", text: "D) Limiting education access for men" },
+          ],
+          correctAnswer: "2",
+        },
+        {
+          id: "10",
           text: "Which policy can help reduce gender inequality?",
           select: [
-            {
-              subId: "1",
-              text: "A) Gender-based violence",
-            },
-            {
-              subId: "2",
-              text: "B) Unequal pay policies",
-            },
-            {
-              subId: "3",
-              text: "C) Access to reproductive health services",
-            },
-            {
-              subId: "4",
-              text: "D) Job discrimination",
-            },
+            { subId: "1", text: "A) Gender-based violence" },
+            { subId: "2", text: "B) Unequal pay policies" },
+            { subId: "3", text: "C) Access to reproductive health services" },
+            { subId: "4", text: "D) Job discrimination" },
           ],
+          correctAnswer: "3",
         },
       ],
-      selectMap: {},
+      selectMap: {}, // Stores user selections
       isSubmit: false,
+      score: 0, // Stores user's score
+      submitMessage: "",
     };
   },
   methods: {
@@ -294,31 +202,45 @@ export default {
     },
     submitHandle() {
       if (Object.keys(this.selectMap).length !== this.question.length) {
-      console.log("Not all questions answered");
-      return; // 如果还有未回答的问题，不允许提交
+        // console.log("Not all questions answered");
+        return; // Prevent submission if not all questions are answered
       }
-      // todo
-      this.$confirm("Comfirm to submit the Answer", {
+
+      this.$confirm("Confirm to submit the Answer", {
         confirmButtonText: "Continue",
         cancelButtonText: "Cancel",
         type: "warning",
       }).then(() => {
         this.isSubmit = true;
+
+        // Check answers
+        this.score = 0;
+        this.question.forEach((q) => {
+          if (this.selectMap[q.id] === q.correctAnswer) {
+            this.score++;
+          }
+        });
+        this.submitMessage = `Your score is ${this.score}/${this.question.length}.`;
+
         this.$message({
-          type: "success",
-          message: "Submit Successful!",
+              type: "success",
+              message: "Submit Successful!",
         });
       });
       this.isSubmit = false;
     },
+    refreshPage() {
+      window.location.reload();
+    },
   },
   computed: {
     getId() {
-    return this.question[this.currentIndex].id ?? "";
-  }
+      return this.question[this.currentIndex].id ?? "";
+    },
   },
 };
 </script>
+
 
 <style scoped>
 .question-submit {
@@ -422,6 +344,11 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.score-font{
+  color:#0077ffd4;
+  font-weight: bolder;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 </style>
