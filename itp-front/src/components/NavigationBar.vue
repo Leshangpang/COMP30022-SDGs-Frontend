@@ -1,6 +1,9 @@
 <template>
   <div :class="['edu-navbar-area navbar-area', { 'is-sticky': isSticky }]">
-    <img src="../assets/image/webLogo.jpg" alt="Logo" class="navbar-logo" />
+    <div class="web-logo">
+      <img src="../assets/image/webLogo.jpg" alt="Logo" class="navbar-logo" />
+      <p>SDG Journey</p>
+    </div>
     <div class="edumim-nav">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -247,8 +250,21 @@ export default {
 
 
 <style scoped>
-.total_header{
+
+.web-logo{
+  text-align: center;
+  font-size: smaller;
+  margin-right: 70px;
+}
+
+.navbar-logo {
+  max-width: 130px; /* Adjust the max width as needed */
+  height: 50px; /* Maintains the aspect ratio */
   display: flex;
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .user-info-container {
@@ -684,15 +700,5 @@ export default {
 
 .navbar-toggler.active i:nth-child(2) {
   display: block;
-}
-
-.navbar-logo {
-  max-width: 150px; /* Adjust the max width as needed */
-  height: auto; /* Maintains the aspect ratio */
-  display: flex;
-  margin-left: 0;
-  padding-left: 0;
-  margin-right: 0;
-  padding-right: 0;
 }
 </style>
