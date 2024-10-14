@@ -190,7 +190,7 @@ export default {
     return {
       isSticky: false,
       button_active_state: false,
-      isLoggedIn: false, // 初始化为未登录状态, 可切换
+      isLoggedIn: localStorage.getItem('isLoggedIn') === 'true', // 初始化为未登录状态, 可切换
       username: 'Alice', // 存储用户名
     };
   },
@@ -215,6 +215,7 @@ export default {
   //生命周期钩子函数created()和destroyed()的使用，它们分别定义了组件在创建和销毁时的行为
   created() {
     // 模拟从后端获取登录状态和用户名
+    this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; 
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed() {
