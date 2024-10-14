@@ -40,10 +40,9 @@
               <ul class="links-list">
                 <li><router-link to="/">Home</router-link></li>
                 <li><router-link to="/learning">Learning</router-link></li>
-                <li>
-                  <router-link to="">My Question</router-link>
-                </li>
-                <li><router-link to="/contact">Profile</router-link></li>
+                <li><router-link to="/myquestion">My Question</router-link></li>
+                <li><router-link to="/badges">My Badges</router-link></li>
+                <li><router-link to="/certificate">My Certificate</router-link></li>
 
               </ul>
 
