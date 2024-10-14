@@ -162,7 +162,10 @@
           <!-- 判断是否登录 -->
           <template v-if="isLoggedIn">
             <div class="user-info-container">
-              <span class="after-login-username">Hi, {{ username }}</span>
+              <span class="after-login-username">
+                Hi, {{ username }}
+                <i class="el-icon-right" @click="changeLoginStates"></i>
+              </span>
               <el-progress :text-inside="false" :stroke-width="15" :percentage="70" class="nav-bar-progress"></el-progress>
             </div>
           </template>
@@ -194,6 +197,22 @@ export default {
       username: 'Alice', // 存储用户名
     };
   },
+
+  methods: {
+    handleScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      this.isSticky = scrollTop > 50; // Adjust as needed
+    },
+    showLoginForm(isSignUp) {
+      EventBus.$emit('toggle-login-form', isSignUp);
+    },
+    changeLoginStates(){
+      this.isLoggedIn = false;
+      localStorage.setItem('isLoggedIn', 'false');
+      EventBus.$emit('loginStatusChanged', false); 
+    },
+  },
+
   computed: {
     // Check if either 'Badges' or 'Certificate' routes are active
     isProfileActive() {
@@ -221,15 +240,6 @@ export default {
   destroyed() {
     window.removeEventListener('scroll', this.handleScroll);
   },
-  methods: {
-    handleScroll() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      this.isSticky = scrollTop > 50; // Adjust as needed
-    },
-    showLoginForm(isSignUp) {
-      EventBus.$emit('toggle-login-form', isSignUp);
-    },
-  },
 };
 </script>
 
@@ -237,56 +247,7 @@ export default {
 
 
 
-<script>
-import { EventBus } from '@/eventBus';
 
-export default {
-  data() {
-    return {
-      isSticky: false,
-      button_active_state: false,
-      isLoggedIn: localStorage.getItem('isLoggedIn') === 'true', // 初始化为未登录状态, 可切换
-      username: 'Alice', // 存储用户名
-    };
-  },
-  computed: {
-    // Check if either 'Badges' or 'Certificate' routes are active
-    isProfileActive() {
-      return (
-        this.$route.name === 'Badges' || this.$route.name === 'Certificate'
-      );
-    },
-  },
-
-  mounted() {
-    EventBus.$on('loginStatusChanged', (status) => {
-      this.isLoggedIn = status;
-    });
-  },
-  beforeDestroy() {
-    EventBus.$off('loginStatusChanged'); // Clean up event listener
-  },
-
-  //生命周期钩子函数created()和destroyed()的使用，它们分别定义了组件在创建和销毁时的行为
-  created() {
-    // 模拟从后端获取登录状态和用户名
-    this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; 
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      this.isSticky = scrollTop > 50; // Adjust as needed
-    },
-    showLoginForm(isSignUp) {
-      EventBus.$emit('toggle-login-form', isSignUp);
-    },
-  },
-};
-</script>
 
 
 
