@@ -8,6 +8,7 @@
             <i class="bx bx-menu"></i>
             <i class="bx bx-x"></i>
           </div>
+
           <div class="collapse navbar-collapse" :class="{ show: active }">
             <ul class="navbar-nav">
               <!-- Home Link -->
@@ -21,7 +22,7 @@
               <li class="nav-item">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                   Learning
-                  <i class="bx bx-chevron-down"></i> 
+                  <i class="bx bx-chevron-down"></i> <!-- 添加向下箭头 -->
                 </a>
                 <ul class="dropdown-menu learning-dropdown">
                   <li class="nav-item">
@@ -120,21 +121,15 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <router-link v-if="isLoggedIn" to="/myquestion" class="nav-link" exact-active-class="active">
+                    <router-link to="/myquestion" class="nav-link" exact-active-class="active">
                       My Question
                     </router-link>
-                    <a v-else  @click="showLoginForm(false)">
-                      My Question
-                    </a>
                   </li>
 
                   <li class="nav-item">
-                    <router-link v-if = "isLoggedIn" to="/uploadquestion" class="nav-link" exact-active-class="active">
+                    <router-link to="/uploadquestion" class="nav-link" exact-active-class="active">
                       Upload Question
                     </router-link>
-                    <a v-else  @click="showLoginForm(false)">
-                      Upload Question
-                    </a>
                   </li>
                 </ul>
               </li>
@@ -147,20 +142,14 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <router-link v-if= "isLoggedIn" to="/badges" class="nav-link" exact-active-class="active">
+                    <router-link to="/badges" class="nav-link" exact-active-class="active">
                       Badges
                     </router-link>
-                    <a v-else  @click="showLoginForm(false)">
-                      Badges
-                    </a>
                   </li>
                   <li class="nav-item">
-                    <router-link v-if="isLoggedIn" to="/certificate" class="nav-link" exact-active-class="active">
+                    <router-link to="/certificate" class="nav-link" exact-active-class="active">
                       Certificate
                     </router-link>
-                    <a v-else  @click="showLoginForm(false)">
-                      Certificate
-                    </a>
                   </li>
                 </ul>
               </li>
@@ -175,7 +164,7 @@
             <div class="user-info-container">
               <span class="after-login-username">
                 Hi, {{ username }}
-                <i class="el-icon-right"  @click="checkLoginStatus"></i>
+                <i class="el-icon-right" @click="changeLoginStates"></i>
               </span>
               <el-progress :text-inside="false" :stroke-width="15" :percentage="70" class="nav-bar-progress"></el-progress>
             </div>
@@ -204,27 +193,11 @@ export default {
     return {
       isSticky: false,
       button_active_state: false,
-      isLoggedIn: false, // 初始化为未登录状态, 可切换
-      username: 'TestUser', // 存储用户名
+      isLoggedIn: localStorage.getItem('isLoggedIn') === 'true', // 初始化为未登录状态, 可切换
+      username: 'Alice', // 存储用户名
     };
   },
-  computed: {
-    // Check if either 'Badges' or 'Certificate' routes are active
-    isProfileActive() {
-      return (
-        this.$route.name === 'Badges' || this.$route.name === 'Certificate'
-      );
-    },
-  },
-  //生命周期钩子函数created()和destroyed()的使用，它们分别定义了组件在创建和销毁时的行为
-  created() {
-    // 模拟从后端获取登录状态和用户名
-    this.checkLoginStatus();
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
+
   methods: {
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -233,15 +206,48 @@ export default {
     showLoginForm(isSignUp) {
       EventBus.$emit('toggle-login-form', isSignUp);
     },
-    //simulate the status of user changing
-    checkLoginStatus() {
-      // 假设已经登录，用户名为 "Alice"
-      this.isLoggedIn = !this.isLoggedIn; // 设置为已登录
-      this.username = 'Alice'; // 从后端获取的用户名
-    }
+    changeLoginStates(){
+      this.isLoggedIn = false;
+      localStorage.setItem('isLoggedIn', 'false');
+      EventBus.$emit('loginStatusChanged', false); 
+    },
+  },
+
+  computed: {
+    // Check if either 'Badges' or 'Certificate' routes are active
+    isProfileActive() {
+      return (
+        this.$route.name === 'Badges' || this.$route.name === 'Certificate'
+      );
+    },
+  },
+
+  mounted() {
+    EventBus.$on('loginStatusChanged', (status) => {
+      this.isLoggedIn = status;
+    });
+  },
+  beforeDestroy() {
+    EventBus.$off('loginStatusChanged'); // Clean up event listener
+  },
+
+  //生命周期钩子函数created()和destroyed()的使用，它们分别定义了组件在创建和销毁时的行为
+  created() {
+    // 模拟从后端获取登录状态和用户名
+    this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; 
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>
+
+
+
+
+
+
 
 
 

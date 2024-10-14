@@ -70,6 +70,19 @@ export default {
     SwiperList,
     HomePageQnA,
   },
+  data() {
+    return {
+      isLoggedIn: localStorage.getItem('isLoggedIn') === 'true',
+    };
+  },
+  mounted() {
+    EventBus.$on('loginStatusChanged', (status) => {
+      this.isLoggedIn = status;
+    });
+  },
+  beforeDestroy() {
+    EventBus.$off('loginStatusChanged'); // Clean up event listener
+  },
   methods: {
     showLoginForm(isSignUp) {
       this.isSignUp = isSignUp;
