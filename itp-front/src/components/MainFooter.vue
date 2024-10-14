@@ -6,31 +6,8 @@
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-footer-widget">
               <router-link to="/" class="logo">
-                <img src="../assets/image/WebsiteLogo.jpg" alt="image" width="200px" />
+                <img src="../assets/image/WebsiteLogo.jpg" alt="image" width="300px" />
               </router-link>
-              <ul class="social-links">
-                <li>
-                  <!-- icons -->
-                  <a href="https://www.facebook.com/" target="_blank">
-                    <i class="bx bxl-facebook"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/" target="_blank">
-                    <i class="bx bxl-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/" target="_blank">
-                    <i class="bx bxl-linkedin"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/" target="_blank">
-                    <i class="bx bxl-instagram"></i>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
           <!-- router link -->
@@ -52,8 +29,8 @@
             <div class="single-footer-widget">
               <h2>Try it today</h2>
               <div>
-                <h4>Get Start For free.</h4>
-                <h4>Learn SDGs from now</h4>
+                <h4>Get Started For free.</h4>
+                <h4>Learn about SDGs now</h4>
               </div>
             </div>
           </div>
