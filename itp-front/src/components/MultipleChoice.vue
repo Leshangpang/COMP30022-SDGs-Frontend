@@ -59,7 +59,6 @@
 export default {
   name: "QuestionSubmit",
   components: {},
-
   data() {
     return {
       currentIndex: 0,
@@ -180,6 +179,7 @@ export default {
       isSubmit: false,
       score: 0, // Stores user's score
       submitMessage: "",
+      processData: {}, // Will store the fetched process data
     };
   },
   methods: {
@@ -205,14 +205,12 @@ export default {
         // console.log("Not all questions answered");
         return; // Prevent submission if not all questions are answered
       }
-
       this.$confirm("Confirm to submit the Answer", {
         confirmButtonText: "Continue",
         cancelButtonText: "Cancel",
         type: "warning",
       }).then(() => {
         this.isSubmit = true;
-
         // Check answers
         this.score = 0;
         this.question.forEach((q) => {
@@ -226,12 +224,68 @@ export default {
               type: "success",
               message: "Submit Successful!",
         });
+        this.fetchProcessData();
       });
       this.isSubmit = false;
     },
     refreshPage() {
       window.location.reload();
     },
+
+    fetchProcessData() {
+      const moduleId = 2; // Replace with your actual moduleId
+      // GET request to fetch the current process data
+      this.$axios.get(`https://ba8a701b-07d5-4191-8556-da47d8974118.mock.pstmn.io/process/${moduleId}`)
+      .then((response) => {
+          if (response.data.code === 1) {
+            // Store the fetched process data
+            this.processData = response.data.data;
+            // Update quizPassed based on the user's score
+            this.processData.quizPassed = this.score >= 5 ? 10 : 0; // Example passing condition
+            // Send the updated process data to the server
+            // console.log("here means get data")
+            // console.log(this.processData.quizPassed)
+            this.updateProcess();
+          } else {
+            this.$message({
+              type: "error",
+              message: "Failed to fetch process data!",
+            });
+          }
+        })
+        .catch((error) => {
+          console.error("API error:", error);
+          this.$message({
+            type: "error",
+            message: "Failed to fetch process data!",
+          });
+        });
+      },
+
+      updateProcess() {
+          // Send the updated process data back to the server
+          this.$axios.post("https://ba8a701b-07d5-4191-8556-da47d8974118.mock.pstmn.io/process", this.processData)
+            .then((response) => {
+              if (response.data.code === 1) {
+                this.$message({
+                  type: "success",
+                  message: "Process update successful!",
+              });
+              } else {
+                this.$message({
+                  type: "error",
+                  message: "Failed to update process!",
+                });
+              }
+            })
+            .catch((error) => {
+              console.error("API error:", error);
+              this.$message({
+                type: "error",
+                message: "Process update failed!",
+              });
+            });
+          },
   },
   computed: {
     getId() {
