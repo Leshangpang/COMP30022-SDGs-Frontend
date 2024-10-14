@@ -6,13 +6,16 @@
           @click="$emit('update', 1)"
           :class="{ active: active === 1 }"
           class="choose el-dropdown-link">
-          <router-link to="" data-text="Learning" >Learning</router-link>
+          <router-link to="" data-text="Learning" >
+            Learning 
+            <i class="bx bx-chevron-down"></i> 
+          </router-link>
           <!-- <span><i class="el-icon-arrow-down el-icon--right"></i></span> -->
           <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item command="1">Topic 1: Overview</el-dropdown-item>
-        <el-dropdown-item command="2">Topic 2: Targets</el-dropdown-item>
-        <el-dropdown-item command="3">Topic 3: Actions</el-dropdown-item>
-        <el-dropdown-item command="4">Topic 4: Events and News</el-dropdown-item>
+        <el-dropdown-item command="1">Overview</el-dropdown-item>
+        <el-dropdown-item command="2">Targets</el-dropdown-item>
+        <el-dropdown-item command="3">Actions</el-dropdown-item>
+        <el-dropdown-item command="4">Events and News</el-dropdown-item>
         <!-- <el-dropdown-item disabled>dd</el-dropdown-item> -->
         <!-- <el-dropdown-item divided command="4">Divided Item</el-dropdown-item> -->
       </el-dropdown-menu>
@@ -25,26 +28,33 @@
           @click="$emit('update', 2)"
           :class="{ active: active === 2 }"
           class="choose">
-          <router-link to="flashcard" data-text="FlashCard">FlashCard</router-link></li>
+          <router-link v-if= "isLoggedIn" to="flashcard" data-text="FlashCard">FlashCard</router-link>
+          <a v-else  @click="showLoginForm(false)">FlashCard</a>
+        </li>
       </div>
       <div class ="choose-section">
           <li 
           @click="$emit('update', 3)"
           :class="{ active: active === 3 }"
           class="choose">
-          <router-link to="quiz" data-text="Quiz">Quiz</router-link></li>
-      </div>
+          <router-link v-if="isLoggedIn" to="quiz" data-text="Quiz">Quiz</router-link>
+          <a v-else  @click="showLoginForm(false)">Quiz</a></li>
+        </div>
       <div class ="choose-section">
           <li 
           @click="$emit('update', 4)"
           :class="{ active: active === 4 }"
           class="choose">
-          <router-link to="/communitychallenge" data-text="Community Chanllenge">Community Challenge</router-link></li>
+          <router-link v-if="isLoggedIn" to="/communitychallenge" data-text="Community Chanllenge">Community Challenge</router-link>
+          <a v-else  @click="showLoginForm(false)">Community Challenge</a>
+        </li>
       </div>
   </ul>
 </template>
 
 <script>
+import { EventBus } from '@/eventBus';
+
 export default {
 name: "SideBar",
 props: {
@@ -56,8 +66,17 @@ props: {
 emits: ["update"],
 components: {},
 data() {
-  return {};
+  return {
+    isLoggedIn: true, // initialise to not logged
+  };
 },
+created() {
+    // this.checkLoginStatus();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
 methods: {
   navigateToLearning() {
     this.$router.push({ name: "/learning" });
@@ -74,8 +93,21 @@ methods: {
     if (this.$route.path !== targetRoute.path || this.$route.query.topic !== targetRoute.query.topic) {
       this.$router.push(targetRoute);
     }
-  }
-}
+  },
+  handleScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      this.isSticky = scrollTop > 50; // Adjust as needed
+  },
+  showLoginForm(isSignUp) {
+    this.isSignUp = isSignUp;
+    EventBus.$emit('toggle-login-form', this.isSignUp);
+  },
+  checkLoginStatus() {
+      // 假设已经登录，用户名为 "Alice"
+      this.isLoggedIn = true; // 设置为已登录
+      this.username = 'Alice'; // 从后端获取的用户名
+  },
+  },
 };
 </script>
 

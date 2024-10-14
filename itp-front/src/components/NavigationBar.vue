@@ -8,7 +8,6 @@
             <i class="bx bx-menu"></i>
             <i class="bx bx-x"></i>
           </div>
-
           <div class="collapse navbar-collapse" :class="{ show: active }">
             <ul class="navbar-nav">
               <!-- Home Link -->
@@ -22,7 +21,7 @@
               <li class="nav-item">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                   Learning
-                  <i class="bx bx-chevron-down"></i> <!-- 添加向下箭头 -->
+                  <i class="bx bx-chevron-down"></i> 
                 </a>
                 <ul class="dropdown-menu learning-dropdown">
                   <li class="nav-item">
@@ -121,15 +120,21 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <router-link to="/myquestion" class="nav-link" exact-active-class="active">
+                    <router-link v-if="isLoggedIn" to="/myquestion" class="nav-link" exact-active-class="active">
                       My Question
                     </router-link>
+                    <a v-else  @click="showLoginForm(false)">
+                      My Question
+                    </a>
                   </li>
 
                   <li class="nav-item">
-                    <router-link to="/uploadquestion" class="nav-link" exact-active-class="active">
+                    <router-link v-if = "isLoggedIn" to="/uploadquestion" class="nav-link" exact-active-class="active">
                       Upload Question
                     </router-link>
+                    <a v-else  @click="showLoginForm(false)">
+                      Upload Question
+                    </a>
                   </li>
                 </ul>
               </li>
@@ -142,14 +147,20 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <router-link to="/badges" class="nav-link" exact-active-class="active">
+                    <router-link v-if= "isLoggedIn" to="/badges" class="nav-link" exact-active-class="active">
                       Badges
                     </router-link>
+                    <a v-else  @click="showLoginForm(false)">
+                      Badges
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/certificate" class="nav-link" exact-active-class="active">
+                    <router-link v-if="isLoggedIn" to="/certificate" class="nav-link" exact-active-class="active">
                       Certificate
                     </router-link>
+                    <a v-else  @click="showLoginForm(false)">
+                      Certificate
+                    </a>
                   </li>
                 </ul>
               </li>
@@ -162,7 +173,10 @@
           <!-- 判断是否登录 -->
           <template v-if="isLoggedIn">
             <div class="user-info-container">
-              <span class="after-login-username">Hi, {{ username }}</span>
+              <span class="after-login-username">
+                Hi, {{ username }}
+                <i class="el-icon-right"  @click="checkLoginStatus"></i>
+              </span>
               <el-progress :text-inside="false" :stroke-width="15" :percentage="70" class="nav-bar-progress"></el-progress>
             </div>
           </template>
@@ -239,14 +253,14 @@ export default {
 .user-info-container {
   display: flex;
   flex-direction: column; /* 垂直方向排列 */
-  align-items: center; /* 水平方向居中对齐 */
+  align-items: center;
+  width: 100%;
 }
 .nav-bar-progress {
   width: 100%; /* 让进度条的宽度适应容器或调整为固定值 */
   min-width: 200px; /* 可根据需要设置最大宽度 */
 
 }
-
 .after-login-username {
   margin-bottom: 5px; 
   margin-right: 30px;
