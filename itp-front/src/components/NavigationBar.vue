@@ -191,7 +191,7 @@ export default {
       isSticky: false,
       button_active_state: false,
       isLoggedIn: false, // 初始化为未登录状态, 可切换
-      username: 'TestUser', // 存储用户名
+      username: 'Alice', // 存储用户名
     };
   },
   computed: {
@@ -202,10 +202,19 @@ export default {
       );
     },
   },
+
+  mounted() {
+    EventBus.$on('loginStatusChanged', (status) => {
+      this.isLoggedIn = status;
+    });
+  },
+  beforeDestroy() {
+    EventBus.$off('loginStatusChanged'); // Clean up event listener
+  },
+
   //生命周期钩子函数created()和destroyed()的使用，它们分别定义了组件在创建和销毁时的行为
   created() {
     // 模拟从后端获取登录状态和用户名
-    this.checkLoginStatus();
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed() {
@@ -219,12 +228,6 @@ export default {
     showLoginForm(isSignUp) {
       EventBus.$emit('toggle-login-form', isSignUp);
     },
-    // 模拟登录状态检查
-    checkLoginStatus() {
-      // 假设已经登录，用户名为 "Alice"
-      this.isLoggedIn = true; // 设置为已登录
-      this.username = 'Alice'; // 从后端获取的用户名
-    }
   },
 };
 </script>
