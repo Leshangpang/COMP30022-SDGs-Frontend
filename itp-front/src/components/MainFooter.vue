@@ -6,7 +6,7 @@
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-footer-widget">
               <router-link to="/" class="logo">
-                <img src="../assets/image/LogoPlaceholder.png" alt="image" width="100px" />
+                <img src="../assets/image/WebsiteLogo.jpg" alt="image" width="200px" />
               </router-link>
               <ul class="social-links">
                 <li>
