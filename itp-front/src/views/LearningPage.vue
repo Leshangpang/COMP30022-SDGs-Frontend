@@ -289,7 +289,7 @@ import SideBar from '../components/LearningSideBar.vue'
 import learningProgressBar from '../components/learningProgressBar.vue';
 import Goal5LogoBar from '../components/Goal5LogoBar.vue';
 
-
+import { EventBus } from '@/eventBus';
 
 export default {
   name: 'LearningPage',

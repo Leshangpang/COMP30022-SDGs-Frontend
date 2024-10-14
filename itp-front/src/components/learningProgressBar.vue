@@ -1,26 +1,93 @@
 <template>
-    <div class="progress-bar">
-      <div class="progress-item" v-for="(item, index) in progressItems" :key="index">
-        <div class="progress-number">{{ item.number }}%</div>
-        <div class="progress-label">{{ item.label }}</div>
-      </div>
+  <div class="progress-bar">
+    <div class="progress-item" v-for="(item, index) in progressItems" :key="index">
+      <div class="progress-number">{{ item.number }}%</div>
+      <div class="progress-label">{{ item.label }}</div>
     </div>
+  </div>
 </template>
 
 <script>
+import { EventBus } from '@/eventBus';
+
 export default {
   name: "ProgressBar",
   data() {
     return {
+      isloggedIn: false,
+      progressData: null,
+      error: null,
+      loading: false,
       progressItems: [
-        { number: 25, label: "topic" },
-        { number: 10, label: "flashcard" },
-        { number: 100, label: "quiz" },
+        { number: 0, label: "topic" },     // topics finished, calculated from resourcesFinished
+        { number: 0, label: "flashcard" }, // cardsFinishedNum
+        { number: 0, label: "quiz" },      // quizPassed
       ],
     };
   },
+  methods: {
+    async fetchData() {
+      this.loading = true;
+      this.error = null;
+
+      try {
+        const response = await fetch('https://ba8a701b-07d5-4191-8556-da47d8974118.mock.pstmn.io/process/5', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (result.code === 1) {
+          this.progressData = result.data;
+
+          // Update the progressItems based on the received data
+          const totalTopics = 4;
+          const totalFlashcards = 4;
+          const totalQuizzes = 10;
+
+          // Calculate the number of topics finished from resourcesFinished
+          const topicsFinished = this.progressData.resourcesFinished.split(',').length;
+
+          this.progressItems = [
+            { number: (topicsFinished / totalTopics) * 100, label: "topic" },   // Use length of resourcesFinished for topics
+            { number: (this.progressData.cardsFinishedNum / totalFlashcards) * 100, label: "flashcard" },
+            { number: (this.progressData.quizPassed / totalQuizzes) * 100, label: "quiz" },
+          ];
+
+          localStorage.setItem('progressItems', JSON.stringify(this.progressItems));
+
+        } else {
+          throw new Error('Failed to fetch data: ' + result.msg);
+        }
+      } catch (error) {
+        this.error = error.message;
+      } finally {
+        this.loading = false;
+      }
+    },
+    loadProgressFromStorage() {
+      const storedProgress = localStorage.getItem('progressItems');
+      if (storedProgress) {
+        this.progressItems = JSON.parse(storedProgress);
+      }
+    }
+  },
+  mounted() {
+    this.loadProgressFromStorage();
+    EventBus.$on('loginStatusChanged', (status) => {
+      this.fetchData();
+    });
+  },
 };
 </script>
+
 
 <style scoped>
 .progress-bar {
