@@ -130,7 +130,7 @@ export default {
       let storedProgressItems = localStorage.getItem('progressItems');
       if (storedProgressItems) {
         storedProgressItems = JSON.parse(storedProgressItems);
-      };
+      }
       if (storedProgressItems[0].number === 100 && storedProgressItems[1].number === 100 && storedProgressItems[2].number === 100){
         this.getBadgeImage(5);
       }

@@ -191,7 +191,7 @@
 
 <script>
 import { EventBus } from '@/eventBus';
-import 'boxicons/css/boxicons.min.css';
+//import 'boxicons/css/boxicons.min.css';
 
 
 export default {
