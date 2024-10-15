@@ -110,8 +110,6 @@ import MainFooter from '@/components/MainFooter.vue';
 import BadgePageBanner from '@/components/BadgePageBanner.vue';
 import ProfileSidebar from '@/components/ProfileSidebar.vue';
 
-import { EventBus } from '@/eventBus';
-
 export default {
   name: 'BadgePage',
   components: {
