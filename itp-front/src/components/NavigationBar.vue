@@ -233,6 +233,10 @@ export default {
   },
 
   mounted() {
+    const storedProgress = localStorage.getItem('totalProgress');
+    this.percentage = storedProgress !== null ? storedProgress : 0;
+
+
     EventBus.$on('loginStatusChanged', (status) => {
       this.isLoggedIn = status;
     });
