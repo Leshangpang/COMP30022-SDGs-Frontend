@@ -18,11 +18,6 @@
             <input type="text" id="username" class="auth-input" placeholder="username" v-model="username" />
           </div>
 
-          <div class="input-group" v-if="!localIsLogin">
-            <label for="email" class="visually-hidden"></label>
-            <input type="text" id="email" class="auth-input" placeholder="email" v-model="email" />
-          </div>
-
           <div class="input-group">
             <label for="password" class="visually-hidden"></label>
             <input type="password" id="password" class="auth-input" placeholder="password" v-model="password" />
@@ -46,14 +41,6 @@
           <button v-if="localIsLogin" class="forgot-password">forgot password?</button>
         </main>
         <footer>
-          <div class="auth-methods">
-            <button @click="signInWithGoogle" class="google-auth">
-              <img src="../assets/image/svg/google.svg" alt="Google" />
-            </button>
-            <button @click="signInWithFacebook" class="facebook-auth">
-              <img src="../assets/image/svg/facebook.svg" alt="Facebook" />
-            </button>
-          </div>
           <p></p>
           <p v-if="!localIsLogin" class="switch-login">
             <button class="forgot-password" @click="setLoginState(true)">already have an account?</button>
@@ -83,6 +70,8 @@ export default {
       password: '',  // Added data property for password
       confirmPassword: '',  // Added data property for confirm password
       email: '', // Added email for sign up
+      error: null,
+      loading: false,
     };
   },
   methods: {
@@ -166,6 +155,7 @@ export default {
             // You can save the token to localStorage or Vuex for further use
             localStorage.setItem('isLoggedIn', 'true');
             EventBus.$emit('loginStatusChanged', true);
+            this.fetchData();
             this.closeForm(); 
           } else {
             // Handle login failure
@@ -197,6 +187,7 @@ export default {
             alert('Sign-up successful: ' + data.msg);
             localStorage.setItem('isLoggedIn', 'true');
             EventBus.$emit('loginStatusChanged', true);
+            this.fetchData();
             this.closeForm(); 
           } else {
             // Handle sign-up failure
@@ -206,7 +197,51 @@ export default {
         .catch(error => {
           console.error('Error:', error);
         });
-    }
+    },
+    async fetchData() {
+      this.loading = true;
+      this.error = null;
+
+      try {
+        const response = await fetch('https://ba8a701b-07d5-4191-8556-da47d8974118.mock.pstmn.io/process/5', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        if (result.code == 1) {
+          
+          // Update the progressItems based on the received data
+          const totalTopics = 4;
+          const totalFlashcards = 4;
+          const totalQuizzes = 10;
+
+          // Calculate the number of topics finished from resourcesFinished
+          const topicsFinished = result.data.resourcesFinished.split(',').length;
+          const progressItems = [
+            { number: (topicsFinished / totalTopics) * 100, label: "topic" },   // Use length of resourcesFinished for topics
+            { number: (result.data.cardsFinishedNum / totalFlashcards) * 100, label: "flashcard" },
+            { number: (result.data.quizPassed / totalQuizzes) * 100, label: "quiz" },
+          ];
+
+          localStorage.setItem('progressItems', JSON.stringify(progressItems));
+          localStorage.setItem('topicFinished', JSON.stringify(result.data.resourcesFinished.split(',')));
+
+        } else {
+          throw new Error('Failed to fetch data: ' + result.msg);
+        }
+      } catch (error) {
+        this.error = null;
+      } finally {
+        this.loading = false;
+      }
+    },
 
   },
 };

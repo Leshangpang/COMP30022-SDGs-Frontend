@@ -289,7 +289,7 @@ import SideBar from '../components/LearningSideBar.vue'
 import learningProgressBar from '../components/learningProgressBar.vue';
 import Goal5LogoBar from '../components/Goal5LogoBar.vue';
 
-
+import { EventBus } from '@/eventBus';
 
 export default {
   name: 'LearningPage',
@@ -375,14 +375,41 @@ export default {
       } else if (topic == 'events and news') {
         this.topicNum = 4;
       }
+
+      if (localStorage.getItem('isLoggedIn') === 'true'){
+        let topicFinished = localStorage.getItem('topicFinished');
+        if (topicFinished) {
+          topicFinished = JSON.parse(topicFinished);
+        } else {
+          topicFinished = [];
+        }
+
+        const topicStr = String(this.topicNum);
+        if (!topicFinished.includes(topicStr)) {
+          topicFinished.push(topicStr);
+          localStorage.setItem('topicFinished', JSON.stringify(topicFinished));
+          let storedProgressItems = localStorage.getItem('progressItems');
+          if (storedProgressItems) {
+            storedProgressItems = JSON.parse(storedProgressItems);
+          } else {
+            storedProgressItems = [
+              { number: 0, label: "topic" },
+              { number: 0, label: "flashcard" },
+              { number: 0, label: "quiz" },
+            ];
+          }
+          storedProgressItems[0].number = (topicFinished.length / 4) * 100;
+          localStorage.setItem('progressItems', JSON.stringify(storedProgressItems));
+          EventBus.$emit('progressItemsUpdated');
+        } 
+      }
     },
+  },
     navigateToImagePage() {
       this.$router.push({ name: "Preview1" });
     }
   }
 
-
-}
 </script>
 
 <style>

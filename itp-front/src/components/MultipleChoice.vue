@@ -56,6 +56,8 @@
 </template>
 
 <script>
+import { EventBus } from '@/eventBus';
+
 export default {
   name: "QuestionSubmit",
   components: {},
@@ -199,6 +201,16 @@ export default {
         this.currentIndex++;
         this.currentSub = this.selectMap?.[this.getId] ?? "";
       }
+      let storedProgressItems = localStorage.getItem('progressItems');
+      if (storedProgressItems) {
+        storedProgressItems = JSON.parse(storedProgressItems);
+      }
+      if(this.currentIndex + 1 > storedProgressItems[2].number / 10){
+        storedProgressItems[2].number = this.currentIndex * 10;
+        localStorage.setItem('progressItems', JSON.stringify(storedProgressItems));
+        EventBus.$emit('progressItemsUpdated');
+      }
+
     },
     submitHandle() {
       if (Object.keys(this.selectMap).length !== this.question.length) {
@@ -228,6 +240,15 @@ export default {
         });
       });
       this.isSubmit = false;
+
+      let storedProgressItems = localStorage.getItem('progressItems');
+      if (storedProgressItems) {
+        storedProgressItems = JSON.parse(storedProgressItems);
+      }
+      storedProgressItems[2].number = 100;
+      localStorage.setItem('progressItems', JSON.stringify(storedProgressItems));
+      EventBus.$emit('progressItemsUpdated');
+
     },
     refreshPage() {
       window.location.reload();
