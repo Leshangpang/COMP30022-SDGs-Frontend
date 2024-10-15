@@ -30,6 +30,8 @@ export default {
     // Handler for beforeunload event to clear login status
     handleBeforeUnload() {
       localStorage.setItem('isLoggedIn', 'false'); // Set isLoggedIn to false when the app is closed or refreshed
+      localStorage.removeItem('progressItems');
+      localStorage.removeItem('topicFinished');
     },
   },
   created() {
@@ -45,6 +47,7 @@ export default {
 
     // Clean up the beforeunload event listener
     window.removeEventListener('beforeunload', this.handleBeforeUnload);
+    
   },
 };
 </script>

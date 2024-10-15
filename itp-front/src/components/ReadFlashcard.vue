@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { EventBus } from '@/eventBus';
+
 export default {
   name: "FlashCard",
   components: {},
@@ -36,6 +38,16 @@ export default {
     changeIndex(index) {
       this.activeIndex = index;
       this.isRotate = false;
+
+      let storedProgressItems = localStorage.getItem('progressItems');
+      if (storedProgressItems) {
+        storedProgressItems = JSON.parse(storedProgressItems);
+      }
+      if(this.activeIndex + 1 > storedProgressItems[1].number / 25){
+        storedProgressItems[1].number = (this.activeIndex + 1) * 25;
+        localStorage.setItem('progressItems', JSON.stringify(storedProgressItems));
+        EventBus.$emit('progressItemsUpdated');
+      }
     },
     toggleFlash() {
       // Toggle the isRotate property to switch between question and answer
