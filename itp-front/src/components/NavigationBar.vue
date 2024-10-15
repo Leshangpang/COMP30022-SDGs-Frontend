@@ -167,10 +167,18 @@
             <div class="user-info-container">
               <span class="after-login-username">
                 Hi, {{ username }}
-                <i class="el-icon-right" @click="changeLoginStates"></i>
+                <!-- <i class="el-icon-right" @click="changeLoginStates"></i> -->
                 <!-- <box-icon name='exit' @click="changeLoginStates"></box-icon> -->
+                <svg class = "exit-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;" @click="changeLoginStates">
+                  <path
+                    d="M19.002 3h-14c-1.103 0-2 .897-2 2v4h2V5h14v14h-14v-4h-2v4c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.898-2-2-2z">
+                  </path>
+                  <path d="m11 16 5-4-5-4v3.001H3v2h8z"></path>
+                </svg>
               </span>
-              <el-progress :text-inside="false" :stroke-width="15" :percentage=this.percentage class="nav-bar-progress"></el-progress>
+              <el-progress :text-inside="false" :stroke-width="15" :percentage=this.percentage
+                class="nav-bar-progress"></el-progress>
             </div>
           </template>
           <template v-else>
@@ -218,7 +226,7 @@ export default {
       localStorage.setItem('isLoggedIn', 'false');
       EventBus.$emit('loginStatusChanged', false);
     },
-    updateProgress(){
+    updateProgress() {
       this.percentage = 6;
     }
   },
@@ -258,16 +266,20 @@ export default {
 
 
 <style scoped>
-
-.web-logo{
+.exit-icon {
+  margin-left: 1vw;
+}
+.web-logo {
   text-align: center;
   font-size: smaller;
   margin-right: 70px;
 }
 
 .navbar-logo {
-  max-width: 130px; /* Adjust the max width as needed */
-  height: 50px; /* Maintains the aspect ratio */
+  max-width: 130px;
+  /* Adjust the max width as needed */
+  height: 50px;
+  /* Maintains the aspect ratio */
   display: flex;
   margin-left: 0;
   padding-left: 0;
@@ -338,9 +350,11 @@ export default {
 .edumim-responsive-nav {
   display: none;
 }
+
 .edumim-nav {
   width: 100%
 }
+
 .edumim-nav .navbar {
   position: inherit;
   padding: 0;

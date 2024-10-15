@@ -4,10 +4,11 @@
       <div class="footer-top-area ptb-100">
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
+            <div class="single-footer-widget logo-container">
               <router-link to="/" class="logo">
                 <img src="../assets/image/WebsiteLogo.jpg" alt="image" width="300px" />
               </router-link>
+              <h1 class="sdg-journey-text">SDG Journey</h1>
             </div>
           </div>
           <!-- router link -->
@@ -62,6 +63,18 @@ export default {
 </script>
 
 <style scouped>
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中 */
+  justify-content: center; /* 垂直居中 */
+}
+.sdg-journey-text {
+  color: white;
+  font-size: 2vw;
+  margin-top: 0px;
+  text-align: center;
+}
 #try {
   margin-left: 100px;
 }
