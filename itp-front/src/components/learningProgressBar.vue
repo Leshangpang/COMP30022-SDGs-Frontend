@@ -62,6 +62,7 @@ export default {
           ];
 
           localStorage.setItem('progressItems', JSON.stringify(this.progressItems));
+          localStorage.setItem('topicFinished', JSON.stringify(this.progressData.resourcesFinished.split(',')));
 
         } else {
           throw new Error('Failed to fetch data: ' + result.msg);
@@ -81,9 +82,14 @@ export default {
   },
   mounted() {
     this.loadProgressFromStorage();
+    EventBus.$on('progressItemsUpdated', this.loadProgressFromStorage);
     EventBus.$on('loginStatusChanged', (status) => {
       this.fetchData();
     });
+  },
+  beforeDestroy() {
+    // Clean up the event listener when the component is destroyed
+    EventBus.$off('progressItemsUpdated', this.loadProgressFromStorage);
   },
 };
 </script>
