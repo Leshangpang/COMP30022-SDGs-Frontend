@@ -67,7 +67,7 @@ margin-right: 10px;
 margin-left: 10px;
 margin-top: 40px;
 width: 200px;
-height:450px;
+height:550px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
 background-image: url('../assets/image/Goal5QuizDecoration.jpg');

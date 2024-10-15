@@ -73,7 +73,7 @@ margin-right: 30px;
 margin-left: 30px;
 margin-top: 20px;
 width: 200px ;
-height: 450px;
+height: 650px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
 background-image: url('../assets/image/Goal5FlashcardDecoration.png');

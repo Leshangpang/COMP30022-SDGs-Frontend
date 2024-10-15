@@ -69,8 +69,8 @@ export default {
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
-  height: 450px; 
-  width: 625px;
+  height: 650px; 
+  width: 1225px;
   margin-right: 50px;
   margin-left: 50px;
   border-radius: 10%;
