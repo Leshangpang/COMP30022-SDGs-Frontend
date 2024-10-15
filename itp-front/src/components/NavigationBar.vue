@@ -164,7 +164,8 @@
             <div class="user-info-container">
               <span class="after-login-username">
                 Hi, {{ username }}
-                <i class="el-icon-right" @click="changeLoginStates"></i>
+                <!-- <i class="el-icon-right" @click="changeLoginStates"></i> -->
+                <box-icon name='exit' @click="changeLoginStates"></box-icon>
               </span>
               <el-progress :text-inside="false" :stroke-width="15" :percentage="70" class="nav-bar-progress"></el-progress>
             </div>
@@ -187,6 +188,8 @@
 
 <script>
 import { EventBus } from '@/eventBus';
+import 'boxicons/css/boxicons.min.css';
+
 
 export default {
   data() {

@@ -109,5 +109,7 @@ export default {
 
 .question-list {
   margin-bottom: 20px;
+  min-width: 90%;
+
 }
 </style>
