@@ -29,18 +29,93 @@ export default {
       ],
       isRotate: false,
       activeIndex: 0,
+      maxIndex: 0, // To store the maximum active index
       // url: "https://img0.baidu.com/it/u=2426072799,1960439289&fm=253&fmt=auto&app=120&f=JPEG?w=747&h=500",
     };
+  },
+  mounted() {
+      // Add the event listener for visibility change
+      document.addEventListener("visibilitychange", this.handleVisibilityChange);
+      console.log('iiiii')
+  },
+  beforeDestroy() {
+      // Remove the event listener when the component is destroyed
+      document.removeEventListener("visibilitychange", this.handleVisibilityChange);
+      console.log('uuuuu')
   },
   methods: {
     changeIndex(index) {
       this.activeIndex = index;
       this.isRotate = false;
+      if (index > this.maxIndex) {
+        this.maxIndex = index;
+        this.fetchProcessData()
+        console.log(this.maxIndex)
+      }
     },
     toggleFlash() {
       // Toggle the isRotate property to switch between question and answer
       this.isRotate = !this.isRotate;
     },
+    fetchProcessData() {
+      const moduleId=2;
+      // Fetch the latest data from the API
+      this.$axios.get(`https://ba8a701b-07d5-4191-8556-da47d8974118.mock.pstmn.io/process/${moduleId}`)
+        .then((response) => {
+          if (response.data.code === 1) {
+            // Store the fetched process data
+            this.processData = response.data.data;
+            // Update quizPassed based on the user's score
+            this.processData.cardsFinishedNum = this.maxIndex; // Example passing condition
+            // Send the updated process data to the server
+            if(this.maxIndex==3){
+              this.processData.cardsFinishedNum = 10;
+            }
+            console.log("here means get data")
+            console.log(this.processData.quizPassed)
+            this.updateProcess();
+          } else {
+            this.$message({
+              type: "error",
+              message: "Failed to fetch process data!",
+            });
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching process data:", error);
+        });
+    },
+    updateProcess() {
+          // Send the updated process data back to the server
+          this.$axios.post("https://ba8a701b-07d5-4191-8556-da47d8974118.mock.pstmn.io/process", this.processData)
+            .then((response) => {
+              if (response.data.code === 1) {
+                this.$message({
+                  type: "success",
+                  message: "Process update successful!",
+              });
+              } else {
+                this.$message({
+                  type: "error",
+                  message: "Failed to update process!",
+                });
+              }
+            })
+            .catch((error) => {
+              console.error("API error:", error);
+              this.$message({
+                type: "error",
+                message: "Process update failed!",
+              });
+            });
+      },
+      handleVisibilityChange() {
+        if (document.visibilityState === "visible") {
+          // User has returned to the page, fetch the latest data
+          console.log('xxxxxxx');
+          this.fetchProcessData();
+        }
+      },
   },
 };
 </script>
