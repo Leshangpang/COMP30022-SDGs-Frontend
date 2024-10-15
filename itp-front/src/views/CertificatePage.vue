@@ -77,15 +77,20 @@ export default {
 /* Flex container for sidebar, unlock info, and certificate */
 .content-container {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start; /* Align items at the top */
   justify-content: space-between;
   padding: 20px;
   flex: 1;
   width: 100%;
-  margin-top: -60px;
+  margin-top: 0; /* Remove negative margins for better alignment */
   margin-right: -250px;
   margin-left: -50px;
   margin-bottom: 30px;
+}
+
+/* Adjustments for Sidebar */
+.sidebar {
+  margin-right: 20px; /* Add some margin to the right of the sidebar */
 }
 
 /* Unlock Info Section */
@@ -98,14 +103,14 @@ export default {
   line-height: 1.5;
   box-shadow: none; /* Remove any box shadow */
   text-align: left;
-  margin-top: 90px;
+  margin-top: 0; /* Align with sidebar */
 }
 
-/* set text for unlock info to black */
+/* Set text for unlock info to black */
 .unlock-info p {
   color: black;
 }
-/* change the router link colour here to grey*/ 
+/* Change the router link colour here to grey*/ 
 .unlock-info a {
   color: #7b7b8a;
 }
