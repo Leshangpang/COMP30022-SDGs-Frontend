@@ -18,11 +18,6 @@
             <input type="text" id="username" class="auth-input" placeholder="username" v-model="username" />
           </div>
 
-          <div class="input-group" v-if="!localIsLogin">
-            <label for="email" class="visually-hidden"></label>
-            <input type="text" id="email" class="auth-input" placeholder="email" v-model="email" />
-          </div>
-
           <div class="input-group">
             <label for="password" class="visually-hidden"></label>
             <input type="password" id="password" class="auth-input" placeholder="password" v-model="password" />
@@ -46,14 +41,6 @@
           <button v-if="localIsLogin" class="forgot-password">forgot password?</button>
         </main>
         <footer>
-          <div class="auth-methods">
-            <button @click="signInWithGoogle" class="google-auth">
-              <img src="../assets/image/svg/google.svg" alt="Google" />
-            </button>
-            <button @click="signInWithFacebook" class="facebook-auth">
-              <img src="../assets/image/svg/facebook.svg" alt="Facebook" />
-            </button>
-          </div>
           <p></p>
           <p v-if="!localIsLogin" class="switch-login">
             <button class="forgot-password" @click="setLoginState(true)">already have an account?</button>
