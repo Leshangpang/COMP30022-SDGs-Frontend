@@ -166,7 +166,7 @@
                 Hi, {{ username }}
                 <i class="el-icon-right" @click="changeLoginStates"></i>
               </span>
-              <el-progress :text-inside="false" :stroke-width="15" :percentage="70" class="nav-bar-progress"></el-progress>
+              <el-progress :text-inside="false" :stroke-width="15" :percentage=this.percentage class="nav-bar-progress"></el-progress>
             </div>
           </template>
           <template v-else>
@@ -195,6 +195,7 @@ export default {
       button_active_state: false,
       isLoggedIn: localStorage.getItem('isLoggedIn') === 'true', // 初始化为未登录状态, 可切换
       username: 'Alice', // 存储用户名
+      percentage: 0,
     };
   },
 
@@ -211,6 +212,9 @@ export default {
       localStorage.setItem('isLoggedIn', 'false');
       EventBus.$emit('loginStatusChanged', false); 
     },
+    updateProgress(){
+      this.percentage = 6;
+    }
   },
 
   computed: {
@@ -226,7 +230,9 @@ export default {
     EventBus.$on('loginStatusChanged', (status) => {
       this.isLoggedIn = status;
     });
+    EventBus.$on('totalProgressUpdate', this.updateProgress);
   },
+
   beforeDestroy() {
     EventBus.$off('loginStatusChanged'); // Clean up event listener
   },

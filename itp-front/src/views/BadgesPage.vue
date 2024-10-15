@@ -110,6 +110,8 @@ import MainFooter from '@/components/MainFooter.vue';
 import BadgePageBanner from '@/components/BadgePageBanner.vue';
 import ProfileSidebar from '@/components/ProfileSidebar.vue';
 
+import { EventBus } from '@/eventBus';
+
 export default {
   name: 'BadgePage',
   components: {
@@ -131,7 +133,7 @@ export default {
       if (storedProgressItems) {
         storedProgressItems = JSON.parse(storedProgressItems);
       };
-      if (storedProgressItems[0].number === 100){
+      if (storedProgressItems[0].number === 100 && storedProgressItems[1].number === 100 && storedProgressItems[2].number === 100){
         this.getBadgeImage(5);
       }
     },

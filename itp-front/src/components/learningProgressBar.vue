@@ -78,6 +78,9 @@ export default {
       if (storedProgress) {
         this.progressItems = JSON.parse(storedProgress);
       }
+      if (this.progressItems[0].number === 100 && this.progressItems[1].number === 100 && this.progressItems[2].number === 100){
+        EventBus.$emit('totalProgressUpdate');
+      }
     }
   },
   mounted() {
