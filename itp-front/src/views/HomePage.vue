@@ -130,7 +130,7 @@ export default {
 }
 
 .pic .text{
-  width: 1500px;
+  width: 100%;
   height:80%;
   background-color: rgba(130, 201, 137, 0.461);
   display: flex;
@@ -172,7 +172,7 @@ export default {
 }
 
 .history .text{
-  width: 1200px;
+  width: 100%;
   height:90%;
   background-color: hsla(194, 56%, 62%, 0.474);
   margin-right: 60px;
@@ -191,7 +191,7 @@ export default {
 
 .thirdpart .goal{
   height: 80%;
-  width: 1250px;
+  width: 100%;
   background-color: hwb(200 50% 0% / 0.474);
   margin: 80px;  
   padding: 15px;

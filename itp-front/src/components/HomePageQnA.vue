@@ -60,13 +60,13 @@ export default {
   justify-content: space-between;
   align-items: flex-start;
   background-color:  #f0ffffb3;;
-  padding-left: 150px;
+  padding-left: 7%;
   padding-bottom: 100px;
   padding-top: 50px;
 }
 .side-left {
   flex: 1;
-  max-width: 900px;
+  max-width: 40%;
 }
 .side-left p {
   font-size: 40px;
@@ -115,7 +115,7 @@ export default {
   grid-template-columns: repeat(3, 170px);
   grid-column-gap: 20px;
   align-items: center;
-  margin-right: 100px;
+  margin-right: 10%;
 }
 .show-image img {
   height: 350px;
