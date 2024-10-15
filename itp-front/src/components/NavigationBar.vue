@@ -1,5 +1,9 @@
 <template>
   <div :class="['edu-navbar-area navbar-area', { 'is-sticky': isSticky }]">
+    <div class="web-logo">
+      <img src="../assets/image/webLogo.jpg" alt="Logo" class="navbar-logo" />
+      <p>SDG Journey</p>
+    </div>
     <div class="edumim-nav">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -8,7 +12,6 @@
             <i class="bx bx-menu"></i>
             <i class="bx bx-x"></i>
           </div>
-
           <div class="collapse navbar-collapse" :class="{ show: active }">
             <ul class="navbar-nav">
               <!-- Home Link -->
@@ -207,10 +210,10 @@ export default {
     showLoginForm(isSignUp) {
       EventBus.$emit('toggle-login-form', isSignUp);
     },
-    changeLoginStates(){
+    changeLoginStates() {
       this.isLoggedIn = false;
       localStorage.setItem('isLoggedIn', 'false');
-      EventBus.$emit('loginStatusChanged', false); 
+      EventBus.$emit('loginStatusChanged', false);
     },
     updateProgress(){
       this.percentage = 6;
@@ -240,7 +243,7 @@ export default {
   //生命周期钩子函数created()和destroyed()的使用，它们分别定义了组件在创建和销毁时的行为
   created() {
     // 模拟从后端获取登录状态和用户名
-    this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; 
+    this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed() {
@@ -251,29 +254,47 @@ export default {
 
 
 
-
-
-
-
-
-
 <style scoped>
+
+.web-logo{
+  text-align: center;
+  font-size: smaller;
+  margin-right: 70px;
+}
+
+.navbar-logo {
+  max-width: 130px; /* Adjust the max width as needed */
+  height: 50px; /* Maintains the aspect ratio */
+  display: flex;
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+
 .user-info-container {
   display: flex;
-  flex-direction: column; /* 垂直方向排列 */
+  flex-direction: column;
+  /* 垂直方向排列 */
   align-items: center;
   width: 100%;
 }
+
 .nav-bar-progress {
-  width: 100%; /* 让进度条的宽度适应容器或调整为固定值 */
-  min-width: 200px; /* 可根据需要设置最大宽度 */
+  width: 100%;
+  /* 让进度条的宽度适应容器或调整为固定值 */
+  min-width: 200px;
+  /* 可根据需要设置最大宽度 */
 
 }
+
 .after-login-username {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
   margin-right: 30px;
-  font-weight: 460; /* 加粗字体 */
-  font-size: 20px; /* 增大字体 */
+  font-weight: 460;
+  /* 加粗字体 */
+  font-size: 20px;
+  /* 增大字体 */
 }
 
 .edu-navbar-area.is-sticky {
@@ -295,6 +316,7 @@ export default {
   padding-left: 50px;
   z-index: 99;
   position: absolute;
+  display: flex;
 }
 
 .navbar-area.is-sticky {
