@@ -203,5 +203,20 @@ export default {
   .specific-question {
     margin-left: 10px;
   }
+
+  .comment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.comment-content {
+  max-width: 85%; /* 限制评论内容的最大宽度 */
+  word-wrap: break-word; /* 如果内容过长，自动换行 */
+  overflow-wrap: break-word; /* 确保长单词换行 */
+}
   </style>
   

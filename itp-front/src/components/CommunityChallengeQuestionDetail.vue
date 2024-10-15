@@ -166,7 +166,7 @@ export default {
 <style>
 .question-in-answer-section {
   color:rgb(93, 89, 89);
-  font-size: larger;
+  font-size: 25px;
   margin-top: 0px;
 }
 .question-detail {
@@ -235,7 +235,7 @@ export default {
 
 /* 讨论区样式 */
 .discussion-section {
-  max-width: 70%;
+  max-width: 90%;
   margin-top: 70px;
 
 
