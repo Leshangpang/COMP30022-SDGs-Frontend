@@ -6,7 +6,7 @@
     <learningProgressBar></learningProgressBar>
     <div class="main-container">
       <SideBar class="sidebar"></SideBar>
-      <MultipleChoice></MultipleChoice>
+      <MultipleChoice class = "TakeQuizPage-quiz"></MultipleChoice>
       <div class="catton"></div>
     </div>
     <MainFooter></MainFooter>
@@ -75,5 +75,8 @@ background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 transform: rotateY(180deg);
+}
+.TakeQuizPage-quiz {
+  min-width: 60%;
 }
 </style>
