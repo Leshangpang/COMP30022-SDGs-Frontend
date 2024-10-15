@@ -167,8 +167,8 @@
             <div class="user-info-container">
               <span class="after-login-username">
                 Hi, {{ username }}
-                <!-- <i class="el-icon-right" @click="changeLoginStates"></i> -->
-                <box-icon name='exit' @click="changeLoginStates"></box-icon>
+                <i class="el-icon-right" @click="changeLoginStates"></i>
+                <!-- <box-icon name='exit' @click="changeLoginStates"></box-icon> -->
               </span>
               <el-progress :text-inside="false" :stroke-width="15" :percentage=this.percentage class="nav-bar-progress"></el-progress>
             </div>
