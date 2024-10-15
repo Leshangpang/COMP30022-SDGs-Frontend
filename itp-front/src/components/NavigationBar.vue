@@ -338,7 +338,9 @@ export default {
 .edumim-responsive-nav {
   display: none;
 }
-
+.edumim-nav {
+  width: 100%
+}
 .edumim-nav .navbar {
   position: inherit;
   padding: 0;

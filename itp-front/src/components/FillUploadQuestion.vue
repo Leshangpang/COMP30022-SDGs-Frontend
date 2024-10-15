@@ -54,7 +54,8 @@
                     </el-select>
                 </div>
                 <div class="question-hub-form-group question-hub-buttons">
-                    <el-button type="success">View uploaded Question</el-button>
+                    <el-button type="success" @click="$router.push('/myquestion')">View Uploaded Question</el-button>
+
                     <el-button type="primary" @click="clearForm">Clear</el-button>
                     <el-button type="primary" @click="validateForm">Publish</el-button>
                 </div>
@@ -69,11 +70,11 @@ export default {
     data() {
         return {
             question: '', // Question
-            choiceA: '', 
-            choiceB: '', 
-            choiceC: '', 
-            choiceD: '', 
-            selectedGoal: '', 
+            choiceA: '',
+            choiceB: '',
+            choiceC: '',
+            choiceD: '',
+            selectedGoal: '',
             correctAnswer: '', // correct answer
             options1: [{
                 value: '1',
@@ -153,15 +154,15 @@ export default {
             this.correctAnswer = '';
         },
         validateForm() {
-        // 这里可以进行表单验证逻辑，如果表单无误则调用 submitForm
-        if (!this.question || !this.choiceA || !this.choiceB || !this.choiceC || !this.choiceD || !this.correctAnswer || !this.selectedGoal) {
-            alert('Please fill in all required fields.');
-        } else {
-            this.submitForm();
-        }
-    },
+            // 这里可以进行表单验证逻辑，如果表单无误则调用 submitForm
+            if (!this.question || !this.choiceA || !this.choiceB || !this.choiceC || !this.choiceD || !this.correctAnswer || !this.selectedGoal) {
+                alert('Please fill in all required fields.');
+            } else {
+                this.submitForm();
+            }
+        },
         async submitForm() {
-            
+
 
             // 组织 choice 数据
             const choices = `${this.choiceA},,,${this.choiceB},,,${this.choiceC},,,${this.choiceD}`;
@@ -173,7 +174,7 @@ export default {
                 question: this.question,
                 choice: choices,
                 answer: this.correctAnswer === 'option1' ? 1 :
-                        this.correctAnswer === 'option2' ? 2 :
+                    this.correctAnswer === 'option2' ? 2 :
                         this.correctAnswer === 'option3' ? 3 : 4
             };
 
