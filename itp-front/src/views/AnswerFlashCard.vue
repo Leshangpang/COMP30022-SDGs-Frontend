@@ -6,6 +6,7 @@
     <learningProgressBar class="progress-bar"></learningProgressBar>
     <div class="main-container">
       <SideBar class="sidebar"></SideBar>
+      
       <Flashcard class="flashcard"></Flashcard>
       <div class="catton"></div>
     </div>
@@ -64,17 +65,18 @@ components: {
 }
 
 .flashcard{
-  margin-left: 100px;
+  margin-left: 130px;
   margin-bottom: 20px;
+  min-width: 65%
 }
 
 .catton{
 margin-right: 30px;
 margin-left: 30px;
-margin-top: 20px;
+margin-top: 0px;
 width: 200px ;
-height: 450px;
-background-color: hsl(0, 0%, 100%);
+height: 120%;
+background-color: hsl(0, 61%, 58%);
 margin-bottom: 50px;
 background-image: url('../assets/image/Goal5FlashcardDecoration.png');
 background-size: cover; 

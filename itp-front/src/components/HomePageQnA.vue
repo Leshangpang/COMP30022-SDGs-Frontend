@@ -66,7 +66,7 @@ export default {
 }
 .side-left {
   flex: 1;
-  max-width: 500px;
+  max-width: 900px;
 }
 .side-left p {
   font-size: 40px;

@@ -267,8 +267,8 @@ export default {
 .question-submit {
   display: flex;
   flex-direction: column;
-  width: 700px;
-  margin-left: 30px;
+  width: 50%;
+  margin-left: 20px;
   margin-right: 30px;
 }
 .head {

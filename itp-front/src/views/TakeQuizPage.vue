@@ -6,7 +6,7 @@
     <learningProgressBar></learningProgressBar>
     <div class="main-container">
       <SideBar class="sidebar"></SideBar>
-      <MultipleChoice></MultipleChoice>
+      <MultipleChoice class = "TakeQuizPage-quiz"></MultipleChoice>
       <div class="catton"></div>
     </div>
     <MainFooter></MainFooter>
@@ -67,7 +67,7 @@ margin-right: 10px;
 margin-left: 10px;
 margin-top: 40px;
 width: 200px;
-height:450px;
+height:550px;
 background-color: hsl(0, 0%, 100%);
 margin-bottom: 50px;
 background-image: url('../assets/image/Goal5QuizDecoration.jpg');
@@ -75,5 +75,8 @@ background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 transform: rotateY(180deg);
+}
+.TakeQuizPage-quiz {
+  min-width: 60%;
 }
 </style>

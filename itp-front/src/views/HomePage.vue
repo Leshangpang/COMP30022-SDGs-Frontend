@@ -130,7 +130,7 @@ export default {
 }
 
 .pic .text{
-  width: 700px;
+  width: 1500px;
   height:80%;
   background-color: rgba(130, 201, 137, 0.461);
   display: flex;
@@ -172,7 +172,7 @@ export default {
 }
 
 .history .text{
-  width: 900px;
+  width: 1200px;
   height:90%;
   background-color: hsla(194, 56%, 62%, 0.474);
   margin-right: 60px;
@@ -185,13 +185,13 @@ export default {
 .history .text .eachPoint{
   padding: 10px;
   color: #fff;
-  font-size: 22px;
+  font-size: 26px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .thirdpart .goal{
   height: 80%;
-  width: 750px;
+  width: 1250px;
   background-color: hwb(200 50% 0% / 0.474);
   margin: 80px;  
   padding: 15px;
