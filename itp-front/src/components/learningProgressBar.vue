@@ -76,13 +76,12 @@ export default {
     loadProgressFromStorage() {
       const storedProgress = localStorage.getItem('progressItems');
       if (storedProgress) {
-        console.log("111")
         this.progressItems = JSON.parse(storedProgress);
       }
     }
   },
   mounted() {
-    //this.loadProgressFromStorage();
+    this.loadProgressFromStorage();
     EventBus.$on('progressItemsUpdated', this.loadProgressFromStorage);
     EventBus.$on('loginStatusChanged', (status) => {
       this.fetchData();

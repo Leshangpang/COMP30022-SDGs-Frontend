@@ -245,7 +245,6 @@ export default {
 
           localStorage.setItem('progressItems', JSON.stringify(progressItems));
           localStorage.setItem('topicFinished', JSON.stringify(result.data.resourcesFinished.split(',')));
-          
 
         } else {
           throw new Error('Failed to fetch data: ' + result.msg);
