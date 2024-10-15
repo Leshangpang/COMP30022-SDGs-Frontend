@@ -84,7 +84,23 @@ export default {
     this.loadProgressFromStorage();
     EventBus.$on('progressItemsUpdated', this.loadProgressFromStorage);
     EventBus.$on('loginStatusChanged', (status) => {
-      this.fetchData();
+      if (status === true){
+        this.fetchData();
+      }else {
+        localStorage.setItem('progressItem', [
+          { number: 0, label: "topic" },     // topics finished, calculated from resourcesFinished
+          { number: 0, label: "flashcard" }, // cardsFinishedNum
+          { number: 0, label: "quiz" },      // quizPassed
+        ],);
+        localStorage.setItem('topicFinished', '');
+
+        this.progressItems = [
+          { number: 0, label: "topic" },
+          { number: 0, label: "flashcard" },
+          { number: 0, label: "quiz" },
+        ];
+
+      }
     });
   },
   beforeDestroy() {
