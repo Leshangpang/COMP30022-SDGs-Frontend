@@ -5,7 +5,11 @@
         <div class="col-lg-6 col-md-12">
           <div class="edu-banner-content-learning">
             <h1>
-              Sustainable Development Goal: Gender<span class="shape01"> Equality</span>
+              Sustainable 
+              
+            </h1>
+            <h1>
+              Development Goal: Gender<span class="shape01"> Equality</span>
             </h1>
             <p>
               Achieve gender equality and empower all women and girls
@@ -31,7 +35,7 @@ export default {
 <style scoped>
 .learningbanner {
   background-image: url(../assets/image/BannerBackground.png);
-  height: auto;
+  height: 100%;
   max-width: 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -41,8 +45,8 @@ export default {
 }
 
 .edu-banner-image-learning {
-  width: 100%;
-  height: 100%; /* Ensure the container height is 100% */
+  width: 130%;
+  max-height: 50%; /* Ensure the container height is 100% */
   overflow: visible; /* Keep the overflow on the sides and bottom visible */
   clip-path: inset(0px -300px -100px -50px); /* Hide 20px from the top, you can adjust as needed */
 }
@@ -55,11 +59,17 @@ export default {
   margin-left: 50px;
 }
 
+.edu-banner-content-learning{
+  margin-right: 0px;
+  margin-left: -7vw;
+
+}
 
 .edu-banner-content-learning h1 {
   font-size: 75px;
   margin-bottom: 18px;
   line-height: 105px;
+  
 }
 
 .edu-banner-content-learning p {
