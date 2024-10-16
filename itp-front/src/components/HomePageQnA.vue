@@ -1,31 +1,22 @@
 <template>
   <div class="ask-question">
     <div class="side-left">
-      <el-collapse v-model="activeNames">
+      <el-collapse v-model="activeNames" accordion>
         <el-collapse-item title="Global Awareness" name="1">
-          <div class="sub-item">Recognizes interconnected global challenges (e.g., poverty, climate change).</div>
-          <div class="sub-item">Fosters a sense of global responsibility.</div>
+          <div class="sub-item">&bull; Recognizes interconnected global challenges (e.g., poverty, climate change).</div>
+          <div class="sub-item">&bull; Fosters a sense of global responsibility.</div>
         </el-collapse-item>
-        <el-collapse-item
-          title="Critical Thinking"
-          name="2"
-        >
-          <div class="sub-item">Encourages analysis of complex issues.</div>
-          <div class="sub-item">Develops skills to evaluate solutions and understand consequences.</div>
+        <el-collapse-item title="Critical Thinking" name="2">
+          <div class="sub-item">&bull; Encourages analysis of complex issues.</div>
+          <div class="sub-item">&bull; Develops skills to evaluate solutions and understand consequences.</div>
         </el-collapse-item>
-        <el-collapse-item
-          title="Empowerment and Agency"
-          name="3"
-        >
-          <div class="sub-item">Equips individuals to advocate for change in their communities.</div>
-          <div class="sub-item">Instills confidence to participate in local and global initiatives.</div>
+        <el-collapse-item title="Empowerment and Agency" name="3">
+          <div class="sub-item">&bull; Equips individuals to advocate for change in their communities.</div>
+          <div class="sub-item">&bull; Instills confidence to participate in local and global initiatives.</div>
         </el-collapse-item>
-        <el-collapse-item
-          title="Interdisciplinary Approach"
-          name="4"
-        >
-          <div class="sub-item">Integrates knowledge from various fields (e.g., science, economics, social justice)</div>
-          <div class="sub-item">Promotes collaboration to tackle multifaceted problems effectively.</div>
+        <el-collapse-item title="Interdisciplinary Approach" name="4">
+          <div class="sub-item">&bull; Integrates knowledge from various fields (e.g., science, economics, social justice)</div>
+          <div class="sub-item">&bull; Promotes collaboration to tackle multifaceted problems effectively.</div>
         </el-collapse-item>
       </el-collapse>
     </div>
@@ -36,6 +27,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -79,6 +71,12 @@ export default {
 .side-left span {
   color: #cb8083;
 }
+.sub-item {
+  margin-right: 0.5vw; /* 左侧外边距 */
+  font-size: 15px;
+
+}
+
 .side-left .el-collapse {
   width: 100%;
   display: flex;
@@ -92,11 +90,9 @@ export default {
   border: rgb(255, 244, 43) solid 10px;
   justify-content: center;
   background-color: #6dcbc8;
-  height: 400px;
-  padding: 40px;
-  :deep(.el-collapse-item__content) {
-    padding: 12px;
-  }
+  height: auto;
+  padding: 8%;
+  
 }
 .side-left :deep(.el-collapse-item__header) {
   height: 36px;
@@ -104,6 +100,7 @@ export default {
   padding-left: 12px;
   border: none;
 }
+
 .el-collapse .el-collapse-item {
   border-radius: 10px;
   overflow: hidden;

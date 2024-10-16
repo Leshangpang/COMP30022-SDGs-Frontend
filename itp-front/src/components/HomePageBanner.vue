@@ -48,7 +48,7 @@ margin-top: 4vw;
 
 .content-home h1 {
 font-size: 3.2vw;
-line-height: 120px;
+line-height: 12vh;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 color: rgb(90, 196, 220);
 font-weight: bolder;
