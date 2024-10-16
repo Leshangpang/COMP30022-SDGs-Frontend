@@ -30,9 +30,6 @@
               v-model="confirmPassword" />
           </div>
 
-          <div class="input-group">
-            <img src="../assets/image/SignInCloudfarePlaceholder.png" />
-          </div>
 
           <button type="submit" class="login-button">
             {{ localIsLogin ? 'Log in' : 'Sign up' }}
