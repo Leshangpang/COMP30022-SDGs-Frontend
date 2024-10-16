@@ -32,6 +32,7 @@ export default {
       localStorage.setItem('isLoggedIn', 'false'); // Set isLoggedIn to false when the app is closed or refreshed
       localStorage.removeItem('progressItems');
       localStorage.removeItem('topicFinished');
+      localStorage.removeItem('totalProgress', 6);
     },
   },
   created() {
